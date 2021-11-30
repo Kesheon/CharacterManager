@@ -177,7 +177,7 @@ class Necromancer//They often engage in battle alone, because they use undead mi
 }
 
 class Wizard/*They can manipulate the natural elements, confuse their opponents,  fly, and, if powerful enough,
-        seal their opponents in another dimension for quite a while*/
+        seal their opponents in another dimension for quite a while.*/
 {
     Accuracy accuracy;
     Attack attack;
@@ -276,11 +276,39 @@ class Main
                         " ranged weapons.");
                             
                         System.out.println();
+                        
                         System.out.println("Engineer: They utilize advanced"+
                         " equipment (like jetpacks!), advanced ranged weapons,"+
                         " and different\ntypes of mech suits"+
-                        " (piloted or autonomous) which they can repair and upgrade.");//not finished w/ descriptions
+                        " (piloted or autonomous) which they can repair and upgrade.");
+                        
                         System.out.println();
+                        
+                        System.out.println("Healer: Healers keep their comrades"+
+                        " battle ready and can revive them (they cannot heal"+
+                        " Engineer's\nmech suits).");
+                        
+                        System.out.println();
+                        
+                        System.out.println("Martial Artist: They are not afraid"+
+                        " to punch or kick anything- they are the definition"+
+                        " of super\nhuman strength.");
+                        
+                        System.out.println();
+                        
+                        System.out.println("Necromancers: They often engage in"+
+                        " battle alone, because they use undead minions -tiny,"+
+                        " small,\nbig, and humongous- to do their bidding.");
+                        
+                        System.out.println();
+                        
+                        System.out.println("Wizard: They can manipulate the"+
+                        " natural elements, confuse their opponents, fly, and,"+
+                        " if\npowerful enough, seal their opponents in another"+
+                        " dimension for quite a while.");
+                        
+                        System.out.println();
+                        
                         System.out.print("When ready, press enter to continue");
                         try{System.in.read();}
                         catch(Exception e){}
