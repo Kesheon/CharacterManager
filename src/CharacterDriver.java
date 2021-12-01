@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 interface Accuracy
 {   
@@ -209,6 +210,12 @@ class Main
         System.out.println(wizardAttack.rollForAttack(2, wizardAccuracyValue));
         */
         
+        /*Linked list that holds characters that have been created and/or characters that have been loaded from a save file.
+        And the strings are what hold the user-entered character names of their created characters.*/
+        LinkedList loadedCharacters = new LinkedList();
+        String AssassinFirstName;
+        String AssassinLastName;
+        
         int userMainMenu;
         Scanner scan = new Scanner(System.in);
         System.out.println();
@@ -321,45 +328,42 @@ class Main
                     //Assassin Class Creation
                     else if(characterCreationMenu == 1)
                     {
-                        //MORE THAN LIKELY WON'T NEED THIS COMMENTED SECTION, THOUGH NOT ENTIRELY SURE YET.
-                        /*getAccuracy assassinAcc = new getAccuracy();
-                        getAttack assassinAtt = new getAttack();
-                        getDamage assassinDmg = new getDamage();
-                        getPhyDef assassinPhyDef = new getPhyDef();
-                        getMagDef assassinMagDef = new getMagDef();
-                    
-                        Assassin Assassin = new Assassin(assassinAcc, assassinAtt,
-                            assassinDmg, assassinPhyDef, assassinMagDef);*/
-                    
+                        
                         File rangeText = new File("src/range.txt");
                         Scanner scan2 = new Scanner(rangeText);
                         int rangeInt1 = scan2.nextInt();//1
                         int rangeInt2 = scan2.nextInt();//250
                         Random generator = new Random();
                     
-                    
-                        int randomAccuracyStat;
-                        int randomAttackStat;
-                        int randomDamageStat;
-                        int randomPhyDefStat;
-                        int randomMagDefStat;
-                    
                         int randomNum1;
                         int randomNum2;
                         int randomNum3;
                         int randomNum4;
                         int randomNum5;
-        
-                        randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;/*random
-                        # between 1-250*/
-                        randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;/*random
-                        # between 1-250*/
-                        randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;/*random
-                        # between 1-250*/
-                        randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;/*random
-                        # between 1-250*/
-                        randomNum5 = generator.nextInt(rangeInt2)+rangeInt1;/*random
-                        # between 1-250*/
+                        
+                        /*random # between 1-250*/
+                        randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                        
+                        /*random # between 1-250*/
+                        randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                        
+                        /*random # between 1-250*/
+                        randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                        
+                        /*random # between 1-250*/
+                        randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                        
+                        /*random # between 1-250*/
+                        randomNum5 = generator.nextInt(rangeInt2)+rangeInt1;
+                        
+                        /*the above random num values are later stored in these 
+                        variables so that the user can select from randomly 
+                        generated stat values for each stat*/
+                        int randomAccuracyStat;
+                        int randomAttackStat;
+                        int randomDamageStat;
+                        int randomPhyDefStat;
+                        int randomMagDefStat;
                         
                         /*stores the randomNumbers that are used for the
                         assassin's stats so that more than one random number is
@@ -1108,8 +1112,87 @@ class Main
                                 }
                             }
                         }
-                        //store character name variable in linked list "loadedCharacters"(which should be "global"), and its value (the name itself) in txt file called AssassinName.
-                        //Don't make character name variables global (like AssassinName). Just read/load the text files when needed.
+                        
+                        
+                        System.out.print("Enter the first name of your Assassin character: ");
+                        AssassinFirstName = scan.next();//AssassinFirstName is "global"
+                        
+                        /*add character name variable "AssassinFirstName" to
+                        loadedCharacters linked list to be accessed in other 
+                        parts of the program (like selecting an existing 
+                        character)*/
+                        loadedCharacters.add(AssassinFirstName);/*linked list "loaded
+                        characters" is "global"*/
+                        
+                        try//write AssassinFirstName to AssassinFirstName.txt file
+                        {
+                            /*AssassinName and AssassinName.txt can only
+                            store one Assassin character name, so the newly
+                            created character's name must be written to this txt
+                            file which will later be read so that said character
+                            name can be written to another file(which the user
+                            will name and said txt file will also contain all of
+                            the Assassin Character's stats) after being created,
+                            otherwise upon creating another Assassin character,
+                            the previously created one will be overwritten by
+                            the newer one.*/
+                            FileWriter writeStats = new FileWriter("src/AssassinFirstName.txt");
+                            writeStats.write(String.valueOf(AssassinFirstName));
+                            writeStats.close();
+                            
+                            
+                        }
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        //-----------------------------------------------------
+                        /*do the same thing like above, but with the Assassin's 
+                        last name*/
+                        
+                        System.out.print("Enter the last name of your Assassin character: ");
+                        AssassinLastName = scan.next();//AssassinFirstName is "global"
+                        
+                        /*add character name variable "AssassinLastName" to
+                        loadedCharacters linked list to be accessed in other 
+                        parts of the program (like selecting an existing 
+                        character)*/
+                        loadedCharacters.add(AssassinLastName);/*linked list "loaded
+                        characters" is "global"*/
+                        
+                        try//write AssassinLastName to AssassinLastName.txt file
+                        {
+                            /*AssassinFirstName and AssassinName.txt can only
+                            store one Assassin character name, so the newly
+                            created character's name must be written to this txt
+                            file which will later be read so that said character
+                            name can be written to another file(which the user
+                            will name and said txt file will also contain all of
+                            the Assassin Character's stats) after being created,
+                            otherwise upon creating another Assassin character,
+                            the previously created one will be overwritten by
+                            the newer one.*/
+                            FileWriter writeStats = new FileWriter("src/AssassinLastName.txt");
+                            writeStats.write(String.valueOf(AssassinLastName));
+                            writeStats.close();
+                            
+                        }
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        System.out.println();
+                        System.out.print("WARNING: Be sure to save your"+
+                        " character after this so that you can load them back"+
+                        "\nup later, otherwise you risk overwriting your"+
+                        " character and losing all of their\ndata. Press enter"+
+                        " to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
                     }
                     System.out.println("Character Creation");
                     System.out.println("-----------------------");
@@ -1124,6 +1207,8 @@ class Main
             else if(userMainMenu == 2)
             {
                 System.out.println("TEST!");
+                System.out.println();
+                System.out.println();
                 
             }
            
