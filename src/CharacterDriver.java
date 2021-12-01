@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 interface Accuracy
 {   
@@ -317,21 +318,23 @@ class Main
                        
                     }
                     
+                    //Assassin Class Creation
                     else if(characterCreationMenu == 1)
                     {
-                        getAccuracy assassinAcc = new getAccuracy();
+                        //MORE THAN LIKELY WON'T NEED THIS COMMENTED SECTION, THOUGH NOT ENTIRELY SURE YET.
+                        /*getAccuracy assassinAcc = new getAccuracy();
                         getAttack assassinAtt = new getAttack();
                         getDamage assassinDmg = new getDamage();
                         getPhyDef assassinPhyDef = new getPhyDef();
                         getMagDef assassinMagDef = new getMagDef();
                     
                         Assassin Assassin = new Assassin(assassinAcc, assassinAtt,
-                            assassinDmg, assassinPhyDef, assassinMagDef);
+                            assassinDmg, assassinPhyDef, assassinMagDef);*/
                     
                         File rangeText = new File("src/range.txt");
                         Scanner scan2 = new Scanner(rangeText);
                         int rangeInt1 = scan2.nextInt();//1
-                        int rangeInt2 = scan2.nextInt();//10
+                        int rangeInt2 = scan2.nextInt();//250
                         Random generator = new Random();
                     
                     
@@ -348,23 +351,30 @@ class Main
                         int randomNum5;
         
                         randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;/*random
-                        # between 1-10*/
+                        # between 1-250*/
                         randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;/*random
-                        # between 1-10*/
+                        # between 1-250*/
                         randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;/*random
-                        # between 1-10*/
+                        # between 1-250*/
                         randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;/*random
-                        # between 1-10*/
+                        # between 1-250*/
                         randomNum5 = generator.nextInt(rangeInt2)+rangeInt1;/*random
-                        # between 1-10*/
-              
+                        # between 1-250*/
+                        
+                        /*stores the randomNumbers that are used for the
+                        assassin's stats so that more than one random number is
+                        not applied to more than one stat*/
+                        ArrayList<Integer> randomNumTaken = new ArrayList();
+                        
                         System.out.println("Assassin Class Build");
                         System.out.println("-----------------------");
                         System.out.println("Character stats: Accuracy, Attack, Damage, Physical Defense, and Magical Defense");
                         System.out.println();
                         System.out.println("Random numbers to use for your stats: A."+randomNum1+"  B."+randomNum2+"  C."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
                         System.out.println();
-                        System.out.println("Select a letter from above to add its numeric value to the stat you want it added to.");
+                        System.out.println("Select a letter from above to add"+
+                        " its numeric value to the stat you want it added\nto."+
+                        " You can't use the same letter/value more than once.");
                         System.out.println();
                         System.out.println("Example: Enter your Accuracy stat: C (this would make your Accuracy Stat equal to "+randomNum3+")");
                         System.out.println();
@@ -372,27 +382,14 @@ class Main
                         String accuracyStatChoice;
                         accuracyStatChoice = scan.next();
                         System.out.println();
-                        System.out.println();
-                        if(accuracyStatChoice.equals("a") || accuracyStatChoice.equals("A"))//have to do this for accuracy stat 4 more times (randnum2,3,4, and 5)
+                       
+                        //Accuracy Stat if statements for Assassin class
+                        if(accuracyStatChoice.equals("a") || accuracyStatChoice.equals("A"))
                         {
                             randomAccuracyStat = randomNum1;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/AssassinStats.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));//when writing to file for other stats, do a new line like in file/exceptions before writing
-                                writeStats.close();
-                            }
-                            catch(IOException exception)
-                            {
-                                exception.printStackTrace();
-                            }
-                        }
-                        else if(accuracyStatChoice.equals("b") || accuracyStatChoice.equals("B"))
-                        {
-                            randomAccuracyStat = randomNum2;
-                            try
-                            {
-                                FileWriter writeStats = new FileWriter("src/AssassinStats.txt");
+                                FileWriter writeStats = new FileWriter("src/AssassinAccuracyStat.txt");
                                 writeStats.write(String.valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
@@ -400,7 +397,718 @@ class Main
                             {
                                 exception.printStackTrace();
                             }
+                            randomNumTaken.add(randomNum1);
+                            
                         }
+                        else if(accuracyStatChoice.equals("b") || accuracyStatChoice.equals("B"))
+                        {
+                            randomAccuracyStat = randomNum2;
+                            try
+                            {
+                                FileWriter writeStats = new FileWriter("src/AssassinAccuracyStat.txt");
+                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                writeStats.close();
+                            }
+                            catch(IOException exception)
+                            {
+                                exception.printStackTrace();
+                            }
+                            randomNumTaken.add(randomNum2);
+                        }
+                        else if(accuracyStatChoice.equals("c") || accuracyStatChoice.equals("C"))
+                        {
+                            randomAccuracyStat = randomNum3;
+                            try
+                            {
+                                FileWriter writeStats = new FileWriter("src/AssassinAccuracyStat.txt");
+                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                writeStats.close();
+                            }
+                            catch(IOException exception)
+                            {
+                                exception.printStackTrace();
+                            }
+                            randomNumTaken.add(randomNum3);
+                        }
+                        else if(accuracyStatChoice.equals("d") || accuracyStatChoice.equals("D"))
+                        {
+                            randomAccuracyStat = randomNum4;
+                            try
+                            {
+                                FileWriter writeStats = new FileWriter("src/AssassinAccuracyStat.txt");
+                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                writeStats.close();
+                            }
+                            catch(IOException exception)
+                            {
+                                exception.printStackTrace();
+                            }
+                            randomNumTaken.add(randomNum4);
+                        }
+                        else if(accuracyStatChoice.equals("e") || accuracyStatChoice.equals("E"))
+                        {
+                            randomAccuracyStat = randomNum5;
+                            try
+                            {
+                                FileWriter writeStats = new FileWriter("src/AssassinAccuracyStat.txt");
+                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                writeStats.close();
+                            }
+                            catch(IOException exception)
+                            {
+                                exception.printStackTrace();
+                            }
+                            randomNumTaken.add(randomNum5);
+                        }
+                        
+                        System.out.print("Enter your Attack Stat: ");
+                        String attackStatChoice;
+                        attackStatChoice = scan.next();
+                        System.out.println();
+                        
+                        //Attack Stat if statements for Assassin Class
+                        if(attackStatChoice.equals("a") || attackStatChoice.equals("A"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum1))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum1);
+                                randomAttackStat = randomNum1;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
+                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(attackStatChoice.equals("b") || attackStatChoice.equals("B"))
+                        {
+                            if(randomNumTaken.contains(randomNum2))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum2);
+                                randomAttackStat = randomNum2;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
+                                    writeStats.write(String.valueOf(randomAttackStat));/*writing a newline characters first so its
+                                    easier to read from the AssassinStats files later*/
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(attackStatChoice.equals("c") || attackStatChoice.equals("C"))
+                        {
+                            if(randomNumTaken.contains(randomNum3))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum3);
+                                randomAttackStat = randomNum3;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
+                                    writeStats.write(String.valueOf(randomAttackStat));/*writing a newline characters first so its
+                                    easier to read from the AssassinStats files later*/
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(attackStatChoice.equals("d") || attackStatChoice.equals("D"))
+                        {
+                            if(randomNumTaken.contains(randomNum4))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum4);
+                                randomAttackStat = randomNum4;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
+                                    writeStats.write(String.valueOf(randomAttackStat));/*writing a newline characters first so its
+                                    easier to read from the AssassinStats files later*/
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(attackStatChoice.equals("e") || attackStatChoice.equals("E"))
+                        {
+                            if(randomNumTaken.contains(randomNum5))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum5);
+                                randomAttackStat = randomNum5;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
+                                    writeStats.write(String.valueOf(randomAttackStat));/*writing a newline characters first so its
+                                    easier to read from the AssassinStats files later*/
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        
+                        System.out.print("Enter your Damage Stat: ");
+                        String damageStatChoice;
+                        damageStatChoice = scan.next();
+                        System.out.println();
+                        
+                        //Damage Stat if statements for Assassin Class
+                        if(damageStatChoice.equals("a") || damageStatChoice.equals("A"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum1))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum1);
+                                randomDamageStat = randomNum1;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinDamageStat.txt");
+                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(damageStatChoice.equals("b") || damageStatChoice.equals("B"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum2))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum2);
+                                randomDamageStat = randomNum2;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinDamageStat.txt");
+                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(damageStatChoice.equals("c") || damageStatChoice.equals("C"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum3))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum3);
+                                randomDamageStat = randomNum3;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinDamageStat.txt");
+                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(damageStatChoice.equals("d") || damageStatChoice.equals("D"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum4))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum4);
+                                randomDamageStat = randomNum4;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinDamageStat.txt");
+                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(damageStatChoice.equals("e") || damageStatChoice.equals("E"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum5))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum5);
+                                randomDamageStat = randomNum5;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinDamageStat.txt");
+                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        
+                        System.out.print("Enter your Physical Defense Stat: ");
+                        String phyDefStatChoice;
+                        phyDefStatChoice = scan.next();
+                        System.out.println();
+                        
+                        //Physical Defence Stat if statements for Assassin Class
+                        if(phyDefStatChoice.equals("a") || phyDefStatChoice.equals("A"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum1))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum1);
+                                randomPhyDefStat = randomNum1;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinPhyDefStat.txt");
+                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(phyDefStatChoice.equals("b") || phyDefStatChoice.equals("B"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum2))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum2);
+                                randomPhyDefStat = randomNum2;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinPhyDefStat.txt");
+                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(phyDefStatChoice.equals("c") || phyDefStatChoice.equals("C"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum3))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum3);
+                                randomPhyDefStat = randomNum3;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinPhyDefStat.txt");
+                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(phyDefStatChoice.equals("d") || phyDefStatChoice.equals("D"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum4))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum4);
+                                randomPhyDefStat = randomNum4;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinPhyDefStat.txt");
+                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(phyDefStatChoice.equals("e") || phyDefStatChoice.equals("E"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum5))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum5);
+                                randomPhyDefStat = randomNum5;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinPhyDefStat.txt");
+                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        
+                        System.out.print("Enter your Magical Defense Stat: ");
+                        String magDefStatChoice;
+                        magDefStatChoice = scan.next();
+                        System.out.println();
+                        
+                        //Magical Defense Stat if statements for Assassin Class
+                        if(magDefStatChoice.equals("a") || magDefStatChoice.equals("A"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum1))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum1);
+                                randomMagDefStat = randomNum1;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinMagDefStat.txt");
+                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(magDefStatChoice.equals("b") || magDefStatChoice.equals("B"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum2))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum2);
+                                randomMagDefStat = randomNum2;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinMagDefStat.txt");
+                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(magDefStatChoice.equals("c") || magDefStatChoice.equals("C"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum3))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum3);
+                                randomMagDefStat = randomNum3;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinMagDefStat.txt");
+                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(magDefStatChoice.equals("d") || magDefStatChoice.equals("D"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum4))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum4);
+                                randomMagDefStat = randomNum4;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinMagDefStat.txt");
+                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(magDefStatChoice.equals("e") || magDefStatChoice.equals("E"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum5))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum5);
+                                randomMagDefStat = randomNum5;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/AssassinMagDefStat.txt");
+                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        //store character name variable in linked list, and its value (the name itself) in txt file called AssassinName
                     }
                     System.out.println("Character Creation");
                     System.out.println("-----------------------");
