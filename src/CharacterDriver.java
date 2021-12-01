@@ -1108,7 +1108,8 @@ class Main
                                 }
                             }
                         }
-                        //store character name variable in linked list, and its value (the name itself) in txt file called AssassinName
+                        //store character name variable in linked list "loadedCharacters"(which should be "global"), and its value (the name itself) in txt file called AssassinName.
+                        //Don't make character name variables global (like AssassinName). Just read/load the text files when needed.
                     }
                     System.out.println("Character Creation");
                     System.out.println("-----------------------");
