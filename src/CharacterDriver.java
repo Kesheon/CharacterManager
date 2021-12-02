@@ -2141,6 +2141,84 @@ class Main
                         String accuracyStatChoice;
                         accuracyStatChoice = scan.next();
                         System.out.println();
+                        
+                        //Accuracy Stat if statements for Healer class
+                        if(accuracyStatChoice.equals("a") || accuracyStatChoice.equals("A"))
+                        {
+                            randomAccuracyStat = randomNum1;
+                            try
+                            {
+                                FileWriter writeStats = new FileWriter("src/HealerAccuracyStat.txt");
+                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                writeStats.close();
+                            }
+                            catch(IOException exception)
+                            {
+                                exception.printStackTrace();
+                            }
+                            randomNumTaken.add(randomNum1);
+                            
+                        }
+                        else if(accuracyStatChoice.equals("b") || accuracyStatChoice.equals("B"))
+                        {
+                            randomAccuracyStat = randomNum2;
+                            try
+                            {
+                                FileWriter writeStats = new FileWriter("src/HealerAccuracyStat.txt");
+                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                writeStats.close();
+                            }
+                            catch(IOException exception)
+                            {
+                                exception.printStackTrace();
+                            }
+                            randomNumTaken.add(randomNum2);
+                        }
+                        else if(accuracyStatChoice.equals("c") || accuracyStatChoice.equals("C"))
+                        {
+                            randomAccuracyStat = randomNum3;
+                            try
+                            {
+                                FileWriter writeStats = new FileWriter("src/HealerAccuracyStat.txt");
+                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                writeStats.close();
+                            }
+                            catch(IOException exception)
+                            {
+                                exception.printStackTrace();
+                            }
+                            randomNumTaken.add(randomNum3);
+                        }
+                        else if(accuracyStatChoice.equals("d") || accuracyStatChoice.equals("D"))
+                        {
+                            randomAccuracyStat = randomNum4;
+                            try
+                            {
+                                FileWriter writeStats = new FileWriter("src/HealerAccuracyStat.txt");
+                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                writeStats.close();
+                            }
+                            catch(IOException exception)
+                            {
+                                exception.printStackTrace();
+                            }
+                            randomNumTaken.add(randomNum4);
+                        }
+                        else if(accuracyStatChoice.equals("e") || accuracyStatChoice.equals("E"))
+                        {
+                            randomAccuracyStat = randomNum5;
+                            try
+                            {
+                                FileWriter writeStats = new FileWriter("src/HealerAccuracyStat.txt");
+                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                writeStats.close();
+                            }
+                            catch(IOException exception)
+                            {
+                                exception.printStackTrace();
+                            }
+                            randomNumTaken.add(randomNum5);
+                        }
                     }
                     System.out.println("Character Creation");
                     System.out.println("-----------------------");
