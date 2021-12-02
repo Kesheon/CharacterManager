@@ -2219,6 +2219,164 @@ class Main
                             }
                             randomNumTaken.add(randomNum5);
                         }
+                        
+                        System.out.print("Enter your Attack Stat: ");
+                        String attackStatChoice;
+                        attackStatChoice = scan.next();
+                        System.out.println();
+                        
+                        //Attack Stat if statements for Healer Class
+                        if(attackStatChoice.equals("a") || attackStatChoice.equals("A"))
+                        {
+                            
+                            if(randomNumTaken.contains(randomNum1))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum1);
+                                randomAttackStat = randomNum1;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/HealerAttackStat.txt");
+                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(attackStatChoice.equals("b") || attackStatChoice.equals("B"))
+                        {
+                            if(randomNumTaken.contains(randomNum2))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum2);
+                                randomAttackStat = randomNum2;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/HealerAttackStat.txt");
+                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(attackStatChoice.equals("c") || attackStatChoice.equals("C"))
+                        {
+                            if(randomNumTaken.contains(randomNum3))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum3);
+                                randomAttackStat = randomNum3;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/HealerAttackStat.txt");
+                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(attackStatChoice.equals("d") || attackStatChoice.equals("D"))
+                        {
+                            if(randomNumTaken.contains(randomNum4))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum4);
+                                randomAttackStat = randomNum4;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/HealerAttackStat.txt");
+                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
+                        else if(attackStatChoice.equals("e") || attackStatChoice.equals("E"))
+                        {
+                            if(randomNumTaken.contains(randomNum5))
+                            {
+                                System.out.print("This value is taken. You"+
+                                " will have to start over your character"+
+                                " creation. You\ncan't use the same letter/"+
+                                "value more than once. Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                break;
+                            }
+                            else
+                            {
+                                randomNumTaken.add(randomNum5);
+                                randomAttackStat = randomNum5;
+                                try
+                                {
+                                    FileWriter writeStats = new FileWriter("src/HealerAttackStat.txt");
+                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    writeStats.close();
+                                }
+                                catch(IOException exception)
+                                {
+                                    exception.printStackTrace();
+                                }
+                            }
+                        }
                     }
                     System.out.println("Character Creation");
                     System.out.println("-----------------------");
