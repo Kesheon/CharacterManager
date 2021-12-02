@@ -2072,6 +2072,76 @@ class Main
                         System.out.println();
                         System.out.println();
                     }
+                    
+                    //Healer Class Creation
+                    else if(characterCreationMenu == 3)
+                    {
+                        /*range.txt holds the numbers in the range of 1-500 so
+                        that it can be read from to provide random numbers in
+                        said range so that in character creation the user can
+                        pick 5 of said random numbers to be used for their 
+                        5 stats (Accuracy, Attack, Damage, Physical Defense,
+                        and Magical Defense.*/
+                        File rangeText = new File("src/range.txt");
+                        Scanner scanRange = new Scanner(rangeText);
+                        int rangeInt1 = scanRange.nextInt();//1
+                        int rangeInt2 = scanRange.nextInt();//500
+                        Random generator = new Random();
+                    
+                        int randomNum1;
+                        int randomNum2;
+                        int randomNum3;
+                        int randomNum4;
+                        int randomNum5;
+                        
+                        /*random # between 1-500*/
+                        randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                        
+                        /*random # between 1-500*/
+                        randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                        
+                        /*random # between 1-500*/
+                        randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                        
+                        /*random # between 1-500*/
+                        randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                        
+                        /*random # between 1-500*/
+                        randomNum5 = generator.nextInt(rangeInt2)+rangeInt1;
+                        
+                        /*the above random num values are later stored in these 
+                        variables below so that the user can select from randomly 
+                        generated stat values for each stat which will then be 
+                        written to a txt file so that its value can be read/
+                        loaded later on*/
+                        int randomAccuracyStat;
+                        int randomAttackStat;
+                        int randomDamageStat;
+                        int randomPhyDefStat;
+                        int randomMagDefStat;
+                        
+                        /*stores the randomNumbers that are used for the
+                        Engineer's stats so that more than one random number is
+                        not applied to more than one stat*/
+                        ArrayList<Integer> randomNumTaken = new ArrayList();
+                        
+                        System.out.println("Healer Class Build");
+                        System.out.println("-----------------------");
+                        System.out.println("Character stats: Accuracy, Attack, Damage, Physical Defense, and Magical Defense");
+                        System.out.println();
+                        System.out.println("Random numbers to use for your stats: A."+randomNum1+"  B."+randomNum2+"  C."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
+                        System.out.println();
+                        System.out.println("Select a letter from above to add"+
+                        " its numeric value to the stat you want it added\nto."+
+                        " You can't use the same letter/value more than once.");
+                        System.out.println();
+                        System.out.println("Example: Enter your Accuracy stat: C (this would make your Accuracy Stat equal to "+randomNum3+")");
+                        System.out.println();
+                        System.out.print("Enter your Accuracy stat: ");
+                        String accuracyStatChoice;
+                        accuracyStatChoice = scan.next();
+                        System.out.println();
+                    }
                     System.out.println("Character Creation");
                     System.out.println("-----------------------");
                     System.out.print("Enter 0 to preview all classes, 1 to create"+
@@ -2080,7 +2150,8 @@ class Main
                     characterCreationMenu = scan.nextInt();
                     System.out.println();
                     System.out.println();
-                }      
+                }
+                    
             }
             else if(userMainMenu == 2)
             {
