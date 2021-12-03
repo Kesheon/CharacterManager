@@ -229,6 +229,26 @@ class Main
         String WizardFirstName;
         String WizardLastName;
         
+        //this list holds characters that are currently selected
+        LinkedList selectedCharacter = new LinkedList();
+        
+        /*this list will hold only 1 int value at a time. The value of said int will
+        be used to determine the class of a created and/or loaded character so that 
+        the correct class can be used for the correct character when using the
+        rolling methods. This needs to happen because each class has different
+        max potential stat values. For example, the healer will not do as much
+        damage as the Martial Artist so the user needs to be able to use the
+        correct class for their character.*/
+        ArrayList<Integer> selectedCharacterClass = new ArrayList();
+        
+        //these values are added to the above array for the above mentioned reason
+        int thisIsAssassin = 1;
+        int thisIsEngineer = 2;
+        int thisIsHealer = 3;
+        int thisIsMartialArtist = 4;
+        int thisIsNecromancer = 5;
+        int thisIsWizard = 6;
+        
         //----------------------------------------------------------------------
         //Program starts below, everything above is used later in the program
         
@@ -1168,6 +1188,34 @@ class Main
                             exception.printStackTrace();
                         }
                         
+                        //make the Assassin the currently selected character
+                        //if both lists are empty...add AssassinFirstName then add thisIsAssassin (value 1)
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(AssassinFirstName);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                /*values that are added to the selectedCharacterClass
+                                list are added after the first name of a character
+                                is added to the selectedCharacter list.*/
+                                selectedCharacterClass.add(thisIsAssassin);
+                                
+                            }
+                            
+                        }
+                        /*If not empty then clear it to make way for the Assassin
+                        Character to be the currently selected character. And
+                        make way for the selectedCharacterClass to add the correct
+                        value for the class that is being created.*/
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(AssassinFirstName);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsAssassin);
+                        }
+                        
                         //-----------------------------------------------------
                         /*do the same thing like above, but with the Assassin's 
                         last name*/
@@ -1202,6 +1250,22 @@ class Main
                         catch(IOException exception)
                         {
                             exception.printStackTrace();
+                        }
+                        
+                        //make the Assassin the currently selected character
+                        //if selectedCharacter is empty...add AssassinLastName 
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(AssassinLastName);
+                            
+                        }
+                        /*If not empty then clear it to make way for the Assassin
+                        Character to be the currently selected character.*/
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(AssassinLastName);
+    
                         }
                         
                         System.out.println();
@@ -2039,6 +2103,34 @@ class Main
                             exception.printStackTrace();
                         }
                         
+                        //make the Engineer the currently selected character
+                        //if both lists are empty...add EngineerFirstName then add thisIsEngineer (value 2)
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(EngineerFirstName);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                /*values that are added to the selectedCharacterClass
+                                list are added after the first name of a character
+                                is added to the selectedCharacter list.*/
+                                selectedCharacterClass.add(thisIsEngineer);
+                                
+                            }
+                            
+                        }
+                        /*If not empty then clear it to make way for the Engineer
+                        Character to be the currently selected character. And
+                        make way for the selectedCharacterClass to add the correct
+                        value for the class that is being created.*/
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(EngineerFirstName);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsEngineer);
+                        }
+                        
                         //-----------------------------------------------------
                         /*do the same thing like above, but with the Engineer's 
                         last name*/
@@ -2073,6 +2165,22 @@ class Main
                         catch(IOException exception)
                         {
                             exception.printStackTrace();
+                        }
+                        
+                        //make the Engineer the currently selected character
+                        //if selectedCharacter is empty...add EngineerFirstName 
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(EngineerLastName);
+                            
+                        }
+                        /*If not empty then clear it to make way for the Engineer
+                        Character to be the currently selected character.*/
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(EngineerLastName);
+    
                         }
                         
                         System.out.println();
@@ -5587,11 +5695,10 @@ class Main
                 }
                     
             }
+            /*When selecting an existing character from here the user is opting to select characters that were created during the programs runtime
+            or characters they loaded from a save file that they themselves would have named.*/
             else if(userMainMenu == 2)
             {
-                System.out.println("TEST!");
-                System.out.println();
-                System.out.println();
                 
             }
             //character manager menu while loop
