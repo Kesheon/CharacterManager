@@ -1253,19 +1253,10 @@ class Main
                         }
                         
                         //make the Assassin the currently selected character
-                        //if selectedCharacter is empty...add AssassinLastName 
-                        if(selectedCharacter.isEmpty())
+                        //if selectedCharacter contains AssassinFirstName...add AssassinLastName 
+                        if(selectedCharacter.contains(AssassinFirstName))
                         {
                             selectedCharacter.add(AssassinLastName);
-                            
-                        }
-                        /*If not empty then clear it to make way for the Assassin
-                        Character to be the currently selected character.*/
-                        else
-                        {
-                            selectedCharacter.clear();
-                            selectedCharacter.add(AssassinLastName);
-    
                         }
                         
                         System.out.println();
@@ -2168,19 +2159,10 @@ class Main
                         }
                         
                         //make the Engineer the currently selected character
-                        //if selectedCharacter is empty...add EngineerFirstName 
-                        if(selectedCharacter.isEmpty())
+                        //if selectedCharacter contains EngineerFirstName...add EngineerLastName 
+                        if(selectedCharacter.contains(EngineerFirstName))
                         {
                             selectedCharacter.add(EngineerLastName);
-                            
-                        }
-                        /*If not empty then clear it to make way for the Engineer
-                        Character to be the currently selected character.*/
-                        else
-                        {
-                            selectedCharacter.clear();
-                            selectedCharacter.add(EngineerLastName);
-    
                         }
                         
                         System.out.println();
