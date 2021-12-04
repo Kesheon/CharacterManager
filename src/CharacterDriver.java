@@ -229,7 +229,12 @@ class Main
         String WizardFirstName;
         String WizardLastName;
         
-        //this list holds characters that are currently selected
+        /*this list holds characters that are currently selected. Currently selected 
+        characters are also present in the loadedCharacters list, but the difference
+        between a loaded character and a selected one is that a selected character
+        can actually be used by the user since it is the current character in
+        use, while the other characters in the loadedCharacters list are just in
+        saved files/memory.   */
         LinkedList selectedCharacter = new LinkedList();
         
         /*this list will hold only 1 int value at a time. The value of said int will
@@ -5817,9 +5822,100 @@ class Main
                 }
                     
             }
-            /*When selecting an existing character from here the user is opting to select characters that were created during the programs runtime
-            or characters they loaded from a save file that they themselves would have named.*/
+            /*When selecting an existing character from here the user is opting to
+            select characters that were created during the programs runtime
+            or characters they loaded from a save file that they themselves would
+            have named.*/
             else if(userMainMenu == 2)
+            {
+                
+                //START: display an available Assassin Character if possible
+                //-----------------------------------------------------------
+                //will retrieve AssassinFirstName.txt
+                File Assassin1stFile = new File("src/AssassinFirstName.txt");
+                Scanner scanAssassinFirstName = new Scanner(Assassin1stFile);
+                
+                //see if the AssassinFirstName.txt file has anything in it, returns true or false
+                Boolean booleanAssassinFirstNameTxt = scanAssassinFirstName.hasNext();
+                
+                
+                //will retrieve AssassinLastName.txt
+                File Assassin2ndFile = new File("src/AssassinLastName.txt");
+                Scanner scanAssassinLastName = new Scanner(Assassin2ndFile);
+                
+                //see if the AssassinLastName.txt file has anything in it, returns true or false
+                Boolean booleanAssassinLastNameTxt = scanAssassinLastName.hasNext();
+                
+                
+                /*if the Assassin character's first name txt file is blank then
+                tell the user that no character has been created or loaded for the Assassin class*/
+                if(booleanAssassinFirstNameTxt == false && booleanAssassinLastNameTxt == false)
+                {
+                    String NoCharacterAlert1 = "No character has been created or loaded for the Assassin class so none can be selected";
+                    System.out.println(NoCharacterAlert1);
+                }
+                
+                /*else if there is an Assassin character that has been created or loaded
+                then display them.*/
+                else if(booleanAssassinFirstNameTxt == true && booleanAssassinLastNameTxt == true)
+                {
+                    String AssassinFirstNameTxt = scanAssassinFirstName.next();
+                    String AssassinLastNameTxt = scanAssassinLastName.next();
+                    System.out.println("1. "+AssassinFirstNameTxt+" "+AssassinLastNameTxt+" (Assassin Class)");
+                }
+                //END: Assassin Character display ends
+                //--------------------------------------------------------------
+                
+                
+                //START: display an Available Engineer Character if possible
+                //--------------------------------------------------------------
+                //will retrieve EngineerFirstName.txt
+                File Engineer1stFile = new File("src/EngineerFirstName.txt");
+                Scanner scanEngineerFirstName = new Scanner(Engineer1stFile);
+                
+                //see if the EngineerFirstName.txt file has anything in it, returns true or false
+                Boolean booleanEngineerFirstNameTxt = scanEngineerFirstName.hasNext();
+                
+                
+                //will retrieve EngineerLastName.txt
+                File Engineer2ndFile = new File("src/EngineerLastName.txt");
+                Scanner scanEngineerLastName = new Scanner(Engineer2ndFile);
+                
+                //see if the EngineerLastName.txt file has anything in it, returns true or false
+                Boolean booleanEngineerLastNameTxt = scanEngineerLastName.hasNext();
+                
+                
+                /*if the Engineer character's first name txt file is blank then
+                tell the user that no character has been created or loaded for the Engineer class*/
+                if(booleanEngineerFirstNameTxt == false && booleanEngineerLastNameTxt == false)
+                {
+                    String NoCharacterAlert2 = "No character has been created or loaded for the Engineer class so none can be selected";
+                    System.out.println(NoCharacterAlert2);
+                }
+                
+                /*else if there is an Engineer character that has been created or loaded
+                then display them.*/
+                else if(booleanEngineerFirstNameTxt == true && booleanEngineerLastNameTxt == true)
+                {
+                    String EngineerFirstNameTxt = scanEngineerFirstName.next();
+                    String EngineerLastNameTxt = scanEngineerLastName.next();
+                    System.out.println("2. "+EngineerFirstNameTxt+" "+EngineerLastNameTxt+" (Engineer Class)");
+                }
+                //END: Engineer Character display ends
+                //--------------------------------------------------------------
+                
+                
+                
+                
+                
+                
+                
+            }
+            
+            /*I would have made it to where upon a load the user can automatically
+            have their loaded character as their selected character, but due to
+            a load of other reasons I have notes on I couldn't get this to happen.*/
+            else if(userMainMenu == 3)
             {
                 
             }
