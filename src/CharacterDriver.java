@@ -3001,6 +3001,34 @@ class Main
                             exception.printStackTrace();
                         }
                         
+                        //make the Healer the currently selected character
+                        //if both lists are empty...add HealerFirstName then add thisIsHealer (value 3)
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(HealerFirstName);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                /*values that are added to the selectedCharacterClass
+                                list are added after the first name of a character
+                                is added to the selectedCharacter list.*/
+                                selectedCharacterClass.add(thisIsHealer);
+                                
+                            }
+                            
+                        }
+                        /*If not empty then clear it to make way for the Healer
+                        Character to be the currently selected character. And
+                        make way for the selectedCharacterClass to add the correct
+                        value for the class that is being created.*/
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(HealerFirstName);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsHealer);
+                        }
+                        
                         //-----------------------------------------------------
                         /*do the same thing like above, but with the Healer's 
                         last name*/
@@ -3035,6 +3063,13 @@ class Main
                         catch(IOException exception)
                         {
                             exception.printStackTrace();
+                        }
+                        
+                        //make the Healer the currently selected character
+                        //if selectedCharacter contains HealerFirstName...add HealerLastName 
+                        if(selectedCharacter.contains(HealerFirstName))
+                        {
+                            selectedCharacter.add(HealerLastName);
                         }
                         
                         System.out.println();
@@ -3873,6 +3908,34 @@ class Main
                             exception.printStackTrace();
                         }
                         
+                        //make the Martial Artist the currently selected character
+                        //if both lists are empty...add MartialArtistFirstName then add thisIsMartialArtist (value 4)
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(MartialArtistFirstName);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                /*values that are added to the selectedCharacterClass
+                                list are added after the first name of a character
+                                is added to the selectedCharacter list.*/
+                                selectedCharacterClass.add(thisIsMartialArtist);
+                                
+                            }
+                            
+                        }
+                        /*If not empty then clear it to make way for the Martial Artist
+                        Character to be the currently selected character. And
+                        make way for the selectedCharacterClass to add the correct
+                        value for the class that is being created.*/
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(MartialArtistFirstName);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsMartialArtist);
+                        }
+                        
                         //-----------------------------------------------------
                         /*do the same thing like above, but with the Martial Artist'
                         last name*/
@@ -3907,6 +3970,13 @@ class Main
                         catch(IOException exception)
                         {
                             exception.printStackTrace();
+                        }
+                        
+                        //make the Martial Artist the currently selected character
+                        //if selectedCharacter contains MartialArtistFirstName...add MartialArtistLastName 
+                        if(selectedCharacter.contains(MartialArtistFirstName))
+                        {
+                            selectedCharacter.add(MartialArtistLastName);
                         }
                         
                         System.out.println();
@@ -4746,6 +4816,34 @@ class Main
                             exception.printStackTrace();
                         }
                         
+                        //make the Necromancer the currently selected character
+                        //if both lists are empty...add NecromancerFirstName then add thisIsNecromancer (value 5)
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(NecromancerFirstName);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                /*values that are added to the selectedCharacterClass
+                                list are added after the first name of a character
+                                is added to the selectedCharacter list.*/
+                                selectedCharacterClass.add(thisIsNecromancer);
+                                
+                            }
+                            
+                        }
+                        /*If not empty then clear it to make way for the Necromancer
+                        Character to be the currently selected character. And
+                        make way for the selectedCharacterClass to add the correct
+                        value for the class that is being created.*/
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(NecromancerFirstName);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsNecromancer);
+                        }
+                        
                         //-----------------------------------------------------
                         /*do the same thing like above, but with the Necromancer's
                         last name*/
@@ -4780,6 +4878,13 @@ class Main
                         catch(IOException exception)
                         {
                             exception.printStackTrace();
+                        }
+
+                        //make the Necromancer the currently selected character
+                        //if selectedCharacter contains NecromancerFirstName...add NecromancerLastName 
+                        if(selectedCharacter.contains(NecromancerFirstName))
+                        {
+                            selectedCharacter.add(NecromancerLastName);
                         }
                         
                         System.out.println();
@@ -5618,6 +5723,34 @@ class Main
                             exception.printStackTrace();
                         }
                         
+                        //make the Wizard the currently selected character
+                        //if both lists are empty...add WizardFirstName then add thisIsWizard (value 6)
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(WizardFirstName);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                /*values that are added to the selectedCharacterClass
+                                list are added after the first name of a character
+                                is added to the selectedCharacter list.*/
+                                selectedCharacterClass.add(thisIsWizard);
+                                
+                            }
+                            
+                        }
+                        /*If not empty then clear it to make way for the Wizard
+                        Character to be the currently selected character. And
+                        make way for the selectedCharacterClass to add the correct
+                        value for the class that is being created.*/
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(WizardFirstName);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsWizard);
+                        }
+                        
                         //-----------------------------------------------------
                         /*do the same thing like above, but with the Wizard's
                         last name*/
@@ -5652,6 +5785,13 @@ class Main
                         catch(IOException exception)
                         {
                             exception.printStackTrace();
+                        }
+                        
+                        //make the Wizard the currently selected character
+                        //if selectedCharacter contains WizardFirstName...add WizardLastName 
+                        if(selectedCharacter.contains(WizardFirstName))
+                        {
+                            selectedCharacter.add(WizardLastName);
                         }
                         
                         System.out.println();
