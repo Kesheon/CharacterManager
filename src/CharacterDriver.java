@@ -6609,6 +6609,125 @@ class Main
                     
                 }
                 
+                //if the character being saved is of the Engineer Class
+                if(selectedCharacterClass.contains(thisIsEngineer))
+                {
+                    //will retrieve EngineerFirstName.txt
+                    File Engineer1stFile = new File("src/EngineerFirstName.txt");
+                    Scanner scanEngineerFirstName = new Scanner(Engineer1stFile);
+                
+                    //will retrieve EngineerLastName.txt
+                    File Engineer2ndFile = new File("src/EngineerLastName.txt");
+                    Scanner scanEngineerLastName = new Scanner(Engineer2ndFile);
+                
+                    //read the EngineerFirstName.txt file & EngineerLastName.txt file
+                    String EngineerFirstNameTxt = scanEngineerFirstName.next();
+                    String EngineerLastNameTxt = scanEngineerLastName.next();
+                    
+                    String userSave;
+                    System.out.print("Are you sure you want to save your"+
+                    " currently selected character: \""+EngineerFirstNameTxt+" "+
+                            EngineerLastNameTxt+"\" the Engineer?\nIf yes enter y"+
+                            ", or if no enter n: ");
+                    userSave = scan.next();
+                    System.out.println();
+                    if(userSave.equals("y") || userSave.equals("Y"))
+                    {
+                        /*retrieve all Engineer Files: Name and Stat files*/
+                        //------------------------------------------------------
+                        
+                        //retrieve EngineerFirstName.txt
+                        File EngineerFirstNameTxt2 = new File("src/EngineerFirstName.txt");
+                        Scanner scanEngineerFirstNameTxt = new Scanner(EngineerFirstNameTxt2);
+                        //read the EngineerFirstName.txt file
+                        String EngineerFirstName2 = scanEngineerFirstNameTxt.next();
+                        
+                        //retrieve EngineerLastName.txt
+                        File EngineerLastNameTxt2 = new File("src/EngineerLastName.txt");
+                        Scanner scanEngineerLastNameTxt = new Scanner(EngineerLastNameTxt2);
+                        //read the EngineerLastName.txt file
+                        String EngineerLastName2 = scanEngineerLastNameTxt.next();
+                        
+                        //retrieve EngineerAccuracyStat.txt
+                        File EngineerAccuracyStatTxt = new File("src/EngineerAccuracyStat.txt");
+                        Scanner scanEngineerAccuracyStatTxt = new Scanner(EngineerAccuracyStatTxt);
+                        //read the EngineerAccuracyStat.txt file
+                        int EngineerAccuracyStat = scanEngineerAccuracyStatTxt.nextInt();
+                        
+                        //retrieve EngineerAttackStat.txt
+                        File EngineerAttackStatTxt = new File("src/EngineerAttackStat.txt");
+                        Scanner scanEngineerAttackStatTxt = new Scanner(EngineerAttackStatTxt);
+                        //read the EngineerAttackStat.txt file 
+                        int EngineerAttackStat = scanEngineerAttackStatTxt.nextInt();
+                        
+                        //retrieve EngineerDamageStat.txt
+                        File EngineerDamageStatTxt = new File("src/EngineerDamageStat.txt");
+                        Scanner scanEngineerDamageStatTxt = new Scanner(EngineerDamageStatTxt);
+                        //read the EngineerDamageStat.txt file
+                        int EngineerDamageStat = scanEngineerDamageStatTxt.nextInt();
+                        
+                        //retrieve EngineerPhyDefStat.txt
+                        File EngineerPhyDefStatTxt = new File("src/EngineerPhyDefStat.txt");
+                        Scanner scanEngineerPhyDefStatTxt = new Scanner(EngineerPhyDefStatTxt);
+                        //read the EngineerPhyDefStat.txt file
+                        int EngineerPhyDefStat = scanEngineerPhyDefStatTxt.nextInt();
+                        
+                        //retrieve EngineerMagDefStat.txt
+                        File EngineerMagDefStatTxt = new File("src/EngineerMagDefStat.txt");
+                        Scanner scanEngineerMagDefStatTxt = new Scanner(EngineerMagDefStatTxt);
+                        //read the EngineerMagDefStat.txt file
+                        int EngineerMagDefStat = scanEngineerMagDefStatTxt.nextInt();
+                        
+                        try
+                        {
+                            System.out.print("Enter the name of your save file: ");
+                            userNamedSaveFile = scan.next();
+                            System.out.println();
+                            
+                            FileWriter writeUserSave = new FileWriter("src/"+
+                                    userNamedSaveFile+".txt");
+                            
+                            /*Write "Engineer Class" to the character's user created
+                            save file so that it can later be read when the user
+                            loads their file to load their character so that the
+                            character's class can be determined as "Engineer"
+                            upon the load of the character in the userMainMenu #3
+                            option.*/
+                            writeUserSave.write("Engineer Class"+"\n"+
+                            EngineerFirstName2+"\n"+EngineerLastName2+"\n"+
+                            EngineerAccuracyStat+"\n"+EngineerAttackStat+"\n"+
+                            EngineerDamageStat+"\n"+EngineerPhyDefStat+"\n"+
+                            EngineerMagDefStat);
+                            writeUserSave.close();
+                            System.out.print("\""+EngineerFirstName2+' '+
+                            EngineerLastName2+"\" the Engineer has been saved"+
+                            " to the "+userNamedSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                            
+                        }
+               
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                    }
+                    
+                    else if(userSave.equals("n") || userSave.equals("N"))
+                    {
+                        System.out.print("Ok, no characters will be saved to"+
+                        " any files. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                    
+                }
+                
             }
             
             //conditionals for Character Manager menu while loop
