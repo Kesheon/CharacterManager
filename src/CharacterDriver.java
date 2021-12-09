@@ -255,6 +255,9 @@ class Main
         int thisIsNecromancer = 5;
         int thisIsWizard = 6;
         
+        //this variable is used to create the user's custom-name save file
+        String userNamedSaveFile;
+        
         //----------------------------------------------------------------------
         //Program starts below, everything above is used later in the program
         
@@ -6472,6 +6475,142 @@ class Main
                 created.*/
             }
             
+            else if(userMainMenu == 4)
+            {
+                
+                if(selectedCharacterClass.isEmpty())
+                {
+                    System.out.print("You must either create a character, select"+
+                    " an existing character, or load a character from a"+
+                    " file\nbefore you can save them to a file. Press enter"+
+                    " to continue.");
+                    try{System.in.read();}
+                    catch(Exception e){}
+                    System.out.println();
+                    System.out.println();
+                }
+                
+                //if the character being saved is of the Assassin Class
+                if(selectedCharacterClass.contains(thisIsAssassin))
+                {
+                    //will retrieve AssassinFirstName.txt
+                    File Assassin1stFile = new File("src/AssassinFirstName.txt");
+                    Scanner scanAssassinFirstName = new Scanner(Assassin1stFile);
+                
+                    //will retrieve AssassinLastName.txt
+                    File Assassin2ndFile = new File("src/AssassinLastName.txt");
+                    Scanner scanAssassinLastName = new Scanner(Assassin2ndFile);
+                
+                    //read the AssassinFirstName.txt file & AssassinLastName.txt file
+                    String AssassinFirstNameTxt = scanAssassinFirstName.next();
+                    String AssassinLastNameTxt = scanAssassinLastName.next();
+                    
+                    String userSave;
+                    System.out.print("Are you sure you want to save your"+
+                    " currently selected character: \""+AssassinFirstNameTxt+" "+
+                            AssassinLastNameTxt+"\" the Assassin?\nIf yes enter y"+
+                            ", or if no enter n: ");
+                    userSave = scan.next();
+                    System.out.println();
+                    if(userSave.equals("y") || userSave.equals("Y"))
+                    {
+                        /*retrieve all Assassin Files: Name and Stat files*/
+                        //------------------------------------------------------
+                        
+                        //retrieve AssassinFirstName.txt
+                        File AssassinFirstNameTxt2 = new File("src/AssassinFirstName.txt");
+                        Scanner scanAssassinFirstNameTxt = new Scanner(AssassinFirstNameTxt2);
+                        //read the AssassinFirstName.txt file
+                        String AssassinFirstName2 = scanAssassinFirstNameTxt.next();
+                        
+                        //retrieve AssassinLastName.txt
+                        File AssassinLastNameTxt2 = new File("src/AssassinLastName.txt");
+                        Scanner scanAssassinLastNameTxt = new Scanner(AssassinLastNameTxt2);
+                        //read the AssassinLastName.txt file
+                        String AssassinLastName2 = scanAssassinLastNameTxt.next();
+                        
+                        //retrieve AssassinAccuracyStat.txt
+                        File AssassinAccuracyStatTxt = new File("src/AssassinAccuracyStat.txt");
+                        Scanner scanAssassinAccuracyStatTxt = new Scanner(AssassinAccuracyStatTxt);
+                        //read the AssassinAccuracyStat.txt file
+                        int AssassinAccuracyStat = scanAssassinAccuracyStatTxt.nextInt();
+                        
+                        //retrieve AssassinAttackStat.txt
+                        File AssassinAttackStatTxt = new File("src/AssassinAttackStat.txt");
+                        Scanner scanAssassinAttackStatTxt = new Scanner(AssassinAttackStatTxt);
+                        //read the AssassinAttackStat.txt file 
+                        int AssassinAttackStat = scanAssassinAttackStatTxt.nextInt();
+                        
+                        //retrieve AssassinDamageStat.txt
+                        File AssassinDamageStatTxt = new File("src/AssassinDamageStat.txt");
+                        Scanner scanAssassinDamageStatTxt = new Scanner(AssassinDamageStatTxt);
+                        //read the AssassinDamageStat.txt file
+                        int AssassinDamageStat = scanAssassinDamageStatTxt.nextInt();
+                        
+                        //retrieve AssassinPhyDefStat.txt
+                        File AssassinPhyDefStatTxt = new File("src/AssassinPhyDefStat.txt");
+                        Scanner scanAssassinPhyDefStatTxt = new Scanner(AssassinPhyDefStatTxt);
+                        //read the AssassinPhyDefStat.txt file
+                        int AssassinPhyDefStat = scanAssassinPhyDefStatTxt.nextInt();
+                        
+                        //retrieve AssassinMagDefStat.txt
+                        File AssassinMagDefStatTxt = new File("src/AssassinMagDefStat.txt");
+                        Scanner scanAssassinMagDefStatTxt = new Scanner(AssassinMagDefStatTxt);
+                        //read the AssassinMagDefStat.txt file
+                        int AssassinMagDefStat = scanAssassinMagDefStatTxt.nextInt();
+                        
+                        try
+                        {
+                            System.out.print("Enter the name of your save file: ");
+                            userNamedSaveFile = scan.next();
+                            System.out.println();
+                            
+                            FileWriter writeUserSave = new FileWriter("src/"+
+                                    userNamedSaveFile+".txt");
+                            
+                            /*Write "Assassin Class" to the character's user created
+                            save file so that it can later be read when the user
+                            loads their file to load their character so that the
+                            character's class can be determined as "Assassin"
+                            upon the load of the character in the userMainMenu #3
+                            option.*/
+                            writeUserSave.write("Assassin Class"+"\n"+
+                            AssassinFirstName2+"\n"+AssassinLastName2+"\n"+
+                            AssassinAccuracyStat+"\n"+AssassinAttackStat+"\n"+
+                            AssassinDamageStat+"\n"+AssassinPhyDefStat+"\n"+
+                            AssassinMagDefStat);
+                            writeUserSave.close();
+                            System.out.print("\""+AssassinFirstName2+' '+
+                            AssassinLastName2+"\" the Assassin has been saved"+
+                            " to the "+userNamedSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                            
+                        }
+               
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                    }
+                    
+                    else if(userSave.equals("n") || userSave.equals("N"))
+                    {
+                        System.out.print("Ok, no characters will be saved to"+
+                        " any files. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                    
+                }
+                
+            }
+            
             //conditionals for Character Manager menu while loop
             if(selectedCharacter.isEmpty())
             {
@@ -6603,7 +6742,7 @@ class Main
                 
                 /*if the selectedCharacterClass contains the #2 (thisIsEngineer)
                 representing a character of the Engineer Class, then let the user
-                know they have said character selected be displaying it*/
+                know they have said character selected by displaying it*/
                 else if(selectedCharacterClass.contains(thisIsEngineer))
                 {
                     System.out.println("Character Manager");
@@ -6620,7 +6759,7 @@ class Main
                 
                 /*if the selectedCharacterClass contains the #3 (thisIsHealer)
                 representing a character of the Healer Class, then let the user
-                know they have said character selected be displaying it*/
+                know they have said character selected by displaying it*/
                 else if(selectedCharacterClass.contains(thisIsHealer))
                 {
                     System.out.println("Character Manager");
@@ -6637,7 +6776,7 @@ class Main
                 
                 /*if the selectedCharacterClass contains the #4 (thisIsMartialArtist)
                 representing a character of the Martial Artist Class, then let the user
-                know they have said character selected be displaying it*/
+                know they have said character selected by displaying it*/
                 else if(selectedCharacterClass.contains(thisIsMartialArtist))
                 {
                     System.out.println("Character Manager");
@@ -6654,7 +6793,7 @@ class Main
                 
                 /*if the selectedCharacterClass contains the #5 (thisIsNecromancer)
                 representing a character of the Necromancer Class, then let the user
-                know they have said character selected be displaying it*/
+                know they have said character selected by displaying it*/
                 else if(selectedCharacterClass.contains(thisIsNecromancer))
                 {
                     System.out.println("Character Manager");
@@ -6671,7 +6810,7 @@ class Main
                 
                 /*if the selectedCharacterClass contains the #6 (thisIsWizard)
                 representing a character of the Wizard Class, then let the user
-                know they have said character selected be displaying it*/
+                know they have said character selected by displaying it*/
                 else if(selectedCharacterClass.contains(thisIsWizard))
                 {
                     System.out.println("Character Manager");
