@@ -6728,6 +6728,125 @@ class Main
                     
                 }
                 
+                //if the character being saved is of the Healer Class
+                if(selectedCharacterClass.contains(thisIsHealer))
+                {
+                    //will retrieve HealerFirstName.txt
+                    File Healer1stFile = new File("src/HealerFirstName.txt");
+                    Scanner scanHealerFirstName = new Scanner(Healer1stFile);
+                
+                    //will retrieve HealerLastName.txt
+                    File Healer2ndFile = new File("src/HealerLastName.txt");
+                    Scanner scanHealerLastName = new Scanner(Healer2ndFile);
+                
+                    //read the HealerFirstName.txt file & HealerLastName.txt file
+                    String HealerFirstNameTxt = scanHealerFirstName.next();
+                    String HealerLastNameTxt = scanHealerLastName.next();
+                    
+                    String userSave;
+                    System.out.print("Are you sure you want to save your"+
+                    " currently selected character: \""+HealerFirstNameTxt+" "+
+                            HealerLastNameTxt+"\" the Healer?\nIf yes enter y"+
+                            ", or if no enter n: ");
+                    userSave = scan.next();
+                    System.out.println();
+                    if(userSave.equals("y") || userSave.equals("Y"))
+                    {
+                        /*retrieve all Healer Files: Name and Stat files*/
+                        //------------------------------------------------------
+                        
+                        //retrieve HealerFirstName.txt
+                        File HealerFirstNameTxt2 = new File("src/HealerFirstName.txt");
+                        Scanner scanHealerFirstNameTxt = new Scanner(HealerFirstNameTxt2);
+                        //read the HealerFirstName.txt file
+                        String HealerFirstName2 = scanHealerFirstNameTxt.next();
+                        
+                        //retrieve HealerLastName.txt
+                        File HealerLastNameTxt2 = new File("src/HealerLastName.txt");
+                        Scanner scanHealerLastNameTxt = new Scanner(HealerLastNameTxt2);
+                        //read the HealerLastName.txt file
+                        String HealerLastName2 = scanHealerLastNameTxt.next();
+                        
+                        //retrieve HealerAccuracyStat.txt
+                        File HealerAccuracyStatTxt = new File("src/HealerAccuracyStat.txt");
+                        Scanner scanHealerAccuracyStatTxt = new Scanner(HealerAccuracyStatTxt);
+                        //read the HealerAccuracyStat.txt file
+                        int HealerAccuracyStat = scanHealerAccuracyStatTxt.nextInt();
+                        
+                        //retrieve HealerAttackStat.txt
+                        File HealerAttackStatTxt = new File("src/HealerAttackStat.txt");
+                        Scanner scanHealerAttackStatTxt = new Scanner(HealerAttackStatTxt);
+                        //read the HealerAttackStat.txt file 
+                        int HealerAttackStat = scanHealerAttackStatTxt.nextInt();
+                        
+                        //retrieve HealerDamageStat.txt
+                        File HealerDamageStatTxt = new File("src/HealerDamageStat.txt");
+                        Scanner scanHealerDamageStatTxt = new Scanner(HealerDamageStatTxt);
+                        //read the HealerDamageStat.txt file
+                        int HealerDamageStat = scanHealerDamageStatTxt.nextInt();
+                        
+                        //retrieve HealerPhyDefStat.txt
+                        File HealerPhyDefStatTxt = new File("src/HealerPhyDefStat.txt");
+                        Scanner scanHealerPhyDefStatTxt = new Scanner(HealerPhyDefStatTxt);
+                        //read the HealerPhyDefStat.txt file
+                        int HealerPhyDefStat = scanHealerPhyDefStatTxt.nextInt();
+                        
+                        //retrieve HealerMagDefStat.txt
+                        File HealerMagDefStatTxt = new File("src/HealerMagDefStat.txt");
+                        Scanner scanHealerMagDefStatTxt = new Scanner(HealerMagDefStatTxt);
+                        //read the HealerMagDefStat.txt file
+                        int HealerMagDefStat = scanHealerMagDefStatTxt.nextInt();
+                        
+                        try
+                        {
+                            System.out.print("Enter the name of your save file: ");
+                            userNamedSaveFile = scan.next();
+                            System.out.println();
+                            
+                            FileWriter writeUserSave = new FileWriter("src/"+
+                                    userNamedSaveFile+".txt");
+                            
+                            /*Write "Healer Class" to the character's user created
+                            save file so that it can later be read when the user
+                            loads their file to load their character so that the
+                            character's class can be determined as "Healer"
+                            upon the load of the character in the userMainMenu #3
+                            option.*/
+                            writeUserSave.write("Healer Class"+"\n"+
+                            HealerFirstName2+"\n"+HealerLastName2+"\n"+
+                            HealerAccuracyStat+"\n"+HealerAttackStat+"\n"+
+                            HealerDamageStat+"\n"+HealerPhyDefStat+"\n"+
+                            HealerMagDefStat);
+                            writeUserSave.close();
+                            System.out.print("\""+HealerFirstName2+' '+
+                            HealerLastName2+"\" the Healer has been saved"+
+                            " to the "+userNamedSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                            
+                        }
+               
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                    }
+                    
+                    else if(userSave.equals("n") || userSave.equals("N"))
+                    {
+                        System.out.print("Ok, no characters will be saved to"+
+                        " any files. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                    
+                }
+                
             }
             
             //conditionals for Character Manager menu while loop
