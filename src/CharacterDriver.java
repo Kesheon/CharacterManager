@@ -230,21 +230,23 @@ class Main
         String WizardLastName;
         
         /*this list holds characters that are currently selected. Currently selected 
-        characters are also present in the loadedCharacters list, but the difference
-        between a loaded character and a selected one is that a selected character
-        can actually be used by the user since it is the current character in
-        use, while the other characters in the loadedCharacters list are just in
-        saved files/memory.   */
+        characters are also present in the loadedCharacters list (only if they
+        were created during the programs runtime or loaded from a user created
+        save file), but the difference between a character in the loadedCharacters
+        list (that is not currently selected) and a selected one is that a
+        selected character can actually be used by the user since it is the
+        current character in use, while the other character in the
+        loadedCharacters list is just in temporary saved files/memory.   */
         LinkedList selectedCharacter = new LinkedList();
         
         /*this list will hold only 1 int value at a time. The value of said int
-        will be used to determine the class of a created and/or loaded character
-        so that the correct class can be used for the correct character when
-        using the rolling methods (option #5 of the Character Manager Menu).
-        This needs to happen because each class has different max potential stat
-        values. For example, the healer will not do as much damage as the Martial
-        Artist so the user needs to be able to use the correct class for their
-        character.*/
+        will be used to determine the class of a created character, a selected
+        existing character, or a loaded character so that the correct class can
+        be used for the correct character when using the rolling methods (option
+        #5 of the Character Manager Menu). This needs to happen because each
+        class has different max potential stat values. For example, the healer
+        will not do as much damage as the Martial Artist so the user needs to be
+        able to use the correct class for their character.*/
         ArrayList<Integer> selectedCharacterClass = new ArrayList();
         
         //these values are added to the above array for the above mentioned reason
@@ -6143,9 +6145,9 @@ class Main
                         }
                     }
                 }
-                
+  
                 //Make the currently selected character one of the Engineer class
-                if(userCharacterChoice == 2)
+                else if(userCharacterChoice == 2)
                 {
                     /*if the EngineerFirstName.txt and EngineerLastName.txt
                     files have no character names in them then do the below*/
@@ -6208,7 +6210,7 @@ class Main
                 }
                 
                 //Make the currently selected character one of the Healer class
-                if(userCharacterChoice == 3)
+                else if(userCharacterChoice == 3)
                 {
                     /*if the HealerFirstName.txt and HealerLastName.txt
                     files have no character names in them then do the below*/
@@ -6271,7 +6273,7 @@ class Main
                 }
                 
                 //Make the currently selected character one of the Martial Artist class
-                if(userCharacterChoice == 4)
+                else if(userCharacterChoice == 4)
                 {
                     /*if the MartialArtistFirstName.txt and MartialArtistLastName.txt
                     files have no character names in them then do the below*/
@@ -6334,7 +6336,7 @@ class Main
                 }
                 
                 //Make the currently selected character one of the Necromancer class
-                if(userCharacterChoice == 5)
+                else if(userCharacterChoice == 5)
                 {
                     /*if the NecromancerFirstName.txt and NecromancerLastName.txt
                     files have no character names in them then do the below*/
@@ -6397,7 +6399,7 @@ class Main
                 }
                 
                 //Make the currently selected character one of the Wizard class
-                if(userCharacterChoice == 6)
+                else if(userCharacterChoice == 6)
                 {
                     /*if the WizardFirstName.txt and WizardLastName.txt
                     files have no character names in them then do the below*/
@@ -6457,6 +6459,17 @@ class Main
                             selectedCharacterClass.add(thisIsWizard);
                         }
                     }
+                }
+                
+                else
+                {
+                    System.out.print("You must select a number that corresponds"+
+                    " with a saved character,\nyou'll have to try again. Press"+
+                    " enter to continue.");
+                    try{System.in.read();}
+                    catch(Exception e){}
+                    System.out.println();
+                    System.out.println();
                 }
             }
             
@@ -6561,11 +6574,14 @@ class Main
                         
                         try
                         {
-                            System.out.print("Enter the name of your save file: ");
+                            System.out.print("Enter the name of your save file"+
+                            " (be sure to not overwrite any other save files"+
+                            " you have\nby using the same save file name more"+
+                            " than once): ");
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/"+
+                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
                             /*Write "Assassin Class" to the character's user created
@@ -6691,11 +6707,14 @@ class Main
                         
                         try
                         {
-                            System.out.print("Enter the name of your save file: ");
+                            System.out.print("Enter the name of your save file"+
+                            " (be sure to not overwrite any other save files"+
+                            " you have\nby using the same save file name more"+
+                            " than once): ");
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/"+
+                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
                             /*Write "Engineer Class" to the character's user created
@@ -6821,11 +6840,14 @@ class Main
                         
                         try
                         {
-                            System.out.print("Enter the name of your save file: ");
+                            System.out.print("Enter the name of your save file"+
+                            " (be sure to not overwrite any other save files"+
+                            " you have\nby using the same save file name more"+
+                            " than once): ");
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/"+
+                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
                             /*Write "Healer Class" to the character's user created
@@ -6951,11 +6973,14 @@ class Main
                         
                         try
                         {
-                            System.out.print("Enter the name of your save file: ");
+                            System.out.print("Enter the name of your save file"+
+                            " (be sure to not overwrite any other save files"+
+                            " you have\nby using the same save file name more"+
+                            " than once): ");
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/"+
+                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
                             /*Write "Martial Artist Class" to the character's user created
@@ -7080,11 +7105,14 @@ class Main
                         
                         try
                         {
-                            System.out.print("Enter the name of your save file: ");
+                            System.out.print("Enter the name of your save file"+
+                            " (be sure to not overwrite any other save files"+
+                            " you have\nby using the same save file name more"+
+                            " than once): ");
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/"+
+                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
                             /*Write "Necromancer Class" to the character's user created
@@ -7209,11 +7237,14 @@ class Main
                         
                         try
                         {
-                            System.out.print("Enter the name of your save file: ");
+                            System.out.print("Enter the name of your save file"+
+                            " (be sure to not overwrite any other save files"+
+                            " you have\nby using the same save file name more"+
+                            " than once): ");
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/"+
+                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
                             /*Write "Wizard Class" to the character's user created
