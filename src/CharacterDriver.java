@@ -6607,6 +6607,17 @@ class Main
                         System.out.println();
                     }
                     
+                    else
+                    {
+                        System.out.print("You must enter \"y\" to save"+
+                        " a character or \"n\" to not do so, please try"+
+                        " again. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                    
                 }
                 
                 //if the character being saved is of the Engineer Class
@@ -6720,6 +6731,17 @@ class Main
                     {
                         System.out.print("Ok, no characters will be saved to"+
                         " any files. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                    
+                    else
+                    {
+                        System.out.print("You must enter \"y\" to save"+
+                        " a character or \"n\" to not do so, please try"+
+                        " again. Press enter to continue.");
                         try{System.in.read();}
                         catch(Exception e){}
                         System.out.println();
@@ -6845,10 +6867,149 @@ class Main
                         System.out.println();
                     }
                     
+                    else
+                    {
+                        System.out.print("You must enter \"y\" to save"+
+                        " a character or \"n\" to not do so, please try"+
+                        " again. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                    
                 }
                 
+                //if the character being saved is of the Martial Artist Class
+                if(selectedCharacterClass.contains(thisIsMartialArtist))
+                {
+                    //will retrieve MartialArtistFirstName.txt
+                    File MartialArtist1stFile = new File("src/MartialArtistFirstName.txt");
+                    Scanner scanMartialArtistFirstName = new Scanner(MartialArtist1stFile);
+                
+                    //will retrieve MartialArtistLastName.txt
+                    File MartialArtist2ndFile = new File("src/MartialArtistLastName.txt");
+                    Scanner scanMartialArtistLastName = new Scanner(MartialArtist2ndFile);
+                
+                    //read the MartialArtistFirstName.txt file & MartialArtistLastName.txt file
+                    String MartialArtistFirstNameTxt = scanMartialArtistFirstName.next();
+                    String MartialArtistLastNameTxt = scanMartialArtistLastName.next();
+                    
+                    String userSave;
+                    System.out.print("Are you sure you want to save your"+
+                    " currently selected character: \""+MartialArtistFirstNameTxt+" "+
+                            MartialArtistLastNameTxt+"\" the Martial Artist?\nIf yes enter y"+
+                            ", or if no enter n: ");
+                    userSave = scan.next();
+                    System.out.println();
+                    if(userSave.equals("y") || userSave.equals("Y"))
+                    {
+                        /*retrieve all Martial Artist Files: Name and Stat files*/
+                        //------------------------------------------------------
+                        
+                        //retrieve MartialArtistFirstName.txt
+                        File MartialArtistFirstNameTxt2 = new File("src/MartialArtistFirstName.txt");
+                        Scanner scanMartialArtistFirstNameTxt = new Scanner(MartialArtistFirstNameTxt2);
+                        //read the MartialArtistFirstName.txt file
+                        String MartialArtistFirstName2 = scanMartialArtistFirstNameTxt.next();
+                        
+                        //retrieve MartialArtistLastName.txt
+                        File MartialArtistLastNameTxt2 = new File("src/MartialArtistLastName.txt");
+                        Scanner scanMartialArtistLastNameTxt = new Scanner(MartialArtistLastNameTxt2);
+                        //read the MartialArtistLastName.txt file
+                        String MartialArtistLastName2 = scanMartialArtistLastNameTxt.next();
+                        
+                        //retrieve MartialArtistAccuracyStat.txt
+                        File MartialArtistAccuracyStatTxt = new File("src/MartialArtistAccuracyStat.txt");
+                        Scanner scanMartialArtistAccuracyStatTxt = new Scanner(MartialArtistAccuracyStatTxt);
+                        //read the MartialArtistAccuracyStat.txt file
+                        int MartialArtistAccuracyStat = scanMartialArtistAccuracyStatTxt.nextInt();
+                        
+                        //retrieve MartialArtistAttackStat.txt
+                        File MartialArtistAttackStatTxt = new File("src/MartialArtistAttackStat.txt");
+                        Scanner scanMartialArtistAttackStatTxt = new Scanner(MartialArtistAttackStatTxt);
+                        //read the MartialArtistAttackStat.txt file 
+                        int MartialArtistAttackStat = scanMartialArtistAttackStatTxt.nextInt();
+                        
+                        //retrieve MartialArtistDamageStat.txt
+                        File MartialArtistDamageStatTxt = new File("src/MartialArtistDamageStat.txt");
+                        Scanner scanMartialArtistDamageStatTxt = new Scanner(MartialArtistDamageStatTxt);
+                        //read the MartialArtistDamageStat.txt file
+                        int MartialArtistDamageStat = scanMartialArtistDamageStatTxt.nextInt();
+                        
+                        //retrieve MartialArtistPhyDefStat.txt
+                        File MartialArtistPhyDefStatTxt = new File("src/MartialArtistPhyDefStat.txt");
+                        Scanner scanMartialArtistPhyDefStatTxt = new Scanner(MartialArtistPhyDefStatTxt);
+                        //read the MartialArtistPhyDefStat.txt file
+                        int MartialArtistPhyDefStat = scanMartialArtistPhyDefStatTxt.nextInt();
+                        
+                        //retrieve MartialArtistMagDefStat.txt
+                        File MartialArtistMagDefStatTxt = new File("src/MartialArtistMagDefStat.txt");
+                        Scanner scanMartialArtistMagDefStatTxt = new Scanner(MartialArtistMagDefStatTxt);
+                        //read the MartialArtistMagDefStat.txt file
+                        int MartialArtistMagDefStat = scanMartialArtistMagDefStatTxt.nextInt();
+                        
+                        try
+                        {
+                            System.out.print("Enter the name of your save file: ");
+                            userNamedSaveFile = scan.next();
+                            System.out.println();
+                            
+                            FileWriter writeUserSave = new FileWriter("src/"+
+                                    userNamedSaveFile+".txt");
+                            
+                            /*Write "Martial Artist Class" to the character's user created
+                            save file so that it can later be read when the user
+                            loads their file to load their character so that the
+                            character's class can be determined as "Martial Artist"
+                            upon the load of the character in the userMainMenu #3
+                            option.*/
+                            writeUserSave.write("Martial Artist Class"+"\n"+
+                            MartialArtistFirstName2+"\n"+MartialArtistLastName2+"\n"+
+                            MartialArtistAccuracyStat+"\n"+MartialArtistAttackStat+"\n"+
+                            MartialArtistDamageStat+"\n"+MartialArtistPhyDefStat+"\n"+
+                            MartialArtistMagDefStat);
+                            writeUserSave.close();
+                            System.out.print("\""+MartialArtistFirstName2+' '+
+                            MartialArtistLastName2+"\" the Martial Artist has been saved"+
+                            " to the "+userNamedSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                            
+                        }
+               
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                    }
+                    
+                    else if(userSave.equals("n") || userSave.equals("N"))
+                    {
+                        System.out.print("Ok, no characters will be saved to"+
+                        " any files. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                    
+                    else
+                    {
+                        System.out.print("You must enter \"y\" to save"+
+                        " a character or \"n\" to not do so, please try"+
+                        " again. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                }
             }
-            
+     
             //conditionals for Character Manager menu while loop
             if(selectedCharacter.isEmpty())
             {
@@ -6968,8 +7129,8 @@ class Main
                 {
                     System.out.println("Character Manager");
                     System.out.println("-----------------------");
-                    System.out.print("You have "+AssassinFirstNameTxt+" "+
-                    AssassinLastNameTxt+" the Assassin selected. Enter 1 to"+
+                    System.out.print("You have \""+AssassinFirstNameTxt+" "+
+                    AssassinLastNameTxt+"\" the Assassin selected. Enter 1 to"+
                     " create a new character, 2 to select an existing chara"+
                     "cter,\n3 to load a character from file, 4 to save a"+
                     " character to file, 5 to perform an action, or 6 to exit: ");
@@ -6985,8 +7146,8 @@ class Main
                 {
                     System.out.println("Character Manager");
                     System.out.println("-----------------------");
-                    System.out.print("You have "+EngineerFirstNameTxt+" "+
-                    EngineerLastNameTxt+" the Engineer selected. Enter 1 to"+
+                    System.out.print("You have \""+EngineerFirstNameTxt+" "+
+                    EngineerLastNameTxt+"\" the Engineer selected. Enter 1 to"+
                     " create a new character, 2 to select an existing chara"+
                     "cter,\n3 to load a character from file, 4 to save a"+
                     " character to file, 5 to perform an action, or 6 to exit: ");
@@ -7002,8 +7163,8 @@ class Main
                 {
                     System.out.println("Character Manager");
                     System.out.println("-----------------------");
-                    System.out.print("You have "+HealerFirstNameTxt+" "+
-                    HealerLastNameTxt+" the Healer selected. Enter 1 to"+
+                    System.out.print("You have \""+HealerFirstNameTxt+" "+
+                    HealerLastNameTxt+"\" the Healer selected. Enter 1 to"+
                     " create a new character, 2 to select an existing chara"+
                     "cter,\n3 to load a character from file, 4 to save a"+
                     " character to file, 5 to perform an action, or 6 to exit: ");
@@ -7019,8 +7180,8 @@ class Main
                 {
                     System.out.println("Character Manager");
                     System.out.println("-----------------------");
-                    System.out.print("You have "+MartialArtistFirstNameTxt+" "+
-                    MartialArtistLastNameTxt+" the Martial Artist selected. Enter 1 to"+
+                    System.out.print("You have \""+MartialArtistFirstNameTxt+" "+
+                    MartialArtistLastNameTxt+"\" the Martial Artist selected. Enter 1 to"+
                     " create a new character, 2 to select an existing chara"+
                     "cter,\n3 to load a character from file, 4 to save a"+
                     " character to file, 5 to perform an action, or 6 to exit: ");
@@ -7036,8 +7197,8 @@ class Main
                 {
                     System.out.println("Character Manager");
                     System.out.println("-----------------------");
-                    System.out.print("You have "+NecromancerFirstNameTxt+" "+
-                    NecromancerLastNameTxt+" the Necromancer selected. Enter 1 to"+
+                    System.out.print("You have \""+NecromancerFirstNameTxt+" "+
+                    NecromancerLastNameTxt+"\" the Necromancer selected. Enter 1 to"+
                     " create a new character, 2 to select an existing chara"+
                     "cter,\n3 to load a character from file, 4 to save a"+
                     " character to file, 5 to perform an action, or 6 to exit: ");
@@ -7053,8 +7214,8 @@ class Main
                 {
                     System.out.println("Character Manager");
                     System.out.println("-----------------------");
-                    System.out.print("You have "+WizardFirstNameTxt+" "+
-                    WizardLastNameTxt+" the Wizard selected. Enter 1 to"+
+                    System.out.print("You have \""+WizardFirstNameTxt+" "+
+                    WizardLastNameTxt+"\" the Wizard selected. Enter 1 to"+
                     " create a new character, 2 to select an existing chara"+
                     "cter,\n3 to load a character from file, 4 to save a"+
                     " character to file, 5 to perform an action, or 6 to exit: ");
