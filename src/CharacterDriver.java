@@ -7137,6 +7137,135 @@ class Main
                         System.out.println();
                     }
                 }
+                
+                //if the character being saved is of the Wizard Class
+                if(selectedCharacterClass.contains(thisIsWizard))
+                {
+                    //will retrieve WizardFirstName.txt
+                    File Wizard1stFile = new File("src/WizardFirstName.txt");
+                    Scanner scanWizardFirstName = new Scanner(Wizard1stFile);
+                
+                    //will retrieve WizardLastName.txt
+                    File Wizard2ndFile = new File("src/WizardLastName.txt");
+                    Scanner scanWizardLastName = new Scanner(Wizard2ndFile);
+                
+                    //read the WizardFirstName.txt file & WizardLastName.txt file
+                    String WizardFirstNameTxt = scanWizardFirstName.next();
+                    String WizardLastNameTxt = scanWizardLastName.next();
+                    
+                    String userSave;
+                    System.out.print("Are you sure you want to save your"+
+                    " currently selected character: \""+WizardFirstNameTxt+" "+
+                            WizardLastNameTxt+"\" the Wizard?\nIf yes enter y"+
+                            ", or if no enter n: ");
+                    userSave = scan.next();
+                    System.out.println();
+                    if(userSave.equals("y") || userSave.equals("Y"))
+                    {
+                        /*retrieve all Wizard Files: Name and Stat files*/
+                        //------------------------------------------------------
+                        
+                        //retrieve WizardFirstName.txt
+                        File WizardFirstNameTxt2 = new File("src/WizardFirstName.txt");
+                        Scanner scanWizardFirstNameTxt = new Scanner(WizardFirstNameTxt2);
+                        //read the WizardFirstName.txt file
+                        String WizardFirstName2 = scanWizardFirstNameTxt.next();
+                        
+                        //retrieve WizardLastName.txt
+                        File WizardLastNameTxt2 = new File("src/WizardLastName.txt");
+                        Scanner scanWizardLastNameTxt = new Scanner(WizardLastNameTxt2);
+                        //read the WizardLastName.txt file
+                        String WizardLastName2 = scanWizardLastNameTxt.next();
+                        
+                        //retrieve WizardAccuracyStat.txt
+                        File WizardAccuracyStatTxt = new File("src/WizardAccuracyStat.txt");
+                        Scanner scanWizardAccuracyStatTxt = new Scanner(WizardAccuracyStatTxt);
+                        //read the WizardAccuracyStat.txt file
+                        int WizardAccuracyStat = scanWizardAccuracyStatTxt.nextInt();
+                        
+                        //retrieve WizardAttackStat.txt
+                        File WizardAttackStatTxt = new File("src/WizardAttackStat.txt");
+                        Scanner scanWizardAttackStatTxt = new Scanner(WizardAttackStatTxt);
+                        //read the WizardAttackStat.txt file 
+                        int WizardAttackStat = scanWizardAttackStatTxt.nextInt();
+                        
+                        //retrieve WizardDamageStat.txt
+                        File WizardDamageStatTxt = new File("src/WizardDamageStat.txt");
+                        Scanner scanWizardDamageStatTxt = new Scanner(WizardDamageStatTxt);
+                        //read the WizardDamageStat.txt file
+                        int WizardDamageStat = scanWizardDamageStatTxt.nextInt();
+                        
+                        //retrieve WizardPhyDefStat.txt
+                        File WizardPhyDefStatTxt = new File("src/WizardPhyDefStat.txt");
+                        Scanner scanWizardPhyDefStatTxt = new Scanner(WizardPhyDefStatTxt);
+                        //read the WizardPhyDefStat.txt file
+                        int WizardPhyDefStat = scanWizardPhyDefStatTxt.nextInt();
+                        
+                        //retrieve WizardMagDefStat.txt
+                        File WizardMagDefStatTxt = new File("src/WizardMagDefStat.txt");
+                        Scanner scanWizardMagDefStatTxt = new Scanner(WizardMagDefStatTxt);
+                        //read the WizardMagDefStat.txt file
+                        int WizardMagDefStat = scanWizardMagDefStatTxt.nextInt();
+                        
+                        try
+                        {
+                            System.out.print("Enter the name of your save file: ");
+                            userNamedSaveFile = scan.next();
+                            System.out.println();
+                            
+                            FileWriter writeUserSave = new FileWriter("src/"+
+                                    userNamedSaveFile+".txt");
+                            
+                            /*Write "Wizard Class" to the character's user created
+                            save file so that it can later be read when the user
+                            loads their file to load their character so that the
+                            character's class can be determined as "Wizard"
+                            upon the load of the character in the userMainMenu #3
+                            option.*/
+                            writeUserSave.write("Wizard Class"+"\n"+
+                            WizardFirstName2+"\n"+WizardLastName2+"\n"+
+                            WizardAccuracyStat+"\n"+WizardAttackStat+"\n"+
+                            WizardDamageStat+"\n"+WizardPhyDefStat+"\n"+
+                            WizardMagDefStat);
+                            writeUserSave.close();
+                            System.out.print("\""+WizardFirstName2+' '+
+                            WizardLastName2+"\" the Wizard has been saved"+
+                            " to the "+userNamedSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                            
+                        }
+               
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                    }
+                    
+                    else if(userSave.equals("n") || userSave.equals("N"))
+                    {
+                        System.out.print("Ok, no characters will be saved to"+
+                        " any files. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                    
+                    else
+                    {
+                        System.out.print("You must enter \"y\" to save"+
+                        " a character or \"n\" to not do so, please try"+
+                        " again. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                }
             }
      
             //conditionals for Character Manager menu while loop
