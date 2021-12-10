@@ -7008,6 +7008,135 @@ class Main
                         System.out.println();
                     }
                 }
+                
+                //if the character being saved is of the Necromancer Class
+                if(selectedCharacterClass.contains(thisIsNecromancer))
+                {
+                    //will retrieve NecromancerFirstName.txt
+                    File Necromancer1stFile = new File("src/NecromancerFirstName.txt");
+                    Scanner scanNecromancerFirstName = new Scanner(Necromancer1stFile);
+                
+                    //will retrieve NecromancerLastName.txt
+                    File Necromancer2ndFile = new File("src/NecromancerLastName.txt");
+                    Scanner scanNecromancerLastName = new Scanner(Necromancer2ndFile);
+                
+                    //read the NecromancerFirstName.txt file & NecromancerLastName.txt file
+                    String NecromancerFirstNameTxt = scanNecromancerFirstName.next();
+                    String NecromancerLastNameTxt = scanNecromancerLastName.next();
+                    
+                    String userSave;
+                    System.out.print("Are you sure you want to save your"+
+                    " currently selected character: \""+NecromancerFirstNameTxt+" "+
+                            NecromancerLastNameTxt+"\" the Necromancer?\nIf yes enter y"+
+                            ", or if no enter n: ");
+                    userSave = scan.next();
+                    System.out.println();
+                    if(userSave.equals("y") || userSave.equals("Y"))
+                    {
+                        /*retrieve all Necromancer Files: Name and Stat files*/
+                        //------------------------------------------------------
+                        
+                        //retrieve NecromancerFirstName.txt
+                        File NecromancerFirstNameTxt2 = new File("src/NecromancerFirstName.txt");
+                        Scanner scanNecromancerFirstNameTxt = new Scanner(NecromancerFirstNameTxt2);
+                        //read the NecromancerFirstName.txt file
+                        String NecromancerFirstName2 = scanNecromancerFirstNameTxt.next();
+                        
+                        //retrieve NecromancerLastName.txt
+                        File NecromancerLastNameTxt2 = new File("src/NecromancerLastName.txt");
+                        Scanner scanNecromancerLastNameTxt = new Scanner(NecromancerLastNameTxt2);
+                        //read the NecromancerLastName.txt file
+                        String NecromancerLastName2 = scanNecromancerLastNameTxt.next();
+                        
+                        //retrieve NecromancerAccuracyStat.txt
+                        File NecromancerAccuracyStatTxt = new File("src/NecromancerAccuracyStat.txt");
+                        Scanner scanNecromancerAccuracyStatTxt = new Scanner(NecromancerAccuracyStatTxt);
+                        //read the NecromancerAccuracyStat.txt file
+                        int NecromancerAccuracyStat = scanNecromancerAccuracyStatTxt.nextInt();
+                        
+                        //retrieve NecromancerAttackStat.txt
+                        File NecromancerAttackStatTxt = new File("src/NecromancerAttackStat.txt");
+                        Scanner scanNecromancerAttackStatTxt = new Scanner(NecromancerAttackStatTxt);
+                        //read the NecromancerAttackStat.txt file 
+                        int NecromancerAttackStat = scanNecromancerAttackStatTxt.nextInt();
+                        
+                        //retrieve NecromancerDamageStat.txt
+                        File NecromancerDamageStatTxt = new File("src/NecromancerDamageStat.txt");
+                        Scanner scanNecromancerDamageStatTxt = new Scanner(NecromancerDamageStatTxt);
+                        //read the NecromancerDamageStat.txt file
+                        int NecromancerDamageStat = scanNecromancerDamageStatTxt.nextInt();
+                        
+                        //retrieve NecromancerPhyDefStat.txt
+                        File NecromancerPhyDefStatTxt = new File("src/NecromancerPhyDefStat.txt");
+                        Scanner scanNecromancerPhyDefStatTxt = new Scanner(NecromancerPhyDefStatTxt);
+                        //read the NecromancerPhyDefStat.txt file
+                        int NecromancerPhyDefStat = scanNecromancerPhyDefStatTxt.nextInt();
+                        
+                        //retrieve NecromancerMagDefStat.txt
+                        File NecromancerMagDefStatTxt = new File("src/NecromancerMagDefStat.txt");
+                        Scanner scanNecromancerMagDefStatTxt = new Scanner(NecromancerMagDefStatTxt);
+                        //read the NecromancerMagDefStat.txt file
+                        int NecromancerMagDefStat = scanNecromancerMagDefStatTxt.nextInt();
+                        
+                        try
+                        {
+                            System.out.print("Enter the name of your save file: ");
+                            userNamedSaveFile = scan.next();
+                            System.out.println();
+                            
+                            FileWriter writeUserSave = new FileWriter("src/"+
+                                    userNamedSaveFile+".txt");
+                            
+                            /*Write "Necromancer Class" to the character's user created
+                            save file so that it can later be read when the user
+                            loads their file to load their character so that the
+                            character's class can be determined as "Necromancer"
+                            upon the load of the character in the userMainMenu #3
+                            option.*/
+                            writeUserSave.write("Necromancer Class"+"\n"+
+                            NecromancerFirstName2+"\n"+NecromancerLastName2+"\n"+
+                            NecromancerAccuracyStat+"\n"+NecromancerAttackStat+"\n"+
+                            NecromancerDamageStat+"\n"+NecromancerPhyDefStat+"\n"+
+                            NecromancerMagDefStat);
+                            writeUserSave.close();
+                            System.out.print("\""+NecromancerFirstName2+' '+
+                            NecromancerLastName2+"\" the Necromancer has been saved"+
+                            " to the "+userNamedSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                            
+                        }
+               
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                    }
+                    
+                    else if(userSave.equals("n") || userSave.equals("N"))
+                    {
+                        System.out.print("Ok, no characters will be saved to"+
+                        " any files. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                    
+                    else
+                    {
+                        System.out.print("You must enter \"y\" to save"+
+                        " a character or \"n\" to not do so, please try"+
+                        " again. Press enter to continue.");
+                        try{System.in.read();}
+                        catch(Exception e){}
+                        System.out.println();
+                        System.out.println();
+                    }
+                }
             }
      
             //conditionals for Character Manager menu while loop
