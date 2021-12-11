@@ -6647,6 +6647,19 @@ class Main
                         {
                             exception.printStackTrace();
                         }
+                        
+                        /*write the Assassin's Magical Defense Stat value*/
+                        try
+                        {
+                            FileWriter AssassinMagDefStatWrite = new FileWriter("src/AssassinMagDefStat.txt");
+                            AssassinMagDefStatWrite.write(AssassinMagDefStatValue);
+                            AssassinMagDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     
                         /*make the Assassin from the user-created txt file
                         become the currently selected character*/
