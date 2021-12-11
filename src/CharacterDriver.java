@@ -6902,6 +6902,35 @@ class Main
                         String HealerPhyDefStatValue = scanHealerClassTxtFile.next();
                     
                         String HealerMagDefStatValue = scanHealerClassTxtFile.next();
+                        
+                        /*write the Healer's first name from the user created
+                        txt file to the HealerFirstName.txt file*/
+                        try
+                        {
+                        
+                            FileWriter HealerFirstNameWrite = new FileWriter("src/HealerFirstName.txt");
+                            HealerFirstNameWrite.write(HealerFirstNameTxt);
+                            HealerFirstNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Healer's last name from the user created
+                        txt file to the HealerLastName.txt file*/
+                        try
+                        {
+                            FileWriter HealerLastNameWrite = new FileWriter("src/HealerLastName.txt");
+                            HealerLastNameWrite.write(HealerLastNameTxt);
+                            HealerLastNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     }
                     
                     /*make an else statement after the else if's for when the
