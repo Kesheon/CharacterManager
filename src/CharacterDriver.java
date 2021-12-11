@@ -6513,11 +6513,12 @@ class Main
                 //tell user how to locate their saved character files
                 System.out.println("Load a character from file");
                 System.out.println("--------------------------------");
-                System.out.print("If you forgot the name of your saved files, then locate them"+
+                System.out.print("If you forgot the name of your saved file(s), then locate them"+
                 " by following this directory:\nyourPath\\CharacterManager\\"+
                 "src\\SavedCharacters. Press enter to continue.");
                 try{System.in.read();}
                 catch(Exception e){}
+                System.out.println();
                 System.out.println();
                 
                 //get user to enter the save file they want to load
@@ -6607,6 +6608,19 @@ class Main
                         {
                             exception.printStackTrace();
                         }
+                        
+                        /*write the Assassin's Attack Stat value*/
+                        try
+                        {
+                            FileWriter AssassinAttackStatWrite = new FileWriter("src/AssassinAttackStat.txt");
+                            AssassinAttackStatWrite.write(AssassinAttackStatValue);
+                            AssassinAttackStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     
                         /*make the Assassin from the user-created txt file
                         become the currently selected character*/
@@ -6614,15 +6628,31 @@ class Main
                         {
                         
                         }
+                        
                         //add character's first and last name to loadedCharacter list if not already in there
-                        //make an else statement for when the class name of a saved file can't be found, this should never have to be used, but will be added just in case
+                        
+                        /*make an else statement after the else if's for when the class name of a
+                        saved file can't be found, this should never have to be
+                        used, but will be added just in case*/
+                        
+                        /*after character is added to selectedCharacter list and
+                        their class is added to selectedCharacterClass, then 
+                        display to the user that the Assassin (first name and last)
+                        and their stats have been loaded from their named save file*/
                     }
                 }
                 
-                //if the user's file they try to load does not exist, or if they typed it in wrong
+                /*if the user's file they try to load does not exist, or if they
+                typed it in wrong*/
                 catch(FileNotFoundException e)
                 {
-                    System.out.println("That file does not exist");
+                    System.out.print("Either that file does not exist, or you"+
+                    " need to be sure that you did not type\nthe name of your"+
+                    " file in incorrectly. Press enter to continue.");
+                    try{System.in.read();}
+                    catch(Exception exception){}
+                    System.out.println();
+                    System.out.println();
                 }
             }
             
