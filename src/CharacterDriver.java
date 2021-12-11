@@ -6755,7 +6755,19 @@ class Main
                             exception.printStackTrace();
                         }
                         
-                        
+                        /*write the Engineer's last name from the user created
+                        txt file to the EngineerLastName.txt file*/
+                        try
+                        {
+                            FileWriter EngineerLastNameWrite = new FileWriter("src/EngineerLastName.txt");
+                            EngineerLastNameWrite.write(EngineerLastNameTxt);
+                            EngineerLastNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     }
                     
                     /*make an else statement after the else if's for when the
