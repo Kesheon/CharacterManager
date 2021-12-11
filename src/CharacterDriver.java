@@ -7200,6 +7200,169 @@ class Main
                         }
                     }
                     
+                    /*if the saved character of the user's save file is of the
+                    Necromancer Class*/
+                    else if(characterClass.contains("Necromancer Class"))
+                    {
+                        /*Read the contents of a saved characters from a user named
+                        save file and write it back to that character's respective
+                        class files found in the "src" folder*/
+                        File NecromancerTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanNecromancerClassTxtFile = new Scanner(NecromancerTxtFile);
+                    
+                        /*this variable below is reading the same thing as
+                        characterClass and is only needed to read that same line
+                        again*/
+                        String dontUseThisVariable = scanNecromancerClassTxtFile.nextLine();
+                    
+                        String NecromancerFirstNameTxt = scanNecromancerClassTxtFile.next();
+                    
+                        String NecromancerLastNameTxt = scanNecromancerClassTxtFile.next();
+                    
+                        String NecromancerAccuracyStatValue = scanNecromancerClassTxtFile.next();
+                    
+                        String NecromancerAttackStatValue = scanNecromancerClassTxtFile.next();
+                    
+                        String NecromancerDamageStatValue = scanNecromancerClassTxtFile.next();
+                    
+                        String NecromancerPhyDefStatValue = scanNecromancerClassTxtFile.next();
+                    
+                        String NecromancerMagDefStatValue = scanNecromancerClassTxtFile.next();
+                        
+                        /*write the Necromancer's first name from the user created
+                        txt file to the NecromancerFirstName.txt file*/
+                        try
+                        {
+                        
+                            FileWriter NecromancerFirstNameWrite = new FileWriter("src/NecromancerFirstName.txt");
+                            NecromancerFirstNameWrite.write(NecromancerFirstNameTxt);
+                            NecromancerFirstNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Necromancer's last name from the user created
+                        txt file to the NecromancerLastName.txt file*/
+                        try
+                        {
+                            FileWriter NecromancerLastNameWrite = new FileWriter("src/NecromancerLastName.txt");
+                            NecromancerLastNameWrite.write(NecromancerLastNameTxt);
+                            NecromancerLastNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Necromancer's Accuracy Stat value*/
+                        try
+                        {
+                            FileWriter NecromancerAccuracyStatWrite = new FileWriter("src/NecromancerAccuracyStat.txt");
+                            NecromancerAccuracyStatWrite.write(NecromancerAccuracyStatValue);
+                            NecromancerAccuracyStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Necromancer's Attack Stat value*/
+                        try
+                        {
+                            FileWriter NecromancerAttackStatWrite = new FileWriter("src/NecromancerAttackStat.txt");
+                            NecromancerAttackStatWrite.write(NecromancerAttackStatValue);
+                            NecromancerAttackStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Necromancer's Damage Stat value*/
+                        try
+                        {
+                            FileWriter NecromancerDamageStatWrite = new FileWriter("src/NecromancerDamageStat.txt");
+                            NecromancerDamageStatWrite.write(NecromancerDamageStatValue);
+                            NecromancerDamageStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Necromancer's Physical Defense Stat value*/
+                        try
+                        {
+                            FileWriter NecromancerPhyDefStatWrite = new FileWriter("src/NecromancerPhyDefStat.txt");
+                            NecromancerPhyDefStatWrite.write(NecromancerPhyDefStatValue);
+                            NecromancerPhyDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Necromancer's Magical Defense Stat value*/
+                        try
+                        {
+                            FileWriter NecromancerMagDefStatWrite = new FileWriter("src/NecromancerMagDefStat.txt");
+                            NecromancerMagDefStatWrite.write(NecromancerMagDefStatValue);
+                            NecromancerMagDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*make the Necromancer from the user-created txt file
+                        become the currently selected character*/
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(NecromancerFirstNameTxt);
+                            selectedCharacter.add(NecromancerLastNameTxt);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                selectedCharacterClass.add(thisIsNecromancer);
+                            }
+                            
+                            System.out.print("\""+NecromancerFirstNameTxt+" "+
+                            NecromancerLastNameTxt+"\" the Necromancer has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                        }
+                        
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(NecromancerFirstNameTxt);
+                            selectedCharacter.add(NecromancerLastNameTxt);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsNecromancer);
+                            System.out.print("\""+NecromancerFirstNameTxt+" "+
+                            NecromancerLastNameTxt+"\" the Necromancer has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                        }
+                    }
+                    
                     /*make an else statement after the else if's for when the
                     class name of a saved file can't be found, this should never
                     have to be used, but will be added just in case*/   
