@@ -6807,6 +6807,32 @@ class Main
                         {
                             exception.printStackTrace();
                         }
+                        
+                        /*write the Engineer's Physical Defense Stat value*/
+                        try
+                        {
+                            FileWriter EngineerPhyDefStatWrite = new FileWriter("src/EngineerPhyDefStat.txt");
+                            EngineerPhyDefStatWrite.write(EngineerPhyDefStatValue);
+                            EngineerPhyDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Engineer's Magical Defense Stat value*/
+                        try
+                        {
+                            FileWriter EngineerMagDefStatWrite = new FileWriter("src/EngineerMagDefStat.txt");
+                            EngineerMagDefStatWrite.write(EngineerMagDefStatValue);
+                            EngineerMagDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     }
                     
                     /*make an else statement after the else if's for when the
