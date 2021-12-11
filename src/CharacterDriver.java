@@ -6546,8 +6546,10 @@ class Main
                     /*read the first line of the user-named saved file to determine
                     the class of the character they want to load*/
                     String characterClass = scanUserNamedFile.nextLine();
-                
-                    if(characterClass.contains("Assassin Class"));
+                    
+                    /*if the saved character of the user's save file is of the
+                    Assassin Class*/
+                    if(characterClass.contains("Assassin Class"))
                     {
                         /*Read the contents of a saved characters from a user named
                         save file and write it back to that character's respective
@@ -6710,10 +6712,38 @@ class Main
                         
                         /*make an else statement after the else if's for when the class name of a
                         saved file can't be found, this should never have to be
-                        used, but will be added just in case*/
-                        
-                        
+                        used, but will be added just in case*/   
                     }
+                    
+                    /*if the saved character of the user's save file is of the
+                    Engineer Class*/
+                    else if(characterClass.contains("Engineer Class"))
+                    {
+                        /*Read the contents of a saved characters from a user named
+                        save file and write it back to that character's respective
+                        class files found in the "src" folder*/
+                        File EngineerTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanEngineerClassTxtFile = new Scanner(EngineerTxtFile);
+                    
+                        /*this variable below is reading the same thing as
+                        characterClass and is only needed to read that same line
+                        again*/
+                        String dontUseThisVariable = scanEngineerClassTxtFile.nextLine();
+                    
+                        String EngineerFirstNameTxt = scanEngineerClassTxtFile.next();
+                    
+                        String EngineerLastNameTxt = scanEngineerClassTxtFile.next();
+                    
+                        String EngineerAccuracyStatValue = scanEngineerClassTxtFile.next();
+                    
+                        String EngineerAttackStatValue = scanEngineerClassTxtFile.next();
+                    
+                        String EngineerDamageStatValue = scanEngineerClassTxtFile.next();
+                    
+                        String EngineerPhyDefStatValue = scanEngineerClassTxtFile.next();
+                    
+                        String EngineerMagDefStatValue = scanEngineerClassTxtFile.next();
+                    }    
                 }
                 
                 /*if the user's file they try to load does not exist, or if they
