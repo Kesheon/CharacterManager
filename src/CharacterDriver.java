@@ -7037,6 +7037,169 @@ class Main
                         }
                     }
                     
+                    /*if the saved character of the user's save file is of the
+                    Martial Artist Class*/
+                    else if(characterClass.contains("Martial Artist Class"))
+                    {
+                        /*Read the contents of a saved characters from a user named
+                        save file and write it back to that character's respective
+                        class files found in the "src" folder*/
+                        File MartialArtistTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanMartialArtistClassTxtFile = new Scanner(MartialArtistTxtFile);
+                    
+                        /*this variable below is reading the same thing as
+                        characterClass and is only needed to read that same line
+                        again*/
+                        String dontUseThisVariable = scanMartialArtistClassTxtFile.nextLine();
+                    
+                        String MartialArtistFirstNameTxt = scanMartialArtistClassTxtFile.next();
+                    
+                        String MartialArtistLastNameTxt = scanMartialArtistClassTxtFile.next();
+                    
+                        String MartialArtistAccuracyStatValue = scanMartialArtistClassTxtFile.next();
+                    
+                        String MartialArtistAttackStatValue = scanMartialArtistClassTxtFile.next();
+                    
+                        String MartialArtistDamageStatValue = scanMartialArtistClassTxtFile.next();
+                    
+                        String MartialArtistPhyDefStatValue = scanMartialArtistClassTxtFile.next();
+                    
+                        String MartialArtistMagDefStatValue = scanMartialArtistClassTxtFile.next();
+                        
+                        /*write the Martial Artist's first name from the user created
+                        txt file to the HealerFirstName.txt file*/
+                        try
+                        {
+                        
+                            FileWriter MartialArtistFirstNameWrite = new FileWriter("src/MartialArtistFirstName.txt");
+                            MartialArtistFirstNameWrite.write(MartialArtistFirstNameTxt);
+                            MartialArtistFirstNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Martial Artist's last name from the user created
+                        txt file to the MartialArtistLastName.txt file*/
+                        try
+                        {
+                            FileWriter MartialArtistLastNameWrite = new FileWriter("src/MartialArtistLastName.txt");
+                            MartialArtistLastNameWrite.write(MartialArtistLastNameTxt);
+                            MartialArtistLastNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Martial Artist's Accuracy Stat value*/
+                        try
+                        {
+                            FileWriter MartialArtistAccuracyStatWrite = new FileWriter("src/MartialArtistAccuracyStat.txt");
+                            MartialArtistAccuracyStatWrite.write(MartialArtistAccuracyStatValue);
+                            MartialArtistAccuracyStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Martial Artist's Attack Stat value*/
+                        try
+                        {
+                            FileWriter MartialArtistAttackStatWrite = new FileWriter("src/MartialArtistAttackStat.txt");
+                            MartialArtistAttackStatWrite.write(MartialArtistAttackStatValue);
+                            MartialArtistAttackStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Martial Artist's Damage Stat value*/
+                        try
+                        {
+                            FileWriter MartialArtistDamageStatWrite = new FileWriter("src/MartialArtistDamageStat.txt");
+                            MartialArtistDamageStatWrite.write(MartialArtistDamageStatValue);
+                            MartialArtistDamageStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Martial Artist's Physical Defense Stat value*/
+                        try
+                        {
+                            FileWriter MartialArtistPhyDefStatWrite = new FileWriter("src/MartialArtistPhyDefStat.txt");
+                            MartialArtistPhyDefStatWrite.write(MartialArtistPhyDefStatValue);
+                            MartialArtistPhyDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Martial Artist's Magical Defense Stat value*/
+                        try
+                        {
+                            FileWriter MartialArtistMagDefStatWrite = new FileWriter("src/MartialArtistMagDefStat.txt");
+                            MartialArtistMagDefStatWrite.write(MartialArtistMagDefStatValue);
+                            MartialArtistMagDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*make the Martial Artist from the user-created txt file
+                        become the currently selected character*/
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(MartialArtistFirstNameTxt);
+                            selectedCharacter.add(MartialArtistLastNameTxt);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                selectedCharacterClass.add(thisIsMartialArtist);
+                            }
+                            
+                            System.out.print("\""+MartialArtistFirstNameTxt+" "+
+                            MartialArtistLastNameTxt+"\" the Martial Artist has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                        }
+                        
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(MartialArtistFirstNameTxt);
+                            selectedCharacter.add(MartialArtistLastNameTxt);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsMartialArtist);
+                            System.out.print("\""+MartialArtistFirstNameTxt+" "+
+                            MartialArtistLastNameTxt+"\" the Martial Artist has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                        }
+                    }
+                    
                     /*make an else statement after the else if's for when the
                     class name of a saved file can't be found, this should never
                     have to be used, but will be added just in case*/   
