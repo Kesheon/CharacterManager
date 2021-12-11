@@ -6591,8 +6591,8 @@ class Main
                             exception.printStackTrace();
                         }
                     
-                        /*write the Assassin's last name from the user created txt
-                        file to the AssassinLastName.txt file*/
+                        /*write the Assassin's last name from the user created
+                        txt file to the AssassinLastName.txt file*/
                         try
                         {
                             FileWriter AssassinLastNameWrite = new FileWriter("src/AssassinLastName.txt");
@@ -6709,10 +6709,6 @@ class Main
                             System.out.println();
                             System.out.println();
                         }
-                        
-                        /*make an else statement after the else if's for when the class name of a
-                        saved file can't be found, this should never have to be
-                        used, but will be added just in case*/   
                     }
                     
                     /*if the saved character of the user's save file is of the
@@ -6743,7 +6739,28 @@ class Main
                         String EngineerPhyDefStatValue = scanEngineerClassTxtFile.next();
                     
                         String EngineerMagDefStatValue = scanEngineerClassTxtFile.next();
-                    }    
+                        
+                        /*write the Engineer's first name from the user created
+                        txt file to the EngineerFirstName.txt file*/
+                        try
+                        {
+                        
+                            FileWriter EngineerFirstNameWrite = new FileWriter("src/EngineerFirstName.txt");
+                            EngineerFirstNameWrite.write(EngineerFirstNameTxt);
+                            EngineerFirstNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        
+                    }
+                    
+                    /*make an else statement after the else if's for when the
+                    class name of a saved file can't be found, this should never
+                    have to be used, but will be added just in case*/   
                 }
                 
                 /*if the user's file they try to load does not exist, or if they
