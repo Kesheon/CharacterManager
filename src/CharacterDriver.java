@@ -6768,6 +6768,19 @@ class Main
                         {
                             exception.printStackTrace();
                         }
+                        
+                        /*write the Engineer's Accuracy Stat value*/
+                        try
+                        {
+                            FileWriter EngineerAccuracyStatWrite = new FileWriter("src/EngineerAccuracyStat.txt");
+                            EngineerAccuracyStatWrite.write(EngineerAccuracyStatValue);
+                            EngineerAccuracyStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     }
                     
                     /*make an else statement after the else if's for when the
