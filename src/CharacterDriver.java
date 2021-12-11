@@ -206,14 +206,20 @@ class Main
     public static void main(String[] args) throws FileNotFoundException
     {
         
-        /*Linked list that holds characters that have been created and/or
-        characters that have been loaded from a save file. And the strings are
-        what hold the user-entered character names of their created characters/ 
-        characters loaded from a save file.*/
+        /*Linked list that holds characters that are newly created. This list
+        does not need to store loaded characters that are loaded from a user
+        save file, because the selectedCharacter list does that. The 
+        selectedCharacter list is also able to add characters to it that are
+        currently existing characters (whether said characters have a save file
+        or not). The selectedCharacter list only holds one character at a time
+        (since only one character at a time can be loaded/ be the currently
+        selected character).*/
         LinkedList loadedCharacters = new LinkedList();
         String AssassinFirstName;
         String AssassinLastName;
         
+        /*The strings are what hold the user-entered character names of
+        their created characters or characters loaded from a save file.*/
         String EngineerFirstName;
         String EngineerLastName;
         
@@ -231,12 +237,11 @@ class Main
         
         /*this list holds characters that are currently selected. Currently selected 
         characters are also present in the loadedCharacters list (only if they
-        were created during the programs runtime or loaded from a user created
-        save file), but the difference between a character in the loadedCharacters
-        list (that is not currently selected) and a selected one is that a
-        selected character can actually be used by the user since it is the
-        current character in use, while the other character in the
-        loadedCharacters list is just in temporary saved files/memory.   */
+        were created during the programs runtime), but the difference between a
+        character in the loadedCharacters list (that is not currently selected)
+        and a selected one is that a selected character can actually be used by
+        the user since it is the current character in use, while the other
+        character in the loadedCharacters list is just in temporary saved files/memory.   */
         LinkedList selectedCharacter = new LinkedList();
         
         /*this list will hold only 1 int value at a time. The value of said int
@@ -5851,10 +5856,12 @@ class Main
                 }
                     
             }
-            /*When selecting an existing character from here the user is opting to
-            select characters that were created during the programs runtime
-            or characters they loaded from a save file that they themselves would
-            have named.*/
+            
+            /*When selecting an existing character from here (#2 userMainMenu)
+            the user is opting to select characters that were created during the
+            programs runtime or characters they loaded from a save file that
+            they themselves would have named.*/
+            
             else if(userMainMenu == 2)
             {
                 
@@ -6660,24 +6667,46 @@ class Main
                         {
                             exception.printStackTrace();
                         }
-                    
+                        
+                        
                         /*make the Assassin from the user-created txt file
                         become the currently selected character*/
                         if(selectedCharacter.isEmpty())
                         {
+                            selectedCharacter.add(AssassinFirstNameTxt);
+                            selectedCharacter.add(AssassinLastNameTxt);
                             
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                selectedCharacterClass.add(thisIsAssassin);
+                            }
                             
-                            
-                         
-                            /*after character is added to selectedCharacter list and
-                            their class is added to selectedCharacterClass, then 
-                            display to the user that the Assassin (first name and last)
-                            and their stats have been loaded from their named save file*/
+                            System.out.print("\""+AssassinFirstNameTxt+" "+
+                            AssassinLastNameTxt+"\" the Assassin has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
                         }
                         
-                        /*add character's first and last name to loadedCharacter
-                        list if not already in there (after selectedCharacter
-                        and selectedCharacterClass if statements)*/
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(AssassinFirstNameTxt);
+                            selectedCharacter.add(AssassinLastNameTxt);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsAssassin);
+                            System.out.print("\""+AssassinFirstNameTxt+" "+
+                            AssassinLastNameTxt+"\" the Assassin has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                        }
                         
                         /*make an else statement after the else if's for when the class name of a
                         saved file can't be found, this should never have to be
