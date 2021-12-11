@@ -6634,6 +6634,19 @@ class Main
                         {
                             exception.printStackTrace();
                         }
+                        
+                        /*write the Assassin's Physical Defense Stat value*/
+                        try
+                        {
+                            FileWriter AssassinPhyDefStatWrite = new FileWriter("src/AssassinPhyDefStat.txt");
+                            AssassinPhyDefStatWrite.write(AssassinPhyDefStatValue);
+                            AssassinPhyDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     
                         /*make the Assassin from the user-created txt file
                         become the currently selected character*/
