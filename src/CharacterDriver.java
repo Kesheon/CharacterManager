@@ -6833,6 +6833,45 @@ class Main
                         {
                             exception.printStackTrace();
                         }
+                        
+                        /*make the Engineer from the user-created txt file
+                        become the currently selected character*/
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(EngineerFirstNameTxt);
+                            selectedCharacter.add(EngineerLastNameTxt);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                selectedCharacterClass.add(thisIsEngineer);
+                            }
+                            
+                            System.out.print("\""+EngineerFirstNameTxt+" "+
+                            EngineerLastNameTxt+"\" the Engineer has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                        }
+                        
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(EngineerFirstNameTxt);
+                            selectedCharacter.add(EngineerLastNameTxt);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsEngineer);
+                            System.out.print("\""+EngineerFirstNameTxt+" "+
+                            EngineerLastNameTxt+"\" the Assassin has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                        }
                     }
                     
                     /*make an else statement after the else if's for when the
