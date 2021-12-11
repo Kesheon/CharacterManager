@@ -6864,7 +6864,7 @@ class Main
                             selectedCharacterClass.clear();
                             selectedCharacterClass.add(thisIsEngineer);
                             System.out.print("\""+EngineerFirstNameTxt+" "+
-                            EngineerLastNameTxt+"\" the Assassin has been"+
+                            EngineerLastNameTxt+"\" the Engineer has been"+
                             " loaded from the "+userSaveFile+".txt file.\nPress"+
                             " enter to continue.");
                             try{System.in.read();}
@@ -6995,6 +6995,45 @@ class Main
                         catch(IOException exception)
                         {
                             exception.printStackTrace();
+                        }
+                        
+                        /*make the Healer from the user-created txt file
+                        become the currently selected character*/
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(HealerFirstNameTxt);
+                            selectedCharacter.add(HealerLastNameTxt);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                selectedCharacterClass.add(thisIsHealer);
+                            }
+                            
+                            System.out.print("\""+HealerFirstNameTxt+" "+
+                            HealerLastNameTxt+"\" the Healer has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                        }
+                        
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(HealerFirstNameTxt);
+                            selectedCharacter.add(HealerLastNameTxt);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsHealer);
+                            System.out.print("\""+HealerFirstNameTxt+" "+
+                            HealerLastNameTxt+"\" the Healer has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
                         }
                     }
                     
