@@ -6621,24 +6621,43 @@ class Main
                         {
                             exception.printStackTrace();
                         }
+                        
+                        /*write the Assassin's Damage Stat value*/
+                        try
+                        {
+                            FileWriter AssassinDamageStatWrite = new FileWriter("src/AssassinDamageStat.txt");
+                            AssassinDamageStatWrite.write(AssassinDamageStatValue);
+                            AssassinDamageStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     
                         /*make the Assassin from the user-created txt file
                         become the currently selected character*/
                         if(selectedCharacter.isEmpty())
                         {
-                        
+                            
+                            
+                            
+                         
+                            /*after character is added to selectedCharacter list and
+                            their class is added to selectedCharacterClass, then 
+                            display to the user that the Assassin (first name and last)
+                            and their stats have been loaded from their named save file*/
                         }
                         
-                        //add character's first and last name to loadedCharacter list if not already in there
+                        /*add character's first and last name to loadedCharacter
+                        list if not already in there (after selectedCharacter
+                        and selectedCharacterClass if statements)*/
                         
                         /*make an else statement after the else if's for when the class name of a
                         saved file can't be found, this should never have to be
                         used, but will be added just in case*/
                         
-                        /*after character is added to selectedCharacter list and
-                        their class is added to selectedCharacterClass, then 
-                        display to the user that the Assassin (first name and last)
-                        and their stats have been loaded from their named save file*/
+                        
                     }
                 }
                 
