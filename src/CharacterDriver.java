@@ -6874,6 +6874,36 @@ class Main
                         }
                     }
                     
+                    /*if the saved character of the user's save file is of the
+                    Healer Class*/
+                    else if(characterClass.contains("Healer Class"))
+                    {
+                        /*Read the contents of a saved characters from a user named
+                        save file and write it back to that character's respective
+                        class files found in the "src" folder*/
+                        File HealerTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanHealerClassTxtFile = new Scanner(HealerTxtFile);
+                    
+                        /*this variable below is reading the same thing as
+                        characterClass and is only needed to read that same line
+                        again*/
+                        String dontUseThisVariable = scanHealerClassTxtFile.nextLine();
+                    
+                        String HealerFirstNameTxt = scanHealerClassTxtFile.next();
+                    
+                        String HealerLastNameTxt = scanHealerClassTxtFile.next();
+                    
+                        String HealerAccuracyStatValue = scanHealerClassTxtFile.next();
+                    
+                        String HealerAttackStatValue = scanHealerClassTxtFile.next();
+                    
+                        String HealerDamageStatValue = scanHealerClassTxtFile.next();
+                    
+                        String HealerPhyDefStatValue = scanHealerClassTxtFile.next();
+                    
+                        String HealerMagDefStatValue = scanHealerClassTxtFile.next();
+                    }
+                    
                     /*make an else statement after the else if's for when the
                     class name of a saved file can't be found, this should never
                     have to be used, but will be added just in case*/   
