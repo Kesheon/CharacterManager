@@ -6957,6 +6957,32 @@ class Main
                         {
                             exception.printStackTrace();
                         }
+                        
+                        /*write the Healer's Damage Stat value*/
+                        try
+                        {
+                            FileWriter HealerDamageStatWrite = new FileWriter("src/HealerDamageStat.txt");
+                            HealerDamageStatWrite.write(HealerDamageStatValue);
+                            HealerDamageStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Healer's Physical Defense Stat value*/
+                        try
+                        {
+                            FileWriter HealerPhyDefStatWrite = new FileWriter("src/HealerPhyDefStat.txt");
+                            HealerPhyDefStatWrite.write(HealerPhyDefStatValue);
+                            HealerPhyDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     }
                     
                     /*make an else statement after the else if's for when the
