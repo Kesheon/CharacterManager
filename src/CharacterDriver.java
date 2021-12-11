@@ -6794,6 +6794,19 @@ class Main
                         {
                             exception.printStackTrace();
                         }
+                        
+                        /*write the Engineer's Damage Stat value*/
+                        try
+                        {
+                            FileWriter EngineerDamageStatWrite = new FileWriter("src/EngineerDamageStat.txt");
+                            EngineerDamageStatWrite.write(EngineerDamageStatValue);
+                            EngineerDamageStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     }
                     
                     /*make an else statement after the else if's for when the
