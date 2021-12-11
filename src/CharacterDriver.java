@@ -6494,7 +6494,7 @@ class Main
                 else
                 {
                     System.out.print("You must select a number that corresponds"+
-                    " with a saved character,\nyou'll have to try again. Press"+
+                    " with an existing character,\nyou'll have to try again. Press"+
                     " enter to continue.");
                     try{System.in.read();}
                     catch(Exception e){}
@@ -7354,6 +7354,169 @@ class Main
                             selectedCharacterClass.add(thisIsNecromancer);
                             System.out.print("\""+NecromancerFirstNameTxt+" "+
                             NecromancerLastNameTxt+"\" the Necromancer has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                        }
+                    }
+                    
+                    /*if the saved character of the user's save file is of the
+                    Wizard Class*/
+                    else if(characterClass.contains("Wizard Class"))
+                    {
+                        /*Read the contents of a saved characters from a user named
+                        save file and write it back to that character's respective
+                        class files found in the "src" folder*/
+                        File WizardTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanWizardClassTxtFile = new Scanner(WizardTxtFile);
+                    
+                        /*this variable below is reading the same thing as
+                        characterClass and is only needed to read that same line
+                        again*/
+                        String dontUseThisVariable = scanWizardClassTxtFile.nextLine();
+                    
+                        String WizardFirstNameTxt = scanWizardClassTxtFile.next();
+                    
+                        String WizardLastNameTxt = scanWizardClassTxtFile.next();
+                    
+                        String WizardAccuracyStatValue = scanWizardClassTxtFile.next();
+                    
+                        String WizardAttackStatValue = scanWizardClassTxtFile.next();
+                    
+                        String WizardDamageStatValue = scanWizardClassTxtFile.next();
+                    
+                        String WizardPhyDefStatValue = scanWizardClassTxtFile.next();
+                    
+                        String WizardMagDefStatValue = scanWizardClassTxtFile.next();
+                        
+                        /*write the Wizard's first name from the user created
+                        txt file to the WizardFirstName.txt file*/
+                        try
+                        {
+                        
+                            FileWriter WizardFirstNameWrite = new FileWriter("src/WizardFirstName.txt");
+                            WizardFirstNameWrite.write(WizardFirstNameTxt);
+                            WizardFirstNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Wizard's last name from the user created
+                        txt file to the WizardLastName.txt file*/
+                        try
+                        {
+                            FileWriter WizardLastNameWrite = new FileWriter("src/WizardLastName.txt");
+                            WizardLastNameWrite.write(WizardLastNameTxt);
+                            WizardLastNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Wizard's Accuracy Stat value*/
+                        try
+                        {
+                            FileWriter WizardAccuracyStatWrite = new FileWriter("src/WizardAccuracyStat.txt");
+                            WizardAccuracyStatWrite.write(WizardAccuracyStatValue);
+                            WizardAccuracyStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Wizard's Attack Stat value*/
+                        try
+                        {
+                            FileWriter WizardAttackStatWrite = new FileWriter("src/WizardAttackStat.txt");
+                            WizardAttackStatWrite.write(WizardAttackStatValue);
+                            WizardAttackStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Wizard's Damage Stat value*/
+                        try
+                        {
+                            FileWriter WizardDamageStatWrite = new FileWriter("src/WizardDamageStat.txt");
+                            WizardDamageStatWrite.write(WizardDamageStatValue);
+                            WizardDamageStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Wizard's Physical Defense Stat value*/
+                        try
+                        {
+                            FileWriter WizardPhyDefStatWrite = new FileWriter("src/WizardPhyDefStat.txt");
+                            WizardPhyDefStatWrite.write(WizardPhyDefStatValue);
+                            WizardPhyDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*write the Wizard's Magical Defense Stat value*/
+                        try
+                        {
+                            FileWriter WizardMagDefStatWrite = new FileWriter("src/WizardMagDefStat.txt");
+                            WizardMagDefStatWrite.write(WizardMagDefStatValue);
+                            WizardMagDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                        
+                        /*make the Wizard from the user-created txt file
+                        become the currently selected character*/
+                        if(selectedCharacter.isEmpty())
+                        {
+                            selectedCharacter.add(WizardFirstNameTxt);
+                            selectedCharacter.add(WizardLastNameTxt);
+                            
+                            if(selectedCharacterClass.isEmpty())
+                            {
+                                selectedCharacterClass.add(thisIsWizard);
+                            }
+                            
+                            System.out.print("\""+WizardFirstNameTxt+" "+
+                            WizardLastNameTxt+"\" the Wizard has been"+
+                            " loaded from the "+userSaveFile+".txt file.\nPress"+
+                            " enter to continue.");
+                            try{System.in.read();}
+                            catch(Exception e){}
+                            System.out.println();
+                            System.out.println();
+                        }
+                        
+                        else
+                        {
+                            selectedCharacter.clear();
+                            selectedCharacter.add(WizardFirstNameTxt);
+                            selectedCharacter.add(WizardLastNameTxt);
+                            selectedCharacterClass.clear();
+                            selectedCharacterClass.add(thisIsWizard);
+                            System.out.print("\""+WizardFirstNameTxt+" "+
+                            WizardLastNameTxt+"\" the Wizard has been"+
                             " loaded from the "+userSaveFile+".txt file.\nPress"+
                             " enter to continue.");
                             try{System.in.read();}
