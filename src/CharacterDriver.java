@@ -6983,6 +6983,19 @@ class Main
                         {
                             exception.printStackTrace();
                         }
+                        
+                        /*write the Healer's Magical Defense Stat value*/
+                        try
+                        {
+                            FileWriter HealerMagDefStatWrite = new FileWriter("src/HealerMagDefStat.txt");
+                            HealerMagDefStatWrite.write(HealerMagDefStatValue);
+                            HealerMagDefStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     }
                     
                     /*make an else statement after the else if's for when the
