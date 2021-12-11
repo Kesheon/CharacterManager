@@ -415,6 +415,10 @@ class Main
                         generated stat values for each stat which will then be 
                         written to a txt file so that its value can be read/
                         loaded later on*/
+                        /*these stat variables below are written to their txt files
+                        as strings. Every stat variable in the program is either
+                        read from a txt file or written to a txt file as a
+                        string*/
                         int randomAccuracyStat;
                         int randomAttackStat;
                         int randomDamageStat;
@@ -669,8 +673,7 @@ class Main
                                 try
                                 {
                                     FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));/*writing a newline characters first so its
-                                    easier to read from the AssassinStats files later*/
+                                    writeStats.write(String.valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1189,7 +1192,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/AssassinFirstName.txt");
-                            writeStats.write(String.valueOf(AssassinFirstName));
+                            writeStats.write(AssassinFirstName);
                             writeStats.close();
                             
                             
@@ -1254,7 +1257,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/AssassinLastName.txt");
-                            writeStats.write(String.valueOf(AssassinLastName));
+                            writeStats.write(AssassinLastName);
                             writeStats.close();
                             
                         }
@@ -1323,6 +1326,10 @@ class Main
                         generated stat values for each stat which will then be 
                         written to a txt file so that its value can be read/
                         loaded later on*/
+                        /*these stat variables below are written to their txt files
+                        as strings. Every stat variable in the program is either
+                        read from a txt file or written to a txt file as a
+                        string*/
                         int randomAccuracyStat;
                         int randomAttackStat;
                         int randomDamageStat;
@@ -2095,7 +2102,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/EngineerFirstName.txt");
-                            writeStats.write(String.valueOf(EngineerFirstName));
+                            writeStats.write(EngineerFirstName);
                             writeStats.close();
                             
                             
@@ -2160,7 +2167,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/EngineerLastName.txt");
-                            writeStats.write(String.valueOf(EngineerLastName));
+                            writeStats.write(EngineerLastName);
                             writeStats.close();
                             
                         }
@@ -2229,6 +2236,10 @@ class Main
                         generated stat values for each stat which will then be 
                         written to a txt file so that its value can be read/
                         loaded later on*/
+                        /*these stat variables below are written to their txt files
+                        as strings. Every stat variable in the program is either
+                        read from a txt file or written to a txt file as a
+                        string*/
                         int randomAccuracyStat;
                         int randomAttackStat;
                         int randomDamageStat;
@@ -3002,7 +3013,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/HealerFirstName.txt");
-                            writeStats.write(String.valueOf(HealerFirstName));
+                            writeStats.write(HealerFirstName);
                             writeStats.close();
                             
                             
@@ -3067,7 +3078,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/HealerLastName.txt");
-                            writeStats.write(String.valueOf(HealerLastName));
+                            writeStats.write(HealerLastName);
                             writeStats.close();
                             
                         }
@@ -3136,6 +3147,10 @@ class Main
                         generated stat values for each stat which will then be 
                         written to a txt file so that its value can be read/
                         loaded later on*/
+                        /*these stat variables below are written to their txt files
+                        as strings. Every stat variable in the program is either
+                        read from a txt file or written to a txt file as a
+                        string*/
                         int randomAccuracyStat;
                         int randomAttackStat;
                         int randomDamageStat;
@@ -3909,7 +3924,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/MartialArtistFirstName.txt");
-                            writeStats.write(String.valueOf(MartialArtistFirstName));
+                            writeStats.write(MartialArtistFirstName);
                             writeStats.close();
                             
                             
@@ -3974,7 +3989,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/MartialArtistLastName.txt");
-                            writeStats.write(String.valueOf(MartialArtistLastName));
+                            writeStats.write(MartialArtistLastName);
                             writeStats.close();
                             
                         }
@@ -4044,6 +4059,10 @@ class Main
                         generated stat values for each stat which will then be 
                         written to a txt file so that its value can be read/
                         loaded later on*/
+                        /*these stat variables below are written to their txt files
+                        as strings. Every stat variable in the program is either
+                        read from a txt file or written to a txt file as a
+                        string*/
                         int randomAccuracyStat;
                         int randomAttackStat;
                         int randomDamageStat;
@@ -4817,7 +4836,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/NecromancerFirstName.txt");
-                            writeStats.write(String.valueOf(NecromancerFirstName));
+                            writeStats.write(NecromancerFirstName);
                             writeStats.close();
                             
                             
@@ -4882,7 +4901,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/NecromancerLastName.txt");
-                            writeStats.write(String.valueOf(NecromancerLastName));
+                            writeStats.write(NecromancerLastName);
                             writeStats.close();
                             
                         }
@@ -4951,6 +4970,10 @@ class Main
                         generated stat values for each stat which will then be 
                         written to a txt file so that its value can be read/
                         loaded later on*/
+                        /*these stat variables below are written to their txt files
+                        as strings. Every stat variable in the program is either
+                        read from a txt file or written to a txt file as a
+                        string*/
                         int randomAccuracyStat;
                         int randomAttackStat;
                         int randomDamageStat;
@@ -5724,7 +5747,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/WizardFirstName.txt");
-                            writeStats.write(String.valueOf(WizardFirstName));
+                            writeStats.write(WizardFirstName);
                             writeStats.close();
                             
                             
@@ -5789,7 +5812,7 @@ class Main
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter("src/WizardLastName.txt");
-                            writeStats.write(String.valueOf(WizardLastName));
+                            writeStats.write(WizardLastName);
                             writeStats.close();
                             
                         }
@@ -6501,52 +6524,106 @@ class Main
                 String userSaveFile;
                 System.out.print("Enter the name of your save file to load your character: ");
                 userSaveFile = scan.next();
-                File userNamedFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
-                Scanner scanUserNamedFile = new Scanner(userNamedFile);
+                System.out.println();
+                System.out.println();
                 
-                /*read the first line of the user-named saved file to determine
-                the class of the character they want to load*/
-                String characterClass = scanUserNamedFile.nextLine();
-                
-                if(characterClass.contains("Assassin Class"));
+                /*this try makes sure that whatever file the user enters to have
+                loaded actually exists (or the user may have typed their file
+                name in wrong), so that a FileNotFoundException does not
+                appear*/
+                try
                 {
-                    /*Read the contents of a saved characters from a user named
-                    save file and write it back to that character's respective
-                    class files found in the "src" folder*/
-                    File AssassinTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
-                    Scanner scanAssassinClassTxtFile = new Scanner(AssassinTxtFile);
-                    
-                    /*this variable below is reading the same thing as
-                    characterClass and is only needed to read that same line
-                    again*/
-                    String dontUseThisVariable = scanAssassinClassTxtFile.nextLine();
-                    
-                    String AssassinFirstNameTxt = scanAssassinClassTxtFile.next();
-                    
-                    //write the Assassin's first name from the user created txt file to the AssassinFirstName.txt file
-                    try
+                    File userNamedFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                    Scanner scanUserNamedFile = new Scanner(userNamedFile);
+                    /*read the first line of the user-named saved file to determine
+                    the class of the character they want to load*/
+                    String characterClass = scanUserNamedFile.nextLine();
+                
+                    if(characterClass.contains("Assassin Class"));
                     {
+                        /*Read the contents of a saved characters from a user named
+                        save file and write it back to that character's respective
+                        class files found in the "src" folder*/
+                        File AssassinTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanAssassinClassTxtFile = new Scanner(AssassinTxtFile);
+                    
+                        /*this variable below is reading the same thing as
+                        characterClass and is only needed to read that same line
+                        again*/
+                        String dontUseThisVariable = scanAssassinClassTxtFile.nextLine();
+                    
+                        String AssassinFirstNameTxt = scanAssassinClassTxtFile.next();
+                    
+                        String AssassinLastNameTxt = scanAssassinClassTxtFile.next();
+                    
+                        String AssassinAccuracyStatValue = scanAssassinClassTxtFile.next();
+                    
+                        String AssassinAttackStatValue = scanAssassinClassTxtFile.next();
+                    
+                        String AssassinDamageStatValue = scanAssassinClassTxtFile.next();
+                    
+                        String AssassinPhyDefStatValue = scanAssassinClassTxtFile.next();
+                    
+                        String AssassinMagDefStatValue = scanAssassinClassTxtFile.next();
+                    
+                        /*write the Assassin's first name from the user created txt
+                        file to the AssassinFirstName.txt file*/
+                        try
+                        {
                         
-                        FileWriter AssassinFirstNameWrite = new FileWriter("src/AssassinFirstName.txt");
-                        AssassinFirstNameWrite.write(AssassinFirstNameTxt);
-                        AssassinFirstNameWrite.close();
-                    }
+                            FileWriter AssassinFirstNameWrite = new FileWriter("src/AssassinFirstName.txt");
+                            AssassinFirstNameWrite.write(AssassinFirstNameTxt);
+                            AssassinFirstNameWrite.close();
+                        }
                     
-                    catch(IOException exception)
-                    {
-                        exception.printStackTrace();
-                    }
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                     
-                    //make the Assassin from the user-created txt file become the currently selected character
-                    if(selectedCharacter.isEmpty())
-                    {
+                        /*write the Assassin's last name from the user created txt
+                        file to the AssassinLastName.txt file*/
+                        try
+                        {
+                            FileWriter AssassinLastNameWrite = new FileWriter("src/AssassinLastName.txt");
+                            AssassinLastNameWrite.write(AssassinLastNameTxt);
+                            AssassinLastNameWrite.close();
+                        }
+                    
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
                         
+                        /*write the Assassin's Accuracy Stat value*/
+                        try
+                        {
+                            FileWriter AssassinAccuracyStatWrite = new FileWriter("src/AssassinAccuracyStat.txt");
+                            AssassinAccuracyStatWrite.write(AssassinAccuracyStatValue);
+                            AssassinAccuracyStatWrite.close();
+                        }
+                        
+                        catch(IOException exception)
+                        {
+                            exception.printStackTrace();
+                        }
+                    
+                        /*make the Assassin from the user-created txt file
+                        become the currently selected character*/
+                        if(selectedCharacter.isEmpty())
+                        {
+                        
+                        }
+                        //add character's first and last name to loadedCharacter list if not already in there
+                        //make an else statement for when the class name of a saved file can't be found, this should never have to be used, but will be added just in case
                     }
                 }
                 
-                //add character's first and last name to loadedCharacter list if not already in there
-                //make an else statement for when the saved file can't be found and tell user to check spelling, etc.
-                
+                //if the user's file they try to load does not exist, or if they typed it in wrong
+                catch(FileNotFoundException e)
+                {
+                    System.out.println("That file does not exist");
+                }
             }
             
             else if(userMainMenu == 4)
@@ -6608,31 +6685,31 @@ class Main
                         File AssassinAccuracyStatTxt = new File("src/AssassinAccuracyStat.txt");
                         Scanner scanAssassinAccuracyStatTxt = new Scanner(AssassinAccuracyStatTxt);
                         //read the AssassinAccuracyStat.txt file
-                        int AssassinAccuracyStat = scanAssassinAccuracyStatTxt.nextInt();
+                        String AssassinAccuracyStat = scanAssassinAccuracyStatTxt.next();
                         
                         //retrieve AssassinAttackStat.txt
                         File AssassinAttackStatTxt = new File("src/AssassinAttackStat.txt");
                         Scanner scanAssassinAttackStatTxt = new Scanner(AssassinAttackStatTxt);
                         //read the AssassinAttackStat.txt file 
-                        int AssassinAttackStat = scanAssassinAttackStatTxt.nextInt();
+                        String AssassinAttackStat = scanAssassinAttackStatTxt.next();
                         
                         //retrieve AssassinDamageStat.txt
                         File AssassinDamageStatTxt = new File("src/AssassinDamageStat.txt");
                         Scanner scanAssassinDamageStatTxt = new Scanner(AssassinDamageStatTxt);
                         //read the AssassinDamageStat.txt file
-                        int AssassinDamageStat = scanAssassinDamageStatTxt.nextInt();
+                        String AssassinDamageStat = scanAssassinDamageStatTxt.next();
                         
                         //retrieve AssassinPhyDefStat.txt
                         File AssassinPhyDefStatTxt = new File("src/AssassinPhyDefStat.txt");
                         Scanner scanAssassinPhyDefStatTxt = new Scanner(AssassinPhyDefStatTxt);
                         //read the AssassinPhyDefStat.txt file
-                        int AssassinPhyDefStat = scanAssassinPhyDefStatTxt.nextInt();
+                        String AssassinPhyDefStat = scanAssassinPhyDefStatTxt.next();
                         
                         //retrieve AssassinMagDefStat.txt
                         File AssassinMagDefStatTxt = new File("src/AssassinMagDefStat.txt");
                         Scanner scanAssassinMagDefStatTxt = new Scanner(AssassinMagDefStatTxt);
                         //read the AssassinMagDefStat.txt file
-                        int AssassinMagDefStat = scanAssassinMagDefStatTxt.nextInt();
+                        String AssassinMagDefStat = scanAssassinMagDefStatTxt.next();
                         
                         try
                         {
@@ -6741,31 +6818,31 @@ class Main
                         File EngineerAccuracyStatTxt = new File("src/EngineerAccuracyStat.txt");
                         Scanner scanEngineerAccuracyStatTxt = new Scanner(EngineerAccuracyStatTxt);
                         //read the EngineerAccuracyStat.txt file
-                        int EngineerAccuracyStat = scanEngineerAccuracyStatTxt.nextInt();
+                        String EngineerAccuracyStat = scanEngineerAccuracyStatTxt.next();
                         
                         //retrieve EngineerAttackStat.txt
                         File EngineerAttackStatTxt = new File("src/EngineerAttackStat.txt");
                         Scanner scanEngineerAttackStatTxt = new Scanner(EngineerAttackStatTxt);
                         //read the EngineerAttackStat.txt file 
-                        int EngineerAttackStat = scanEngineerAttackStatTxt.nextInt();
+                        String EngineerAttackStat = scanEngineerAttackStatTxt.next();
                         
                         //retrieve EngineerDamageStat.txt
                         File EngineerDamageStatTxt = new File("src/EngineerDamageStat.txt");
                         Scanner scanEngineerDamageStatTxt = new Scanner(EngineerDamageStatTxt);
                         //read the EngineerDamageStat.txt file
-                        int EngineerDamageStat = scanEngineerDamageStatTxt.nextInt();
+                        String EngineerDamageStat = scanEngineerDamageStatTxt.next();
                         
                         //retrieve EngineerPhyDefStat.txt
                         File EngineerPhyDefStatTxt = new File("src/EngineerPhyDefStat.txt");
                         Scanner scanEngineerPhyDefStatTxt = new Scanner(EngineerPhyDefStatTxt);
                         //read the EngineerPhyDefStat.txt file
-                        int EngineerPhyDefStat = scanEngineerPhyDefStatTxt.nextInt();
+                        String EngineerPhyDefStat = scanEngineerPhyDefStatTxt.next();
                         
                         //retrieve EngineerMagDefStat.txt
                         File EngineerMagDefStatTxt = new File("src/EngineerMagDefStat.txt");
                         Scanner scanEngineerMagDefStatTxt = new Scanner(EngineerMagDefStatTxt);
                         //read the EngineerMagDefStat.txt file
-                        int EngineerMagDefStat = scanEngineerMagDefStatTxt.nextInt();
+                        String EngineerMagDefStat = scanEngineerMagDefStatTxt.next();
                         
                         try
                         {
@@ -6874,31 +6951,31 @@ class Main
                         File HealerAccuracyStatTxt = new File("src/HealerAccuracyStat.txt");
                         Scanner scanHealerAccuracyStatTxt = new Scanner(HealerAccuracyStatTxt);
                         //read the HealerAccuracyStat.txt file
-                        int HealerAccuracyStat = scanHealerAccuracyStatTxt.nextInt();
+                        String HealerAccuracyStat = scanHealerAccuracyStatTxt.next();
                         
                         //retrieve HealerAttackStat.txt
                         File HealerAttackStatTxt = new File("src/HealerAttackStat.txt");
                         Scanner scanHealerAttackStatTxt = new Scanner(HealerAttackStatTxt);
                         //read the HealerAttackStat.txt file 
-                        int HealerAttackStat = scanHealerAttackStatTxt.nextInt();
+                        String HealerAttackStat = scanHealerAttackStatTxt.next();
                         
                         //retrieve HealerDamageStat.txt
                         File HealerDamageStatTxt = new File("src/HealerDamageStat.txt");
                         Scanner scanHealerDamageStatTxt = new Scanner(HealerDamageStatTxt);
                         //read the HealerDamageStat.txt file
-                        int HealerDamageStat = scanHealerDamageStatTxt.nextInt();
+                        String HealerDamageStat = scanHealerDamageStatTxt.next();
                         
                         //retrieve HealerPhyDefStat.txt
                         File HealerPhyDefStatTxt = new File("src/HealerPhyDefStat.txt");
                         Scanner scanHealerPhyDefStatTxt = new Scanner(HealerPhyDefStatTxt);
                         //read the HealerPhyDefStat.txt file
-                        int HealerPhyDefStat = scanHealerPhyDefStatTxt.nextInt();
+                        String HealerPhyDefStat = scanHealerPhyDefStatTxt.next();
                         
                         //retrieve HealerMagDefStat.txt
                         File HealerMagDefStatTxt = new File("src/HealerMagDefStat.txt");
                         Scanner scanHealerMagDefStatTxt = new Scanner(HealerMagDefStatTxt);
                         //read the HealerMagDefStat.txt file
-                        int HealerMagDefStat = scanHealerMagDefStatTxt.nextInt();
+                        String HealerMagDefStat = scanHealerMagDefStatTxt.next();
                         
                         try
                         {
@@ -7007,31 +7084,31 @@ class Main
                         File MartialArtistAccuracyStatTxt = new File("src/MartialArtistAccuracyStat.txt");
                         Scanner scanMartialArtistAccuracyStatTxt = new Scanner(MartialArtistAccuracyStatTxt);
                         //read the MartialArtistAccuracyStat.txt file
-                        int MartialArtistAccuracyStat = scanMartialArtistAccuracyStatTxt.nextInt();
+                        String MartialArtistAccuracyStat = scanMartialArtistAccuracyStatTxt.next();
                         
                         //retrieve MartialArtistAttackStat.txt
                         File MartialArtistAttackStatTxt = new File("src/MartialArtistAttackStat.txt");
                         Scanner scanMartialArtistAttackStatTxt = new Scanner(MartialArtistAttackStatTxt);
                         //read the MartialArtistAttackStat.txt file 
-                        int MartialArtistAttackStat = scanMartialArtistAttackStatTxt.nextInt();
+                        String MartialArtistAttackStat = scanMartialArtistAttackStatTxt.next();
                         
                         //retrieve MartialArtistDamageStat.txt
                         File MartialArtistDamageStatTxt = new File("src/MartialArtistDamageStat.txt");
                         Scanner scanMartialArtistDamageStatTxt = new Scanner(MartialArtistDamageStatTxt);
                         //read the MartialArtistDamageStat.txt file
-                        int MartialArtistDamageStat = scanMartialArtistDamageStatTxt.nextInt();
+                        String MartialArtistDamageStat = scanMartialArtistDamageStatTxt.next();
                         
                         //retrieve MartialArtistPhyDefStat.txt
                         File MartialArtistPhyDefStatTxt = new File("src/MartialArtistPhyDefStat.txt");
                         Scanner scanMartialArtistPhyDefStatTxt = new Scanner(MartialArtistPhyDefStatTxt);
                         //read the MartialArtistPhyDefStat.txt file
-                        int MartialArtistPhyDefStat = scanMartialArtistPhyDefStatTxt.nextInt();
+                        String MartialArtistPhyDefStat = scanMartialArtistPhyDefStatTxt.next();
                         
                         //retrieve MartialArtistMagDefStat.txt
                         File MartialArtistMagDefStatTxt = new File("src/MartialArtistMagDefStat.txt");
                         Scanner scanMartialArtistMagDefStatTxt = new Scanner(MartialArtistMagDefStatTxt);
                         //read the MartialArtistMagDefStat.txt file
-                        int MartialArtistMagDefStat = scanMartialArtistMagDefStatTxt.nextInt();
+                        String MartialArtistMagDefStat = scanMartialArtistMagDefStatTxt.next();
                         
                         try
                         {
@@ -7139,31 +7216,31 @@ class Main
                         File NecromancerAccuracyStatTxt = new File("src/NecromancerAccuracyStat.txt");
                         Scanner scanNecromancerAccuracyStatTxt = new Scanner(NecromancerAccuracyStatTxt);
                         //read the NecromancerAccuracyStat.txt file
-                        int NecromancerAccuracyStat = scanNecromancerAccuracyStatTxt.nextInt();
+                        String NecromancerAccuracyStat = scanNecromancerAccuracyStatTxt.next();
                         
                         //retrieve NecromancerAttackStat.txt
                         File NecromancerAttackStatTxt = new File("src/NecromancerAttackStat.txt");
                         Scanner scanNecromancerAttackStatTxt = new Scanner(NecromancerAttackStatTxt);
                         //read the NecromancerAttackStat.txt file 
-                        int NecromancerAttackStat = scanNecromancerAttackStatTxt.nextInt();
+                        String NecromancerAttackStat = scanNecromancerAttackStatTxt.next();
                         
                         //retrieve NecromancerDamageStat.txt
                         File NecromancerDamageStatTxt = new File("src/NecromancerDamageStat.txt");
                         Scanner scanNecromancerDamageStatTxt = new Scanner(NecromancerDamageStatTxt);
                         //read the NecromancerDamageStat.txt file
-                        int NecromancerDamageStat = scanNecromancerDamageStatTxt.nextInt();
+                        String NecromancerDamageStat = scanNecromancerDamageStatTxt.next();
                         
                         //retrieve NecromancerPhyDefStat.txt
                         File NecromancerPhyDefStatTxt = new File("src/NecromancerPhyDefStat.txt");
                         Scanner scanNecromancerPhyDefStatTxt = new Scanner(NecromancerPhyDefStatTxt);
                         //read the NecromancerPhyDefStat.txt file
-                        int NecromancerPhyDefStat = scanNecromancerPhyDefStatTxt.nextInt();
+                        String NecromancerPhyDefStat = scanNecromancerPhyDefStatTxt.next();
                         
                         //retrieve NecromancerMagDefStat.txt
                         File NecromancerMagDefStatTxt = new File("src/NecromancerMagDefStat.txt");
                         Scanner scanNecromancerMagDefStatTxt = new Scanner(NecromancerMagDefStatTxt);
                         //read the NecromancerMagDefStat.txt file
-                        int NecromancerMagDefStat = scanNecromancerMagDefStatTxt.nextInt();
+                        String NecromancerMagDefStat = scanNecromancerMagDefStatTxt.next();
                         
                         try
                         {
@@ -7271,31 +7348,31 @@ class Main
                         File WizardAccuracyStatTxt = new File("src/WizardAccuracyStat.txt");
                         Scanner scanWizardAccuracyStatTxt = new Scanner(WizardAccuracyStatTxt);
                         //read the WizardAccuracyStat.txt file
-                        int WizardAccuracyStat = scanWizardAccuracyStatTxt.nextInt();
+                        String WizardAccuracyStat = scanWizardAccuracyStatTxt.next();
                         
                         //retrieve WizardAttackStat.txt
                         File WizardAttackStatTxt = new File("src/WizardAttackStat.txt");
                         Scanner scanWizardAttackStatTxt = new Scanner(WizardAttackStatTxt);
                         //read the WizardAttackStat.txt file 
-                        int WizardAttackStat = scanWizardAttackStatTxt.nextInt();
+                        String WizardAttackStat = scanWizardAttackStatTxt.next();
                         
                         //retrieve WizardDamageStat.txt
                         File WizardDamageStatTxt = new File("src/WizardDamageStat.txt");
                         Scanner scanWizardDamageStatTxt = new Scanner(WizardDamageStatTxt);
                         //read the WizardDamageStat.txt file
-                        int WizardDamageStat = scanWizardDamageStatTxt.nextInt();
+                        String WizardDamageStat = scanWizardDamageStatTxt.next();
                         
                         //retrieve WizardPhyDefStat.txt
                         File WizardPhyDefStatTxt = new File("src/WizardPhyDefStat.txt");
                         Scanner scanWizardPhyDefStatTxt = new Scanner(WizardPhyDefStatTxt);
                         //read the WizardPhyDefStat.txt file
-                        int WizardPhyDefStat = scanWizardPhyDefStatTxt.nextInt();
+                        String WizardPhyDefStat = scanWizardPhyDefStatTxt.next();
                         
                         //retrieve WizardMagDefStat.txt
                         File WizardMagDefStatTxt = new File("src/WizardMagDefStat.txt");
                         Scanner scanWizardMagDefStatTxt = new Scanner(WizardMagDefStatTxt);
                         //read the WizardMagDefStat.txt file
-                        int WizardMagDefStat = scanWizardMagDefStatTxt.nextInt();
+                        String WizardMagDefStat = scanWizardMagDefStatTxt.next();
                         
                         try
                         {
