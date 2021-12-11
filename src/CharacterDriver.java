@@ -6486,11 +6486,39 @@ class Main
                 old stats back. However, this is not a problem if the user heeds
                 the programs warning and saves their character after it is
                 created.*/
+                
+                //tell user how to locate their saved character files
+                System.out.println("Load a character from file");
+                System.out.println("--------------------------------");
+                System.out.print("If you forgot the name of your saved files, then locate them"+
+                " by following this directory:\nyourPath\\CharacterManager\\"+
+                "src\\SavedCharacters. Press enter to continue.");
+                try{System.in.read();}
+                catch(Exception e){}
+                System.out.println();
+                
+                //get user to enter the save file they want to load
+                String userSaveFile;
+                System.out.print("Enter the name of your save file to load your character: ");
+                userSaveFile = scan.next();
+                File userNamedFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                Scanner scanUserNamedFile = new Scanner(userNamedFile);
+                
+                /*read the first line of the user-named saved file to determine
+                the class of the character they want to load*/
+                String characterClass = scanUserNamedFile.next();
+                
+                
+                
+                
+                
+                
             }
             
             else if(userMainMenu == 4)
             {
-                
+                System.out.println("Save a character to file");
+                System.out.println("---------------------------");
                 if(selectedCharacterClass.isEmpty())
                 {
                     System.out.print("You must either create a character, select"+
