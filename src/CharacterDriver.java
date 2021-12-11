@@ -6506,12 +6506,46 @@ class Main
                 
                 /*read the first line of the user-named saved file to determine
                 the class of the character they want to load*/
-                String characterClass = scanUserNamedFile.next();
+                String characterClass = scanUserNamedFile.nextLine();
                 
+                if(characterClass.contains("Assassin Class"));
+                {
+                    /*Read the contents of a saved characters from a user named
+                    save file and write it back to that character's respective
+                    class files found in the "src" folder*/
+                    File AssassinTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                    Scanner scanAssassinClassTxtFile = new Scanner(AssassinTxtFile);
+                    
+                    /*this variable below is reading the same thing as
+                    characterClass and is only needed to read that same line
+                    again*/
+                    String dontUseThisVariable = scanAssassinClassTxtFile.nextLine();
+                    
+                    String AssassinFirstNameTxt = scanAssassinClassTxtFile.next();
+                    
+                    //write the Assassin's first name from the user created txt file to the AssassinFirstName.txt file
+                    try
+                    {
+                        
+                        FileWriter AssassinFirstNameWrite = new FileWriter("src/AssassinFirstName.txt");
+                        AssassinFirstNameWrite.write(AssassinFirstNameTxt);
+                        AssassinFirstNameWrite.close();
+                    }
+                    
+                    catch(IOException exception)
+                    {
+                        exception.printStackTrace();
+                    }
+                    
+                    //make the Assassin from the user-created txt file become the currently selected character
+                    if(selectedCharacter.isEmpty())
+                    {
+                        
+                    }
+                }
                 
-                
-                
-                
+                //add character's first and last name to loadedCharacter list if not already in there
+                //make an else statement for when the saved file can't be found and tell user to check spelling, etc.
                 
             }
             
@@ -6545,7 +6579,7 @@ class Main
                     //read the AssassinFirstName.txt file & AssassinLastName.txt file
                     String AssassinFirstNameTxt = scanAssassinFirstName.next();
                     String AssassinLastNameTxt = scanAssassinLastName.next();
-                    
+                   
                     String userSave;
                     System.out.print("Are you sure you want to save your"+
                     " currently selected character: \""+AssassinFirstNameTxt+" "+
