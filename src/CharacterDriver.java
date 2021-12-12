@@ -8865,7 +8865,8 @@ class Main
                                 System.out.println();
                                 System.out.println();
                             }
-                        }    
+                        }
+                        
                         //if the currently selected character is an Engineer
                         else if(selectedCharacterClass.contains(thisIsEngineer))
                         {
@@ -9058,6 +9059,200 @@ class Main
                                 System.out.println();
                             }
                         }
+                        
+                        //if the currently selected character is a Healer
+                        else if(selectedCharacterClass.contains(thisIsHealer))
+                        {
+                            
+                            // START: Get Healer Accuracy Stat value
+                            //--------------------------------------------------
+                        
+                            int HealerAccuracyStatInt;
+                            
+                            /*turn the String HealerAccuracyStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            HealerAccuracyStatInt = Integer.valueOf(HealerAccuracyStat);
+                            
+                            //END: Got Healer Accuracy Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Healer getAttack object & Attack Stat value
+                            //--------------------------------------------------
+                            
+                            getAttack healerAttack = new getAttack();
+                            
+                            int HealerAttackStatInt;
+                            
+                            /*turn the String HealerAttackStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            HealerAttackStatInt = Integer.valueOf(HealerAttackStat);
+                            
+                            //END: Got Healer getAttack object & Attack Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Healer getDamage object
+                            //--------------------------------------------------
+                            
+                            getDamage healerDamage = new getDamage();
+                            
+                            //END: Got Healer getDamage object
+                            //--------------------------------------------------
+                            
+                            // START: Get Healer getPhyDef object & Physical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getPhyDef healerPhyDef = new getPhyDef();
+                            
+                            int HealerPhyDefStatInt;
+                            
+                            /*turn the String HealerPhyDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            HealerPhyDefStatInt = Integer.valueOf(HealerPhyDefStat);
+                            
+                            //END: Got Healer getPhyDef object & PhyDef Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Healer getMagDef object & Magical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getMagDef healerMagDef = new getMagDef();
+                            
+                            int HealerMagDefStatInt;
+                            
+                            /*turn the String HealerMagDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            HealerMagDefStatInt = Integer.valueOf(HealerMagDefStat);
+                            
+                            //END: Got Healer getMagDef object & MagDef Stat value
+                            //--------------------------------------------------
+                            
+                            
+                            
+                            //roll for attack
+                            if(userRollChoice == 1)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum1;
+                                
+                                /*random # between 1-500*/
+                                randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int healerAttackValue = 
+                                healerAttack.rollForAttack(randomNum1,
+                                        HealerAccuracyStatInt);
+                                
+                                System.out.println(HealerFirstName2+
+                                " "+HealerLastName2+" rolls for "+randomNum1+
+                                ". "+randomNum1+" + "+HealerAccuracyStatInt+
+                                " Accuracy = "+healerAttackValue+" Attack");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Damage
+                            else if(userRollChoice == 2)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum2;
+                                
+                                /*random # between 1-500*/
+                                randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int healerDamageValue = 
+                                healerDamage.rollForDamage(randomNum2,
+                                        HealerAttackStatInt);
+                                
+                                System.out.println(HealerFirstName2+
+                                " "+HealerLastName2+" rolls for "+randomNum2+
+                                ". "+randomNum2+" + "+HealerAttackStatInt+
+                                " Attack = "+healerDamageValue+" Damage");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Physical Defense
+                            else if(userRollChoice == 3)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum3;
+                                
+                                /*random # between 1-500*/
+                                randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int healerPhyDefValue = 
+                                healerPhyDef.rollForPhyDef(randomNum3,
+                                        HealerPhyDefStatInt);
+                                
+                                System.out.println(HealerFirstName2+
+                                " "+HealerLastName2+" rolls for "+randomNum3+
+                                ". "+randomNum3+" + "+HealerPhyDefStatInt+
+                                " Physical Defense = "+healerPhyDefValue+" Physical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Magical Defense
+                            else if(userRollChoice == 4)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum4;
+                                
+                                /*random # between 1-500*/
+                                randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int healerMagDefValue = 
+                                healerMagDef.rollForMagDef(randomNum4,
+                                        HealerMagDefStatInt);
+                                
+                                System.out.println(HealerFirstName2+
+                                " "+HealerLastName2+" rolls for "+randomNum4+
+                                ". "+randomNum4+" + "+HealerMagDefStatInt+
+                                " Magical Defense = "+healerMagDefValue+" Magical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                        }
+                        
                         System.out.println("Perform an action");
                         System.out.println("--------------------");
                         System.out.println("1. Roll for Attack\n"+
