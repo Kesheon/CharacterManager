@@ -8383,11 +8383,7 @@ class Main
                 //read the AssassinAttackStat.txt file 
                 String AssassinAttackStat = scanAssassinAttackStatTxt.next();
                         
-                //retrieve AssassinDamageStat.txt
-                File AssassinDamageStatTxt = new File("src/AssassinDamageStat.txt");
-                Scanner scanAssassinDamageStatTxt = new Scanner(AssassinDamageStatTxt);
-                //read the AssassinDamageStat.txt file
-                String AssassinDamageStat = scanAssassinDamageStatTxt.next();
+                //Assassin Damage Stat isn't needed 
                         
                 //retrieve AssassinPhyDefStat.txt
                 File AssassinPhyDefStatTxt = new File("src/AssassinPhyDefStat.txt");
@@ -8431,11 +8427,7 @@ class Main
                 //read the EngineerAttackStat.txt file 
                 String EngineerAttackStat = scanEngineerAttackStatTxt.next();
                         
-                //retrieve EngineerDamageStat.txt
-                File EngineerDamageStatTxt = new File("src/EngineerDamageStat.txt");
-                Scanner scanEngineerDamageStatTxt = new Scanner(EngineerDamageStatTxt);
-                //read the EngineerDamageStat.txt file
-                String EngineerDamageStat = scanEngineerDamageStatTxt.next();
+                //Engineer Damage Stat isn't needed
                         
                 //retrieve EngineerPhyDefStat.txt
                 File EngineerPhyDefStatTxt = new File("src/EngineerPhyDefStat.txt");
@@ -8479,11 +8471,7 @@ class Main
                 //read the HealerAttackStat.txt file 
                 String HealerAttackStat = scanHealerAttackStatTxt.next();
                         
-                //retrieve HealerDamageStat.txt
-                File HealerDamageStatTxt = new File("src/HealerDamageStat.txt");
-                Scanner scanHealerDamageStatTxt = new Scanner(HealerDamageStatTxt);
-                //read the HealerDamageStat.txt file
-                String HealerDamageStat = scanHealerDamageStatTxt.next();
+                //Healer Damage Stat isn't needed
                         
                 //retrieve HealerPhyDefStat.txt
                 File HealerPhyDefStatTxt = new File("src/HealerPhyDefStat.txt");
@@ -8527,11 +8515,7 @@ class Main
                 //read the MartialArtistAttackStat.txt file 
                 String MartialArtistAttackStat = scanMartialArtistAttackStatTxt.next();
                         
-                //retrieve MartialArtistDamageStat.txt
-                File MartialArtistDamageStatTxt = new File("src/MartialArtistDamageStat.txt");
-                Scanner scanMartialArtistDamageStatTxt = new Scanner(MartialArtistDamageStatTxt);
-                //read the MartialArtistDamageStat.txt file
-                String MartialArtistDamageStat = scanMartialArtistDamageStatTxt.next();
+                //Martial Artist Damage Stat isn't needed
                         
                 //retrieve MartialArtistPhyDefStat.txt
                 File MartialArtistPhyDefStatTxt = new File("src/MartialArtistPhyDefStat.txt");
@@ -8575,11 +8559,7 @@ class Main
                 //read the NecromancerAttackStat.txt file 
                 String NecromancerAttackStat = scanNecromancerAttackStatTxt.next();
                         
-                //retrieve NecromancerDamageStat.txt
-                File NecromancerDamageStatTxt = new File("src/NecromancerDamageStat.txt");
-                Scanner scanNecromancerDamageStatTxt = new Scanner(NecromancerDamageStatTxt);
-                //read the NecromancerDamageStat.txt file
-                String NecromancerDamageStat = scanNecromancerDamageStatTxt.next();
+                //Necromancer Damage Stat isn't needed
                         
                 //retrieve NecromancerPhyDefStat.txt
                 File NecromancerPhyDefStatTxt = new File("src/NecromancerPhyDefStat.txt");
@@ -8623,11 +8603,7 @@ class Main
                 //read the WizardAttackStat.txt file 
                 String WizardAttackStat = scanWizardAttackStatTxt.next();
                         
-                //retrieve WizardDamageStat.txt
-                File WizardDamageStatTxt = new File("src/WizardDamageStat.txt");
-                Scanner scanWizardDamageStatTxt = new Scanner(WizardDamageStatTxt);
-                //read the WizardDamageStat.txt file
-                String WizardDamageStat = scanWizardDamageStatTxt.next();
+                //Wizard Damage Stat isn't needed
                         
                 //retrieve WizardPhyDefStat.txt
                 File WizardPhyDefStatTxt = new File("src/WizardPhyDefStat.txt");
@@ -8697,7 +8673,7 @@ class Main
                             //END: Got Assassin Accuracy Stat value
                             //--------------------------------------------------
                             
-                            // START: Get Assasin Attack Stat value
+                            // START: Get Assasin getAttack object & Attack Stat value
                             //--------------------------------------------------
                             
                             getAttack assassinAttack = new getAttack();
@@ -8709,16 +8685,48 @@ class Main
                             require the value to be of int type*/
                             AssassinAttackStatInt = Integer.valueOf(AssassinAttackStat);
                             
-                            //END: Got Assassin Attack Stat value
+                            //END: Got Assassin getAttack object & Attack Stat value
                             //--------------------------------------------------
                             
-                            // START: Get Assasin Attack Stat value
+                            // START: Get Assasin getDamage object
                             //--------------------------------------------------
                             
                             getDamage assassinDamage = new getDamage();
                             
-                            //END: Got Assassin Attack Stat value
+                            //END: Got Assassin getDamage object
                             //--------------------------------------------------
+                            
+                            // START: Get Assassin getPhyDef object & Physical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getPhyDef assassinPhyDef = new getPhyDef();
+                            
+                            int AssassinPhyDefStatInt;
+                            
+                            /*turn the String AssassinPhyDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            AssassinPhyDefStatInt = Integer.valueOf(AssassinPhyDefStat);
+                            
+                            //END: Got Assassin getPhyDef object & PhyDef Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Assassin getMagDef object & Magical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getMagDef assassinMagDef = new getMagDef();
+                            
+                            int AssassinMagDefStatInt;
+                            
+                            /*turn the String AssassinMagDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            AssassinMagDefStatInt = Integer.valueOf(AssassinMagDefStat);
+                            
+                            //END: Got Assassin getMagDef object & MagDef Stat value
+                            //--------------------------------------------------
+                            
+                            
                             
                             //roll for attack
                             if(userRollChoice == 1)
@@ -8748,7 +8756,36 @@ class Main
                                 catch(Exception e){}
                                 System.out.println();
                                 System.out.println();
+                            }
+                            
+                            //roll for Damage
+                            else if(userRollChoice == 2)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
                                 
+                                //random number that user will roll for
+                                int randomNum2;
+                                
+                                /*random # between 1-500*/
+                                randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int assassinDamageValue = 
+                                assassinDamage.rollForDamage(randomNum2,
+                                        AssassinAttackStatInt);
+                                
+                                System.out.println(AssassinFirstName2+
+                                " "+AssassinLastName2+" rolls for "+randomNum2+
+                                ". "+randomNum2+" + "+AssassinAttackStatInt+
+                                " Attack = "+assassinDamageValue+" Damage");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
                             }
                         }
                         System.out.println("Perform an action");
