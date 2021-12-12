@@ -8787,6 +8787,66 @@ class Main
                                 System.out.println();
                                 System.out.println();
                             }
+                            
+                            //roll for Physical Defense
+                            else if(userRollChoice == 3)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum3;
+                                
+                                /*random # between 1-500*/
+                                randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int assassinPhyDefValue = 
+                                assassinPhyDef.rollForPhyDef(randomNum3,
+                                        AssassinPhyDefStatInt);
+                                
+                                System.out.println(AssassinFirstName2+
+                                " "+AssassinLastName2+" rolls for "+randomNum3+
+                                ". "+randomNum3+" + "+AssassinPhyDefStatInt+
+                                " Physical Defense = "+assassinPhyDefValue+" Physical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Magical Defense
+                            else if(userRollChoice == 4)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum4;
+                                
+                                /*random # between 1-500*/
+                                randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int assassinMagDefValue = 
+                                assassinMagDef.rollForMagDef(randomNum4,
+                                        AssassinMagDefStatInt);
+                                
+                                System.out.println(AssassinFirstName2+
+                                " "+AssassinLastName2+" rolls for "+randomNum4+
+                                ". "+randomNum4+" + "+AssassinMagDefStatInt+
+                                " Magical Defense = "+assassinMagDefValue+" Magical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
                         }
                         System.out.println("Perform an action");
                         System.out.println("--------------------");
