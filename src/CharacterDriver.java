@@ -9374,8 +9374,8 @@ class Main
                                 martialArtistDamage.rollForDamage(randomNum2,
                                         MartialArtistAttackStatInt);
                                 
-                                System.out.println(HealerFirstName2+
-                                " "+HealerLastName2+" rolls for "+randomNum2+
+                                System.out.println(MartialArtistFirstName2+
+                                " "+MartialArtistLastName2+" rolls for "+randomNum2+
                                 ". "+randomNum2+" + "+MartialArtistAttackStatInt+
                                 " Attack = "+martialArtistDamageValue+" Damage");
                                 System.out.print("Press enter to continue.");
@@ -9438,6 +9438,199 @@ class Main
                                 " "+MartialArtistLastName2+" rolls for "+randomNum4+
                                 ". "+randomNum4+" + "+MartialArtistMagDefStatInt+
                                 " Magical Defense = "+martialArtistMagDefValue+" Magical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                        }
+                        
+                        //if the currently selected character is a Necromancer
+                        else if(selectedCharacterClass.contains(thisIsNecromancer))
+                        {
+                            
+                            // START: Get Necromancer Accuracy Stat value
+                            //--------------------------------------------------
+                        
+                            int NecromancerAccuracyStatInt;
+                            
+                            /*turn the String NecromancerAccuracyStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            NecromancerAccuracyStatInt = Integer.valueOf(NecromancerAccuracyStat);
+                            
+                            //END: Got Necromancer Accuracy Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Necromancer getAttack object & Attack Stat value
+                            //--------------------------------------------------
+                            
+                            getAttack necromancerAttack = new getAttack();
+                            
+                            int NecromancerAttackStatInt;
+                            
+                            /*turn the String NecromancerAttackStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            NecromancerAttackStatInt = Integer.valueOf(NecromancerAttackStat);
+                            
+                            //END: Got Necromancer getAttack object & Attack Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Necromancer getDamage object
+                            //--------------------------------------------------
+                            
+                            getDamage necromancerDamage = new getDamage();
+                            
+                            //END: Got Necromancer getDamage object
+                            //--------------------------------------------------
+                            
+                            // START: Get Necromancer getPhyDef object & Physical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getPhyDef necromancerPhyDef = new getPhyDef();
+                            
+                            int NecromancerPhyDefStatInt;
+                            
+                            /*turn the String NecromancerPhyDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            NecromancerPhyDefStatInt = Integer.valueOf(NecromancerPhyDefStat);
+                            
+                            //END: Got Necromancer getPhyDef object & PhyDef Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Necromancer getMagDef object & Magical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getMagDef necromancerMagDef = new getMagDef();
+                            
+                            int NecromancerMagDefStatInt;
+                            
+                            /*turn the String NecromancerMagDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            NecromancerMagDefStatInt = Integer.valueOf(NecromancerMagDefStat);
+                            
+                            //END: Got Necromancer getMagDef object & MagDef Stat value
+                            //--------------------------------------------------
+                            
+                            
+                            
+                            //roll for attack
+                            if(userRollChoice == 1)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum1;
+                                
+                                /*random # between 1-500*/
+                                randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int necromancerAttackValue = 
+                                necromancerAttack.rollForAttack(randomNum1,
+                                        NecromancerAccuracyStatInt);
+                                
+                                System.out.println(NecromancerFirstName2+
+                                " "+NecromancerLastName2+" rolls for "+randomNum1+
+                                ". "+randomNum1+" + "+NecromancerAccuracyStatInt+
+                                " Accuracy = "+necromancerAttackValue+" Attack");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Damage
+                            else if(userRollChoice == 2)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum2;
+                                
+                                /*random # between 1-500*/
+                                randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int necromancerDamageValue = 
+                                necromancerDamage.rollForDamage(randomNum2,
+                                        NecromancerAttackStatInt);
+                                
+                                System.out.println(NecromancerFirstName2+
+                                " "+NecromancerLastName2+" rolls for "+randomNum2+
+                                ". "+randomNum2+" + "+NecromancerAttackStatInt+
+                                " Attack = "+necromancerDamageValue+" Damage");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Physical Defense
+                            else if(userRollChoice == 3)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum3;
+                                
+                                /*random # between 1-500*/
+                                randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int necromancerPhyDefValue = 
+                                necromancerPhyDef.rollForPhyDef(randomNum3,
+                                        NecromancerPhyDefStatInt);
+                                
+                                System.out.println(NecromancerFirstName2+
+                                " "+NecromancerLastName2+" rolls for "+randomNum3+
+                                ". "+randomNum3+" + "+NecromancerPhyDefStatInt+
+                                " Physical Defense = "+necromancerPhyDefValue+" Physical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Magical Defense
+                            else if(userRollChoice == 4)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum4;
+                                
+                                /*random # between 1-500*/
+                                randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int necromancerMagDefValue = 
+                                necromancerMagDef.rollForMagDef(randomNum4,
+                                        NecromancerMagDefStatInt);
+                                
+                                System.out.println(NecromancerFirstName2+
+                                " "+NecromancerLastName2+" rolls for "+randomNum4+
+                                ". "+randomNum4+" + "+NecromancerMagDefStatInt+
+                                " Magical Defense = "+necromancerMagDefValue+" Magical Defense");
                                 System.out.print("Press enter to continue.");
                                 try{System.in.read();}
                                 catch(Exception e){}
