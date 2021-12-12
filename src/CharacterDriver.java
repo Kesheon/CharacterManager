@@ -6535,10 +6535,10 @@ class Main
                 System.out.println();
                 System.out.println();
                 
-                /*this try makes sure that whatever file the user enters to have
-                loaded actually exists (or the user may have typed their file
-                name in wrong), so that a FileNotFoundException does not
-                appear*/
+                /*this try and its catch makes sure that whatever file the user
+                enters to have loaded actually exists (or the user may have
+                typed their file name in wrong), so that a FileNotFoundException
+                does not appear*/
                 try
                 {
                     File userNamedFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
@@ -8620,8 +8620,13 @@ class Main
                 //END: All WIZARD class name and stat files have been read
                 //--------------------------------------------------------------
                 
-                //if the user has no character selected
-                if(selectedCharacter.isEmpty())
+                /*throughtout the program the selectedCharacter & selectedCharacter
+                Class lists always get added to at the same time and when they are 
+                emptied they are both emptied at the same time, so one of them 
+                being empty and the other having something in it shouldn't even
+                be possible because of the aforementioned reason. So they are
+                either both empty or both have values in them. */
+                if(selectedCharacter.isEmpty() && selectedCharacterClass.isEmpty())
                 {
                     System.out.print("You must either create a character, select"+
                     " an existing character, or load a character from a"+
@@ -8633,6 +8638,7 @@ class Main
                     System.out.println();
                 }
                 
+                //if there is a currently selected character
                 else
                 {
                     int userRollChoice;
@@ -8653,7 +8659,19 @@ class Main
                         //input validation
                         while(userRollChoice <=0 || userRollChoice >=6)
                         {
-                            
+                            System.out.println("Perform an action");
+                            System.out.println("--------------------");
+                            System.out.println("1. Roll for Attack\n"+
+                            "2. Roll for Damage\n"+
+                            "3. Roll for Physical Defense\n"+
+                            "4. Roll for Magical Defense\n"+
+                            "5. Return to main menu");
+                            System.out.println();
+                            System.out.print("You must not enter a value less"+
+                            " than 1 or greater than 5.\nEnter your roll choice: ");
+                            userRollChoice = scan.nextInt();
+                            System.out.println();
+                            System.out.println();
                         }
                         
                         //if the currently selected character is an Assasssin
@@ -8847,6 +8865,198 @@ class Main
                                 System.out.println();
                                 System.out.println();
                             }
+                        }    
+                        //if the currently selected character is an Engineer
+                        else if(selectedCharacterClass.contains(thisIsEngineer))
+                        {
+                            
+                            // START: Get Engineer Accuracy Stat value
+                            //--------------------------------------------------
+                        
+                            int EngineerAccuracyStatInt;
+                            
+                            /*turn the String EngineerAccuracyStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            EngineerAccuracyStatInt = Integer.valueOf(EngineerAccuracyStat);
+                            
+                            //END: Got Engineer Accuracy Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Engineer getAttack object & Attack Stat value
+                            //--------------------------------------------------
+                            
+                            getAttack engineerAttack = new getAttack();
+                            
+                            int EngineerAttackStatInt;
+                            
+                            /*turn the String EngineerAttackStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            EngineerAttackStatInt = Integer.valueOf(EngineerAttackStat);
+                            
+                            //END: Got Engineer getAttack object & Attack Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Engineer getDamage object
+                            //--------------------------------------------------
+                            
+                            getDamage engineerDamage = new getDamage();
+                            
+                            //END: Got Engineer getDamage object
+                            //--------------------------------------------------
+                            
+                            // START: Get Engineer getPhyDef object & Physical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getPhyDef engineerPhyDef = new getPhyDef();
+                            
+                            int EngineerPhyDefStatInt;
+                            
+                            /*turn the String EngineerPhyDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            EngineerPhyDefStatInt = Integer.valueOf(EngineerPhyDefStat);
+                            
+                            //END: Got Engineer getPhyDef object & PhyDef Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Engineer getMagDef object & Magical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getMagDef engineerMagDef = new getMagDef();
+                            
+                            int EngineerMagDefStatInt;
+                            
+                            /*turn the String EngineerMagDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            EngineerMagDefStatInt = Integer.valueOf(EngineerMagDefStat);
+                            
+                            //END: Got Engineer getMagDef object & MagDef Stat value
+                            //--------------------------------------------------
+                            
+                            
+                            
+                            //roll for attack
+                            if(userRollChoice == 1)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum1;
+                                
+                                /*random # between 1-500*/
+                                randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int engineerAttackValue = 
+                                engineerAttack.rollForAttack(randomNum1,
+                                        EngineerAccuracyStatInt);
+                                
+                                System.out.println(EngineerFirstName2+
+                                " "+EngineerLastName2+" rolls for "+randomNum1+
+                                ". "+randomNum1+" + "+EngineerAccuracyStatInt+
+                                " Accuracy = "+engineerAttackValue+" Attack");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Damage
+                            else if(userRollChoice == 2)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum2;
+                                
+                                /*random # between 1-500*/
+                                randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int engineerDamageValue = 
+                                engineerDamage.rollForDamage(randomNum2,
+                                        EngineerAttackStatInt);
+                                
+                                System.out.println(EngineerFirstName2+
+                                " "+EngineerLastName2+" rolls for "+randomNum2+
+                                ". "+randomNum2+" + "+EngineerAttackStatInt+
+                                " Attack = "+engineerDamageValue+" Damage");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Physical Defense
+                            else if(userRollChoice == 3)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum3;
+                                
+                                /*random # between 1-500*/
+                                randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int engineerPhyDefValue = 
+                                engineerPhyDef.rollForPhyDef(randomNum3,
+                                        EngineerPhyDefStatInt);
+                                
+                                System.out.println(EngineerFirstName2+
+                                " "+EngineerLastName2+" rolls for "+randomNum3+
+                                ". "+randomNum3+" + "+EngineerPhyDefStatInt+
+                                " Physical Defense = "+engineerPhyDefValue+" Physical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Magical Defense
+                            else if(userRollChoice == 4)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum4;
+                                
+                                /*random # between 1-500*/
+                                randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int engineerMagDefValue = 
+                                engineerMagDef.rollForMagDef(randomNum4,
+                                        EngineerMagDefStatInt);
+                                
+                                System.out.println(EngineerFirstName2+
+                                " "+EngineerLastName2+" rolls for "+randomNum4+
+                                ". "+randomNum4+" + "+EngineerMagDefStatInt+
+                                " Magical Defense = "+engineerMagDefValue+" Magical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
                         }
                         System.out.println("Perform an action");
                         System.out.println("--------------------");
@@ -8862,7 +9072,6 @@ class Main
                         System.out.println();
                     }
                 }
-                    
             }
      
             //conditionals for Character Manager menu while loop
