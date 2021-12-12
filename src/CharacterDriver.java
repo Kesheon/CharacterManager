@@ -7524,11 +7524,7 @@ class Main
                             System.out.println();
                             System.out.println();
                         }
-                    }
-                    
-                    /*make an else statement after the else if's for when the
-                    class name of a saved file can't be found, this should never
-                    have to be used, but will be added just in case*/   
+                    }  
                 }
                 
                 /*if the user's file they try to load does not exist, or if they
@@ -8356,6 +8352,421 @@ class Main
                     }
                 }
             }
+            
+            else if(userMainMenu == 5)
+            {
+               
+                //START: Get ASSASSIN class name and stat files
+                //--------------------------------------------------------------
+                
+                //retrieve AssassinFirstName.txt
+                File AssassinFirstNameTxt2 = new File("src/AssassinFirstName.txt");
+                Scanner scanAssassinFirstNameTxt = new Scanner(AssassinFirstNameTxt2);
+                //read the AssassinFirstName.txt file
+                String AssassinFirstName2 = scanAssassinFirstNameTxt.next();
+                        
+                //retrieve AssassinLastName.txt
+                File AssassinLastNameTxt2 = new File("src/AssassinLastName.txt");
+                Scanner scanAssassinLastNameTxt = new Scanner(AssassinLastNameTxt2);
+                //read the AssassinLastName.txt file
+                String AssassinLastName2 = scanAssassinLastNameTxt.next();
+                
+                //retrieve AssassinAccuracyStat.txt
+                File AssassinAccuracyStatTxt = new File("src/AssassinAccuracyStat.txt");
+                Scanner scanAssassinAccuracyStatTxt = new Scanner(AssassinAccuracyStatTxt);
+                //read the AssassinAccuracyStat.txt file
+                String AssassinAccuracyStat = scanAssassinAccuracyStatTxt.next();
+                        
+                //retrieve AssassinAttackStat.txt
+                File AssassinAttackStatTxt = new File("src/AssassinAttackStat.txt");
+                Scanner scanAssassinAttackStatTxt = new Scanner(AssassinAttackStatTxt);
+                //read the AssassinAttackStat.txt file 
+                String AssassinAttackStat = scanAssassinAttackStatTxt.next();
+                        
+                //retrieve AssassinDamageStat.txt
+                File AssassinDamageStatTxt = new File("src/AssassinDamageStat.txt");
+                Scanner scanAssassinDamageStatTxt = new Scanner(AssassinDamageStatTxt);
+                //read the AssassinDamageStat.txt file
+                String AssassinDamageStat = scanAssassinDamageStatTxt.next();
+                        
+                //retrieve AssassinPhyDefStat.txt
+                File AssassinPhyDefStatTxt = new File("src/AssassinPhyDefStat.txt");
+                Scanner scanAssassinPhyDefStatTxt = new Scanner(AssassinPhyDefStatTxt);
+                //read the AssassinPhyDefStat.txt file
+                String AssassinPhyDefStat = scanAssassinPhyDefStatTxt.next();
+                        
+                //retrieve AssassinMagDefStat.txt
+                File AssassinMagDefStatTxt = new File("src/AssassinMagDefStat.txt");
+                Scanner scanAssassinMagDefStatTxt = new Scanner(AssassinMagDefStatTxt);
+                //read the AssassinMagDefStat.txt file
+                String AssassinMagDefStat = scanAssassinMagDefStatTxt.next();
+                
+                //END: All ASSASSIN class name and stat files have been read
+                //--------------------------------------------------------------
+                
+                //START: Get ENGINEER class name and stat files
+                //--------------------------------------------------------------
+                
+                //retrieve EngineerFirstName.txt
+                File EngineerFirstNameTxt2 = new File("src/EngineerFirstName.txt");
+                Scanner scanEngineerFirstNameTxt = new Scanner(EngineerFirstNameTxt2);
+                //read the EngineerFirstName.txt file
+                String EngineerFirstName2 = scanEngineerFirstNameTxt.next();
+                        
+                //retrieve EngineerLastName.txt
+                File EngineerLastNameTxt2 = new File("src/EngineerLastName.txt");
+                Scanner scanEngineerLastNameTxt = new Scanner(EngineerLastNameTxt2);
+                //read the EngineerLastName.txt file
+                String EngineerLastName2 = scanEngineerLastNameTxt.next();
+                
+                //retrieve EngineerAccuracyStat.txt
+                File EngineerAccuracyStatTxt = new File("src/EngineerAccuracyStat.txt");
+                Scanner scanEngineerAccuracyStatTxt = new Scanner(EngineerAccuracyStatTxt);
+                //read the EngineerAccuracyStat.txt file
+                String EngineerAccuracyStat = scanEngineerAccuracyStatTxt.next();
+                        
+                //retrieve EngineerAttackStat.txt
+                File EngineerAttackStatTxt = new File("src/EngineerAttackStat.txt");
+                Scanner scanEngineerAttackStatTxt = new Scanner(EngineerAttackStatTxt);
+                //read the EngineerAttackStat.txt file 
+                String EngineerAttackStat = scanEngineerAttackStatTxt.next();
+                        
+                //retrieve EngineerDamageStat.txt
+                File EngineerDamageStatTxt = new File("src/EngineerDamageStat.txt");
+                Scanner scanEngineerDamageStatTxt = new Scanner(EngineerDamageStatTxt);
+                //read the EngineerDamageStat.txt file
+                String EngineerDamageStat = scanEngineerDamageStatTxt.next();
+                        
+                //retrieve EngineerPhyDefStat.txt
+                File EngineerPhyDefStatTxt = new File("src/EngineerPhyDefStat.txt");
+                Scanner scanEngineerPhyDefStatTxt = new Scanner(EngineerPhyDefStatTxt);
+                //read the EngineerPhyDefStat.txt file
+                String EngineerPhyDefStat = scanEngineerPhyDefStatTxt.next();
+                        
+                //retrieve EngineerMagDefStat.txt
+                File EngineerMagDefStatTxt = new File("src/EngineerMagDefStat.txt");
+                Scanner scanEngineerMagDefStatTxt = new Scanner(EngineerMagDefStatTxt);
+                //read the EngineerMagDefStat.txt file
+                String EngineerMagDefStat = scanEngineerMagDefStatTxt.next();
+                
+                //END: All ENGINEER class name and stat files have been read
+                //--------------------------------------------------------------
+                
+                //START: Get HEALER class name and stat files
+                //--------------------------------------------------------------
+                
+                //retrieve HealerFirstName.txt
+                File HealerFirstNameTxt2 = new File("src/HealerFirstName.txt");
+                Scanner scanHealerFirstNameTxt = new Scanner(HealerFirstNameTxt2);
+                //read the HealerFirstName.txt file
+                String HealerFirstName2 = scanHealerFirstNameTxt.next();
+                        
+                //retrieve HealerLastName.txt
+                File HealerLastNameTxt2 = new File("src/HealerLastName.txt");
+                Scanner scanHealerLastNameTxt = new Scanner(HealerLastNameTxt2);
+                //read the HealerLastName.txt file
+                String HealerLastName2 = scanHealerLastNameTxt.next();
+                        
+                //retrieve HealerAccuracyStat.txt
+                File HealerAccuracyStatTxt = new File("src/HealerAccuracyStat.txt");
+                Scanner scanHealerAccuracyStatTxt = new Scanner(HealerAccuracyStatTxt);
+                //read the HealerAccuracyStat.txt file
+                String HealerAccuracyStat = scanHealerAccuracyStatTxt.next();
+                        
+                //retrieve HealerAttackStat.txt
+                File HealerAttackStatTxt = new File("src/HealerAttackStat.txt");
+                Scanner scanHealerAttackStatTxt = new Scanner(HealerAttackStatTxt);
+                //read the HealerAttackStat.txt file 
+                String HealerAttackStat = scanHealerAttackStatTxt.next();
+                        
+                //retrieve HealerDamageStat.txt
+                File HealerDamageStatTxt = new File("src/HealerDamageStat.txt");
+                Scanner scanHealerDamageStatTxt = new Scanner(HealerDamageStatTxt);
+                //read the HealerDamageStat.txt file
+                String HealerDamageStat = scanHealerDamageStatTxt.next();
+                        
+                //retrieve HealerPhyDefStat.txt
+                File HealerPhyDefStatTxt = new File("src/HealerPhyDefStat.txt");
+                Scanner scanHealerPhyDefStatTxt = new Scanner(HealerPhyDefStatTxt);
+                //read the HealerPhyDefStat.txt file
+                String HealerPhyDefStat = scanHealerPhyDefStatTxt.next();
+                        
+                //retrieve HealerMagDefStat.txt
+                File HealerMagDefStatTxt = new File("src/HealerMagDefStat.txt");
+                Scanner scanHealerMagDefStatTxt = new Scanner(HealerMagDefStatTxt);
+                //read the HealerMagDefStat.txt file
+                String HealerMagDefStat = scanHealerMagDefStatTxt.next();
+                
+                //END: All HEALER class name and stat files have been read
+                //--------------------------------------------------------------
+                
+                //START: Get MARTIAL ARTIST class name and stat files
+                //--------------------------------------------------------------
+                
+                //retrieve MartialArtistFirstName.txt
+                File MartialArtistFirstNameTxt2 = new File("src/MartialArtistFirstName.txt");
+                Scanner scanMartialArtistFirstNameTxt = new Scanner(MartialArtistFirstNameTxt2);
+                //read the MartialArtistFirstName.txt file
+                String MartialArtistFirstName2 = scanMartialArtistFirstNameTxt.next();
+                        
+                //retrieve MartialArtistLastName.txt
+                File MartialArtistLastNameTxt2 = new File("src/MartialArtistLastName.txt");
+                Scanner scanMartialArtistLastNameTxt = new Scanner(MartialArtistLastNameTxt2);
+                //read the MartialArtistLastName.txt file
+                String MartialArtistLastName2 = scanMartialArtistLastNameTxt.next();
+                        
+                //retrieve MartialArtistAccuracyStat.txt
+                File MartialArtistAccuracyStatTxt = new File("src/MartialArtistAccuracyStat.txt");
+                Scanner scanMartialArtistAccuracyStatTxt = new Scanner(MartialArtistAccuracyStatTxt);
+                //read the MartialArtistAccuracyStat.txt file
+                String MartialArtistAccuracyStat = scanMartialArtistAccuracyStatTxt.next();
+                        
+                //retrieve MartialArtistAttackStat.txt
+                File MartialArtistAttackStatTxt = new File("src/MartialArtistAttackStat.txt");
+                Scanner scanMartialArtistAttackStatTxt = new Scanner(MartialArtistAttackStatTxt);
+                //read the MartialArtistAttackStat.txt file 
+                String MartialArtistAttackStat = scanMartialArtistAttackStatTxt.next();
+                        
+                //retrieve MartialArtistDamageStat.txt
+                File MartialArtistDamageStatTxt = new File("src/MartialArtistDamageStat.txt");
+                Scanner scanMartialArtistDamageStatTxt = new Scanner(MartialArtistDamageStatTxt);
+                //read the MartialArtistDamageStat.txt file
+                String MartialArtistDamageStat = scanMartialArtistDamageStatTxt.next();
+                        
+                //retrieve MartialArtistPhyDefStat.txt
+                File MartialArtistPhyDefStatTxt = new File("src/MartialArtistPhyDefStat.txt");
+                Scanner scanMartialArtistPhyDefStatTxt = new Scanner(MartialArtistPhyDefStatTxt);
+                //read the MartialArtistPhyDefStat.txt file
+                String MartialArtistPhyDefStat = scanMartialArtistPhyDefStatTxt.next();
+                        
+                //retrieve MartialArtistMagDefStat.txt
+                File MartialArtistMagDefStatTxt = new File("src/MartialArtistMagDefStat.txt");
+                Scanner scanMartialArtistMagDefStatTxt = new Scanner(MartialArtistMagDefStatTxt);
+                //read the MartialArtistMagDefStat.txt file
+                String MartialArtistMagDefStat = scanMartialArtistMagDefStatTxt.next();
+                
+                //END: All MARTIAL ARTIST class name and stat files have been read
+                //--------------------------------------------------------------
+                
+                //START: Get NECROMANCER class name and stat files
+                //--------------------------------------------------------------
+                
+                //retrieve NecromancerFirstName.txt
+                File NecromancerFirstNameTxt2 = new File("src/NecromancerFirstName.txt");
+                Scanner scanNecromancerFirstNameTxt = new Scanner(NecromancerFirstNameTxt2);
+                //read the NecromancerFirstName.txt file
+                String NecromancerFirstName2 = scanNecromancerFirstNameTxt.next();
+                        
+                //retrieve NecromancerLastName.txt
+                File NecromancerLastNameTxt2 = new File("src/NecromancerLastName.txt");
+                Scanner scanNecromancerLastNameTxt = new Scanner(NecromancerLastNameTxt2);
+                //read the NecromancerLastName.txt file
+                String NecromancerLastName2 = scanNecromancerLastNameTxt.next();
+                        
+                //retrieve NecromancerAccuracyStat.txt
+                File NecromancerAccuracyStatTxt = new File("src/NecromancerAccuracyStat.txt");
+                Scanner scanNecromancerAccuracyStatTxt = new Scanner(NecromancerAccuracyStatTxt);
+                //read the NecromancerAccuracyStat.txt file
+                String NecromancerAccuracyStat = scanNecromancerAccuracyStatTxt.next();
+                        
+                //retrieve NecromancerAttackStat.txt
+                File NecromancerAttackStatTxt = new File("src/NecromancerAttackStat.txt");
+                Scanner scanNecromancerAttackStatTxt = new Scanner(NecromancerAttackStatTxt);
+                //read the NecromancerAttackStat.txt file 
+                String NecromancerAttackStat = scanNecromancerAttackStatTxt.next();
+                        
+                //retrieve NecromancerDamageStat.txt
+                File NecromancerDamageStatTxt = new File("src/NecromancerDamageStat.txt");
+                Scanner scanNecromancerDamageStatTxt = new Scanner(NecromancerDamageStatTxt);
+                //read the NecromancerDamageStat.txt file
+                String NecromancerDamageStat = scanNecromancerDamageStatTxt.next();
+                        
+                //retrieve NecromancerPhyDefStat.txt
+                File NecromancerPhyDefStatTxt = new File("src/NecromancerPhyDefStat.txt");
+                Scanner scanNecromancerPhyDefStatTxt = new Scanner(NecromancerPhyDefStatTxt);
+                //read the NecromancerPhyDefStat.txt file
+                String NecromancerPhyDefStat = scanNecromancerPhyDefStatTxt.next();
+                        
+                //retrieve NecromancerMagDefStat.txt
+                File NecromancerMagDefStatTxt = new File("src/NecromancerMagDefStat.txt");
+                Scanner scanNecromancerMagDefStatTxt = new Scanner(NecromancerMagDefStatTxt);
+                //read the NecromancerMagDefStat.txt file
+                String NecromancerMagDefStat = scanNecromancerMagDefStatTxt.next();
+                
+                //END: All NECROMANCER class name and stat files have been read
+                //--------------------------------------------------------------
+                
+                //START: Get WIZARD class name and stat files
+                //--------------------------------------------------------------
+                
+                //retrieve WizardFirstName.txt
+                File WizardFirstNameTxt2 = new File("src/WizardFirstName.txt");
+                Scanner scanWizardFirstNameTxt = new Scanner(WizardFirstNameTxt2);
+                //read the WizardFirstName.txt file
+                String WizardFirstName2 = scanWizardFirstNameTxt.next();
+                        
+                //retrieve WizardLastName.txt
+                File WizardLastNameTxt2 = new File("src/WizardLastName.txt");
+                Scanner scanWizardLastNameTxt = new Scanner(WizardLastNameTxt2);
+                //read the WizardLastName.txt file
+                String WizardLastName2 = scanWizardLastNameTxt.next();
+                        
+                //retrieve WizardAccuracyStat.txt
+                File WizardAccuracyStatTxt = new File("src/WizardAccuracyStat.txt");
+                Scanner scanWizardAccuracyStatTxt = new Scanner(WizardAccuracyStatTxt);
+                //read the WizardAccuracyStat.txt file
+                String WizardAccuracyStat = scanWizardAccuracyStatTxt.next();
+                        
+                //retrieve WizardAttackStat.txt
+                File WizardAttackStatTxt = new File("src/WizardAttackStat.txt");
+                Scanner scanWizardAttackStatTxt = new Scanner(WizardAttackStatTxt);
+                //read the WizardAttackStat.txt file 
+                String WizardAttackStat = scanWizardAttackStatTxt.next();
+                        
+                //retrieve WizardDamageStat.txt
+                File WizardDamageStatTxt = new File("src/WizardDamageStat.txt");
+                Scanner scanWizardDamageStatTxt = new Scanner(WizardDamageStatTxt);
+                //read the WizardDamageStat.txt file
+                String WizardDamageStat = scanWizardDamageStatTxt.next();
+                        
+                //retrieve WizardPhyDefStat.txt
+                File WizardPhyDefStatTxt = new File("src/WizardPhyDefStat.txt");
+                Scanner scanWizardPhyDefStatTxt = new Scanner(WizardPhyDefStatTxt);
+                //read the WizardPhyDefStat.txt file
+                String WizardPhyDefStat = scanWizardPhyDefStatTxt.next();
+                        
+                //retrieve WizardMagDefStat.txt
+                File WizardMagDefStatTxt = new File("src/WizardMagDefStat.txt");
+                Scanner scanWizardMagDefStatTxt = new Scanner(WizardMagDefStatTxt);
+                //read the WizardMagDefStat.txt file
+                String WizardMagDefStat = scanWizardMagDefStatTxt.next();
+                
+                //END: All WIZARD class name and stat files have been read
+                //--------------------------------------------------------------
+                
+                //if the user has no character selected
+                if(selectedCharacter.isEmpty())
+                {
+                    System.out.print("You must either create a character, select"+
+                    " an existing character, or load a character from a"+
+                    " file\nbefore you can perform an action. Press enter"+
+                    " to continue.");
+                    try{System.in.read();}
+                    catch(Exception e){}
+                    System.out.println();
+                    System.out.println();
+                }
+                
+                else
+                {
+                    int userRollChoice;
+                    System.out.println("Perform an action");
+                    System.out.println("--------------------");
+                    System.out.println("1. Roll for Attack\n"+
+                    "2. Roll for Damage\n"+
+                    "3. Roll for Physical Defense\n"+
+                    "4. Roll for Magical Defense\n"+
+                    "5. Return to main menu");
+                    System.out.println();
+                    System.out.print("Enter your roll choice: ");
+                    userRollChoice = scan.nextInt();
+                    System.out.println();
+                    System.out.println();
+                    while(userRollChoice != 5)
+                    {
+                        //input validation
+                        while(userRollChoice <=0 || userRollChoice >=6)
+                        {
+                            
+                        }
+                        
+                        //if the currently selected character is an Assasssin
+                        if(selectedCharacterClass.contains(thisIsAssassin))
+                        {
+                            
+                            // START: Get Assassin Accuracy Stat value
+                            //--------------------------------------------------
+                        
+                            int AssassinAccuracyStatInt;
+                            
+                            /*turn the String AssassinAccuracyStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            AssassinAccuracyStatInt = Integer.valueOf(AssassinAccuracyStat);
+                            
+                            //END: Got Assassin Accuracy Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Assasin Attack Stat value
+                            //--------------------------------------------------
+                            
+                            getAttack assassinAttack = new getAttack();
+                            
+                            int AssassinAttackStatInt;
+                            
+                            /*turn the String AssassinAttackStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            AssassinAttackStatInt = Integer.valueOf(AssassinAttackStat);
+                            
+                            //END: Got Assassin Attack Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Assasin Attack Stat value
+                            //--------------------------------------------------
+                            
+                            getDamage assassinDamage = new getDamage();
+                            
+                            //END: Got Assassin Attack Stat value
+                            //--------------------------------------------------
+                            
+                            //roll for attack
+                            if(userRollChoice == 1)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum1;
+                                
+                                /*random # between 1-500*/
+                                randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int assassinAttackValue = 
+                                assassinAttack.rollForAttack(randomNum1,
+                                        AssassinAccuracyStatInt);
+                                
+                                System.out.println(AssassinFirstName2+
+                                " "+AssassinLastName2+" rolls for "+randomNum1+
+                                ". "+randomNum1+" + "+AssassinAccuracyStatInt+
+                                " Accuracy = "+assassinAttackValue+" Attack");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                                
+                            }
+                        }
+                        System.out.println("Perform an action");
+                        System.out.println("--------------------");
+                        System.out.println("1. Roll for Attack\n"+
+                        "2. Roll for Damage\n"+
+                        "3. Roll for Physical Defense\n"+
+                        "4. Roll for Magical Defense\n"+
+                        "5. Return to main menu");
+                        System.out.println();
+                        System.out.print("Enter your roll choice: ");
+                        userRollChoice = scan.nextInt();
+                        System.out.println();
+                        System.out.println();
+                    }
+                }
+                    
+            }
      
             //conditionals for Character Manager menu while loop
             if(selectedCharacter.isEmpty())
@@ -8370,6 +8781,7 @@ class Main
                 System.out.println();
                 System.out.println();
             }
+            
             //if the user does have a character selected
             else
             {
