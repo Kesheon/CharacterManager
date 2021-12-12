@@ -9253,6 +9253,199 @@ class Main
                             }
                         }
                         
+                        //if the currently selected character is a Martial Artist
+                        else if(selectedCharacterClass.contains(thisIsMartialArtist))
+                        {
+                            
+                            // START: Get Martial Artist Accuracy Stat value
+                            //--------------------------------------------------
+                        
+                            int MartialArtistAccuracyStatInt;
+                            
+                            /*turn the String MartialArtistAccuracyStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            MartialArtistAccuracyStatInt = Integer.valueOf(MartialArtistAccuracyStat);
+                            
+                            //END: Got Martial Artist Accuracy Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Martial Artist getAttack object & Attack Stat value
+                            //--------------------------------------------------
+                            
+                            getAttack martialArtistAttack = new getAttack();
+                            
+                            int MartialArtistAttackStatInt;
+                            
+                            /*turn the String MartialArtistAttackStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            MartialArtistAttackStatInt = Integer.valueOf(MartialArtistAttackStat);
+                            
+                            //END: Got Martial Artist getAttack object & Attack Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Martial Artist getDamage object
+                            //--------------------------------------------------
+                            
+                            getDamage martialArtistDamage = new getDamage();
+                            
+                            //END: Got Martial Artist getDamage object
+                            //--------------------------------------------------
+                            
+                            // START: Get Martial Artist getPhyDef object & Physical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getPhyDef martialArtistPhyDef = new getPhyDef();
+                            
+                            int MartialArtistPhyDefStatInt;
+                            
+                            /*turn the String MartialArtistPhyDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            MartialArtistPhyDefStatInt = Integer.valueOf(MartialArtistPhyDefStat);
+                            
+                            //END: Got Martial Artist getPhyDef object & PhyDef Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Martial Artist getMagDef object & Magical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getMagDef martialArtistMagDef = new getMagDef();
+                            
+                            int MartialArtistMagDefStatInt;
+                            
+                            /*turn the String MartialArtistMagDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            MartialArtistMagDefStatInt = Integer.valueOf(MartialArtistMagDefStat);
+                            
+                            //END: Got MartialArtist getMagDef object & MagDef Stat value
+                            //--------------------------------------------------
+                            
+                            
+                            
+                            //roll for attack
+                            if(userRollChoice == 1)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum1;
+                                
+                                /*random # between 1-500*/
+                                randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int martialArtistAttackValue = 
+                                martialArtistAttack.rollForAttack(randomNum1,
+                                        MartialArtistAccuracyStatInt);
+                                
+                                System.out.println(MartialArtistFirstName2+
+                                " "+MartialArtistLastName2+" rolls for "+randomNum1+
+                                ". "+randomNum1+" + "+MartialArtistAccuracyStatInt+
+                                " Accuracy = "+martialArtistAttackValue+" Attack");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Damage
+                            else if(userRollChoice == 2)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum2;
+                                
+                                /*random # between 1-500*/
+                                randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int martialArtistDamageValue = 
+                                martialArtistDamage.rollForDamage(randomNum2,
+                                        MartialArtistAttackStatInt);
+                                
+                                System.out.println(HealerFirstName2+
+                                " "+HealerLastName2+" rolls for "+randomNum2+
+                                ". "+randomNum2+" + "+MartialArtistAttackStatInt+
+                                " Attack = "+martialArtistDamageValue+" Damage");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Physical Defense
+                            else if(userRollChoice == 3)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum3;
+                                
+                                /*random # between 1-500*/
+                                randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int martialArtistPhyDefValue = 
+                                martialArtistPhyDef.rollForPhyDef(randomNum3,
+                                        MartialArtistPhyDefStatInt);
+                                
+                                System.out.println(MartialArtistFirstName2+
+                                " "+MartialArtistLastName2+" rolls for "+randomNum3+
+                                ". "+randomNum3+" + "+MartialArtistPhyDefStatInt+
+                                " Physical Defense = "+martialArtistPhyDefValue+" Physical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Magical Defense
+                            else if(userRollChoice == 4)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum4;
+                                
+                                /*random # between 1-500*/
+                                randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int martialArtistMagDefValue = 
+                                martialArtistMagDef.rollForMagDef(randomNum4,
+                                        MartialArtistMagDefStatInt);
+                                
+                                System.out.println(MartialArtistFirstName2+
+                                " "+MartialArtistLastName2+" rolls for "+randomNum4+
+                                ". "+randomNum4+" + "+MartialArtistMagDefStatInt+
+                                " Magical Defense = "+martialArtistMagDefValue+" Magical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                        }
+                        
                         System.out.println("Perform an action");
                         System.out.println("--------------------");
                         System.out.println("1. Roll for Attack\n"+
