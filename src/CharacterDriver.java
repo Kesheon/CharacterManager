@@ -9639,6 +9639,199 @@ class Main
                             }
                         }
                         
+                        //if the currently selected character is a Wizard
+                        else if(selectedCharacterClass.contains(thisIsWizard))
+                        {
+                            
+                            // START: Get Wizard Accuracy Stat value
+                            //--------------------------------------------------
+                        
+                            int WizardAccuracyStatInt;
+                            
+                            /*turn the String WizardAccuracyStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            WizardAccuracyStatInt = Integer.valueOf(WizardAccuracyStat);
+                            
+                            //END: Got Wizard Accuracy Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Wizard getAttack object & Attack Stat value
+                            //--------------------------------------------------
+                            
+                            getAttack wizardAttack = new getAttack();
+                            
+                            int WizardAttackStatInt;
+                            
+                            /*turn the String WizardAttackStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            WizardAttackStatInt = Integer.valueOf(WizardAttackStat);
+                            
+                            //END: Got Wizard getAttack object & Attack Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Wizard getDamage object
+                            //--------------------------------------------------
+                            
+                            getDamage wizardDamage = new getDamage();
+                            
+                            //END: Got Wizard getDamage object
+                            //--------------------------------------------------
+                            
+                            // START: Get Wizard getPhyDef object & Physical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getPhyDef wizardPhyDef = new getPhyDef();
+                            
+                            int WizardPhyDefStatInt;
+                            
+                            /*turn the String WizardPhyDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            WizardPhyDefStatInt = Integer.valueOf(WizardPhyDefStat);
+                            
+                            //END: Got Wizard getPhyDef object & PhyDef Stat value
+                            //--------------------------------------------------
+                            
+                            // START: Get Wizard getMagDef object & Magical Defense Stat value
+                            //--------------------------------------------------
+                            
+                            getMagDef wizardMagDef = new getMagDef();
+                            
+                            int WizardMagDefStatInt;
+                            
+                            /*turn the String WizardMagDefStat into int data
+                            type so that the value can be used in methods that
+                            require the value to be of int type*/
+                            WizardMagDefStatInt = Integer.valueOf(WizardMagDefStat);
+                            
+                            //END: Got Wizard getMagDef object & MagDef Stat value
+                            //--------------------------------------------------
+                            
+                            
+                            
+                            //roll for attack
+                            if(userRollChoice == 1)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum1;
+                                
+                                /*random # between 1-500*/
+                                randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int wizardAttackValue = 
+                                wizardAttack.rollForAttack(randomNum1,
+                                        WizardAccuracyStatInt);
+                                
+                                System.out.println(WizardFirstName2+
+                                " "+WizardLastName2+" rolls for "+randomNum1+
+                                ". "+randomNum1+" + "+WizardAccuracyStatInt+
+                                " Accuracy = "+wizardAttackValue+" Attack");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Damage
+                            else if(userRollChoice == 2)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum2;
+                                
+                                /*random # between 1-500*/
+                                randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int wizardDamageValue = 
+                                wizardDamage.rollForDamage(randomNum2,
+                                        WizardAttackStatInt);
+                                
+                                System.out.println(WizardFirstName2+
+                                " "+WizardLastName2+" rolls for "+randomNum2+
+                                ". "+randomNum2+" + "+WizardAttackStatInt+
+                                " Attack = "+wizardDamageValue+" Damage");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Physical Defense
+                            else if(userRollChoice == 3)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum3;
+                                
+                                /*random # between 1-500*/
+                                randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int wizardPhyDefValue = 
+                                wizardPhyDef.rollForPhyDef(randomNum3,
+                                        WizardPhyDefStatInt);
+                                
+                                System.out.println(WizardFirstName2+
+                                " "+WizardLastName2+" rolls for "+randomNum3+
+                                ". "+randomNum3+" + "+WizardPhyDefStatInt+
+                                " Physical Defense = "+wizardPhyDefValue+" Physical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                            
+                            //roll for Magical Defense
+                            else if(userRollChoice == 4)
+                            {
+                                File rangeText = new File("src/range.txt");
+                                Scanner scanRange = new Scanner(rangeText);
+                                int rangeInt1 = scanRange.nextInt();//1
+                                int rangeInt2 = scanRange.nextInt();//500
+                                Random generator = new Random();
+                                
+                                //random number that user will roll for
+                                int randomNum4;
+                                
+                                /*random # between 1-500*/
+                                randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                
+                                int wizardMagDefValue = 
+                                wizardMagDef.rollForMagDef(randomNum4,
+                                        WizardMagDefStatInt);
+                                
+                                System.out.println(WizardFirstName2+
+                                " "+WizardLastName2+" rolls for "+randomNum4+
+                                ". "+randomNum4+" + "+WizardMagDefStatInt+
+                                " Magical Defense = "+wizardMagDefValue+" Magical Defense");
+                                System.out.print("Press enter to continue.");
+                                try{System.in.read();}
+                                catch(Exception e){}
+                                System.out.println();
+                                System.out.println();
+                            }
+                        }
+                        
                         System.out.println("Perform an action");
                         System.out.println("--------------------");
                         System.out.println("1. Roll for Attack\n"+
