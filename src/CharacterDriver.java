@@ -4350,13 +4350,17 @@ class Main
                         {
                             /*MartialArtistLastName and 
                             MartialArtistLastName.txt can only
-                            store one Martial Artist character's last name, so the newly
-                            created character's name must be written to this txt
+                            store one Martial Artist character's last name,
+                            so the newly
+                            created character's name must be written to this
+                            txt
                             file which will later be read so that said character
                             name can be written to another file(which the user
                             will name and said txt file will also contain all of
-                            the Martial Artist Character's stats) after being created,
-                            otherwise upon creating another Martial Artist character,
+                            the Martial Artist Character's stats) after being
+                            created,
+                            otherwise upon creating another Martial Artist
+                            character,
                             the previously created one will be overwritten by
                             the newer one.*/
                             FileWriter writeStats = new FileWriter
@@ -7619,7 +7623,8 @@ class Main
                         {
                             FileWriter EngineerAccuracyStatWrite = 
                                     new FileWriter("src/EngineerAccuracyStat.txt");
-                            EngineerAccuracyStatWrite.write(EngineerAccuracyStatValue);
+                            EngineerAccuracyStatWrite.
+                                    write(EngineerAccuracyStatValue);
                             EngineerAccuracyStatWrite.close();
                         }
                         
@@ -7633,7 +7638,8 @@ class Main
                         {
                             FileWriter EngineerAttackStatWrite = 
                                     new FileWriter("src/EngineerAttackStat.txt");
-                            EngineerAttackStatWrite.write(EngineerAttackStatValue);
+                            EngineerAttackStatWrite.
+                                    write(EngineerAttackStatValue);
                             EngineerAttackStatWrite.close();
                         }
                         
@@ -7994,7 +8000,8 @@ class Main
                         try
                         {
                             FileWriter MartialArtistAttackStatWrite = 
-                                    new FileWriter("src/MartialArtistAttackStat.txt");
+                                    new FileWriter
+                                    ("src/MartialArtistAttackStat.txt");
                             MartialArtistAttackStatWrite.
                                     write(MartialArtistAttackStatValue);
                             MartialArtistAttackStatWrite.close();
@@ -8487,8 +8494,10 @@ class Main
                 System.out.println("---------------------------");
                 if(selectedCharacterClass.isEmpty())
                 {
-                    System.out.print("You must either create a character or select"+
-                    " an existing character\nbefore you can save them to a file. Press enter"+
+                    System.out.print("You must either create a character"+
+                            " or select"+
+                    " an existing character\nbefore you can save them"
+                            + " to a file. Press enter"+
                     " to continue.");
                     try{System.in.read();}
                     catch(Exception e){}
@@ -8976,8 +8985,10 @@ class Main
                     
                     String userSave;
                     System.out.print("Are you sure you want to save your"+
-                    " currently selected character: \""+MartialArtistFirstNameTxt+" "+
-                            MartialArtistLastNameTxt+"\" the Martial Artist?\nIf yes enter y"+
+                    " currently selected character: \""+
+                            MartialArtistFirstNameTxt+" "+
+                            MartialArtistLastNameTxt+
+                            "\" the Martial Artist?\nIf yes enter y"+
                             ", or if no enter n: ");
                     userSave = scan.next();
                     System.out.println();
@@ -9058,24 +9069,31 @@ class Main
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
+                            FileWriter writeUserSave = 
+                                    new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
-                            /*Write "Martial Artist Class" to the character's user created
+                            /*Write "Martial Artist Class" to the character's
+                            user created
                             save file so that it can later be read when the user
                             loads their file to load their character so that the
                             character's class can be determined as "Martial Artist"
                             upon the load of the character in the userMainMenu #3
                             option.*/
                             writeUserSave.write("Martial Artist Class"+"\n"+
-                            MartialArtistFirstName2+"\n"+MartialArtistLastName2+"\n"+
-                            MartialArtistAccuracyStat+"\n"+MartialArtistAttackStat+"\n"+
-                            MartialArtistDamageStat+"\n"+MartialArtistPhyDefStat+"\n"+
+                            MartialArtistFirstName2+"\n"+
+                                    MartialArtistLastName2+"\n"+
+                            MartialArtistAccuracyStat+"\n"+
+                                    MartialArtistAttackStat+"\n"+
+                            MartialArtistDamageStat+"\n"+
+                                    MartialArtistPhyDefStat+"\n"+
                             MartialArtistMagDefStat);
                             writeUserSave.close();
                             System.out.print("\""+MartialArtistFirstName2+' '+
-                            MartialArtistLastName2+"\" the Martial Artist has been saved"+
-                            " to the "+userNamedSaveFile+".txt file.\nPress"+
+                            MartialArtistLastName2
+                                    +"\" the Martial Artist has been saved"+
+                            " to the "+userNamedSaveFile
+                                    +".txt file.\nPress"+
                             " enter to continue.");
                             try{System.in.read();}
                             catch(Exception e){}
@@ -9127,7 +9145,8 @@ class Main
                     Scanner scanNecromancerLastName = 
                             new Scanner(Necromancer2ndFile);
                 
-                    //read the NecromancerFirstName.txt file & NecromancerLastName.txt file
+                    /*read the NecromancerFirstName.txt file &
+                    NecromancerLastName.txt file*/
                     String NecromancerFirstNameTxt = 
                             scanNecromancerFirstName.next();
                     String NecromancerLastNameTxt = 
@@ -9135,8 +9154,10 @@ class Main
                     
                     String userSave;
                     System.out.print("Are you sure you want to save your"+
-                    " currently selected character: \""+NecromancerFirstNameTxt+" "+
-                            NecromancerLastNameTxt+"\" the Necromancer?\nIf yes enter y"+
+                    " currently selected character: \""+
+                            NecromancerFirstNameTxt+" "+
+                            NecromancerLastNameTxt+
+                            "\" the Necromancer?\nIf yes enter y"+
                             ", or if no enter n: ");
                     userSave = scan.next();
                     System.out.println();
@@ -9217,10 +9238,12 @@ class Main
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
+                            FileWriter writeUserSave = 
+                                    new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
-                            /*Write "Necromancer Class" to the character's user created
+                            /*Write "Necromancer Class" to the character's user
+                            created
                             save file so that it can later be read when the user
                             loads their file to load their character so that the
                             character's class can be determined as "Necromancer"
@@ -9538,10 +9561,10 @@ class Main
                     String EngineerMagDefStat = scanEngineerMagDefStatTxt.next();
 
                     //END: All ENGINEER class name and stat files have been read
-                    //--------------------------------------------------------------
+                    //----------------------------------------------------------
 
                     //START: Get HEALER class name and stat files
-                    //--------------------------------------------------------------
+                    //----------------------------------------------------------
 
                     //retrieve HealerFirstName.txt
                     File HealerFirstNameTxt2 = 
@@ -9588,10 +9611,10 @@ class Main
                     String HealerMagDefStat = scanHealerMagDefStatTxt.next();
 
                     //END: All HEALER class name and stat files have been read
-                    //--------------------------------------------------------------
+                    //----------------------------------------------------------
 
                     //START: Get MARTIAL ARTIST class name and stat files
-                    //--------------------------------------------------------------
+                    //----------------------------------------------------------
 
                     //retrieve MartialArtistFirstName.txt
                     File MartialArtistFirstNameTxt2 = 
@@ -9670,7 +9693,8 @@ class Main
                     Scanner scanNecromancerLastNameTxt = 
                             new Scanner(NecromancerLastNameTxt2);
                     //read the NecromancerLastName.txt file
-                    String NecromancerLastName2 = scanNecromancerLastNameTxt.next();
+                    String NecromancerLastName2 = 
+                            scanNecromancerLastNameTxt.next();
 
                     //retrieve NecromancerAccuracyStat.txt
                     File NecromancerAccuracyStatTxt = 
@@ -9687,7 +9711,8 @@ class Main
                     Scanner scanNecromancerAttackStatTxt = 
                             new Scanner(NecromancerAttackStatTxt);
                     //read the NecromancerAttackStat.txt file 
-                    String NecromancerAttackStat = scanNecromancerAttackStatTxt.next();
+                    String NecromancerAttackStat = 
+                            scanNecromancerAttackStatTxt.next();
 
                     //Necromancer Damage Stat isn't needed
 
@@ -9697,7 +9722,8 @@ class Main
                     Scanner scanNecromancerPhyDefStatTxt = 
                             new Scanner(NecromancerPhyDefStatTxt);
                     //read the NecromancerPhyDefStat.txt file
-                    String NecromancerPhyDefStat = scanNecromancerPhyDefStatTxt.next();
+                    String NecromancerPhyDefStat = 
+                            scanNecromancerPhyDefStatTxt.next();
 
                     //retrieve NecromancerMagDefStat.txt
                     File NecromancerMagDefStatTxt = 
@@ -9705,49 +9731,59 @@ class Main
                     Scanner scanNecromancerMagDefStatTxt = 
                             new Scanner(NecromancerMagDefStatTxt);
                     //read the NecromancerMagDefStat.txt file
-                    String NecromancerMagDefStat = scanNecromancerMagDefStatTxt.next();
+                    String NecromancerMagDefStat = 
+                            scanNecromancerMagDefStatTxt.next();
 
                     //END: All NECROMANCER class name and stat files have been read
-                    //--------------------------------------------------------------
+                    //----------------------------------------------------------
 
                     //START: Get WIZARD class name and stat files
-                    //--------------------------------------------------------------
+                    //----------------------------------------------------------
 
                     //retrieve WizardFirstName.txt
-                    File WizardFirstNameTxt2 = new File("src/WizardFirstName.txt");
-                    Scanner scanWizardFirstNameTxt = new Scanner(WizardFirstNameTxt2);
+                    File WizardFirstNameTxt2 = 
+                            new File("src/WizardFirstName.txt");
+                    Scanner scanWizardFirstNameTxt = 
+                            new Scanner(WizardFirstNameTxt2);
                     //read the WizardFirstName.txt file
                     String WizardFirstName2 = scanWizardFirstNameTxt.next();
 
                     //retrieve WizardLastName.txt
                     File WizardLastNameTxt2 = new File("src/WizardLastName.txt");
-                    Scanner scanWizardLastNameTxt = new Scanner(WizardLastNameTxt2);
+                    Scanner scanWizardLastNameTxt = 
+                            new Scanner(WizardLastNameTxt2);
                     //read the WizardLastName.txt file
                     String WizardLastName2 = scanWizardLastNameTxt.next();
 
                     //retrieve WizardAccuracyStat.txt
                     File WizardAccuracyStatTxt = new File("src/WizardAccuracyStat.txt");
-                    Scanner scanWizardAccuracyStatTxt = new Scanner(WizardAccuracyStatTxt);
+                    Scanner scanWizardAccuracyStatTxt = 
+                            new Scanner(WizardAccuracyStatTxt);
                     //read the WizardAccuracyStat.txt file
                     String WizardAccuracyStat = scanWizardAccuracyStatTxt.next();
 
                     //retrieve WizardAttackStat.txt
                     File WizardAttackStatTxt = new File("src/WizardAttackStat.txt");
-                    Scanner scanWizardAttackStatTxt = new Scanner(WizardAttackStatTxt);
+                    Scanner scanWizardAttackStatTxt = 
+                            new Scanner(WizardAttackStatTxt);
                     //read the WizardAttackStat.txt file 
                     String WizardAttackStat = scanWizardAttackStatTxt.next();
 
                     //Wizard Damage Stat isn't needed
 
                     //retrieve WizardPhyDefStat.txt
-                    File WizardPhyDefStatTxt = new File("src/WizardPhyDefStat.txt");
-                    Scanner scanWizardPhyDefStatTxt = new Scanner(WizardPhyDefStatTxt);
+                    File WizardPhyDefStatTxt = 
+                            new File("src/WizardPhyDefStat.txt");
+                    Scanner scanWizardPhyDefStatTxt = 
+                            new Scanner(WizardPhyDefStatTxt);
                     //read the WizardPhyDefStat.txt file
                     String WizardPhyDefStat = scanWizardPhyDefStatTxt.next();
 
                     //retrieve WizardMagDefStat.txt
-                    File WizardMagDefStatTxt = new File("src/WizardMagDefStat.txt");
-                    Scanner scanWizardMagDefStatTxt = new Scanner(WizardMagDefStatTxt);
+                    File WizardMagDefStatTxt = 
+                            new File("src/WizardMagDefStat.txt");
+                    Scanner scanWizardMagDefStatTxt = 
+                            new Scanner(WizardMagDefStatTxt);
                     //read the WizardMagDefStat.txt file
                     String WizardMagDefStat = scanWizardMagDefStatTxt.next();
 
@@ -9760,9 +9796,11 @@ class Main
                     being empty and the other having something in it shouldn't even
                     be possible because of the aforementioned reason. So they are
                     either both empty or both have values in them. */
-                    if(selectedCharacter.isEmpty() && selectedCharacterClass.isEmpty())
+                    if(selectedCharacter.isEmpty() &&
+                            selectedCharacterClass.isEmpty())
                     {
-                        System.out.print("You must either create a character, select"+
+                        System.out.print("You must either create"+
+                                " a character, select"+
                         " an existing character, or load a character from a"+
                         " file\nbefore you can perform an action. Press enter"+
                         " to continue.");
@@ -9813,7 +9851,7 @@ class Main
                             {
 
                                 // START: Get Assassin Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 int AssassinAccuracyStatInt;
 
@@ -9824,10 +9862,11 @@ class Main
                                         Integer.valueOf(AssassinAccuracyStat);
 
                                 //END: Got Assassin Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
-                                // START: Get Assasin getAttack object & Attack Stat value
-                                //--------------------------------------------------
+                                /* START: Get Assasin getAttack object &
+                                Attack Stat value*/
+                                //----------------------------------------------
 
                                 getAttack assassinAttack = new getAttack();
 
@@ -9839,11 +9878,12 @@ class Main
                                 AssassinAttackStatInt = 
                                         Integer.valueOf(AssassinAttackStat);
 
-                                //END: Got Assassin getAttack object & Attack Stat value
-                                //--------------------------------------------------
+                                /*END: Got Assassin getAttack object &
+                                Attack Stat value*/
+                                //----------------------------------------------
 
                                 // START: Get Assasin getDamage object
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getDamage assassinDamage = new getDamage();
 
@@ -9864,12 +9904,13 @@ class Main
                                 AssassinPhyDefStatInt = 
                                         Integer.valueOf(AssassinPhyDefStat);
 
-                                //END: Got Assassin getPhyDef object & PhyDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got Assassin getPhyDef object &
+                                PhyDef Stat value*/
+                                //----------------------------------------------
 
                                 /* START: Get Assassin getMagDef object &
                                 Magical Defense Stat value*/
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getMagDef assassinMagDef = new getMagDef();
 
@@ -9881,8 +9922,9 @@ class Main
                                 AssassinMagDefStatInt = 
                                         Integer.valueOf(AssassinMagDefStat);
 
-                                //END: Got Assassin getMagDef object & MagDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got Assassin getMagDef object &
+                                MagDef Stat value*/
+                                //----------------------------------------------
 
 
 
@@ -9929,7 +9971,8 @@ class Main
                                     int randomNum2;
 
                                     /*random # between 1-1000*/
-                                    randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum2 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int assassinDamageValue = 
                                     assassinDamage.rollForDamage(randomNum2,
@@ -9959,7 +10002,8 @@ class Main
                                     int randomNum3;
 
                                     /*random # between 1-1000*/
-                                    randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum3 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int assassinPhyDefValue = 
                                     assassinPhyDef.rollForPhyDef(randomNum3,
@@ -9990,7 +10034,8 @@ class Main
                                     int randomNum4;
 
                                     /*random # between 1-1000*/
-                                    randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum4 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int assassinMagDefValue = 
                                     assassinMagDef.rollForMagDef(randomNum4,
@@ -9999,7 +10044,9 @@ class Main
                                     System.out.println(AssassinFirstName2+
                                     " "+AssassinLastName2+" rolls for "+randomNum4+
                                     ". "+randomNum4+" + "+AssassinMagDefStatInt+
-                                    " Magical Defense = "+assassinMagDefValue+" Magical Defense");
+                                    " Magical Defense = "+
+                                            assassinMagDefValue+
+                                            " Magical Defense");
                                     System.out.print("Press enter to continue.");
                                     try{System.in.read();}
                                     catch(Exception e){}
@@ -10013,7 +10060,7 @@ class Main
                             {
 
                                 // START: Get Engineer Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 int EngineerAccuracyStatInt;
 
@@ -10024,11 +10071,11 @@ class Main
                                         Integer.valueOf(EngineerAccuracyStat);
 
                                 //END: Got Engineer Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 /* START: Get Engineer getAttack object &
                                 Attack Stat value*/
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getAttack engineerAttack = new getAttack();
 
@@ -10040,19 +10087,21 @@ class Main
                                 EngineerAttackStatInt = 
                                         Integer.valueOf(EngineerAttackStat);
 
-                                //END: Got Engineer getAttack object & Attack Stat value
-                                //--------------------------------------------------
+                                /*END: Got Engineer getAttack object &
+                                Attack Stat value*/
+                                //----------------------------------------------
 
                                 // START: Get Engineer getDamage object
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getDamage engineerDamage = new getDamage();
 
                                 //END: Got Engineer getDamage object
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
-                                // START: Get Engineer getPhyDef object & Physical Defense Stat value
-                                //--------------------------------------------------
+                                /* START: Get Engineer getPhyDef object &
+                                Physical Defense Stat value*/
+                                //----------------------------------------------
 
                                 getPhyDef engineerPhyDef = new getPhyDef();
 
@@ -10064,11 +10113,13 @@ class Main
                                 EngineerPhyDefStatInt = 
                                         Integer.valueOf(EngineerPhyDefStat);
 
-                                //END: Got Engineer getPhyDef object & PhyDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got Engineer getPhyDef object &
+                                PhyDef Stat value*/
+                                //----------------------------------------------
 
-                                // START: Get Engineer getMagDef object & Magical Defense Stat value
-                                //--------------------------------------------------
+                                /*START: Get Engineer getMagDef object &
+                                Magical Defense Stat value*/
+                                //----------------------------------------------
 
                                 getMagDef engineerMagDef = new getMagDef();
 
@@ -10080,8 +10131,9 @@ class Main
                                 EngineerMagDefStatInt = 
                                         Integer.valueOf(EngineerMagDefStat);
 
-                                //END: Got Engineer getMagDef object & MagDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got Engineer getMagDef object &
+                                MagDef Stat value*/
+                                //----------------------------------------------
 
 
 
@@ -10098,7 +10150,8 @@ class Main
                                     int randomNum1;
 
                                     /*random # between 1-1000*/
-                                    randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum1 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int engineerAttackValue = 
                                     engineerAttack.rollForAttack(randomNum1,
@@ -10128,7 +10181,8 @@ class Main
                                     int randomNum2;
 
                                     /*random # between 1-1000*/
-                                    randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum2 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int engineerDamageValue = 
                                     engineerDamage.rollForDamage(randomNum2,
@@ -10158,7 +10212,8 @@ class Main
                                     int randomNum3;
 
                                     /*random # between 1-1000*/
-                                    randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum3 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int engineerPhyDefValue = 
                                     engineerPhyDef.rollForPhyDef(randomNum3,
@@ -10189,7 +10244,8 @@ class Main
                                     int randomNum4;
 
                                     /*random # between 1-1000*/
-                                    randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum4 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int engineerMagDefValue = 
                                     engineerMagDef.rollForMagDef(randomNum4,
@@ -10213,7 +10269,7 @@ class Main
                             {
 
                                 // START: Get Healer Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 int HealerAccuracyStatInt;
 
@@ -10224,10 +10280,11 @@ class Main
                                         Integer.valueOf(HealerAccuracyStat);
 
                                 //END: Got Healer Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
-                                // START: Get Healer getAttack object & Attack Stat value
-                                //--------------------------------------------------
+                                /* START: Get Healer getAttack object &
+                                Attack Stat value*/
+                                //----------------------------------------------
 
                                 getAttack healerAttack = new getAttack();
 
@@ -10239,20 +10296,21 @@ class Main
                                 HealerAttackStatInt = 
                                         Integer.valueOf(HealerAttackStat);
 
-                                //END: Got Healer getAttack object & Attack Stat value
-                                //--------------------------------------------------
+                                /*END: Got Healer getAttack object &
+                                Attack Stat value*/
+                                //----------------------------------------------
 
                                 // START: Get Healer getDamage object
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getDamage healerDamage = new getDamage();
 
                                 //END: Got Healer getDamage object
-                                //--------------------------------------------------
-
+                                //-----------------------------------------------
+                                
                                 /* START: Get Healer getPhyDef object &
                                 Physical Defense Stat value*/
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getPhyDef healerPhyDef = new getPhyDef();
 
@@ -10264,12 +10322,13 @@ class Main
                                 HealerPhyDefStatInt = 
                                         Integer.valueOf(HealerPhyDefStat);
 
-                                //END: Got Healer getPhyDef object & PhyDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got Healer getPhyDef object &
+                                PhyDef Stat value*/
+                                //----------------------------------------------
 
                                 /* START: Get Healer getMagDef object &
                                 Magical Defense Stat value*/
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getMagDef healerMagDef = new getMagDef();
 
@@ -10278,10 +10337,11 @@ class Main
                                 /*turn the String HealerMagDefStat into int data
                                 type so that the value can be used in methods that
                                 require the value to be of int type*/
-                                HealerMagDefStatInt = Integer.valueOf(HealerMagDefStat);
+                                HealerMagDefStatInt = Integer.
+                                        valueOf(HealerMagDefStat);
 
                                 //END: Got Healer getMagDef object & MagDef Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
 
 
@@ -10298,7 +10358,8 @@ class Main
                                     int randomNum1;
 
                                     /*random # between 1-1000*/
-                                    randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum1 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int healerAttackValue = 
                                     healerAttack.rollForAttack(randomNum1,
@@ -10328,7 +10389,8 @@ class Main
                                     int randomNum2;
 
                                     /*random # between 1-1000*/
-                                    randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum2 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int healerDamageValue = 
                                     healerDamage.rollForDamage(randomNum2,
@@ -10358,7 +10420,8 @@ class Main
                                     int randomNum3;
 
                                     /*random # between 1-1000*/
-                                    randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum3 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int healerPhyDefValue = 
                                     healerPhyDef.rollForPhyDef(randomNum3,
@@ -10389,7 +10452,8 @@ class Main
                                     int randomNum4;
 
                                     /*random # between 1-1000*/
-                                    randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum4 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int healerMagDefValue = 
                                     healerMagDef.rollForMagDef(randomNum4,
@@ -10408,8 +10472,10 @@ class Main
                                 }
                             }
 
-                            //if the currently selected character is a Martial Artist
-                            else if(selectedCharacterClass.contains(thisIsMartialArtist))
+                            /*if the currently selected character is a Martial
+                            Artist*/
+                            else if(selectedCharacterClass.
+                                    contains(thisIsMartialArtist))
                             {
 
                                 // START: Get Martial Artist Accuracy Stat value
@@ -10417,74 +10483,84 @@ class Main
 
                                 int MartialArtistAccuracyStatInt;
 
-                                /*turn the String MartialArtistAccuracyStat into int data
-                                type so that the value can be used in methods that
+                                /*turn the String MartialArtistAccuracyStat into
+                                int data
+                                type so that the value can be used in methods 
+                                that
                                 require the value to be of int type*/
                                 MartialArtistAccuracyStatInt = 
                                         Integer.valueOf(MartialArtistAccuracyStat);
 
                                 //END: Got Martial Artist Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 /* START: Get Martial Artist getAttack object 
                                 & Attack Stat value*/
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getAttack martialArtistAttack = new getAttack();
 
                                 int MartialArtistAttackStatInt;
 
-                                /*turn the String MartialArtistAttackStat into int data
-                                type so that the value can be used in methods that
+                                /*turn the String MartialArtistAttackStat into
+                                int data
+                                type so that the value can be used in methods
+                                that
                                 require the value to be of int type*/
                                 MartialArtistAttackStatInt = 
                                         Integer.valueOf(MartialArtistAttackStat);
 
                                 /*END: Got Martial Artist getAttack object &
                                 Attack Stat value*/
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 // START: Get Martial Artist getDamage object
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getDamage martialArtistDamage = new getDamage();
 
                                 //END: Got Martial Artist getDamage object
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 /* START: Get Martial Artist getPhyDef object 
                                 & Physical Defense Stat value*/
-                                //--------------------------------------------------
-
+                                //-----------------------------------------------
+                                
                                 getPhyDef martialArtistPhyDef = new getPhyDef();
 
                                 int MartialArtistPhyDefStatInt;
 
-                                /*turn the String MartialArtistPhyDefStat into int data
-                                type so that the value can be used in methods that
+                                /*turn the String MartialArtistPhyDefStat into
+                                int data
+                                type so that the value can be used in methods
+                                that
                                 require the value to be of int type*/
                                 MartialArtistPhyDefStatInt = 
                                         Integer.valueOf(MartialArtistPhyDefStat);
 
-                                //END: Got Martial Artist getPhyDef object & PhyDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got Martial Artist getPhyDef object &
+                                PhyDef Stat value*/
+                                //----------------------------------------------
 
                                 /* START: Get Martial Artist getMagDef object &
                                 Magical Defense Stat value*/
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getMagDef martialArtistMagDef = new getMagDef();
 
                                 int MartialArtistMagDefStatInt;
 
-                                /*turn the String MartialArtistMagDefStat into int data
-                                type so that the value can be used in methods that
+                                /*turn the String MartialArtistMagDefStat into
+                                int data
+                                type so that the value can be used in methods
+                                that
                                 require the value to be of int type*/
                                 MartialArtistMagDefStatInt = 
                                         Integer.valueOf(MartialArtistMagDefStat);
 
-                                //END: Got MartialArtist getMagDef object & MagDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got MartialArtist getMagDef object &
+                                MagDef Stat value*/
+                                //----------------------------------------------
 
 
 
@@ -10501,16 +10577,20 @@ class Main
                                     int randomNum1;
 
                                     /*random # between 1-1000*/
-                                    randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum1 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int martialArtistAttackValue = 
                                     martialArtistAttack.rollForAttack(randomNum1,
                                             MartialArtistAccuracyStatInt);
 
                                     System.out.println(MartialArtistFirstName2+
-                                    " "+MartialArtistLastName2+" rolls for "+randomNum1+
-                                    ". "+randomNum1+" + "+MartialArtistAccuracyStatInt+
-                                    " Accuracy = "+martialArtistAttackValue+" Attack");
+                                    " "+MartialArtistLastName2+" rolls for "+
+                                            randomNum1+
+                                    ". "+randomNum1+" + "+
+                                            MartialArtistAccuracyStatInt+
+                                    " Accuracy = "+
+                                            martialArtistAttackValue+" Attack");
                                     System.out.print("Press enter to continue.");
                                     try{System.in.read();}
                                     catch(Exception e){}
@@ -10531,16 +10611,20 @@ class Main
                                     int randomNum2;
 
                                     /*random # between 1-1000*/
-                                    randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum2 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int martialArtistDamageValue = 
                                     martialArtistDamage.rollForDamage(randomNum2,
                                             MartialArtistAttackStatInt);
 
                                     System.out.println(MartialArtistFirstName2+
-                                    " "+MartialArtistLastName2+" rolls for "+randomNum2+
-                                    ". "+randomNum2+" + "+MartialArtistAttackStatInt+
-                                    " Attack = "+martialArtistDamageValue+" Damage");
+                                    " "+MartialArtistLastName2+" rolls for "+
+                                            randomNum2+
+                                    ". "+randomNum2+" + "+
+                                            MartialArtistAttackStatInt+
+                                    " Attack = "+
+                                            martialArtistDamageValue+" Damage");
                                     System.out.print("Press enter to continue.");
                                     try{System.in.read();}
                                     catch(Exception e){}
@@ -10561,16 +10645,21 @@ class Main
                                     int randomNum3;
 
                                     /*random # between 1-1000*/
-                                    randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum3 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int martialArtistPhyDefValue = 
                                     martialArtistPhyDef.rollForPhyDef(randomNum3,
                                             MartialArtistPhyDefStatInt);
 
                                     System.out.println(MartialArtistFirstName2+
-                                    " "+MartialArtistLastName2+" rolls for "+randomNum3+
-                                    ". "+randomNum3+" + "+MartialArtistPhyDefStatInt+
-                                    " Physical Defense = "+martialArtistPhyDefValue+" Physical Defense");
+                                    " "+MartialArtistLastName2+" rolls for "+
+                                            randomNum3+
+                                    ". "+randomNum3+" + "+
+                                            MartialArtistPhyDefStatInt+
+                                    " Physical Defense = "+
+                                            martialArtistPhyDefValue+
+                                            " Physical Defense");
                                     System.out.print("Press enter to continue.");
                                     try{System.in.read();}
                                     catch(Exception e){}
@@ -10591,16 +10680,21 @@ class Main
                                     int randomNum4;
 
                                     /*random # between 1-1000*/
-                                    randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum4 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int martialArtistMagDefValue = 
                                     martialArtistMagDef.rollForMagDef(randomNum4,
                                             MartialArtistMagDefStatInt);
 
                                     System.out.println(MartialArtistFirstName2+
-                                    " "+MartialArtistLastName2+" rolls for "+randomNum4+
-                                    ". "+randomNum4+" + "+MartialArtistMagDefStatInt+
-                                    " Magical Defense = "+martialArtistMagDefValue+" Magical Defense");
+                                    " "+MartialArtistLastName2+" rolls for "+
+                                            randomNum4+
+                                    ". "+randomNum4+" + "+
+                                            MartialArtistMagDefStatInt+
+                                    " Magical Defense = "+
+                                            martialArtistMagDefValue+
+                                            " Magical Defense");
                                     System.out.print("Press enter to continue.");
                                     try{System.in.read();}
                                     catch(Exception e){}
@@ -10614,7 +10708,7 @@ class Main
                             {
 
                                 // START: Get Necromancer Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 int NecromancerAccuracyStatInt;
 
@@ -10625,10 +10719,11 @@ class Main
                                         Integer.valueOf(NecromancerAccuracyStat);
 
                                 //END: Got Necromancer Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
-                                // START: Get Necromancer getAttack object & Attack Stat value
-                                //--------------------------------------------------
+                                /* START: Get Necromancer getAttack object &
+                                Attack Stat value*/
+                                //----------------------------------------------
 
                                 getAttack necromancerAttack = new getAttack();
 
@@ -10640,19 +10735,21 @@ class Main
                                 NecromancerAttackStatInt = 
                                         Integer.valueOf(NecromancerAttackStat);
 
-                                //END: Got Necromancer getAttack object & Attack Stat value
-                                //--------------------------------------------------
+                                /*END: Got Necromancer getAttack object &
+                                Attack Stat value*/
+                                //----------------------------------------------
 
                                 // START: Get Necromancer getDamage object
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getDamage necromancerDamage = new getDamage();
 
                                 //END: Got Necromancer getDamage object
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
-                                // START: Get Necromancer getPhyDef object & Physical Defense Stat value
-                                //--------------------------------------------------
+                                /* START: Get Necromancer getPhyDef object &
+                                Physical Defense Stat value*/
+                                //----------------------------------------------
 
                                 getPhyDef necromancerPhyDef = new getPhyDef();
 
@@ -10664,24 +10761,29 @@ class Main
                                 NecromancerPhyDefStatInt = 
                                         Integer.valueOf(NecromancerPhyDefStat);
 
-                                //END: Got Necromancer getPhyDef object & PhyDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got Necromancer getPhyDef object &
+                                PhyDef Stat value*/
+                                //----------------------------------------------
 
-                                // START: Get Necromancer getMagDef object & Magical Defense Stat value
-                                //--------------------------------------------------
+                                /* START: Get Necromancer getMagDef object &
+                                Magical Defense Stat value*/
+                                //----------------------------------------------
 
                                 getMagDef necromancerMagDef = new getMagDef();
 
                                 int NecromancerMagDefStatInt;
 
-                                /*turn the String NecromancerMagDefStat into int data
-                                type so that the value can be used in methods that
+                                /*turn the String NecromancerMagDefStat into int
+                                data
+                                type so that the value can be used in methods
+                                that
                                 require the value to be of int type*/
                                 NecromancerMagDefStatInt = 
                                         Integer.valueOf(NecromancerMagDefStat);
 
-                                //END: Got Necromancer getMagDef object & MagDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got Necromancer getMagDef object &
+                                MagDef Stat value*/
+                                //----------------------------------------------
 
 
 
@@ -10698,16 +10800,20 @@ class Main
                                     int randomNum1;
 
                                     /*random # between 1-1000*/
-                                    randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum1 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int necromancerAttackValue = 
                                     necromancerAttack.rollForAttack(randomNum1,
                                             NecromancerAccuracyStatInt);
 
                                     System.out.println(NecromancerFirstName2+
-                                    " "+NecromancerLastName2+" rolls for "+randomNum1+
-                                    ". "+randomNum1+" + "+NecromancerAccuracyStatInt+
-                                    " Accuracy = "+necromancerAttackValue+" Attack");
+                                    " "+NecromancerLastName2+" rolls for "+
+                                            randomNum1+
+                                    ". "+randomNum1+" + "+
+                                            NecromancerAccuracyStatInt+
+                                    " Accuracy = "+
+                                            necromancerAttackValue+" Attack");
                                     System.out.print("Press enter to continue.");
                                     try{System.in.read();}
                                     catch(Exception e){}
@@ -10728,16 +10834,20 @@ class Main
                                     int randomNum2;
 
                                     /*random # between 1-1000*/
-                                    randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum2 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int necromancerDamageValue = 
                                     necromancerDamage.rollForDamage(randomNum2,
                                             NecromancerAttackStatInt);
 
                                     System.out.println(NecromancerFirstName2+
-                                    " "+NecromancerLastName2+" rolls for "+randomNum2+
-                                    ". "+randomNum2+" + "+NecromancerAttackStatInt+
-                                    " Attack = "+necromancerDamageValue+" Damage");
+                                    " "+NecromancerLastName2+" rolls for "+
+                                            randomNum2+
+                                    ". "+randomNum2+" + "+
+                                            NecromancerAttackStatInt+
+                                    " Attack = "
+                                            +necromancerDamageValue+" Damage");
                                     System.out.print("Press enter to continue.");
                                     try{System.in.read();}
                                     catch(Exception e){}
@@ -10758,16 +10868,21 @@ class Main
                                     int randomNum3;
 
                                     /*random # between 1-1000*/
-                                    randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum3 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int necromancerPhyDefValue = 
                                     necromancerPhyDef.rollForPhyDef(randomNum3,
                                             NecromancerPhyDefStatInt);
 
                                     System.out.println(NecromancerFirstName2+
-                                    " "+NecromancerLastName2+" rolls for "+randomNum3+
-                                    ". "+randomNum3+" + "+NecromancerPhyDefStatInt+
-                                    " Physical Defense = "+necromancerPhyDefValue+" Physical Defense");
+                                    " "+NecromancerLastName2+" rolls for "+
+                                            randomNum3+
+                                    ". "+randomNum3+" + "+
+                                            NecromancerPhyDefStatInt+
+                                    " Physical Defense = "+
+                                            necromancerPhyDefValue+
+                                            " Physical Defense");
                                     System.out.print("Press enter to continue.");
                                     try{System.in.read();}
                                     catch(Exception e){}
@@ -10788,16 +10903,21 @@ class Main
                                     int randomNum4;
 
                                     /*random # between 1-1000*/
-                                    randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum4 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int necromancerMagDefValue = 
                                     necromancerMagDef.rollForMagDef(randomNum4,
                                             NecromancerMagDefStatInt);
 
                                     System.out.println(NecromancerFirstName2+
-                                    " "+NecromancerLastName2+" rolls for "+randomNum4+
-                                    ". "+randomNum4+" + "+NecromancerMagDefStatInt+
-                                    " Magical Defense = "+necromancerMagDefValue+" Magical Defense");
+                                    " "+NecromancerLastName2+" rolls for "+
+                                            randomNum4+
+                                    ". "+randomNum4+" + "+
+                                            NecromancerMagDefStatInt+
+                                    " Magical Defense = "+
+                                            necromancerMagDefValue+
+                                            " Magical Defense");
                                     System.out.print("Press enter to continue.");
                                     try{System.in.read();}
                                     catch(Exception e){}
@@ -10811,7 +10931,7 @@ class Main
                             {
 
                                 // START: Get Wizard Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 int WizardAccuracyStatInt;
 
@@ -10822,10 +10942,11 @@ class Main
                                         Integer.valueOf(WizardAccuracyStat);
 
                                 //END: Got Wizard Accuracy Stat value
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
-                                // START: Get Wizard getAttack object & Attack Stat value
-                                //--------------------------------------------------
+                                /* START: Get Wizard getAttack object &
+                                Attack Stat value*/
+                                //----------------------------------------------
 
                                 getAttack wizardAttack = new getAttack();
 
@@ -10834,22 +10955,24 @@ class Main
                                 /*turn the String WizardAttackStat into int data
                                 type so that the value can be used in methods that
                                 require the value to be of int type*/
-                                WizardAttackStatInt = Integer.valueOf(WizardAttackStat);
+                                WizardAttackStatInt = 
+                                        Integer.valueOf(WizardAttackStat);
 
-                                //END: Got Wizard getAttack object & Attack Stat value
-                                //--------------------------------------------------
+                                /*END: Got Wizard getAttack object &
+                                Attack Stat value*/
+                                //----------------------------------------------
 
                                 // START: Get Wizard getDamage object
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getDamage wizardDamage = new getDamage();
 
                                 //END: Got Wizard getDamage object
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 /* START: Get Wizard getPhyDef object &
                                 Physical Defense Stat value*/
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getPhyDef wizardPhyDef = new getPhyDef();
 
@@ -10858,14 +10981,16 @@ class Main
                                 /*turn the String WizardPhyDefStat into int data
                                 type so that the value can be used in methods that
                                 require the value to be of int type*/
-                                WizardPhyDefStatInt = Integer.valueOf(WizardPhyDefStat);
+                                WizardPhyDefStatInt = Integer.
+                                        valueOf(WizardPhyDefStat);
 
-                                //END: Got Wizard getPhyDef object & PhyDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got Wizard getPhyDef object &
+                                PhyDef Stat value*/
+                                //----------------------------------------------
 
                                 /* START: Get Wizard getMagDef object &
                                 Magical Defense Stat value*/
-                                //--------------------------------------------------
+                                //----------------------------------------------
 
                                 getMagDef wizardMagDef = new getMagDef();
 
@@ -10877,8 +11002,9 @@ class Main
                                 WizardMagDefStatInt = 
                                         Integer.valueOf(WizardMagDefStat);
 
-                                //END: Got Wizard getMagDef object & MagDef Stat value
-                                //--------------------------------------------------
+                                /*END: Got Wizard getMagDef object &
+                                MagDef Stat value*/
+                                //----------------------------------------------
 
 
 
@@ -10895,7 +11021,8 @@ class Main
                                     int randomNum1;
 
                                     /*random # between 1-1000*/
-                                    randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum1 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int wizardAttackValue = 
                                     wizardAttack.rollForAttack(randomNum1,
@@ -10925,7 +11052,8 @@ class Main
                                     int randomNum2;
 
                                     /*random # between 1-1000*/
-                                    randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum2 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int wizardDamageValue = 
                                     wizardDamage.rollForDamage(randomNum2,
@@ -10985,7 +11113,8 @@ class Main
                                     int randomNum4;
 
                                     /*random # between 1-1000*/
-                                    randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
+                                    randomNum4 = generator.
+                                            nextInt(rangeInt2)+rangeInt1;
 
                                     int wizardMagDefValue = 
                                     wizardMagDef.rollForMagDef(randomNum4,
@@ -10994,7 +11123,8 @@ class Main
                                     System.out.println(WizardFirstName2+
                                     " "+WizardLastName2+" rolls for "+randomNum4+
                                     ". "+randomNum4+" + "+WizardMagDefStatInt+
-                                    " Magical Defense = "+wizardMagDefValue+" Magical Defense");
+                                    " Magical Defense = "+
+                                            wizardMagDefValue+" Magical Defense");
                                     System.out.print("Press enter to continue.");
                                     try{System.in.read();}
                                     catch(Exception e){}
