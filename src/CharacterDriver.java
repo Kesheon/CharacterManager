@@ -247,11 +247,7 @@ class Main
         /*this list will hold only 1 int value at a time. The value of said int
         will be used to determine the class of a created character, a selected
         existing character, or a loaded character so that the correct class can
-        be used for the correct character when using the rolling methods (option
-        #5 of the Character Manager Menu). This needs to happen because each
-        class has different max potential stat values. For example, the healer
-        will not do as much damage as the Martial Artist so the user needs to be
-        able to use the correct class for their character.*/
+        be used for the correct character.  */
         ArrayList<Integer> selectedCharacterClass = new ArrayList();
         
         //these values are added to the above array for the above mentioned reason
@@ -273,7 +269,6 @@ class Main
         System.out.println();
         System.out.println("Character Manager");
         System.out.println("-----------------------");
-        //the character being shown as selected or not depends on something with the linked list for loadedCharacters? conditional?
         System.out.print("You have no character selected. Enter 1 to create a"+
                 " new character, 2 to select an existing character, \n"+
                 "3 to load a character from file, 4 to save a character to file,"+
@@ -382,7 +377,7 @@ class Main
                     else if(characterCreationMenu == 1)
                     {
            
-                        /*range.txt holds the numbers in the range of 1-500 so
+                        /*range.txt holds the numbers in the range of 1-1000 so
                         that it can be read from to provide random numbers in
                         said range so that in character creation the user can
                         pick 5 of said random numbers to be used for their 
@@ -391,7 +386,7 @@ class Main
                         File rangeText = new File("src/range.txt");
                         Scanner scanRange = new Scanner(rangeText);
                         int rangeInt1 = scanRange.nextInt();//1
-                        int rangeInt2 = scanRange.nextInt();//500
+                        int rangeInt2 = scanRange.nextInt();//1000
                         Random generator = new Random();
                     
                         int randomNum1;
@@ -400,19 +395,19 @@ class Main
                         int randomNum4;
                         int randomNum5;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum5 = generator.nextInt(rangeInt2)+rangeInt1;
                         
                         /*the above random num values are later stored in these 
@@ -1293,7 +1288,7 @@ class Main
                     //Engineer Class Creation
                     else if(characterCreationMenu == 2)
                     {
-                        /*range.txt holds the numbers in the range of 1-500 so
+                        /*range.txt holds the numbers in the range of 1-1000 so
                         that it can be read from to provide random numbers in
                         said range so that in character creation the user can
                         pick 5 of said random numbers to be used for their 
@@ -1302,7 +1297,7 @@ class Main
                         File rangeText = new File("src/range.txt");
                         Scanner scanRange = new Scanner(rangeText);
                         int rangeInt1 = scanRange.nextInt();//1
-                        int rangeInt2 = scanRange.nextInt();//500
+                        int rangeInt2 = scanRange.nextInt();//1000
                         Random generator = new Random();
                     
                         int randomNum1;
@@ -1311,19 +1306,19 @@ class Main
                         int randomNum4;
                         int randomNum5;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum5 = generator.nextInt(rangeInt2)+rangeInt1;
                         
                         /*the above random num values are later stored in these 
@@ -2203,7 +2198,7 @@ class Main
                     //Healer Class Creation
                     else if(characterCreationMenu == 3)
                     {
-                        /*range.txt holds the numbers in the range of 1-500 so
+                        /*range.txt holds the numbers in the range of 1-1000 so
                         that it can be read from to provide random numbers in
                         said range so that in character creation the user can
                         pick 5 of said random numbers to be used for their 
@@ -2212,7 +2207,7 @@ class Main
                         File rangeText = new File("src/range.txt");
                         Scanner scanRange = new Scanner(rangeText);
                         int rangeInt1 = scanRange.nextInt();//1
-                        int rangeInt2 = scanRange.nextInt();//500
+                        int rangeInt2 = scanRange.nextInt();//1000
                         Random generator = new Random();
                     
                         int randomNum1;
@@ -2221,19 +2216,19 @@ class Main
                         int randomNum4;
                         int randomNum5;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum5 = generator.nextInt(rangeInt2)+rangeInt1;
                         
                         /*the above random num values are later stored in these 
@@ -3114,7 +3109,7 @@ class Main
                     //Martial Artist Class Creation
                     else if(characterCreationMenu == 4)
                     {
-                        /*range.txt holds the numbers in the range of 1-500 so
+                        /*range.txt holds the numbers in the range of 1-1000 so
                         that it can be read from to provide random numbers in
                         said range so that in character creation the user can
                         pick 5 of said random numbers to be used for their 
@@ -3123,7 +3118,7 @@ class Main
                         File rangeText = new File("src/range.txt");
                         Scanner scanRange = new Scanner(rangeText);
                         int rangeInt1 = scanRange.nextInt();//1
-                        int rangeInt2 = scanRange.nextInt();//500
+                        int rangeInt2 = scanRange.nextInt();//1000
                         Random generator = new Random();
                     
                         int randomNum1;
@@ -3132,19 +3127,19 @@ class Main
                         int randomNum4;
                         int randomNum5;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum5 = generator.nextInt(rangeInt2)+rangeInt1;
                         
                         /*the above random num values are later stored in these 
@@ -4026,7 +4021,7 @@ class Main
                     //Necromancer Class Creation
                     else if(characterCreationMenu == 5)
                     {
-                        /*range.txt holds the numbers in the range of 1-500 so
+                        /*range.txt holds the numbers in the range of 1-1000 so
                         that it can be read from to provide random numbers in
                         said range so that in character creation the user can
                         pick 5 of said random numbers to be used for their 
@@ -4035,7 +4030,7 @@ class Main
                         File rangeText = new File("src/range.txt");
                         Scanner scanRange = new Scanner(rangeText);
                         int rangeInt1 = scanRange.nextInt();//1
-                        int rangeInt2 = scanRange.nextInt();//500
+                        int rangeInt2 = scanRange.nextInt();//1000
                         Random generator = new Random();
                     
                         int randomNum1;
@@ -4044,19 +4039,19 @@ class Main
                         int randomNum4;
                         int randomNum5;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum5 = generator.nextInt(rangeInt2)+rangeInt1;
                         
                         /*the above random num values are later stored in these 
@@ -4937,7 +4932,7 @@ class Main
                     //Wizard Class Creation
                     else if(characterCreationMenu == 6)
                     {
-                        /*range.txt holds the numbers in the range of 1-500 so
+                        /*range.txt holds the numbers in the range of 1-1000 so
                         that it can be read from to provide random numbers in
                         said range so that in character creation the user can
                         pick 5 of said random numbers to be used for their 
@@ -4946,7 +4941,7 @@ class Main
                         File rangeText = new File("src/range.txt");
                         Scanner scanRange = new Scanner(rangeText);
                         int rangeInt1 = scanRange.nextInt();//1
-                        int rangeInt2 = scanRange.nextInt();//500
+                        int rangeInt2 = scanRange.nextInt();//1000
                         Random generator = new Random();
                     
                         int randomNum1;
@@ -4955,19 +4950,19 @@ class Main
                         int randomNum4;
                         int randomNum5;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                         
-                        /*random # between 1-500*/
+                        /*random # between 1-1000*/
                         randomNum5 = generator.nextInt(rangeInt2)+rangeInt1;
                         
                         /*the above random num values are later stored in these 
@@ -8752,13 +8747,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum1;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int assassinAttackValue = 
@@ -8782,13 +8777,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum2;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int assassinDamageValue = 
@@ -8812,13 +8807,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum3;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int assassinPhyDefValue = 
@@ -8842,13 +8837,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum4;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int assassinMagDefValue = 
@@ -8945,13 +8940,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum1;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int engineerAttackValue = 
@@ -8975,13 +8970,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum2;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int engineerDamageValue = 
@@ -9005,13 +9000,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum3;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int engineerPhyDefValue = 
@@ -9035,13 +9030,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum4;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int engineerMagDefValue = 
@@ -9138,13 +9133,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum1;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int healerAttackValue = 
@@ -9168,13 +9163,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum2;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int healerDamageValue = 
@@ -9198,13 +9193,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum3;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int healerPhyDefValue = 
@@ -9228,13 +9223,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum4;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int healerMagDefValue = 
@@ -9331,13 +9326,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum1;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int martialArtistAttackValue = 
@@ -9361,13 +9356,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum2;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int martialArtistDamageValue = 
@@ -9391,13 +9386,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum3;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int martialArtistPhyDefValue = 
@@ -9421,13 +9416,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum4;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int martialArtistMagDefValue = 
@@ -9524,13 +9519,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum1;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int necromancerAttackValue = 
@@ -9554,13 +9549,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum2;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int necromancerDamageValue = 
@@ -9584,13 +9579,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum3;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int necromancerPhyDefValue = 
@@ -9614,13 +9609,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum4;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int necromancerMagDefValue = 
@@ -9717,13 +9712,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum1;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum1 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int wizardAttackValue = 
@@ -9747,13 +9742,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum2;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum2 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int wizardDamageValue = 
@@ -9777,13 +9772,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum3;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum3 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int wizardPhyDefValue = 
@@ -9807,13 +9802,13 @@ class Main
                                 File rangeText = new File("src/range.txt");
                                 Scanner scanRange = new Scanner(rangeText);
                                 int rangeInt1 = scanRange.nextInt();//1
-                                int rangeInt2 = scanRange.nextInt();//500
+                                int rangeInt2 = scanRange.nextInt();//1000
                                 Random generator = new Random();
                                 
                                 //random number that user will roll for
                                 int randomNum4;
                                 
-                                /*random # between 1-500*/
+                                /*random # between 1-1000*/
                                 randomNum4 = generator.nextInt(rangeInt2)+rangeInt1;
                                 
                                 int wizardMagDefValue = 
