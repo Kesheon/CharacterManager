@@ -10,8 +10,9 @@ import java.util.LinkedList;
 
 interface Accuracy
 {   
-    public int accuracyStat(int randomAccuracyStat);/*the randomAccuracyStat value will be the random number that
-    the user selects for their accuracy stat during character creation*/
+    public int accuracyStat(int randomAccuracyStat);/*the randomAccuracyStat
+    value will be the random number that the user selects for their accuracy
+    stat during character creation*/
 }
 
 class getAccuracy implements Accuracy
@@ -24,8 +25,9 @@ class getAccuracy implements Accuracy
 }
 interface Attack
 {                    //randomNum1 will be a value from a random number generator
-    public int rollForAttack(int randomNum1, int randomAccuracyStat);/*randomAccuracyStat is the random number
-    that the user selects for their accuracy stat during character creation*/
+    public int rollForAttack(int randomNum1, int randomAccuracyStat);/*
+    randomAccuracyStat is the random number that the user selects for their
+    accuracy stat during character creation*/
 }
 
 class getAttack implements Attack
@@ -39,8 +41,9 @@ class getAttack implements Attack
 
 interface Damage
 {                    //randomNum2 will be a value from a random number generator
-    public int rollForDamage(int randomNum2, int randomAttackStat);/*randomAttackStat is the random number
-    that the user selects for their attack stat during character creation*/
+    public int rollForDamage(int randomNum2, int randomAttackStat);/*
+    randomAttackStat is the random number that the user selects for their attack
+    stat during character creation*/
 }
 
 class getDamage implements Damage
@@ -54,8 +57,9 @@ class getDamage implements Damage
 
 interface PhysicalDefense
 {                       //randomNum3 will be a value from a random number generator
-    public int rollForPhyDef(int randomNum3, int randomPhyDefStat);/*phyDefStat is the random number that the user selects for their physical defense stat
-    during character creation*/
+    public int rollForPhyDef(int randomNum3, int randomPhyDefStat);/*
+    phyDefStat is the random number that the user selects for their physical
+    defense stat during character creation*/
 }
 
 class getPhyDef implements PhysicalDefense
@@ -81,7 +85,8 @@ class getMagDef implements MagicalDefense
     }
 }
 
-class Assassin//The stealthy class. They utilize daggers, swords, poison darts, & silenced ranged weapons
+class Assassin/*The stealthy class. They utilize daggers, swords, poison darts,
+        & silenced ranged weapons*/
 {
     Accuracy accuracy;
     Attack attack;
@@ -101,8 +106,9 @@ class Assassin//The stealthy class. They utilize daggers, swords, poison darts, 
     
 }
 
-class Engineer/*They utilize advanced equipment (like jetpacks!), advanced modifiable ranged weapons,
-        and different types of mech suits (piloted or autonomous) which they can repair and upgrade.*/
+class Engineer/*They utilize advanced equipment (like jetpacks!), advanced
+        modifiable ranged weapons, and different types of mech suits (piloted or
+        autonomous) which they can repair and upgrade.*/
 {
     Accuracy accuracy;
     Attack attack;
@@ -121,7 +127,8 @@ class Engineer/*They utilize advanced equipment (like jetpacks!), advanced modif
     }
 }
 
-class Healer//Healers keep their comrades battle ready and can revive them (they cannot heal Engineer's mech suits).
+class Healer/*Healers keep their comrades battle ready and can revive them
+        (they cannot heal Engineer's mech suits).*/
 {
     Accuracy accuracy;
     Attack attack;
@@ -140,7 +147,8 @@ class Healer//Healers keep their comrades battle ready and can revive them (they
     }
 }
 
-class MartialArtist//They are not afraid to punch or kick anything- they are the definition of super human strength.
+class MartialArtist/*They are not afraid to punch or kick anything- they are the
+        definition of super human strength.*/
 {
     Accuracy accuracy;
     Attack attack;
@@ -180,7 +188,8 @@ class Necromancer/*They often engage in battle alone, because they use undead
     }
 }
 
-class Wizard/*They can manipulate the natural elements of the earth and beyond, confuse their opponents, and, if powerful enough,
+class Wizard/*They can manipulate the natural elements of the earth and beyond,
+        confuse their opponents, and, if powerful enough,
         seal their opponents in another dimension.*/
 {
     Accuracy accuracy;
@@ -235,13 +244,15 @@ class Main
         String WizardFirstName;
         String WizardLastName;
         
-        /*this list holds characters that are currently selected. Currently selected 
+        /*this list holds characters that are currently selected. Currently
+        selected 
         characters are also present in the loadedCharacters list (only if they
         were created during the programs runtime), but the difference between a
         character in the loadedCharacters list (that is not currently selected)
         and a selected one is that a selected character can actually be used by
         the user since it is the current character in use, while the other
-        character in the loadedCharacters list is just in temporary saved files/memory.   */
+        character in the loadedCharacters list is just in temporary saved
+        files/memory.*/
         LinkedList selectedCharacter = new LinkedList();
         
         /*this list will hold only 1 int value at a time. The value of said int
@@ -315,7 +326,8 @@ class Main
                         System.out.println("-----------------------");
                         System.out.print("Enter 0 to preview all classes, 1 to create"+
                         " an Assassin, 2 for an Engineer, 3 for a Healer,\n4 for a"+
-                        " Martial Artist, 5 for a Necromancer, 6 for a Wizard, or 7 to quit: ");
+                        " Martial Artist, 5 for a Necromancer, 6"+
+                        " for a Wizard, or 7 to quit: ");
                         characterCreationMenu = scan.nextInt();
                         System.out.println();
                         System.out.println();
@@ -432,15 +444,20 @@ class Main
                         
                         System.out.println("Assassin Class Build");
                         System.out.println("-----------------------");
-                        System.out.println("Character stats: Accuracy, Attack, Damage, Physical Defense, and Magical Defense");
+                        System.out.println("Character stats: Accuracy, Attack,"+
+                        " Damage, Physical Defense, and Magical Defense");
                         System.out.println();
-                        System.out.println("Random numbers to use for your stats: A."+randomNum1+"  B."+randomNum2+"  C."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
+                        System.out.println("Random numbers to use for your"+
+                        " stats: A."+randomNum1+"  B."+randomNum2+"  C"+
+                        "."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
                         System.out.println();
                         System.out.println("Select a letter from above to add"+
                         " its numeric value to the stat you want it added\nto."+
                         " You can't use the same letter/value more than once.");
                         System.out.println();
-                        System.out.println("Example: Enter your Accuracy stat: C (this would make your Accuracy Stat equal to "+randomNum3+")");
+                        System.out.println("Example: Enter your Accuracy stat:"+
+                        " C (this would make your Accuracy Stat equal"+
+                        " to "+randomNum3+")");
                         System.out.println();
                         System.out.print("Enter your Accuracy stat: ");
                         String accuracyStatChoice;
@@ -448,13 +465,16 @@ class Main
                         System.out.println();
                        
                         //Accuracy Stat if statements for Assassin class
-                        if(accuracyStatChoice.equals("a") || accuracyStatChoice.equals("A"))
+                        if(accuracyStatChoice.equals("a") || 
+                           accuracyStatChoice.equals("A"))
                         {
                             randomAccuracyStat = randomNum1;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/AssassinAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/AssassinAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -464,13 +484,16 @@ class Main
                             randomNumTaken.add(randomNum1);
                             
                         }
-                        else if(accuracyStatChoice.equals("b") || accuracyStatChoice.equals("B"))
+                        else if(accuracyStatChoice.equals("b") || 
+                                accuracyStatChoice.equals("B"))
                         {
                             randomAccuracyStat = randomNum2;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/AssassinAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/AssassinAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -479,13 +502,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum2);
                         }
-                        else if(accuracyStatChoice.equals("c") || accuracyStatChoice.equals("C"))
+                        else if(accuracyStatChoice.equals("c") ||
+                                accuracyStatChoice.equals("C"))
                         {
                             randomAccuracyStat = randomNum3;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/AssassinAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/AssassinAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -494,13 +520,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum3);
                         }
-                        else if(accuracyStatChoice.equals("d") || accuracyStatChoice.equals("D"))
+                        else if(accuracyStatChoice.equals("d") ||
+                                accuracyStatChoice.equals("D"))
                         {
                             randomAccuracyStat = randomNum4;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/AssassinAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/AssassinAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -509,13 +538,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum4);
                         }
-                        else if(accuracyStatChoice.equals("e") || accuracyStatChoice.equals("E"))
+                        else if(accuracyStatChoice.equals("e") ||
+                                accuracyStatChoice.equals("E"))
                         {
                             randomAccuracyStat = randomNum5;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/AssassinAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/AssassinAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -531,7 +563,8 @@ class Main
                         System.out.println();
                         
                         //Attack Stat if statements for Assassin Class
-                        if(attackStatChoice.equals("a") || attackStatChoice.equals("A"))
+                        if(attackStatChoice.equals("a") ||
+                           attackStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -552,8 +585,10 @@ class Main
                                 randomAttackStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -562,7 +597,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("b") || attackStatChoice.equals("B"))
+                        else if(attackStatChoice.equals("b") ||
+                                attackStatChoice.equals("B"))
                         {
                             if(randomNumTaken.contains(randomNum2))
                             {
@@ -582,8 +618,10 @@ class Main
                                 randomAttackStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -592,7 +630,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("c") || attackStatChoice.equals("C"))
+                        else if(attackStatChoice.equals("c") ||
+                                attackStatChoice.equals("C"))
                         {
                             if(randomNumTaken.contains(randomNum3))
                             {
@@ -612,8 +651,10 @@ class Main
                                 randomAttackStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -622,7 +663,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("d") || attackStatChoice.equals("D"))
+                        else if(attackStatChoice.equals("d") ||
+                                attackStatChoice.equals("D"))
                         {
                             if(randomNumTaken.contains(randomNum4))
                             {
@@ -642,8 +684,10 @@ class Main
                                 randomAttackStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -652,7 +696,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("e") || attackStatChoice.equals("E"))
+                        else if(attackStatChoice.equals("e") ||
+                                attackStatChoice.equals("E"))
                         {
                             if(randomNumTaken.contains(randomNum5))
                             {
@@ -672,8 +717,10 @@ class Main
                                 randomAttackStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -689,7 +736,8 @@ class Main
                         System.out.println();
                         
                         //Damage Stat if statements for Assassin Class
-                        if(damageStatChoice.equals("a") || damageStatChoice.equals("A"))
+                        if(damageStatChoice.equals("a") ||
+                           damageStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -710,8 +758,10 @@ class Main
                                 randomDamageStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -720,7 +770,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("b") || damageStatChoice.equals("B"))
+                        else if(damageStatChoice.equals("b") ||
+                                damageStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -741,8 +792,10 @@ class Main
                                 randomDamageStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -751,7 +804,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("c") || damageStatChoice.equals("C"))
+                        else if(damageStatChoice.equals("c") ||
+                                damageStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -772,8 +826,10 @@ class Main
                                 randomDamageStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -782,7 +838,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("d") || damageStatChoice.equals("D"))
+                        else if(damageStatChoice.equals("d") ||
+                                damageStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -803,8 +860,10 @@ class Main
                                 randomDamageStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -813,7 +872,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("e") || damageStatChoice.equals("E"))
+                        else if(damageStatChoice.equals("e") ||
+                                damageStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -834,8 +894,10 @@ class Main
                                 randomDamageStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -851,7 +913,8 @@ class Main
                         System.out.println();
                         
                         //Physical Defence Stat if statements for Assassin Class
-                        if(phyDefStatChoice.equals("a") || phyDefStatChoice.equals("A"))
+                        if(phyDefStatChoice.equals("a") ||
+                           phyDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -872,8 +935,10 @@ class Main
                                 randomPhyDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -882,7 +947,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("b") || phyDefStatChoice.equals("B"))
+                        else if(phyDefStatChoice.equals("b") ||
+                                phyDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -903,8 +969,10 @@ class Main
                                 randomPhyDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -913,7 +981,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("c") || phyDefStatChoice.equals("C"))
+                        else if(phyDefStatChoice.equals("c") ||
+                                phyDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -934,8 +1003,10 @@ class Main
                                 randomPhyDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -944,7 +1015,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("d") || phyDefStatChoice.equals("D"))
+                        else if(phyDefStatChoice.equals("d") ||
+                                phyDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -965,8 +1037,10 @@ class Main
                                 randomPhyDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -975,7 +1049,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("e") || phyDefStatChoice.equals("E"))
+                        else if(phyDefStatChoice.equals("e") ||
+                                phyDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -996,8 +1071,10 @@ class Main
                                 randomPhyDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1013,7 +1090,8 @@ class Main
                         System.out.println();
                         
                         //Magical Defense Stat if statements for Assassin Class
-                        if(magDefStatChoice.equals("a") || magDefStatChoice.equals("A"))
+                        if(magDefStatChoice.equals("a") ||
+                           magDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -1034,8 +1112,10 @@ class Main
                                 randomMagDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1044,7 +1124,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("b") || magDefStatChoice.equals("B"))
+                        else if(magDefStatChoice.equals("b") ||
+                                magDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -1065,8 +1146,10 @@ class Main
                                 randomMagDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1075,7 +1158,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("c") || magDefStatChoice.equals("C"))
+                        else if(magDefStatChoice.equals("c") ||
+                                magDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -1096,8 +1180,10 @@ class Main
                                 randomMagDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1106,7 +1192,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("d") || magDefStatChoice.equals("D"))
+                        else if(magDefStatChoice.equals("d") ||
+                                magDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -1127,8 +1214,10 @@ class Main
                                 randomMagDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1137,7 +1226,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("e") || magDefStatChoice.equals("E"))
+                        else if(magDefStatChoice.equals("e") ||
+                                magDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -1158,8 +1248,10 @@ class Main
                                 randomMagDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/AssassinMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/AssassinMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1169,7 +1261,8 @@ class Main
                             }
                         }
                         
-                        System.out.print("Enter the first name of your Assassin character: ");
+                        System.out.print("Enter the first name of your"+
+                                " Assassin character: ");
                         AssassinFirstName = scan.next();//AssassinFirstName is "global"
                         
                         /*add character name variable "AssassinFirstName" to
@@ -1191,7 +1284,8 @@ class Main
                             otherwise upon creating another Assassin character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/AssassinFirstName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/AssassinFirstName.txt");
                             writeStats.write(AssassinFirstName);
                             writeStats.close();
                             
@@ -1203,7 +1297,8 @@ class Main
                         }
                         
                         //make the Assassin the currently selected character
-                        //if both lists are empty...add AssassinFirstName then add thisIsAssassin (value 1)
+                        /*if both lists are empty...add AssassinFirstName then
+                        add thisIsAssassin (value 1)*/
                         if(selectedCharacter.isEmpty())
                         {
                             selectedCharacter.add(AssassinFirstName);
@@ -1234,7 +1329,8 @@ class Main
                         /*do the same thing like above, but with the Assassin's 
                         last name*/
                         
-                        System.out.print("Enter the last name of your Assassin character: ");
+                        System.out.print("Enter the last name of your"+
+                                " Assassin character: ");
                         AssassinLastName = scan.next();//AssassinLastName is "global"
                         
                         /*add character name variable "AssassinLastName" to
@@ -1256,7 +1352,8 @@ class Main
                             otherwise upon creating another Assassin character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/AssassinLastName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/AssassinLastName.txt");
                             writeStats.write(AssassinLastName);
                             writeStats.close();
                             
@@ -1267,7 +1364,8 @@ class Main
                         }
                         
                         //make the Assassin the currently selected character
-                        //if selectedCharacter contains AssassinFirstName...add AssassinLastName 
+                        /*if selectedCharacter contains AssassinFirstName...add
+                        AssassinLastName*/
                         if(selectedCharacter.contains(AssassinFirstName))
                         {
                             selectedCharacter.add(AssassinLastName);
@@ -1343,15 +1441,20 @@ class Main
                         
                         System.out.println("Engineer Class Build");
                         System.out.println("-----------------------");
-                        System.out.println("Character stats: Accuracy, Attack, Damage, Physical Defense, and Magical Defense");
+                        System.out.println("Character stats: Accuracy, Attack,"+
+                        " Damage, Physical Defense, and Magical Defense");
                         System.out.println();
-                        System.out.println("Random numbers to use for your stats: A."+randomNum1+"  B."+randomNum2+"  C."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
+                        System.out.println("Random numbers to use for your"+
+                        " stats: A."+randomNum1+"  B."+randomNum2+"  C"+
+                        "."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
                         System.out.println();
                         System.out.println("Select a letter from above to add"+
                         " its numeric value to the stat you want it added\nto."+
                         " You can't use the same letter/value more than once.");
                         System.out.println();
-                        System.out.println("Example: Enter your Accuracy stat: C (this would make your Accuracy Stat equal to "+randomNum3+")");
+                        System.out.println("Example: Enter your Accuracy"+
+                        " stat: C (this would make your Accuracy Stat equal"+
+                        " to "+randomNum3+")");
                         System.out.println();
                         System.out.print("Enter your Accuracy stat: ");
                         String accuracyStatChoice;
@@ -1359,13 +1462,16 @@ class Main
                         System.out.println();
                         
                         //Accuracy Stat if statements for Engineer class
-                        if(accuracyStatChoice.equals("a") || accuracyStatChoice.equals("A"))
+                        if(accuracyStatChoice.equals("a") ||
+                           accuracyStatChoice.equals("A"))
                         {
                             randomAccuracyStat = randomNum1;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/EngineerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/EngineerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -1375,13 +1481,16 @@ class Main
                             randomNumTaken.add(randomNum1);
                             
                         }
-                        else if(accuracyStatChoice.equals("b") || accuracyStatChoice.equals("B"))
+                        else if(accuracyStatChoice.equals("b") ||
+                                accuracyStatChoice.equals("B"))
                         {
                             randomAccuracyStat = randomNum2;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/EngineerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/EngineerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -1390,13 +1499,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum2);
                         }
-                        else if(accuracyStatChoice.equals("c") || accuracyStatChoice.equals("C"))
+                        else if(accuracyStatChoice.equals("c") ||
+                                accuracyStatChoice.equals("C"))
                         {
                             randomAccuracyStat = randomNum3;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/EngineerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/EngineerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -1405,13 +1517,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum3);
                         }
-                        else if(accuracyStatChoice.equals("d") || accuracyStatChoice.equals("D"))
+                        else if(accuracyStatChoice.equals("d") ||
+                                accuracyStatChoice.equals("D"))
                         {
                             randomAccuracyStat = randomNum4;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/EngineerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/EngineerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -1420,13 +1535,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum4);
                         }
-                        else if(accuracyStatChoice.equals("e") || accuracyStatChoice.equals("E"))
+                        else if(accuracyStatChoice.equals("e") ||
+                                accuracyStatChoice.equals("E"))
                         {
                             randomAccuracyStat = randomNum5;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/EngineerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/EngineerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -1463,8 +1581,10 @@ class Main
                                 randomAttackStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1473,7 +1593,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("b") || attackStatChoice.equals("B"))
+                        else if(attackStatChoice.equals("b") ||
+                                attackStatChoice.equals("B"))
                         {
                             if(randomNumTaken.contains(randomNum2))
                             {
@@ -1493,8 +1614,10 @@ class Main
                                 randomAttackStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1503,7 +1626,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("c") || attackStatChoice.equals("C"))
+                        else if(attackStatChoice.equals("c") ||
+                                attackStatChoice.equals("C"))
                         {
                             if(randomNumTaken.contains(randomNum3))
                             {
@@ -1523,8 +1647,10 @@ class Main
                                 randomAttackStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1533,7 +1659,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("d") || attackStatChoice.equals("D"))
+                        else if(attackStatChoice.equals("d") ||
+                                attackStatChoice.equals("D"))
                         {
                             if(randomNumTaken.contains(randomNum4))
                             {
@@ -1553,8 +1680,10 @@ class Main
                                 randomAttackStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1563,7 +1692,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("e") || attackStatChoice.equals("E"))
+                        else if(attackStatChoice.equals("e") ||
+                                attackStatChoice.equals("E"))
                         {
                             if(randomNumTaken.contains(randomNum5))
                             {
@@ -1583,8 +1713,10 @@ class Main
                                 randomAttackStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1600,7 +1732,8 @@ class Main
                         System.out.println();
                         
                         //Damage Stat if statements for Engineer Class
-                        if(damageStatChoice.equals("a") || damageStatChoice.equals("A"))
+                        if(damageStatChoice.equals("a") ||
+                           damageStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -1621,8 +1754,10 @@ class Main
                                 randomDamageStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1631,7 +1766,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("b") || damageStatChoice.equals("B"))
+                        else if(damageStatChoice.equals("b") ||
+                                damageStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -1652,8 +1788,10 @@ class Main
                                 randomDamageStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1662,7 +1800,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("c") || damageStatChoice.equals("C"))
+                        else if(damageStatChoice.equals("c") ||
+                                damageStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -1683,8 +1822,10 @@ class Main
                                 randomDamageStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1693,7 +1834,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("d") || damageStatChoice.equals("D"))
+                        else if(damageStatChoice.equals("d") ||
+                                damageStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -1714,8 +1856,10 @@ class Main
                                 randomDamageStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1724,7 +1868,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("e") || damageStatChoice.equals("E"))
+                        else if(damageStatChoice.equals("e") ||
+                                damageStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -1745,8 +1890,10 @@ class Main
                                 randomDamageStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1762,7 +1909,8 @@ class Main
                         System.out.println();
                         
                         //Physical Defence Stat if statements for Engineer Class
-                        if(phyDefStatChoice.equals("a") || phyDefStatChoice.equals("A"))
+                        if(phyDefStatChoice.equals("a") ||
+                           phyDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -1783,8 +1931,10 @@ class Main
                                 randomPhyDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1793,7 +1943,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("b") || phyDefStatChoice.equals("B"))
+                        else if(phyDefStatChoice.equals("b") ||
+                                phyDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -1814,8 +1965,10 @@ class Main
                                 randomPhyDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1824,7 +1977,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("c") || phyDefStatChoice.equals("C"))
+                        else if(phyDefStatChoice.equals("c") ||
+                                phyDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -1845,8 +1999,10 @@ class Main
                                 randomPhyDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1855,7 +2011,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("d") || phyDefStatChoice.equals("D"))
+                        else if(phyDefStatChoice.equals("d") ||
+                                phyDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -1876,8 +2033,10 @@ class Main
                                 randomPhyDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1886,7 +2045,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("e") || phyDefStatChoice.equals("E"))
+                        else if(phyDefStatChoice.equals("e") ||
+                                phyDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -1907,8 +2067,10 @@ class Main
                                 randomPhyDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1924,7 +2086,8 @@ class Main
                         System.out.println();
                         
                         //Magical Defense Stat if statements for Engineer Class
-                        if(magDefStatChoice.equals("a") || magDefStatChoice.equals("A"))
+                        if(magDefStatChoice.equals("a") ||
+                           magDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -1945,8 +2108,10 @@ class Main
                                 randomMagDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1955,7 +2120,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("b") || magDefStatChoice.equals("B"))
+                        else if(magDefStatChoice.equals("b") ||
+                                magDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -1976,8 +2142,10 @@ class Main
                                 randomMagDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -1986,7 +2154,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("c") || magDefStatChoice.equals("C"))
+                        else if(magDefStatChoice.equals("c") ||
+                                magDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -2007,8 +2176,10 @@ class Main
                                 randomMagDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2017,7 +2188,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("d") || magDefStatChoice.equals("D"))
+                        else if(magDefStatChoice.equals("d") ||
+                                magDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -2038,8 +2210,10 @@ class Main
                                 randomMagDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2048,7 +2222,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("e") || magDefStatChoice.equals("E"))
+                        else if(magDefStatChoice.equals("e") ||
+                                magDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -2069,8 +2244,10 @@ class Main
                                 randomMagDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/EngineerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/EngineerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2079,14 +2256,17 @@ class Main
                                 }
                             }
                         }
-                        System.out.print("Enter the first name of your Engineer character: ");
-                        EngineerFirstName = scan.next();//EngineerFirstName is "global"
+                        System.out.print("Enter the first name of your"+
+                                " Engineer character: ");
+                        EngineerFirstName = scan.next();/*EngineerFirstName is
+                        "global"*/
                         
                         /*add character name variable "EngineerFirstName" to
                         loadedCharacters linked list to be accessed in other 
                         parts of the program (like selecting an existing 
                         character)*/
-                        loadedCharacters.add(EngineerFirstName);/*linked list "loaded
+                        loadedCharacters.add(EngineerFirstName);/*
+                        linked list "loaded
                         characters" is "global"*/
                         
                         try//write EngineerFirstName to EngineerFirstName.txt file
@@ -2101,7 +2281,8 @@ class Main
                             otherwise upon creating another Engineer character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/EngineerFirstName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/EngineerFirstName.txt");
                             writeStats.write(EngineerFirstName);
                             writeStats.close();
                             
@@ -2113,7 +2294,8 @@ class Main
                         }
                         
                         //make the Engineer the currently selected character
-                        //if both lists are empty...add EngineerFirstName then add thisIsEngineer (value 2)
+                        /*if both lists are empty...add EngineerFirstName then
+                        add thisIsEngineer (value 2)*/
                         if(selectedCharacter.isEmpty())
                         {
                             selectedCharacter.add(EngineerFirstName);
@@ -2144,7 +2326,8 @@ class Main
                         /*do the same thing like above, but with the Engineer's 
                         last name*/
                         
-                        System.out.print("Enter the last name of your Engineer character: ");
+                        System.out.print("Enter the last name of your"+
+                                " Engineer character: ");
                         EngineerLastName = scan.next();//EngineerLastName is "global"
                         
                         /*add character name variable "EngineerLastName" to
@@ -2166,7 +2349,8 @@ class Main
                             otherwise upon creating another Engineer character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/EngineerLastName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/EngineerLastName.txt");
                             writeStats.write(EngineerLastName);
                             writeStats.close();
                             
@@ -2177,7 +2361,8 @@ class Main
                         }
                         
                         //make the Engineer the currently selected character
-                        //if selectedCharacter contains EngineerFirstName...add EngineerLastName 
+                        /*if selectedCharacter contains EngineerFirstName...add
+                        EngineerLastName*/
                         if(selectedCharacter.contains(EngineerFirstName))
                         {
                             selectedCharacter.add(EngineerLastName);
@@ -2253,15 +2438,20 @@ class Main
                         
                         System.out.println("Healer Class Build");
                         System.out.println("-----------------------");
-                        System.out.println("Character stats: Accuracy, Attack, Damage, Physical Defense, and Magical Defense");
+                        System.out.println("Character stats: Accuracy, Attack,"+
+                        " Damage, Physical Defense, and Magical Defense");
                         System.out.println();
-                        System.out.println("Random numbers to use for your stats: A."+randomNum1+"  B."+randomNum2+"  C."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
+                        System.out.println("Random numbers to use for your"+
+                        " stats: A."+randomNum1+"  B."+randomNum2+"  C"+
+                        "."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
                         System.out.println();
                         System.out.println("Select a letter from above to add"+
                         " its numeric value to the stat you want it added\nto."+
                         " You can't use the same letter/value more than once.");
                         System.out.println();
-                        System.out.println("Example: Enter your Accuracy stat: C (this would make your Accuracy Stat equal to "+randomNum3+")");
+                        System.out.println("Example: Enter your Accuracy"+
+                        " stat: C (this would make your Accuracy Stat equal"+
+                        " to "+randomNum3+")");
                         System.out.println();
                         System.out.print("Enter your Accuracy stat: ");
                         String accuracyStatChoice;
@@ -2269,13 +2459,16 @@ class Main
                         System.out.println();
                         
                         //Accuracy Stat if statements for Healer class
-                        if(accuracyStatChoice.equals("a") || accuracyStatChoice.equals("A"))
+                        if(accuracyStatChoice.equals("a") ||
+                           accuracyStatChoice.equals("A"))
                         {
                             randomAccuracyStat = randomNum1;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/HealerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/HealerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -2285,13 +2478,16 @@ class Main
                             randomNumTaken.add(randomNum1);
                             
                         }
-                        else if(accuracyStatChoice.equals("b") || accuracyStatChoice.equals("B"))
+                        else if(accuracyStatChoice.equals("b") ||
+                                accuracyStatChoice.equals("B"))
                         {
                             randomAccuracyStat = randomNum2;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/HealerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/HealerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -2300,13 +2496,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum2);
                         }
-                        else if(accuracyStatChoice.equals("c") || accuracyStatChoice.equals("C"))
+                        else if(accuracyStatChoice.equals("c") ||
+                                accuracyStatChoice.equals("C"))
                         {
                             randomAccuracyStat = randomNum3;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/HealerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/HealerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -2315,13 +2514,17 @@ class Main
                             }
                             randomNumTaken.add(randomNum3);
                         }
-                        else if(accuracyStatChoice.equals("d") || accuracyStatChoice.equals("D"))
+                        else if(accuracyStatChoice.equals("d") ||
+                                accuracyStatChoice.equals("D"))
                         {
                             randomAccuracyStat = randomNum4;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/HealerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = 
+                                        new FileWriter
+                                        ("src/HealerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -2330,13 +2533,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum4);
                         }
-                        else if(accuracyStatChoice.equals("e") || accuracyStatChoice.equals("E"))
+                        else if(accuracyStatChoice.equals("e") ||
+                                accuracyStatChoice.equals("E"))
                         {
                             randomAccuracyStat = randomNum5;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/HealerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/HealerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -2352,7 +2558,8 @@ class Main
                         System.out.println();
                         
                         //Attack Stat if statements for Healer Class
-                        if(attackStatChoice.equals("a") || attackStatChoice.equals("A"))
+                        if(attackStatChoice.equals("a") ||
+                           attackStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -2373,8 +2580,10 @@ class Main
                                 randomAttackStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2383,7 +2592,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("b") || attackStatChoice.equals("B"))
+                        else if(attackStatChoice.equals("b") ||
+                                attackStatChoice.equals("B"))
                         {
                             if(randomNumTaken.contains(randomNum2))
                             {
@@ -2403,8 +2613,10 @@ class Main
                                 randomAttackStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2413,7 +2625,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("c") || attackStatChoice.equals("C"))
+                        else if(attackStatChoice.equals("c") ||
+                                attackStatChoice.equals("C"))
                         {
                             if(randomNumTaken.contains(randomNum3))
                             {
@@ -2433,8 +2646,10 @@ class Main
                                 randomAttackStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2443,7 +2658,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("d") || attackStatChoice.equals("D"))
+                        else if(attackStatChoice.equals("d") ||
+                                attackStatChoice.equals("D"))
                         {
                             if(randomNumTaken.contains(randomNum4))
                             {
@@ -2463,8 +2679,10 @@ class Main
                                 randomAttackStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2473,7 +2691,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("e") || attackStatChoice.equals("E"))
+                        else if(attackStatChoice.equals("e") ||
+                                attackStatChoice.equals("E"))
                         {
                             if(randomNumTaken.contains(randomNum5))
                             {
@@ -2493,8 +2712,10 @@ class Main
                                 randomAttackStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2510,7 +2731,8 @@ class Main
                         System.out.println();
                         
                         //Damage Stat if statements for Healer Class
-                        if(damageStatChoice.equals("a") || damageStatChoice.equals("A"))
+                        if(damageStatChoice.equals("a") ||
+                           damageStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -2531,8 +2753,10 @@ class Main
                                 randomDamageStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2541,7 +2765,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("b") || damageStatChoice.equals("B"))
+                        else if(damageStatChoice.equals("b") ||
+                                damageStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -2562,8 +2787,10 @@ class Main
                                 randomDamageStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2572,7 +2799,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("c") || damageStatChoice.equals("C"))
+                        else if(damageStatChoice.equals("c") ||
+                                damageStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -2593,8 +2821,10 @@ class Main
                                 randomDamageStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2603,7 +2833,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("d") || damageStatChoice.equals("D"))
+                        else if(damageStatChoice.equals("d") ||
+                                damageStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -2624,8 +2855,10 @@ class Main
                                 randomDamageStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2634,7 +2867,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("e") || damageStatChoice.equals("E"))
+                        else if(damageStatChoice.equals("e") ||
+                                damageStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -2655,8 +2889,10 @@ class Main
                                 randomDamageStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2672,7 +2908,8 @@ class Main
                         System.out.println();
                         
                         //Physical Defence Stat if statements for Healer Class
-                        if(phyDefStatChoice.equals("a") || phyDefStatChoice.equals("A"))
+                        if(phyDefStatChoice.equals("a") ||
+                           phyDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -2693,8 +2930,10 @@ class Main
                                 randomPhyDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2703,7 +2942,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("b") || phyDefStatChoice.equals("B"))
+                        else if(phyDefStatChoice.equals("b") ||
+                                phyDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -2724,8 +2964,10 @@ class Main
                                 randomPhyDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2734,7 +2976,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("c") || phyDefStatChoice.equals("C"))
+                        else if(phyDefStatChoice.equals("c") ||
+                                phyDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -2755,8 +2998,10 @@ class Main
                                 randomPhyDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2765,7 +3010,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("d") || phyDefStatChoice.equals("D"))
+                        else if(phyDefStatChoice.equals("d") ||
+                                phyDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -2786,8 +3032,10 @@ class Main
                                 randomPhyDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2796,7 +3044,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("e") || phyDefStatChoice.equals("E"))
+                        else if(phyDefStatChoice.equals("e") ||
+                                phyDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -2817,8 +3066,10 @@ class Main
                                 randomPhyDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2834,7 +3085,8 @@ class Main
                         System.out.println();
                         
                         //Magical Defense Stat if statements for Healer Class
-                        if(magDefStatChoice.equals("a") || magDefStatChoice.equals("A"))
+                        if(magDefStatChoice.equals("a") ||
+                           magDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -2855,8 +3107,10 @@ class Main
                                 randomMagDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2865,7 +3119,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("b") || magDefStatChoice.equals("B"))
+                        else if(magDefStatChoice.equals("b") ||
+                                magDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -2886,8 +3141,10 @@ class Main
                                 randomMagDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2896,7 +3153,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("c") || magDefStatChoice.equals("C"))
+                        else if(magDefStatChoice.equals("c") ||
+                                magDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -2917,8 +3175,10 @@ class Main
                                 randomMagDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2927,7 +3187,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("d") || magDefStatChoice.equals("D"))
+                        else if(magDefStatChoice.equals("d") ||
+                                magDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -2948,8 +3209,10 @@ class Main
                                 randomMagDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2958,7 +3221,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("e") || magDefStatChoice.equals("E"))
+                        else if(magDefStatChoice.equals("e") ||
+                                magDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -2979,8 +3243,10 @@ class Main
                                 randomMagDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/HealerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/HealerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -2990,7 +3256,8 @@ class Main
                             }
                         }
                         
-                        System.out.print("Enter the first name of your Healer character: ");
+                        System.out.print("Enter the first name of your Healer"+
+                        " character: ");
                         HealerFirstName = scan.next();//HealerFirstName is "global"
                         
                         /*add character name variable "HealerFirstName" to
@@ -3012,7 +3279,8 @@ class Main
                             otherwise upon creating another Healer character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/HealerFirstName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/HealerFirstName.txt");
                             writeStats.write(HealerFirstName);
                             writeStats.close();
                             
@@ -3024,7 +3292,8 @@ class Main
                         }
                         
                         //make the Healer the currently selected character
-                        //if both lists are empty...add HealerFirstName then add thisIsHealer (value 3)
+                        /*if both lists are empty...add HealerFirstName then add
+                        thisIsHealer (value 3)*/
                         if(selectedCharacter.isEmpty())
                         {
                             selectedCharacter.add(HealerFirstName);
@@ -3055,7 +3324,8 @@ class Main
                         /*do the same thing like above, but with the Healer's 
                         last name*/
                         
-                        System.out.print("Enter the last name of your Healer character: ");
+                        System.out.print("Enter the last name of your Healer"+
+                        " character: ");
                         HealerLastName = scan.next();//HealerLastName is "global"
                         
                         /*add character name variable "HealerLastName" to
@@ -3077,7 +3347,8 @@ class Main
                             otherwise upon creating another Healer character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/HealerLastName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/HealerLastName.txt");
                             writeStats.write(HealerLastName);
                             writeStats.close();
                             
@@ -3088,7 +3359,8 @@ class Main
                         }
                         
                         //make the Healer the currently selected character
-                        //if selectedCharacter contains HealerFirstName...add HealerLastName 
+                        /*if selectedCharacter contains HealerFirstName...add
+                        HealerLastName */
                         if(selectedCharacter.contains(HealerFirstName))
                         {
                             selectedCharacter.add(HealerLastName);
@@ -3164,15 +3436,20 @@ class Main
                         
                         System.out.println("Martial Artist Class Build");
                         System.out.println("-----------------------");
-                        System.out.println("Character stats: Accuracy, Attack, Damage, Physical Defense, and Magical Defense");
+                        System.out.println("Character stats: Accuracy, Attack,"+
+                        " Damage, Physical Defense, and Magical Defense");
                         System.out.println();
-                        System.out.println("Random numbers to use for your stats: A."+randomNum1+"  B."+randomNum2+"  C."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
+                        System.out.println("Random numbers to use for your"+
+                        " stats: A."+randomNum1+"  B."+randomNum2+"  C"+
+                        "."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
                         System.out.println();
                         System.out.println("Select a letter from above to add"+
                         " its numeric value to the stat you want it added\nto."+
                         " You can't use the same letter/value more than once.");
                         System.out.println();
-                        System.out.println("Example: Enter your Accuracy stat: C (this would make your Accuracy Stat equal to "+randomNum3+")");
+                        System.out.println("Example: Enter your Accuracy"+
+                        " stat: C (this would make your Accuracy Stat equal"+
+                        " to "+randomNum3+")");
                         System.out.println();
                         System.out.print("Enter your Accuracy stat: ");
                         String accuracyStatChoice;
@@ -3180,13 +3457,16 @@ class Main
                         System.out.println();
                         
                         //Accuracy Stat if statements for Martial Artist class
-                        if(accuracyStatChoice.equals("a") || accuracyStatChoice.equals("A"))
+                        if(accuracyStatChoice.equals("a") ||
+                           accuracyStatChoice.equals("A"))
                         {
                             randomAccuracyStat = randomNum1;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/MartialArtistAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/MartialArtistAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -3196,13 +3476,16 @@ class Main
                             randomNumTaken.add(randomNum1);
                             
                         }
-                        else if(accuracyStatChoice.equals("b") || accuracyStatChoice.equals("B"))
+                        else if(accuracyStatChoice.equals("b") ||
+                                accuracyStatChoice.equals("B"))
                         {
                             randomAccuracyStat = randomNum2;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/MartialArtistAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/MartialArtistAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -3211,13 +3494,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum2);
                         }
-                        else if(accuracyStatChoice.equals("c") || accuracyStatChoice.equals("C"))
+                        else if(accuracyStatChoice.equals("c") ||
+                                accuracyStatChoice.equals("C"))
                         {
                             randomAccuracyStat = randomNum3;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/MartialArtistAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/MartialArtistAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -3226,13 +3512,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum3);
                         }
-                        else if(accuracyStatChoice.equals("d") || accuracyStatChoice.equals("D"))
+                        else if(accuracyStatChoice.equals("d") ||
+                                accuracyStatChoice.equals("D"))
                         {
                             randomAccuracyStat = randomNum4;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/MartialArtistAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/MartialArtistAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -3241,13 +3530,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum4);
                         }
-                        else if(accuracyStatChoice.equals("e") || accuracyStatChoice.equals("E"))
+                        else if(accuracyStatChoice.equals("e") ||
+                                accuracyStatChoice.equals("E"))
                         {
                             randomAccuracyStat = randomNum5;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/MartialArtistAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/MartialArtistAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -3263,7 +3555,8 @@ class Main
                         System.out.println();
                         
                         //Attack Stat if statements for Martial Artist Class
-                        if(attackStatChoice.equals("a") || attackStatChoice.equals("A"))
+                        if(attackStatChoice.equals("a") ||
+                           attackStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -3284,8 +3577,10 @@ class Main
                                 randomAttackStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3294,7 +3589,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("b") || attackStatChoice.equals("B"))
+                        else if(attackStatChoice.equals("b") ||
+                                attackStatChoice.equals("B"))
                         {
                             if(randomNumTaken.contains(randomNum2))
                             {
@@ -3314,8 +3610,10 @@ class Main
                                 randomAttackStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3324,7 +3622,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("c") || attackStatChoice.equals("C"))
+                        else if(attackStatChoice.equals("c") ||
+                                attackStatChoice.equals("C"))
                         {
                             if(randomNumTaken.contains(randomNum3))
                             {
@@ -3344,8 +3643,10 @@ class Main
                                 randomAttackStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3354,7 +3655,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("d") || attackStatChoice.equals("D"))
+                        else if(attackStatChoice.equals("d") ||
+                                attackStatChoice.equals("D"))
                         {
                             if(randomNumTaken.contains(randomNum4))
                             {
@@ -3374,8 +3676,10 @@ class Main
                                 randomAttackStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3384,7 +3688,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("e") || attackStatChoice.equals("E"))
+                        else if(attackStatChoice.equals("e") ||
+                                attackStatChoice.equals("E"))
                         {
                             if(randomNumTaken.contains(randomNum5))
                             {
@@ -3404,8 +3709,10 @@ class Main
                                 randomAttackStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3421,7 +3728,8 @@ class Main
                         System.out.println();
                         
                         //Damage Stat if statements for Martial Artist Class
-                        if(damageStatChoice.equals("a") || damageStatChoice.equals("A"))
+                        if(damageStatChoice.equals("a") ||
+                           damageStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -3442,8 +3750,10 @@ class Main
                                 randomDamageStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3452,7 +3762,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("b") || damageStatChoice.equals("B"))
+                        else if(damageStatChoice.equals("b") ||
+                                damageStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -3473,8 +3784,10 @@ class Main
                                 randomDamageStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3483,7 +3796,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("c") || damageStatChoice.equals("C"))
+                        else if(damageStatChoice.equals("c") ||
+                                damageStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -3504,8 +3818,10 @@ class Main
                                 randomDamageStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3514,7 +3830,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("d") || damageStatChoice.equals("D"))
+                        else if(damageStatChoice.equals("d") ||
+                                damageStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -3535,8 +3852,10 @@ class Main
                                 randomDamageStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3545,7 +3864,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("e") || damageStatChoice.equals("E"))
+                        else if(damageStatChoice.equals("e") ||
+                                damageStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -3566,8 +3886,10 @@ class Main
                                 randomDamageStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3583,7 +3905,8 @@ class Main
                         System.out.println();
                         
                         //Physical Defence Stat if statements for Martial Artist Class
-                        if(phyDefStatChoice.equals("a") || phyDefStatChoice.equals("A"))
+                        if(phyDefStatChoice.equals("a") ||
+                           phyDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -3604,8 +3927,10 @@ class Main
                                 randomPhyDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3614,7 +3939,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("b") || phyDefStatChoice.equals("B"))
+                        else if(phyDefStatChoice.equals("b") ||
+                                phyDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -3635,8 +3961,10 @@ class Main
                                 randomPhyDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3645,7 +3973,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("c") || phyDefStatChoice.equals("C"))
+                        else if(phyDefStatChoice.equals("c") ||
+                                phyDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -3666,8 +3995,10 @@ class Main
                                 randomPhyDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3676,7 +4007,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("d") || phyDefStatChoice.equals("D"))
+                        else if(phyDefStatChoice.equals("d") ||
+                                phyDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -3697,8 +4029,10 @@ class Main
                                 randomPhyDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3707,7 +4041,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("e") || phyDefStatChoice.equals("E"))
+                        else if(phyDefStatChoice.equals("e") ||
+                                phyDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -3728,8 +4063,10 @@ class Main
                                 randomPhyDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3745,7 +4082,8 @@ class Main
                         System.out.println();
                         
                         //Magical Defense Stat if statements for Martial Artist Class
-                        if(magDefStatChoice.equals("a") || magDefStatChoice.equals("A"))
+                        if(magDefStatChoice.equals("a") ||
+                           magDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -3766,8 +4104,10 @@ class Main
                                 randomMagDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3776,7 +4116,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("b") || magDefStatChoice.equals("B"))
+                        else if(magDefStatChoice.equals("b") ||
+                                magDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -3797,8 +4138,10 @@ class Main
                                 randomMagDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3807,7 +4150,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("c") || magDefStatChoice.equals("C"))
+                        else if(magDefStatChoice.equals("c") ||
+                                magDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -3828,8 +4172,10 @@ class Main
                                 randomMagDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3838,7 +4184,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("d") || magDefStatChoice.equals("D"))
+                        else if(magDefStatChoice.equals("d") ||
+                                magDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -3859,8 +4206,10 @@ class Main
                                 randomMagDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3869,7 +4218,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("e") || magDefStatChoice.equals("E"))
+                        else if(magDefStatChoice.equals("e") ||
+                                magDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -3890,8 +4240,10 @@ class Main
                                 randomMagDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/MartialArtistMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/MartialArtistMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -3901,29 +4253,39 @@ class Main
                             }
                         }
                         
-                        System.out.print("Enter the first name of your Martial Artist character: ");
-                        MartialArtistFirstName = scan.next();//MartialArtistFirstName is "global"
+                        System.out.print("Enter the first name of your Martial"+
+                        " Artist character: ");
+                        MartialArtistFirstName = scan.next();/*MartialArtist
+                        FirstName is "global"*/
                         
                         /*add character name variable "MartialArtistFirstName" to
                         loadedCharacters linked list to be accessed in other 
                         parts of the program (like selecting an existing 
                         character)*/
-                        loadedCharacters.add(MartialArtistFirstName);/*linked list "loaded
+                        loadedCharacters.add(MartialArtistFirstName);/*
+                        linked list "loaded
                         characters" is "global"*/
                         
-                        try//write MartialArtistFirstName to MartialArtistFirstName.txt file
+                        try/*write MartialArtistFirstName to
+                            MartialArtistFirstName.txt file*/
                         {
-                            /*MartialArtistFirstName and MartialArtistFirstName.txt can only
-                            store one Martial Artist character's First name, so the newly
-                            created character's first name must be written to this txt
+                            /*MartialArtistFirstName and 
+                            MartialArtistFirstName.txt can only
+                            store one Martial Artist character's First name,
+                            so the newly
+                            created character's first name must be written to
+                            this txt
                             file which will later be read so that said character
                             name can be written to another file(which the user
                             will name and said txt file will also contain all of
-                            the Martial Artist Character's stats) after being created,
-                            otherwise upon creating another Martial Artist character,
+                            the Martial Artist Character's stats) after being
+                            created,
+                            otherwise upon creating another Martial Artist
+                            character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/MartialArtistFirstName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/MartialArtistFirstName.txt");
                             writeStats.write(MartialArtistFirstName);
                             writeStats.close();
                             
@@ -3935,14 +4297,16 @@ class Main
                         }
                         
                         //make the Martial Artist the currently selected character
-                        //if both lists are empty...add MartialArtistFirstName then add thisIsMartialArtist (value 4)
+                        /*if both lists are empty...add MartialArtistFirstName
+                        then add thisIsMartialArtist (value 4)*/
                         if(selectedCharacter.isEmpty())
                         {
                             selectedCharacter.add(MartialArtistFirstName);
                             
                             if(selectedCharacterClass.isEmpty())
                             {
-                                /*values that are added to the selectedCharacterClass
+                                /*values that are added to the 
+                                selectedCharacterClass
                                 list are added after the first name of a character
                                 is added to the selectedCharacter list.*/
                                 selectedCharacterClass.add(thisIsMartialArtist);
@@ -3950,9 +4314,11 @@ class Main
                             }
                             
                         }
-                        /*If not empty then clear it to make way for the Martial Artist
+                        /*If not empty then clear it to make way for the 
+                        Martial Artist
                         Character to be the currently selected character. And
-                        make way for the selectedCharacterClass to add the correct
+                        make way for the selectedCharacterClass to add the
+                        correct
                         value for the class that is being created.*/
                         else
                         {
@@ -3966,19 +4332,24 @@ class Main
                         /*do the same thing like above, but with the Martial Artist'
                         last name*/
                         
-                        System.out.print("Enter the last name of your Martial Artist character: ");
-                        MartialArtistLastName = scan.next();//MartialArtistLastName is "global"
+                        System.out.print("Enter the last name of your"+
+                        " Martial Artist character: ");
+                        MartialArtistLastName = scan.next();/*
+                        MartialArtistLastName is "global"*/
                         
                         /*add character name variable "MartialArtistLastName" to
                         loadedCharacters linked list to be accessed in other 
                         parts of the program (like selecting an existing 
                         character)*/
-                        loadedCharacters.add(MartialArtistLastName);/*linked list "loaded
+                        loadedCharacters.add(MartialArtistLastName);/*
+                        linked list "loaded
                         characters" is "global"*/
                         
-                        try//write MartialArtistLastName to MartialArtistLastName.txt file
+                        try/*write MartialArtistLastName to 
+                            MartialArtistLastName.txt file*/
                         {
-                            /*MartialArtistLastName and MartialArtistLastName.txt can only
+                            /*MartialArtistLastName and 
+                            MartialArtistLastName.txt can only
                             store one Martial Artist character's last name, so the newly
                             created character's name must be written to this txt
                             file which will later be read so that said character
@@ -3988,7 +4359,8 @@ class Main
                             otherwise upon creating another Martial Artist character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/MartialArtistLastName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/MartialArtistLastName.txt");
                             writeStats.write(MartialArtistLastName);
                             writeStats.close();
                             
@@ -3999,7 +4371,8 @@ class Main
                         }
                         
                         //make the Martial Artist the currently selected character
-                        //if selectedCharacter contains MartialArtistFirstName...add MartialArtistLastName 
+                        /*if selectedCharacter contains MartialArtistFirstName
+                        ...add MartialArtistLastName */
                         if(selectedCharacter.contains(MartialArtistFirstName))
                         {
                             selectedCharacter.add(MartialArtistLastName);
@@ -4076,15 +4449,20 @@ class Main
                         
                         System.out.println("Necromancer Class Build");
                         System.out.println("-----------------------");
-                        System.out.println("Character stats: Accuracy, Attack, Damage, Physical Defense, and Magical Defense");
+                        System.out.println("Character stats: Accuracy, Attack,"+
+                        " Damage, Physical Defense, and Magical Defense");
                         System.out.println();
-                        System.out.println("Random numbers to use for your stats: A."+randomNum1+"  B."+randomNum2+"  C."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
+                        System.out.println("Random numbers to use for your"+
+                        " stats: A."+randomNum1+"  B."+randomNum2+"  C"+
+                        "."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
                         System.out.println();
                         System.out.println("Select a letter from above to add"+
                         " its numeric value to the stat you want it added\nto."+
                         " You can't use the same letter/value more than once.");
                         System.out.println();
-                        System.out.println("Example: Enter your Accuracy stat: C (this would make your Accuracy Stat equal to "+randomNum3+")");
+                        System.out.println("Example: Enter your Accuracy"+
+                        " stat: C (this would make your Accuracy Stat equal"+
+                        " to "+randomNum3+")");
                         System.out.println();
                         System.out.print("Enter your Accuracy stat: ");
                         String accuracyStatChoice;
@@ -4092,13 +4470,16 @@ class Main
                         System.out.println();
                         
                         //Accuracy Stat if statements for Necromancer class
-                        if(accuracyStatChoice.equals("a") || accuracyStatChoice.equals("A"))
+                        if(accuracyStatChoice.equals("a") ||
+                           accuracyStatChoice.equals("A"))
                         {
                             randomAccuracyStat = randomNum1;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/NecromancerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/NecromancerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -4108,13 +4489,16 @@ class Main
                             randomNumTaken.add(randomNum1);
                             
                         }
-                        else if(accuracyStatChoice.equals("b") || accuracyStatChoice.equals("B"))
+                        else if(accuracyStatChoice.equals("b") ||
+                                accuracyStatChoice.equals("B"))
                         {
                             randomAccuracyStat = randomNum2;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/NecromancerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/NecromancerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -4123,13 +4507,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum2);
                         }
-                        else if(accuracyStatChoice.equals("c") || accuracyStatChoice.equals("C"))
+                        else if(accuracyStatChoice.equals("c") ||
+                                accuracyStatChoice.equals("C"))
                         {
                             randomAccuracyStat = randomNum3;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/NecromancerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/NecromancerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -4138,13 +4525,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum3);
                         }
-                        else if(accuracyStatChoice.equals("d") || accuracyStatChoice.equals("D"))
+                        else if(accuracyStatChoice.equals("d") ||
+                                accuracyStatChoice.equals("D"))
                         {
                             randomAccuracyStat = randomNum4;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/NecromancerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/NecromancerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -4153,13 +4543,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum4);
                         }
-                        else if(accuracyStatChoice.equals("e") || accuracyStatChoice.equals("E"))
+                        else if(accuracyStatChoice.equals("e") ||
+                                accuracyStatChoice.equals("E"))
                         {
                             randomAccuracyStat = randomNum5;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/NecromancerAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/NecromancerAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -4175,7 +4568,8 @@ class Main
                         System.out.println();
                         
                         //Attack Stat if statements for Necromancer Class
-                        if(attackStatChoice.equals("a") || attackStatChoice.equals("A"))
+                        if(attackStatChoice.equals("a") ||
+                           attackStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -4196,8 +4590,10 @@ class Main
                                 randomAttackStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4206,7 +4602,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("b") || attackStatChoice.equals("B"))
+                        else if(attackStatChoice.equals("b") ||
+                                attackStatChoice.equals("B"))
                         {
                             if(randomNumTaken.contains(randomNum2))
                             {
@@ -4226,8 +4623,10 @@ class Main
                                 randomAttackStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4236,7 +4635,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("c") || attackStatChoice.equals("C"))
+                        else if(attackStatChoice.equals("c") ||
+                                attackStatChoice.equals("C"))
                         {
                             if(randomNumTaken.contains(randomNum3))
                             {
@@ -4256,8 +4656,10 @@ class Main
                                 randomAttackStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4266,7 +4668,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("d") || attackStatChoice.equals("D"))
+                        else if(attackStatChoice.equals("d") ||
+                                attackStatChoice.equals("D"))
                         {
                             if(randomNumTaken.contains(randomNum4))
                             {
@@ -4286,8 +4689,10 @@ class Main
                                 randomAttackStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4296,7 +4701,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("e") || attackStatChoice.equals("E"))
+                        else if(attackStatChoice.equals("e") ||
+                                attackStatChoice.equals("E"))
                         {
                             if(randomNumTaken.contains(randomNum5))
                             {
@@ -4316,8 +4722,10 @@ class Main
                                 randomAttackStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4333,7 +4741,8 @@ class Main
                         System.out.println();
                         
                         //Damage Stat if statements for Necromancer Class
-                        if(damageStatChoice.equals("a") || damageStatChoice.equals("A"))
+                        if(damageStatChoice.equals("a") ||
+                           damageStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -4354,8 +4763,10 @@ class Main
                                 randomDamageStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4364,7 +4775,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("b") || damageStatChoice.equals("B"))
+                        else if(damageStatChoice.equals("b") ||
+                                damageStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -4385,8 +4797,10 @@ class Main
                                 randomDamageStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4395,7 +4809,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("c") || damageStatChoice.equals("C"))
+                        else if(damageStatChoice.equals("c") ||
+                                damageStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -4416,8 +4831,10 @@ class Main
                                 randomDamageStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4426,7 +4843,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("d") || damageStatChoice.equals("D"))
+                        else if(damageStatChoice.equals("d") ||
+                                damageStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -4447,8 +4865,10 @@ class Main
                                 randomDamageStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4457,7 +4877,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("e") || damageStatChoice.equals("E"))
+                        else if(damageStatChoice.equals("e") ||
+                                damageStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -4478,8 +4899,10 @@ class Main
                                 randomDamageStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4495,7 +4918,8 @@ class Main
                         System.out.println();
                         
                         //Physical Defence Stat if statements for Necromancer Class
-                        if(phyDefStatChoice.equals("a") || phyDefStatChoice.equals("A"))
+                        if(phyDefStatChoice.equals("a") ||
+                           phyDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -4516,8 +4940,10 @@ class Main
                                 randomPhyDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4526,7 +4952,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("b") || phyDefStatChoice.equals("B"))
+                        else if(phyDefStatChoice.equals("b") ||
+                                phyDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -4547,8 +4974,10 @@ class Main
                                 randomPhyDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4557,7 +4986,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("c") || phyDefStatChoice.equals("C"))
+                        else if(phyDefStatChoice.equals("c") ||
+                                phyDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -4578,8 +5008,10 @@ class Main
                                 randomPhyDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4588,7 +5020,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("d") || phyDefStatChoice.equals("D"))
+                        else if(phyDefStatChoice.equals("d") ||
+                                phyDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -4609,8 +5042,10 @@ class Main
                                 randomPhyDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4619,7 +5054,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("e") || phyDefStatChoice.equals("E"))
+                        else if(phyDefStatChoice.equals("e") ||
+                                phyDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -4640,8 +5076,10 @@ class Main
                                 randomPhyDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4657,7 +5095,8 @@ class Main
                         System.out.println();
                         
                         //Magical Defense Stat if statements for Necromancer Class
-                        if(magDefStatChoice.equals("a") || magDefStatChoice.equals("A"))
+                        if(magDefStatChoice.equals("a") ||
+                           magDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -4678,8 +5117,10 @@ class Main
                                 randomMagDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4688,7 +5129,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("b") || magDefStatChoice.equals("B"))
+                        else if(magDefStatChoice.equals("b") ||
+                                magDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -4709,8 +5151,10 @@ class Main
                                 randomMagDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4719,7 +5163,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("c") || magDefStatChoice.equals("C"))
+                        else if(magDefStatChoice.equals("c") ||
+                                magDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -4740,8 +5185,10 @@ class Main
                                 randomMagDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4750,7 +5197,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("d") || magDefStatChoice.equals("D"))
+                        else if(magDefStatChoice.equals("d") ||
+                                magDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -4771,8 +5219,10 @@ class Main
                                 randomMagDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4781,7 +5231,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("e") || magDefStatChoice.equals("E"))
+                        else if(magDefStatChoice.equals("e") ||
+                                magDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -4802,8 +5253,10 @@ class Main
                                 randomMagDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/NecromancerMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/NecromancerMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -4813,21 +5266,26 @@ class Main
                             }
                         }
                         
-                        System.out.print("Enter the first name of your Necromancer character: ");
-                        NecromancerFirstName = scan.next();//NecromancerFirstName is "global"
+                        System.out.print("Enter the first name of your"+
+                        " Necromancer character: ");
+                        NecromancerFirstName = scan.next();/*
+                        NecromancerFirstName is "global"*/
                         
                         /*add character name variable "NecromancerFirstName" to
                         loadedCharacters linked list to be accessed in other 
                         parts of the program (like selecting an existing 
                         character)*/
-                        loadedCharacters.add(NecromancerFirstName);/*linked list "loaded
-                        characters" is "global"*/
+                        loadedCharacters.add(NecromancerFirstName);/*
+                        linked list "loaded characters" is "global"*/
                         
                         try//write NecromancerFirstName to NecromancerFirstName.txt file
                         {
-                            /*NecromancerFirstName and NecromancerFirstName.txt can only
-                            store one Necromancer character's First name, so the newly
-                            created character's first name must be written to this txt
+                            /*NecromancerFirstName and 
+                            NecromancerFirstName.txt can only
+                            store one Necromancer character's First name, 
+                            so the newly
+                            created character's first name must be written 
+                            to this txt
                             file which will later be read so that said character
                             name can be written to another file(which the user
                             will name and said txt file will also contain all of
@@ -4835,7 +5293,8 @@ class Main
                             otherwise upon creating another Necromancer character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/NecromancerFirstName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/NecromancerFirstName.txt");
                             writeStats.write(NecromancerFirstName);
                             writeStats.close();
                             
@@ -4847,7 +5306,8 @@ class Main
                         }
                         
                         //make the Necromancer the currently selected character
-                        //if both lists are empty...add NecromancerFirstName then add thisIsNecromancer (value 5)
+                        /*if both lists are empty...add NecromancerFirstName
+                        then add thisIsNecromancer (value 5)*/
                         if(selectedCharacter.isEmpty())
                         {
                             selectedCharacter.add(NecromancerFirstName);
@@ -4878,20 +5338,25 @@ class Main
                         /*do the same thing like above, but with the Necromancer's
                         last name*/
                         
-                        System.out.print("Enter the last name of your Necromancer character: ");
-                        NecromancerLastName = scan.next();//NecromancerLastName is "global"
+                        System.out.print("Enter the last name of your"+
+                        " Necromancer character: ");
+                        NecromancerLastName = scan.next();/*
+                        NecromancerLastName is "global"*/
                         
                         /*add character name variable "NecromancerLastName" to
                         loadedCharacters linked list to be accessed in other 
                         parts of the program (like selecting an existing 
                         character)*/
-                        loadedCharacters.add(NecromancerLastName);/*linked list "loaded
+                        loadedCharacters.add(NecromancerLastName);/*
+                        linked list "loaded
                         characters" is "global"*/
                         
                         try//write NecromancerLastName to NecromancerLastName.txt file
                         {
-                            /*NecromancerLastName and NecromancerLastName.txt can only
-                            store one Necromancer character's last name, so the newly
+                            /*NecromancerLastName and NecromancerLastName.txt 
+                            can only
+                            store one Necromancer character's last name, so the
+                            newly
                             created character's name must be written to this txt
                             file which will later be read so that said character
                             name can be written to another file(which the user
@@ -4900,7 +5365,8 @@ class Main
                             otherwise upon creating another Necromancer character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/NecromancerLastName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/NecromancerLastName.txt");
                             writeStats.write(NecromancerLastName);
                             writeStats.close();
                             
@@ -4911,7 +5377,8 @@ class Main
                         }
 
                         //make the Necromancer the currently selected character
-                        //if selectedCharacter contains NecromancerFirstName...add NecromancerLastName 
+                        /*if selectedCharacter contains NecromancerFirstName
+                        ...add NecromancerLastName */
                         if(selectedCharacter.contains(NecromancerFirstName))
                         {
                             selectedCharacter.add(NecromancerLastName);
@@ -4987,15 +5454,20 @@ class Main
                         
                         System.out.println("Wizard Class Build");
                         System.out.println("-----------------------");
-                        System.out.println("Character stats: Accuracy, Attack, Damage, Physical Defense, and Magical Defense");
+                        System.out.println("Character stats: Accuracy, Attack,"+
+                        " Damage, Physical Defense, and Magical Defense");
                         System.out.println();
-                        System.out.println("Random numbers to use for your stats: A."+randomNum1+"  B."+randomNum2+"  C."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
+                        System.out.println("Random numbers to use for your"+
+                        " stats: A."+randomNum1+"  B."+randomNum2+"  C"+
+                        "."+randomNum3+"  D."+randomNum4+"  E."+randomNum5);
                         System.out.println();
                         System.out.println("Select a letter from above to add"+
                         " its numeric value to the stat you want it added\nto."+
                         " You can't use the same letter/value more than once.");
                         System.out.println();
-                        System.out.println("Example: Enter your Accuracy stat: C (this would make your Accuracy Stat equal to "+randomNum3+")");
+                        System.out.println("Example: Enter your"+
+                        " Accuracy stat: C (this would make your Accuracy Stat"+
+                        " equal to "+randomNum3+")");
                         System.out.println();
                         System.out.print("Enter your Accuracy stat: ");
                         String accuracyStatChoice;
@@ -5003,13 +5475,16 @@ class Main
                         System.out.println();
                         
                         //Accuracy Stat if statements for Wizard class
-                        if(accuracyStatChoice.equals("a") || accuracyStatChoice.equals("A"))
+                        if(accuracyStatChoice.equals("a") ||
+                           accuracyStatChoice.equals("A"))
                         {
                             randomAccuracyStat = randomNum1;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/WizardAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/WizardAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -5019,13 +5494,16 @@ class Main
                             randomNumTaken.add(randomNum1);
                             
                         }
-                        else if(accuracyStatChoice.equals("b") || accuracyStatChoice.equals("B"))
+                        else if(accuracyStatChoice.equals("b") ||
+                                accuracyStatChoice.equals("B"))
                         {
                             randomAccuracyStat = randomNum2;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/WizardAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/WizardAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -5034,13 +5512,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum2);
                         }
-                        else if(accuracyStatChoice.equals("c") || accuracyStatChoice.equals("C"))
+                        else if(accuracyStatChoice.equals("c") ||
+                                accuracyStatChoice.equals("C"))
                         {
                             randomAccuracyStat = randomNum3;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/WizardAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/WizardAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -5049,13 +5530,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum3);
                         }
-                        else if(accuracyStatChoice.equals("d") || accuracyStatChoice.equals("D"))
+                        else if(accuracyStatChoice.equals("d") ||
+                                accuracyStatChoice.equals("D"))
                         {
                             randomAccuracyStat = randomNum4;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/WizardAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/WizardAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -5064,13 +5548,16 @@ class Main
                             }
                             randomNumTaken.add(randomNum4);
                         }
-                        else if(accuracyStatChoice.equals("e") || accuracyStatChoice.equals("E"))
+                        else if(accuracyStatChoice.equals("e") ||
+                                accuracyStatChoice.equals("E"))
                         {
                             randomAccuracyStat = randomNum5;
                             try
                             {
-                                FileWriter writeStats = new FileWriter("src/WizardAccuracyStat.txt");
-                                writeStats.write(String.valueOf(randomAccuracyStat));
+                                FileWriter writeStats = new FileWriter
+                                ("src/WizardAccuracyStat.txt");
+                                writeStats.write(String.
+                                        valueOf(randomAccuracyStat));
                                 writeStats.close();
                             }
                             catch(IOException exception)
@@ -5086,7 +5573,8 @@ class Main
                         System.out.println();
                         
                         //Attack Stat if statements for Wizard Class
-                        if(attackStatChoice.equals("a") || attackStatChoice.equals("A"))
+                        if(attackStatChoice.equals("a") ||
+                           attackStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -5107,8 +5595,10 @@ class Main
                                 randomAttackStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5117,7 +5607,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("b") || attackStatChoice.equals("B"))
+                        else if(attackStatChoice.equals("b") ||
+                                attackStatChoice.equals("B"))
                         {
                             if(randomNumTaken.contains(randomNum2))
                             {
@@ -5137,8 +5628,10 @@ class Main
                                 randomAttackStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5147,7 +5640,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("c") || attackStatChoice.equals("C"))
+                        else if(attackStatChoice.equals("c") ||
+                                attackStatChoice.equals("C"))
                         {
                             if(randomNumTaken.contains(randomNum3))
                             {
@@ -5167,8 +5661,10 @@ class Main
                                 randomAttackStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5177,7 +5673,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("d") || attackStatChoice.equals("D"))
+                        else if(attackStatChoice.equals("d") ||
+                                attackStatChoice.equals("D"))
                         {
                             if(randomNumTaken.contains(randomNum4))
                             {
@@ -5197,8 +5694,10 @@ class Main
                                 randomAttackStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5207,7 +5706,8 @@ class Main
                                 }
                             }
                         }
-                        else if(attackStatChoice.equals("e") || attackStatChoice.equals("E"))
+                        else if(attackStatChoice.equals("e") ||
+                                attackStatChoice.equals("E"))
                         {
                             if(randomNumTaken.contains(randomNum5))
                             {
@@ -5227,8 +5727,10 @@ class Main
                                 randomAttackStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardAttackStat.txt");
-                                    writeStats.write(String.valueOf(randomAttackStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardAttackStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomAttackStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5244,7 +5746,8 @@ class Main
                         System.out.println();
                         
                         //Damage Stat if statements for Wizard Class
-                        if(damageStatChoice.equals("a") || damageStatChoice.equals("A"))
+                        if(damageStatChoice.equals("a") ||
+                           damageStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -5265,8 +5768,10 @@ class Main
                                 randomDamageStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5275,7 +5780,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("b") || damageStatChoice.equals("B"))
+                        else if(damageStatChoice.equals("b") ||
+                                damageStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -5296,8 +5802,10 @@ class Main
                                 randomDamageStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5306,7 +5814,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("c") || damageStatChoice.equals("C"))
+                        else if(damageStatChoice.equals("c") ||
+                                damageStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -5327,8 +5836,10 @@ class Main
                                 randomDamageStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5337,7 +5848,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("d") || damageStatChoice.equals("D"))
+                        else if(damageStatChoice.equals("d") ||
+                                damageStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -5358,8 +5870,10 @@ class Main
                                 randomDamageStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5368,7 +5882,8 @@ class Main
                                 }
                             }
                         }
-                        else if(damageStatChoice.equals("e") || damageStatChoice.equals("E"))
+                        else if(damageStatChoice.equals("e") ||
+                                damageStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -5389,8 +5904,10 @@ class Main
                                 randomDamageStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardDamageStat.txt");
-                                    writeStats.write(String.valueOf(randomDamageStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardDamageStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomDamageStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5406,7 +5923,8 @@ class Main
                         System.out.println();
                         
                         //Physical Defence Stat if statements for Wizard Class
-                        if(phyDefStatChoice.equals("a") || phyDefStatChoice.equals("A"))
+                        if(phyDefStatChoice.equals("a") ||
+                           phyDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -5427,8 +5945,10 @@ class Main
                                 randomPhyDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5437,7 +5957,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("b") || phyDefStatChoice.equals("B"))
+                        else if(phyDefStatChoice.equals("b") ||
+                                phyDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -5458,8 +5979,10 @@ class Main
                                 randomPhyDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5468,7 +5991,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("c") || phyDefStatChoice.equals("C"))
+                        else if(phyDefStatChoice.equals("c") ||
+                                phyDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -5489,8 +6013,10 @@ class Main
                                 randomPhyDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5499,7 +6025,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("d") || phyDefStatChoice.equals("D"))
+                        else if(phyDefStatChoice.equals("d") ||
+                                phyDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -5520,8 +6047,10 @@ class Main
                                 randomPhyDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5530,7 +6059,8 @@ class Main
                                 }
                             }
                         }
-                        else if(phyDefStatChoice.equals("e") || phyDefStatChoice.equals("E"))
+                        else if(phyDefStatChoice.equals("e") ||
+                                phyDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -5551,8 +6081,10 @@ class Main
                                 randomPhyDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardPhyDefStat.txt");
-                                    writeStats.write(String.valueOf(randomPhyDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardPhyDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomPhyDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5568,7 +6100,8 @@ class Main
                         System.out.println();
                         
                         //Magical Defense Stat if statements for Wizard Class
-                        if(magDefStatChoice.equals("a") || magDefStatChoice.equals("A"))
+                        if(magDefStatChoice.equals("a") ||
+                           magDefStatChoice.equals("A"))
                         {
                             
                             if(randomNumTaken.contains(randomNum1))
@@ -5589,8 +6122,10 @@ class Main
                                 randomMagDefStat = randomNum1;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5599,7 +6134,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("b") || magDefStatChoice.equals("B"))
+                        else if(magDefStatChoice.equals("b") ||
+                                magDefStatChoice.equals("B"))
                         {
                             
                             if(randomNumTaken.contains(randomNum2))
@@ -5620,8 +6156,10 @@ class Main
                                 randomMagDefStat = randomNum2;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5630,7 +6168,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("c") || magDefStatChoice.equals("C"))
+                        else if(magDefStatChoice.equals("c") ||
+                                magDefStatChoice.equals("C"))
                         {
                             
                             if(randomNumTaken.contains(randomNum3))
@@ -5651,8 +6190,10 @@ class Main
                                 randomMagDefStat = randomNum3;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5661,7 +6202,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("d") || magDefStatChoice.equals("D"))
+                        else if(magDefStatChoice.equals("d") ||
+                                magDefStatChoice.equals("D"))
                         {
                             
                             if(randomNumTaken.contains(randomNum4))
@@ -5682,8 +6224,10 @@ class Main
                                 randomMagDefStat = randomNum4;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5692,7 +6236,8 @@ class Main
                                 }
                             }
                         }
-                        else if(magDefStatChoice.equals("e") || magDefStatChoice.equals("E"))
+                        else if(magDefStatChoice.equals("e") ||
+                                magDefStatChoice.equals("E"))
                         {
                             
                             if(randomNumTaken.contains(randomNum5))
@@ -5713,8 +6258,10 @@ class Main
                                 randomMagDefStat = randomNum5;
                                 try
                                 {
-                                    FileWriter writeStats = new FileWriter("src/WizardMagDefStat.txt");
-                                    writeStats.write(String.valueOf(randomMagDefStat));
+                                    FileWriter writeStats = new FileWriter
+                                    ("src/WizardMagDefStat.txt");
+                                    writeStats.write(String.
+                                            valueOf(randomMagDefStat));
                                     writeStats.close();
                                 }
                                 catch(IOException exception)
@@ -5724,21 +6271,25 @@ class Main
                             }
                         }
                         
-                        System.out.print("Enter the first name of your Wizard character: ");
-                        WizardFirstName = scan.next();//WizardFirstName is "global"
+                        System.out.print("Enter the first name of your"+
+                        " Wizard character: ");
+                        WizardFirstName = scan.next();/*
+                        WizardFirstName is "global"*/
                         
                         /*add character name variable "WizardFirstName" to
                         loadedCharacters linked list to be accessed in other 
                         parts of the program (like selecting an existing 
                         character)*/
-                        loadedCharacters.add(WizardFirstName);/*linked list "loaded
+                        loadedCharacters.add(WizardFirstName);/*
+                        linked list "loaded
                         characters" is "global"*/
                         
                         try//write WizardFirstName to WizardFirstName.txt file
                         {
                             /*WizardFirstName and WizardFirstName.txt can only
                             store one Wizard character's First name, so the newly
-                            created character's first name must be written to this txt
+                            created character's first name must be written to 
+                            this txt
                             file which will later be read so that said character
                             name can be written to another file(which the user
                             will name and said txt file will also contain all of
@@ -5746,7 +6297,8 @@ class Main
                             otherwise upon creating another Wizard character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/WizardFirstName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/WizardFirstName.txt");
                             writeStats.write(WizardFirstName);
                             writeStats.close();
                             
@@ -5758,15 +6310,18 @@ class Main
                         }
                         
                         //make the Wizard the currently selected character
-                        //if both lists are empty...add WizardFirstName then add thisIsWizard (value 6)
+                        /*if both lists are empty...add WizardFirstName then add
+                        thisIsWizard (value 6)*/
                         if(selectedCharacter.isEmpty())
                         {
                             selectedCharacter.add(WizardFirstName);
                             
                             if(selectedCharacterClass.isEmpty())
                             {
-                                /*values that are added to the selectedCharacterClass
-                                list are added after the first name of a character
+                                /*values that are added to the 
+                                selectedCharacterClass
+                                list are added after the first name of a 
+                                character
                                 is added to the selectedCharacter list.*/
                                 selectedCharacterClass.add(thisIsWizard);
                                 
@@ -5789,7 +6344,8 @@ class Main
                         /*do the same thing like above, but with the Wizard's
                         last name*/
                         
-                        System.out.print("Enter the last name of your Wizard character: ");
+                        System.out.print("Enter the last name of your"+
+                        " Wizard character: ");
                         WizardLastName = scan.next();//WizardLastName is "global"
                         
                         /*add character name variable "WizardLastName" to
@@ -5811,7 +6367,8 @@ class Main
                             otherwise upon creating another Wizard character,
                             the previously created one will be overwritten by
                             the newer one.*/
-                            FileWriter writeStats = new FileWriter("src/WizardLastName.txt");
+                            FileWriter writeStats = new FileWriter
+                            ("src/WizardLastName.txt");
                             writeStats.write(WizardLastName);
                             writeStats.close();
                             
@@ -5822,7 +6379,8 @@ class Main
                         }
                         
                         //make the Wizard the currently selected character
-                        //if selectedCharacter contains WizardFirstName...add WizardLastName 
+                        /*if selectedCharacter contains WizardFirstName...add
+                        WizardLastName */
                         if(selectedCharacter.contains(WizardFirstName))
                         {
                             selectedCharacter.add(WizardLastName);
@@ -5844,7 +6402,8 @@ class Main
                     System.out.println("-----------------------");
                     System.out.print("Enter 0 to preview all classes, 1 to create"+
                     " an Assassin, 2 for an Engineer, 3 for a Healer,\n4 for a"+
-                    " Martial Artist, 5 for a Necromancer, 6 for a Wizard, or 7 to quit: ");
+                    " Martial Artist, 5 for a Necromancer, 6 for a Wizard, or"+
+                    " 7 to quit: ");
                     characterCreationMenu = scan.nextInt();
                     System.out.println();
                     System.out.println();
@@ -5875,34 +6434,45 @@ class Main
                 File Assassin1stFile = new File("src/AssassinFirstName.txt");
                 Scanner scanAssassinFirstName = new Scanner(Assassin1stFile);
                 
-                //see if the AssassinFirstName.txt file has anything in it, returns true or false
-                Boolean booleanAssassinFirstNameTxt = scanAssassinFirstName.hasNext();
+                /*see if the AssassinFirstName.txt file has anything in it,
+                returns true or false*/
+                Boolean booleanAssassinFirstNameTxt = 
+                        scanAssassinFirstName.hasNext();
                 
                 
                 //will retrieve AssassinLastName.txt
                 File Assassin2ndFile = new File("src/AssassinLastName.txt");
                 Scanner scanAssassinLastName = new Scanner(Assassin2ndFile);
                 
-                //see if the AssassinLastName.txt file has anything in it, returns true or false
-                Boolean booleanAssassinLastNameTxt = scanAssassinLastName.hasNext();
+                /*see if the AssassinLastName.txt file has anything in it,
+                returns true or false*/
+                Boolean booleanAssassinLastNameTxt = 
+                        scanAssassinLastName.hasNext();
                 
                 
                 /*if the Assassin character's first name txt file is blank then
-                tell the user that no character has been created or loaded for the Assassin class*/
-                if(booleanAssassinFirstNameTxt == false && booleanAssassinLastNameTxt == false)
+                tell the user that no character has been created or loaded 
+                for the Assassin class*/
+                if(booleanAssassinFirstNameTxt == false &&
+                   booleanAssassinLastNameTxt == false)
                 {
-                    String NoCharacterAlert1 = "1. No character has been created or loaded for the Assassin class so none can be selected";
+                    String NoCharacterAlert1 = "1. No character has been"+
+                    " created or loaded for the Assassin class so none can"+
+                    " be selected";
                     System.out.println(NoCharacterAlert1);
                 }
                 
-                /*else if there is an Assassin character that has been created or loaded
-                then display them.*/
-                else if(booleanAssassinFirstNameTxt == true && booleanAssassinLastNameTxt == true)
+                /*else if there is an Assassin character that has been created
+                or loaded then display them.*/
+                else if(booleanAssassinFirstNameTxt == true &&
+                        booleanAssassinLastNameTxt == true)
                 {
-                    //read the AssassinFirstName.txt file & AssassinLastName.txt File, then display
+                    /*read the AssassinFirstName.txt file & AssassinLastName.txt
+                    File, then display*/
                     String AssassinFirstNameTxt = scanAssassinFirstName.next();
                     String AssassinLastNameTxt = scanAssassinLastName.next();
-                    System.out.println("1. "+AssassinFirstNameTxt+" "+AssassinLastNameTxt+" (Assassin Class)");
+                    System.out.println("1. "+AssassinFirstNameTxt+" "+
+                            AssassinLastNameTxt+" (Assassin Class)");
                 }
                 //END: Assassin Character display ends
                 //--------------------------------------------------------------
@@ -5914,34 +6484,45 @@ class Main
                 File Engineer1stFile = new File("src/EngineerFirstName.txt");
                 Scanner scanEngineerFirstName = new Scanner(Engineer1stFile);
                 
-                //see if the EngineerFirstName.txt file has anything in it, returns true or false
-                Boolean booleanEngineerFirstNameTxt = scanEngineerFirstName.hasNext();
+                /*see if the EngineerFirstName.txt file has anything in it,
+                returns true or false*/
+                Boolean booleanEngineerFirstNameTxt = 
+                        scanEngineerFirstName.hasNext();
                 
                 
                 //will retrieve EngineerLastName.txt
                 File Engineer2ndFile = new File("src/EngineerLastName.txt");
                 Scanner scanEngineerLastName = new Scanner(Engineer2ndFile);
                 
-                //see if the EngineerLastName.txt file has anything in it, returns true or false
-                Boolean booleanEngineerLastNameTxt = scanEngineerLastName.hasNext();
+                /*see if the EngineerLastName.txt file has anything in it,
+                returns true or false*/
+                Boolean booleanEngineerLastNameTxt = 
+                        scanEngineerLastName.hasNext();
                 
                 
                 /*if the Engineer character's first name txt file is blank then
-                tell the user that no character has been created or loaded for the Engineer class*/
-                if(booleanEngineerFirstNameTxt == false && booleanEngineerLastNameTxt == false)
+                tell the user that no character has been created or loaded
+                for the Engineer class*/
+                if(booleanEngineerFirstNameTxt == false &&
+                   booleanEngineerLastNameTxt == false)
                 {
-                    String NoCharacterAlert2 = "2. No character has been created or loaded for the Engineer class so none can be selected";
+                    String NoCharacterAlert2 = "2. No character has been"+
+                    " created or loaded for the Engineer class so none can"+
+                    " be selected";
                     System.out.println(NoCharacterAlert2);
                 }
                 
-                /*else if there is an Engineer character that has been created or loaded
-                then display them.*/
-                else if(booleanEngineerFirstNameTxt == true && booleanEngineerLastNameTxt == true)
+                /*else if there is an Engineer character that has been created
+                or loaded then display them.*/
+                else if(booleanEngineerFirstNameTxt == true &&
+                        booleanEngineerLastNameTxt == true)
                 {
-                    //read the EngineerFirstName.txt file & EngineerLastName.txt File, then display
+                    /*read the EngineerFirstName.txt file & EngineerLastName.txt
+                    File, then display*/
                     String EngineerFirstNameTxt = scanEngineerFirstName.next();
                     String EngineerLastNameTxt = scanEngineerLastName.next();
-                    System.out.println("2. "+EngineerFirstNameTxt+" "+EngineerLastNameTxt+" (Engineer Class)");
+                    System.out.println("2. "+EngineerFirstNameTxt+" "+
+                            EngineerLastNameTxt+" (Engineer Class)");
                 }
                 //END: Engineer Character display ends
                 //--------------------------------------------------------------
@@ -5953,7 +6534,8 @@ class Main
                 File Healer1stFile = new File("src/HealerFirstName.txt");
                 Scanner scanHealerFirstName = new Scanner(Healer1stFile);
                 
-                //see if the HealerFirstName.txt file has anything in it, returns true or false
+                /*see if the HealerFirstName.txt file has anything in it,
+                returns true or false*/
                 Boolean booleanHealerFirstNameTxt = scanHealerFirstName.hasNext();
                 
                 
@@ -5961,26 +6543,34 @@ class Main
                 File Healer2ndFile = new File("src/HealerLastName.txt");
                 Scanner scanHealerLastName = new Scanner(Healer2ndFile);
                 
-                //see if the HealerLastName.txt file has anything in it, returns true or false
+                /*see if the HealerLastName.txt file has anything in it,
+                returns true or false*/
                 Boolean booleanHealerLastNameTxt = scanHealerLastName.hasNext();
                 
                 
                 /*if the Healer character's first name txt file is blank then
-                tell the user that no character has been created or loaded for the Healer class*/
-                if(booleanHealerFirstNameTxt == false && booleanHealerLastNameTxt == false)
+                tell the user that no character has been created or loaded for
+                the Healer class*/
+                if(booleanHealerFirstNameTxt == false &&
+                   booleanHealerLastNameTxt == false)
                 {
-                    String NoCharacterAlert3 = "3. No character has been created or loaded for the Healer class so none can be selected";
+                    String NoCharacterAlert3 = "3. No character has been"+
+                    " created or loaded for the Healer class so none can be"+
+                    " selected";
                     System.out.println(NoCharacterAlert3);
                 }
                 
-                /*else if there is a Healer character that has been created or loaded
-                then display them.*/
-                else if(booleanHealerFirstNameTxt == true && booleanHealerLastNameTxt == true)
+                /*else if there is a Healer character that has been created or
+                loaded then display them.*/
+                else if(booleanHealerFirstNameTxt == true &&
+                        booleanHealerLastNameTxt == true)
                 {
-                    //read the HealerFirstName.txt file & HealerLastName.txt File, then display
+                    /*read the HealerFirstName.txt file & HealerLastName.txt
+                    File, then display*/
                     String HealerFirstNameTxt = scanHealerFirstName.next();
                     String HealerLastNameTxt = scanHealerLastName.next();
-                    System.out.println("3. "+HealerFirstNameTxt+" "+HealerLastNameTxt+" (Healer Class)");
+                    System.out.println("3. "+HealerFirstNameTxt+" "+
+                            HealerLastNameTxt+" (Healer Class)");
                 }
                 //END: Healer Character display ends
                 //--------------------------------------------------------------
@@ -5989,37 +6579,54 @@ class Main
                 //START: display an Available Martial Artist Character if possible
                 //--------------------------------------------------------------
                 //will retrieve MartialArtistFirstName.txt
-                File MartialArtist1stFile = new File("src/MartialArtistFirstName.txt");
-                Scanner scanMartialArtistFirstName = new Scanner(MartialArtist1stFile);
+                File MartialArtist1stFile = new File
+                ("src/MartialArtistFirstName.txt");
+                Scanner scanMartialArtistFirstName = 
+                        new Scanner(MartialArtist1stFile);
                 
-                //see if the MartialArtistFirstName.txt file has anything in it, returns true or false
-                Boolean booleanMartialArtistFirstNameTxt = scanMartialArtistFirstName.hasNext();
+                /*see if the MartialArtistFirstName.txt file has anything in it,
+                returns true or false*/
+                Boolean booleanMartialArtistFirstNameTxt = 
+                        scanMartialArtistFirstName.hasNext();
                 
                 
                 //will retrieve MartialArtistLastName.txt
-                File MartialArtist2ndFile = new File("src/MartialArtistLastName.txt");
-                Scanner scanMartialArtistLastName = new Scanner(MartialArtist2ndFile);
+                File MartialArtist2ndFile = 
+                        new File("src/MartialArtistLastName.txt");
+                Scanner scanMartialArtistLastName = 
+                        new Scanner(MartialArtist2ndFile);
                 
-                //see if the MartialArtistLastName.txt file has anything in it, returns true or false
-                Boolean booleanMartialArtistLastNameTxt = scanMartialArtistLastName.hasNext();
+                /*see if the MartialArtistLastName.txt file has anything in it,
+                returns true or false*/
+                Boolean booleanMartialArtistLastNameTxt = 
+                        scanMartialArtistLastName.hasNext();
                 
                 
-                /*if the Martial Artist character's first name txt file is blank then
-                tell the user that no character has been created or loaded for the Healer class*/
-                if(booleanMartialArtistFirstNameTxt == false && booleanMartialArtistLastNameTxt == false)
+                /*if the Martial Artist character's first name txt file is blank
+                then tell the user that no character has been created or loaded
+                for the Healer class*/
+                if(booleanMartialArtistFirstNameTxt == false &&
+                        booleanMartialArtistLastNameTxt == false)
                 {
-                    String NoCharacterAlert4 = "4. No character has been created or loaded for the Martial Artist class so none can be selected";
+                    String NoCharacterAlert4 = "4. No character has been"+
+                    " created or loaded for the Martial Artist class so none"+
+                    " can be selected";
                     System.out.println(NoCharacterAlert4);
                 }
                 
-                /*else if there is a Martial Artist character that has been created or loaded
-                then display them.*/
-                else if(booleanMartialArtistFirstNameTxt == true && booleanMartialArtistLastNameTxt == true)
+                /*else if there is a Martial Artist character that has been\
+                created or loaded then display them.*/
+                else if(booleanMartialArtistFirstNameTxt == true &&
+                        booleanMartialArtistLastNameTxt == true)
                 {
-                    //read the MartialArtistFirstName.txt file & MartialArtistLastName.txt File, then display
-                    String MartialArtistFirstNameTxt = scanMartialArtistFirstName.next();
-                    String MartialArtistLastNameTxt = scanMartialArtistLastName.next();
-                    System.out.println("4. "+MartialArtistFirstNameTxt+" "+MartialArtistLastNameTxt+" (Martial Artist Class)");
+                    /*read the MartialArtistFirstName.txt file &
+                    MartialArtistLastName.txt File, then display*/
+                    String MartialArtistFirstNameTxt = 
+                            scanMartialArtistFirstName.next();
+                    String MartialArtistLastNameTxt = 
+                            scanMartialArtistLastName.next();
+                    System.out.println("4. "+MartialArtistFirstNameTxt+" "+
+                    MartialArtistLastNameTxt+" (Martial Artist Class)");
                 }
                 //END: Martial Artist Character display ends
                 //--------------------------------------------------------------
@@ -6031,34 +6638,45 @@ class Main
                 File Necromancer1stFile = new File("src/NecromancerFirstName.txt");
                 Scanner scanNecromancerFirstName = new Scanner(Necromancer1stFile);
                 
-                //see if the NecromancerFirstName.txt file has anything in it, returns true or false
-                Boolean booleanNecromancerFirstNameTxt = scanNecromancerFirstName.hasNext();
+                /*see if the NecromancerFirstName.txt file has anything in it,
+                returns true or false*/
+                Boolean booleanNecromancerFirstNameTxt = 
+                        scanNecromancerFirstName.hasNext();
                 
                 
                 //will retrieve NecromancerLastName.txt
                 File Necromancer2ndFile = new File("src/NecromancerLastName.txt");
                 Scanner scanNecromancerLastName = new Scanner(Necromancer2ndFile);
                 
-                //see if the NecromancerLastName.txt file has anything in it, returns true or false
-                Boolean booleanNecromancerLastNameTxt = scanNecromancerLastName.hasNext();
+                /*see if the NecromancerLastName.txt file has anything in it,
+                returns true or false*/
+                Boolean booleanNecromancerLastNameTxt = 
+                        scanNecromancerLastName.hasNext();
                 
                 
                 /*if the Necromancer character's first name txt file is blank then
-                tell the user that no character has been created or loaded for the Necromancer class*/
-                if(booleanNecromancerFirstNameTxt == false && booleanNecromancerLastNameTxt == false)
+                tell the user that no character has been created or loaded for
+                the Necromancer class*/
+                if(booleanNecromancerFirstNameTxt == false &&
+                   booleanNecromancerLastNameTxt == false)
                 {
-                    String NoCharacterAlert5 = "5. No character has been created or loaded for the Necromancer class so none can be selected";
+                    String NoCharacterAlert5 = "5. No character has been"+
+                    " created or loaded for the Necromancer class so none"+
+                    " can be selected";
                     System.out.println(NoCharacterAlert5);
                 }
                 
-                /*else if there is a Necromancer character that has been created or loaded
-                then display them.*/
-                else if(booleanNecromancerFirstNameTxt == true && booleanNecromancerLastNameTxt == true)
+                /*else if there is a Necromancer character that has been created
+                or loaded then display them.*/
+                else if(booleanNecromancerFirstNameTxt == true &&
+                        booleanNecromancerLastNameTxt == true)
                 {
-                    //read the NecromancerFirstName.txt file & NecromancerLastName.txt File, then display
+                    /*read the NecromancerFirstName.txt file &
+                    NecromancerLastName.txt File, then display*/
                     String NecromancerFirstNameTxt = scanNecromancerFirstName.next();
                     String NecromancerLastNameTxt = scanNecromancerLastName.next();
-                    System.out.println("5. "+NecromancerFirstNameTxt+" "+NecromancerLastNameTxt+" (Necromancer Class)");
+                    System.out.println("5. "+NecromancerFirstNameTxt+" "+
+                            NecromancerLastNameTxt+" (Necromancer Class)");
                 }
                 //END: Necromancer Character display ends
                 //--------------------------------------------------------------
@@ -6070,7 +6688,8 @@ class Main
                 File Wizard1stFile = new File("src/WizardFirstName.txt");
                 Scanner scanWizardFirstName = new Scanner(Wizard1stFile);
                 
-                //see if the WizardFirstName.txt file has anything in it, returns true or false
+                /*see if the WizardFirstName.txt file has anything in it,
+                returns true or false*/
                 Boolean booleanWizardFirstNameTxt = scanWizardFirstName.hasNext();
                 
                 
@@ -6078,33 +6697,42 @@ class Main
                 File Wizard2ndFile = new File("src/WizardLastName.txt");
                 Scanner scanWizardLastName = new Scanner(Wizard2ndFile);
                 
-                //see if the WizardLastName.txt file has anything in it, returns true or false
+                /*see if the WizardLastName.txt file has anything in it, returns
+                true or false*/
                 Boolean booleanWizardLastNameTxt = scanWizardLastName.hasNext();
                 
                 
                 /*if the Wizard character's first name txt file is blank then
-                tell the user that no character has been created or loaded for the Wizard class*/
-                if(booleanWizardFirstNameTxt == false && booleanWizardLastNameTxt == false)
+                tell the user that no character has been created or loaded for
+                the Wizard class*/
+                if(booleanWizardFirstNameTxt == false &&
+                   booleanWizardLastNameTxt == false)
                 {
-                    String NoCharacterAlert6 = "6. No character has been created or loaded for the Wizard class so none can be selected";
+                    String NoCharacterAlert6 = "6. No character has been"+
+                    " created or loaded for the Wizard class so none can"+
+                    " be selected";
                     System.out.println(NoCharacterAlert6);
                 }
                 
-                /*else if there is a Wizard character that has been created or loaded
-                then display them.*/
-                else if(booleanWizardFirstNameTxt == true && booleanWizardLastNameTxt == true)
+                /*else if there is a Wizard character that has been created or
+                loaded then display them.*/
+                else if(booleanWizardFirstNameTxt == true &&
+                        booleanWizardLastNameTxt == true)
                 {
-                    //read the WizardFirstName.txt file & WizardLastName.txt File, then display
+                    /*read the WizardFirstName.txt file & WizardLastName.txt
+                    File, then display*/
                     String WizardFirstNameTxt = scanWizardFirstName.next();
                     String WizardLastNameTxt = scanWizardLastName.next();
-                    System.out.println("6. "+WizardFirstNameTxt+" "+WizardLastNameTxt+" (Wizard Class)");
+                    System.out.println("6. "+WizardFirstNameTxt+" "+
+                            WizardLastNameTxt+" (Wizard Class)");
                 }
                 //END: Wizard Character display ends
                 //--------------------------------------------------------------
                 
                 int userCharacterChoice;
                 System.out.println();
-                System.out.print("Enter the number of the character you want to select: ");
+                System.out.print("Enter the number of the character you want"+
+                " to select: ");
                 userCharacterChoice = scan.nextInt();
                 System.out.println();
                 
@@ -6113,7 +6741,8 @@ class Main
                 {
                     /*if the AssassinFirstName.txt and AssassinLastName.txt
                     files have no character names in them then do the below*/
-                    if(booleanAssassinFirstNameTxt == false && booleanAssassinLastNameTxt == false)
+                    if(booleanAssassinFirstNameTxt == false &&
+                       booleanAssassinLastNameTxt == false)
                     {
                         System.out.print("There is no Assassin character to"+
                         " select. You must create one or load one from a\nsave"+
@@ -6126,19 +6755,27 @@ class Main
                     }
                     /*if the AssassinFirstName.txt and AssassinLastName.txt
                     files have character names in them then do the below*/
-                    else if(booleanAssassinFirstNameTxt == true && booleanAssassinLastNameTxt == true)
+                    else if(booleanAssassinFirstNameTxt == true &&
+                            booleanAssassinLastNameTxt == true)
                     {
                         //will retrieve AssassinFirstName.txt
-                        File Assassin1stFile2 = new File("src/AssassinFirstName.txt");
-                        Scanner scanAssassinFirstName2 = new Scanner(Assassin1stFile2);
+                        File Assassin1stFile2 = new File
+                        ("src/AssassinFirstName.txt");
+                        Scanner scanAssassinFirstName2 = 
+                                new Scanner(Assassin1stFile2);
                         
                         //will retrieve AssassinLastName.txt
-                        File Assassin2ndFile2 = new File("src/AssassinLastName.txt");
-                        Scanner scanAssassinLastName2 = new Scanner(Assassin2ndFile2);
+                        File Assassin2ndFile2 = new File
+                        ("src/AssassinLastName.txt");
+                        Scanner scanAssassinLastName2 = 
+                                new Scanner(Assassin2ndFile2);
                         
-                        //read the AssassinFirstName.txt file & AssassinLastName.txt file
-                        String AssassinFirstNameTxt = scanAssassinFirstName2.next();
-                        String AssassinLastNameTxt = scanAssassinLastName2.next();
+                        /*read the AssassinFirstName.txt file &
+                        AssassinLastName.txt file*/
+                        String AssassinFirstNameTxt = 
+                                scanAssassinFirstName2.next();
+                        String AssassinLastNameTxt = 
+                                scanAssassinLastName2.next();
                         
                         //make the Assassin the currently selected character
                         /*if both lists are empty...add AssassinFirstNameTxt & 
@@ -6150,7 +6787,8 @@ class Main
                             
                             if(selectedCharacterClass.isEmpty())
                             {
-                                //determines that this character is of the Assassin Class
+                                /*determines that this character is of the
+                                Assassin Class*/
                                 selectedCharacterClass.add(thisIsAssassin);
                                 
                             }
@@ -6176,7 +6814,8 @@ class Main
                 {
                     /*if the EngineerFirstName.txt and EngineerLastName.txt
                     files have no character names in them then do the below*/
-                    if(booleanEngineerFirstNameTxt == false && booleanEngineerLastNameTxt == false)
+                    if(booleanEngineerFirstNameTxt == false &&
+                       booleanEngineerLastNameTxt == false)
                     {
                         System.out.print("There is no Engineer character to"+
                         " select. You must create one or load one from a\nsave"+
@@ -6189,19 +6828,27 @@ class Main
                     }
                     /*if the EngineerFirstName.txt and EngineerLastName.txt
                     files have character names in them then do the below*/
-                    else if(booleanEngineerFirstNameTxt == true && booleanEngineerLastNameTxt == true)
+                    else if(booleanEngineerFirstNameTxt == true &&
+                            booleanEngineerLastNameTxt == true)
                     {
                         //will retrieve EngineerFirstName.txt
-                        File Engineer1stFile2 = new File("src/EngineerFirstName.txt");
-                        Scanner scanEngineerFirstName2 = new Scanner(Engineer1stFile2);
+                        File Engineer1stFile2 = new File
+                        ("src/EngineerFirstName.txt");
+                        Scanner scanEngineerFirstName2 = 
+                                new Scanner(Engineer1stFile2);
                         
                         //will retrieve EngineerLastName.txt
-                        File Engineer2ndFile2 = new File("src/EngineerLastName.txt");
-                        Scanner scanEngineerLastName2 = new Scanner(Engineer2ndFile2);
+                        File Engineer2ndFile2 = new File
+                        ("src/EngineerLastName.txt");
+                        Scanner scanEngineerLastName2 = 
+                                new Scanner(Engineer2ndFile2);
                         
-                        //read the EngineerFirstName.txt file & EngineerLastName.txt file
-                        String EngineerFirstNameTxt = scanEngineerFirstName2.next();
-                        String EngineerLastNameTxt = scanEngineerLastName2.next();
+                        /*read the EngineerFirstName.txt file & 
+                        EngineerLastName.txt file*/
+                        String EngineerFirstNameTxt = 
+                                scanEngineerFirstName2.next();
+                        String EngineerLastNameTxt = 
+                                scanEngineerLastName2.next();
                         
                         //make the Engineer the currently selected character
                         /*if both lists are empty...add EngineerFirstNameTxt & 
@@ -6213,7 +6860,8 @@ class Main
                             
                             if(selectedCharacterClass.isEmpty())
                             {
-                                //determines that this character is of the Engineer Class
+                                /*determines that this character is of the
+                                Engineer Class*/
                                 selectedCharacterClass.add(thisIsEngineer);
                                 
                             }
@@ -6239,7 +6887,8 @@ class Main
                 {
                     /*if the HealerFirstName.txt and HealerLastName.txt
                     files have no character names in them then do the below*/
-                    if(booleanHealerFirstNameTxt == false && booleanHealerLastNameTxt == false)
+                    if(booleanHealerFirstNameTxt == false &&
+                       booleanHealerLastNameTxt == false)
                     {
                         System.out.print("There is no Healer character to"+
                         " select. You must create one or load one from a\nsave"+
@@ -6252,15 +6901,20 @@ class Main
                     }
                     /*if the HealerFirstName.txt and HealerLastName.txt
                     files have character names in them then do the below*/
-                    else if(booleanHealerFirstNameTxt == true && booleanHealerLastNameTxt == true)
+                    else if(booleanHealerFirstNameTxt == true &&
+                            booleanHealerLastNameTxt == true)
                     {
                         //will retrieve HealerFirstName.txt
-                        File Healer1stFile2 = new File("src/HealerFirstName.txt");
-                        Scanner scanHealerFirstName2 = new Scanner(Healer1stFile2);
+                        File Healer1stFile2 = 
+                                new File("src/HealerFirstName.txt");
+                        Scanner scanHealerFirstName2 = 
+                                new Scanner(Healer1stFile2);
                         
                         //will retrieve HealerLastName.txt
-                        File Healer2ndFile2 = new File("src/HealerLastName.txt");
-                        Scanner scanHealerLastName2 = new Scanner(Healer2ndFile2);
+                        File Healer2ndFile2 = 
+                                new File("src/HealerLastName.txt");
+                        Scanner scanHealerLastName2 = 
+                                new Scanner(Healer2ndFile2);
                         
                         //read the HealerFirstName.txt file & HealerLastName.txt file
                         String HealerFirstNameTxt = scanHealerFirstName2.next();
@@ -6276,7 +6930,8 @@ class Main
                             
                             if(selectedCharacterClass.isEmpty())
                             {
-                                //determines that this character is of the Healer Class
+                                /*determines that this character is of the
+                                Healer Class*/
                                 selectedCharacterClass.add(thisIsHealer);
                                 
                             }
@@ -6297,12 +6952,14 @@ class Main
                     }
                 }
                 
-                //Make the currently selected character one of the Martial Artist class
+                /*Make the currently selected character one of the Martial
+                Artist class*/
                 else if(userCharacterChoice == 4)
                 {
                     /*if the MartialArtistFirstName.txt and MartialArtistLastName.txt
                     files have no character names in them then do the below*/
-                    if(booleanMartialArtistFirstNameTxt == false && booleanMartialArtistLastNameTxt == false)
+                    if(booleanMartialArtistFirstNameTxt == false &&
+                       booleanMartialArtistLastNameTxt == false)
                     {
                         System.out.print("There is no Martial Artist character to"+
                         " select. You must create one or load one from a\nsave"+
@@ -6315,23 +6972,34 @@ class Main
                     }
                     /*if the MartialArtistFirstName.txt and MartialArtistLastName.txt
                     files have character names in them then do the below*/
-                    else if(booleanMartialArtistFirstNameTxt == true && booleanMartialArtistLastNameTxt == true)
+                    else if(booleanMartialArtistFirstNameTxt == true &&
+                            booleanMartialArtistLastNameTxt == true)
                     {
                         //will retrieve MartialArtistFirstName.txt
-                        File MartialArtist1stFile2 = new File("src/MartialArtistFirstName.txt");
-                        Scanner scanMartialArtistFirstName2 = new Scanner(MartialArtist1stFile2);
+                        File MartialArtist1stFile2 = new File
+                        ("src/MartialArtistFirstName.txt");
+                        Scanner scanMartialArtistFirstName2 = 
+                                new Scanner(MartialArtist1stFile2);
                         
                         //will retrieve MartialArtistLastName.txt
-                        File MartialArtist2ndFile2 = new File("src/MartialArtistLastName.txt");
-                        Scanner scanMartialArtistLastName2 = new Scanner(MartialArtist2ndFile2);
+                        File MartialArtist2ndFile2 = new File
+                        ("src/MartialArtistLastName.txt");
+                        Scanner scanMartialArtistLastName2 = 
+                                new Scanner(MartialArtist2ndFile2);
                         
-                        //read the MartialArtistFirstName.txt file & MartialArtistLastName.txt file
-                        String MartialArtistFirstNameTxt = scanMartialArtistFirstName2.next();
-                        String MartialArtistLastNameTxt = scanMartialArtistLastName2.next();
+                        /*read the MartialArtistFirstName.txt file &
+                        MartialArtistLastName.txt file*/
+                        String MartialArtistFirstNameTxt = 
+                                scanMartialArtistFirstName2.next();
+                        String MartialArtistLastNameTxt = 
+                                scanMartialArtistLastName2.next();
                         
-                        //make the Martial Artist the currently selected character
-                        /*if both lists are empty...add MartialArtistFirstNameTxt & 
-                        MartialArtistLastNameTxt then add thisIsMartialArtist (value 4)*/
+                        /*make the Martial Artist the currently selected 
+                        character*/
+                        /*if both lists are empty...add 
+                        MartialArtistFirstNameTxt & 
+                        MartialArtistLastNameTxt then add thisIsMartialArtist
+                        (value 4)*/
                         if(selectedCharacter.isEmpty())
                         {
                             selectedCharacter.add(MartialArtistFirstNameTxt);
@@ -6339,7 +7007,8 @@ class Main
                             
                             if(selectedCharacterClass.isEmpty())
                             {
-                                //determines that this character is of the Martial Artist Class
+                                /*determines that this character is of the
+                                Martial Artist Class*/
                                 selectedCharacterClass.add(thisIsMartialArtist);
                                 
                             }
@@ -6360,12 +7029,14 @@ class Main
                     }
                 }
                 
-                //Make the currently selected character one of the Necromancer class
+                /*Make the currently selected character one of the Necromancer
+                class*/
                 else if(userCharacterChoice == 5)
                 {
                     /*if the NecromancerFirstName.txt and NecromancerLastName.txt
                     files have no character names in them then do the below*/
-                    if(booleanNecromancerFirstNameTxt == false && booleanNecromancerLastNameTxt == false)
+                    if(booleanNecromancerFirstNameTxt == false &&
+                            booleanNecromancerLastNameTxt == false)
                     {
                         System.out.print("There is no Necromancer character to"+
                         " select. You must create one or load one from a\nsave"+
@@ -6378,19 +7049,27 @@ class Main
                     }
                     /*if the NecromancerFirstName.txt and NecromancerLastName.txt
                     files have character names in them then do the below*/
-                    else if(booleanNecromancerFirstNameTxt == true && booleanNecromancerLastNameTxt == true)
+                    else if(booleanNecromancerFirstNameTxt == true &&
+                            booleanNecromancerLastNameTxt == true)
                     {
                         //will retrieve NecromancerFirstName.txt
-                        File Necromancer1stFile2 = new File("src/NecromancerFirstName.txt");
-                        Scanner scanNecromancerFirstName2 = new Scanner(Necromancer1stFile2);
+                        File Necromancer1stFile2 = new File
+                        ("src/NecromancerFirstName.txt");
+                        Scanner scanNecromancerFirstName2 = 
+                                new Scanner(Necromancer1stFile2);
                         
                         //will retrieve NecromancerLastName.txt
-                        File Necromancer2ndFile2 = new File("src/NecromancerLastName.txt");
-                        Scanner scanNecromancerLastName2 = new Scanner(Necromancer2ndFile2);
+                        File Necromancer2ndFile2 = new File
+                        ("src/NecromancerLastName.txt");
+                        Scanner scanNecromancerLastName2 = 
+                                new Scanner(Necromancer2ndFile2);
                         
-                        //read the NecromancerFirstName.txt file & NecromancerLastName.txt file
-                        String NecromancerFirstNameTxt = scanNecromancerFirstName2.next();
-                        String NecromancerLastNameTxt = scanNecromancerLastName2.next();
+                        /*read the NecromancerFirstName.txt file &
+                        NecromancerLastName.txt file*/
+                        String NecromancerFirstNameTxt = 
+                                scanNecromancerFirstName2.next();
+                        String NecromancerLastNameTxt = 
+                                scanNecromancerLastName2.next();
                         
                         //make the Necromancer the currently selected character
                         /*if both lists are empty...add NecromancerFirstNameTxt & 
@@ -6402,7 +7081,8 @@ class Main
                             
                             if(selectedCharacterClass.isEmpty())
                             {
-                                //determines that this character is of the Necromancer Class
+                                /*determines that this character is of the
+                                Necromancer Class*/
                                 selectedCharacterClass.add(thisIsNecromancer);
                                 
                             }
@@ -6428,7 +7108,8 @@ class Main
                 {
                     /*if the WizardFirstName.txt and WizardLastName.txt
                     files have no character names in them then do the below*/
-                    if(booleanWizardFirstNameTxt == false && booleanWizardLastNameTxt == false)
+                    if(booleanWizardFirstNameTxt == false &&
+                       booleanWizardLastNameTxt == false)
                     {
                         System.out.print("There is no Wizard character to"+
                         " select. You must create one or load one from a\nsave"+
@@ -6441,7 +7122,8 @@ class Main
                     }
                     /*if the WizardFirstName.txt and WizardLastName.txt
                     files have character names in them then do the below*/
-                    else if(booleanWizardFirstNameTxt == true && booleanWizardLastNameTxt == true)
+                    else if(booleanWizardFirstNameTxt == true &&
+                            booleanWizardLastNameTxt == true)
                     {
                         //will retrieve WizardFirstName.txt
                         File Wizard1stFile2 = new File("src/WizardFirstName.txt");
@@ -6465,7 +7147,8 @@ class Main
                             
                             if(selectedCharacterClass.isEmpty())
                             {
-                                //determines that this character is of the Wizard Class
+                                /*determines that this character is of the
+                                Wizard Class*/
                                 selectedCharacterClass.add(thisIsWizard);
                                 
                             }
@@ -6515,7 +7198,8 @@ class Main
                 //tell user how to locate their saved character files
                 System.out.println("Load a character from file");
                 System.out.println("--------------------------------");
-                System.out.print("If you forgot the name of your saved file(s), then locate them"+
+                System.out.print("If you forgot the"+
+                " name of your saved file(s), then locate them"+
                 " by following this directory:\nyourPath\\CharacterManager\\"+
                 "src\\SavedCharacters. Press enter to continue.");
                 try{System.in.read();}
@@ -6525,7 +7209,8 @@ class Main
                 
                 //get user to enter the save file they want to load
                 String userSaveFile;
-                System.out.print("Enter the name of your save file to load your character: ");
+                System.out.print("Enter the name of your save file"+
+                " to load your character: ");
                 userSaveFile = scan.next();
                 System.out.println();
                 System.out.println();
@@ -6536,7 +7221,8 @@ class Main
                 does not appear*/
                 try
                 {
-                    File userNamedFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                    File userNamedFile = new File
+                    ("src/SavedCharacters/"+userSaveFile+".txt");
                     Scanner scanUserNamedFile = new Scanner(userNamedFile);
                     /*read the first line of the user-named saved file to determine
                     the class of the character they want to load*/
@@ -6549,34 +7235,44 @@ class Main
                         /*Read the contents of a saved characters from a user named
                         save file and write it back to that character's respective
                         class files found in the "src" folder*/
-                        File AssassinTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
+                        File AssassinTxtFile = new File
+                        ("src/SavedCharacters/"+userSaveFile+".txt");
                         Scanner scanAssassinClassTxtFile = new Scanner(AssassinTxtFile);
                     
                         /*this variable below is reading the same thing as
                         characterClass and is only needed to read that same line
                         again*/
-                        String dontUseThisVariable = scanAssassinClassTxtFile.nextLine();
+                        String dontUseThisVariable = 
+                                scanAssassinClassTxtFile.nextLine();
                     
-                        String AssassinFirstNameTxt = scanAssassinClassTxtFile.next();
+                        String AssassinFirstNameTxt = 
+                                scanAssassinClassTxtFile.next();
                     
-                        String AssassinLastNameTxt = scanAssassinClassTxtFile.next();
+                        String AssassinLastNameTxt = 
+                                scanAssassinClassTxtFile.next();
                     
-                        String AssassinAccuracyStatValue = scanAssassinClassTxtFile.next();
+                        String AssassinAccuracyStatValue = 
+                                scanAssassinClassTxtFile.next();
                     
-                        String AssassinAttackStatValue = scanAssassinClassTxtFile.next();
+                        String AssassinAttackStatValue = 
+                                scanAssassinClassTxtFile.next();
                     
-                        String AssassinDamageStatValue = scanAssassinClassTxtFile.next();
+                        String AssassinDamageStatValue = 
+                                scanAssassinClassTxtFile.next();
                     
-                        String AssassinPhyDefStatValue = scanAssassinClassTxtFile.next();
+                        String AssassinPhyDefStatValue = 
+                                scanAssassinClassTxtFile.next();
                     
-                        String AssassinMagDefStatValue = scanAssassinClassTxtFile.next();
+                        String AssassinMagDefStatValue = 
+                                scanAssassinClassTxtFile.next();
                     
                         /*write the Assassin's first name from the user created txt
                         file to the AssassinFirstName.txt file*/
                         try
                         {
                         
-                            FileWriter AssassinFirstNameWrite = new FileWriter("src/AssassinFirstName.txt");
+                            FileWriter AssassinFirstNameWrite = 
+                                    new FileWriter("src/AssassinFirstName.txt");
                             AssassinFirstNameWrite.write(AssassinFirstNameTxt);
                             AssassinFirstNameWrite.close();
                         }
@@ -6590,7 +7286,8 @@ class Main
                         txt file to the AssassinLastName.txt file*/
                         try
                         {
-                            FileWriter AssassinLastNameWrite = new FileWriter("src/AssassinLastName.txt");
+                            FileWriter AssassinLastNameWrite = 
+                                    new FileWriter("src/AssassinLastName.txt");
                             AssassinLastNameWrite.write(AssassinLastNameTxt);
                             AssassinLastNameWrite.close();
                         }
@@ -6603,7 +7300,8 @@ class Main
                         /*write the Assassin's Accuracy Stat value*/
                         try
                         {
-                            FileWriter AssassinAccuracyStatWrite = new FileWriter("src/AssassinAccuracyStat.txt");
+                            FileWriter AssassinAccuracyStatWrite = 
+                                    new FileWriter("src/AssassinAccuracyStat.txt");
                             AssassinAccuracyStatWrite.write(AssassinAccuracyStatValue);
                             AssassinAccuracyStatWrite.close();
                         }
@@ -6616,7 +7314,8 @@ class Main
                         /*write the Assassin's Attack Stat value*/
                         try
                         {
-                            FileWriter AssassinAttackStatWrite = new FileWriter("src/AssassinAttackStat.txt");
+                            FileWriter AssassinAttackStatWrite = 
+                                    new FileWriter("src/AssassinAttackStat.txt");
                             AssassinAttackStatWrite.write(AssassinAttackStatValue);
                             AssassinAttackStatWrite.close();
                         }
@@ -6629,7 +7328,8 @@ class Main
                         /*write the Assassin's Damage Stat value*/
                         try
                         {
-                            FileWriter AssassinDamageStatWrite = new FileWriter("src/AssassinDamageStat.txt");
+                            FileWriter AssassinDamageStatWrite = 
+                                    new FileWriter("src/AssassinDamageStat.txt");
                             AssassinDamageStatWrite.write(AssassinDamageStatValue);
                             AssassinDamageStatWrite.close();
                         }
@@ -6642,7 +7342,8 @@ class Main
                         /*write the Assassin's Physical Defense Stat value*/
                         try
                         {
-                            FileWriter AssassinPhyDefStatWrite = new FileWriter("src/AssassinPhyDefStat.txt");
+                            FileWriter AssassinPhyDefStatWrite = 
+                                    new FileWriter("src/AssassinPhyDefStat.txt");
                             AssassinPhyDefStatWrite.write(AssassinPhyDefStatValue);
                             AssassinPhyDefStatWrite.close();
                         }
@@ -6655,7 +7356,8 @@ class Main
                         /*write the Assassin's Magical Defense Stat value*/
                         try
                         {
-                            FileWriter AssassinMagDefStatWrite = new FileWriter("src/AssassinMagDefStat.txt");
+                            FileWriter AssassinMagDefStatWrite = 
+                                    new FileWriter("src/AssassinMagDefStat.txt");
                             AssassinMagDefStatWrite.write(AssassinMagDefStatValue);
                             AssassinMagDefStatWrite.close();
                         }
@@ -6713,34 +7415,45 @@ class Main
                         /*Read the contents of a saved characters from a user named
                         save file and write it back to that character's respective
                         class files found in the "src" folder*/
-                        File EngineerTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
-                        Scanner scanEngineerClassTxtFile = new Scanner(EngineerTxtFile);
+                        File EngineerTxtFile = 
+                                new File("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanEngineerClassTxtFile = 
+                                new Scanner(EngineerTxtFile);
                     
                         /*this variable below is reading the same thing as
                         characterClass and is only needed to read that same line
                         again*/
-                        String dontUseThisVariable = scanEngineerClassTxtFile.nextLine();
+                        String dontUseThisVariable = 
+                                scanEngineerClassTxtFile.nextLine();
                     
-                        String EngineerFirstNameTxt = scanEngineerClassTxtFile.next();
+                        String EngineerFirstNameTxt = 
+                                scanEngineerClassTxtFile.next();
                     
-                        String EngineerLastNameTxt = scanEngineerClassTxtFile.next();
+                        String EngineerLastNameTxt = 
+                                scanEngineerClassTxtFile.next();
                     
-                        String EngineerAccuracyStatValue = scanEngineerClassTxtFile.next();
+                        String EngineerAccuracyStatValue = 
+                                scanEngineerClassTxtFile.next();
                     
-                        String EngineerAttackStatValue = scanEngineerClassTxtFile.next();
+                        String EngineerAttackStatValue = 
+                                scanEngineerClassTxtFile.next();
                     
-                        String EngineerDamageStatValue = scanEngineerClassTxtFile.next();
+                        String EngineerDamageStatValue = 
+                                scanEngineerClassTxtFile.next();
                     
-                        String EngineerPhyDefStatValue = scanEngineerClassTxtFile.next();
+                        String EngineerPhyDefStatValue = 
+                                scanEngineerClassTxtFile.next();
                     
-                        String EngineerMagDefStatValue = scanEngineerClassTxtFile.next();
+                        String EngineerMagDefStatValue = 
+                                scanEngineerClassTxtFile.next();
                         
                         /*write the Engineer's first name from the user created
                         txt file to the EngineerFirstName.txt file*/
                         try
                         {
                         
-                            FileWriter EngineerFirstNameWrite = new FileWriter("src/EngineerFirstName.txt");
+                            FileWriter EngineerFirstNameWrite = 
+                                    new FileWriter("src/EngineerFirstName.txt");
                             EngineerFirstNameWrite.write(EngineerFirstNameTxt);
                             EngineerFirstNameWrite.close();
                         }
@@ -6754,7 +7467,8 @@ class Main
                         txt file to the EngineerLastName.txt file*/
                         try
                         {
-                            FileWriter EngineerLastNameWrite = new FileWriter("src/EngineerLastName.txt");
+                            FileWriter EngineerLastNameWrite = 
+                                    new FileWriter("src/EngineerLastName.txt");
                             EngineerLastNameWrite.write(EngineerLastNameTxt);
                             EngineerLastNameWrite.close();
                         }
@@ -6767,7 +7481,8 @@ class Main
                         /*write the Engineer's Accuracy Stat value*/
                         try
                         {
-                            FileWriter EngineerAccuracyStatWrite = new FileWriter("src/EngineerAccuracyStat.txt");
+                            FileWriter EngineerAccuracyStatWrite = 
+                                    new FileWriter("src/EngineerAccuracyStat.txt");
                             EngineerAccuracyStatWrite.write(EngineerAccuracyStatValue);
                             EngineerAccuracyStatWrite.close();
                         }
@@ -6780,7 +7495,8 @@ class Main
                         /*write the Engineer's Attack Stat value*/
                         try
                         {
-                            FileWriter EngineerAttackStatWrite = new FileWriter("src/EngineerAttackStat.txt");
+                            FileWriter EngineerAttackStatWrite = 
+                                    new FileWriter("src/EngineerAttackStat.txt");
                             EngineerAttackStatWrite.write(EngineerAttackStatValue);
                             EngineerAttackStatWrite.close();
                         }
@@ -6793,7 +7509,8 @@ class Main
                         /*write the Engineer's Damage Stat value*/
                         try
                         {
-                            FileWriter EngineerDamageStatWrite = new FileWriter("src/EngineerDamageStat.txt");
+                            FileWriter EngineerDamageStatWrite = 
+                                    new FileWriter("src/EngineerDamageStat.txt");
                             EngineerDamageStatWrite.write(EngineerDamageStatValue);
                             EngineerDamageStatWrite.close();
                         }
@@ -6806,7 +7523,8 @@ class Main
                         /*write the Engineer's Physical Defense Stat value*/
                         try
                         {
-                            FileWriter EngineerPhyDefStatWrite = new FileWriter("src/EngineerPhyDefStat.txt");
+                            FileWriter EngineerPhyDefStatWrite = 
+                                    new FileWriter("src/EngineerPhyDefStat.txt");
                             EngineerPhyDefStatWrite.write(EngineerPhyDefStatValue);
                             EngineerPhyDefStatWrite.close();
                         }
@@ -6819,7 +7537,8 @@ class Main
                         /*write the Engineer's Magical Defense Stat value*/
                         try
                         {
-                            FileWriter EngineerMagDefStatWrite = new FileWriter("src/EngineerMagDefStat.txt");
+                            FileWriter EngineerMagDefStatWrite = 
+                                    new FileWriter("src/EngineerMagDefStat.txt");
                             EngineerMagDefStatWrite.write(EngineerMagDefStatValue);
                             EngineerMagDefStatWrite.close();
                         }
@@ -6876,34 +7595,45 @@ class Main
                         /*Read the contents of a saved characters from a user named
                         save file and write it back to that character's respective
                         class files found in the "src" folder*/
-                        File HealerTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
-                        Scanner scanHealerClassTxtFile = new Scanner(HealerTxtFile);
+                        File HealerTxtFile = 
+                                new File("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanHealerClassTxtFile = 
+                                new Scanner(HealerTxtFile);
                     
                         /*this variable below is reading the same thing as
                         characterClass and is only needed to read that same line
                         again*/
-                        String dontUseThisVariable = scanHealerClassTxtFile.nextLine();
+                        String dontUseThisVariable = 
+                                scanHealerClassTxtFile.nextLine();
                     
-                        String HealerFirstNameTxt = scanHealerClassTxtFile.next();
+                        String HealerFirstNameTxt = 
+                                scanHealerClassTxtFile.next();
                     
-                        String HealerLastNameTxt = scanHealerClassTxtFile.next();
+                        String HealerLastNameTxt = 
+                                scanHealerClassTxtFile.next();
                     
-                        String HealerAccuracyStatValue = scanHealerClassTxtFile.next();
+                        String HealerAccuracyStatValue = 
+                                scanHealerClassTxtFile.next();
                     
-                        String HealerAttackStatValue = scanHealerClassTxtFile.next();
+                        String HealerAttackStatValue = 
+                                scanHealerClassTxtFile.next();
                     
-                        String HealerDamageStatValue = scanHealerClassTxtFile.next();
+                        String HealerDamageStatValue = 
+                                scanHealerClassTxtFile.next();
                     
-                        String HealerPhyDefStatValue = scanHealerClassTxtFile.next();
+                        String HealerPhyDefStatValue = 
+                                scanHealerClassTxtFile.next();
                     
-                        String HealerMagDefStatValue = scanHealerClassTxtFile.next();
+                        String HealerMagDefStatValue = 
+                                scanHealerClassTxtFile.next();
                         
                         /*write the Healer's first name from the user created
                         txt file to the HealerFirstName.txt file*/
                         try
                         {
                         
-                            FileWriter HealerFirstNameWrite = new FileWriter("src/HealerFirstName.txt");
+                            FileWriter HealerFirstNameWrite = 
+                                    new FileWriter("src/HealerFirstName.txt");
                             HealerFirstNameWrite.write(HealerFirstNameTxt);
                             HealerFirstNameWrite.close();
                         }
@@ -6917,7 +7647,8 @@ class Main
                         txt file to the HealerLastName.txt file*/
                         try
                         {
-                            FileWriter HealerLastNameWrite = new FileWriter("src/HealerLastName.txt");
+                            FileWriter HealerLastNameWrite = 
+                                    new FileWriter("src/HealerLastName.txt");
                             HealerLastNameWrite.write(HealerLastNameTxt);
                             HealerLastNameWrite.close();
                         }
@@ -6930,7 +7661,8 @@ class Main
                         /*write the Healer's Accuracy Stat value*/
                         try
                         {
-                            FileWriter HealerAccuracyStatWrite = new FileWriter("src/HealerAccuracyStat.txt");
+                            FileWriter HealerAccuracyStatWrite = 
+                                    new FileWriter("src/HealerAccuracyStat.txt");
                             HealerAccuracyStatWrite.write(HealerAccuracyStatValue);
                             HealerAccuracyStatWrite.close();
                         }
@@ -6943,7 +7675,8 @@ class Main
                         /*write the Healer's Attack Stat value*/
                         try
                         {
-                            FileWriter HealerAttackStatWrite = new FileWriter("src/HealerAttackStat.txt");
+                            FileWriter HealerAttackStatWrite = 
+                                    new FileWriter("src/HealerAttackStat.txt");
                             HealerAttackStatWrite.write(HealerAttackStatValue);
                             HealerAttackStatWrite.close();
                         }
@@ -6956,7 +7689,8 @@ class Main
                         /*write the Healer's Damage Stat value*/
                         try
                         {
-                            FileWriter HealerDamageStatWrite = new FileWriter("src/HealerDamageStat.txt");
+                            FileWriter HealerDamageStatWrite = 
+                                    new FileWriter("src/HealerDamageStat.txt");
                             HealerDamageStatWrite.write(HealerDamageStatValue);
                             HealerDamageStatWrite.close();
                         }
@@ -6969,7 +7703,8 @@ class Main
                         /*write the Healer's Physical Defense Stat value*/
                         try
                         {
-                            FileWriter HealerPhyDefStatWrite = new FileWriter("src/HealerPhyDefStat.txt");
+                            FileWriter HealerPhyDefStatWrite = 
+                                    new FileWriter("src/HealerPhyDefStat.txt");
                             HealerPhyDefStatWrite.write(HealerPhyDefStatValue);
                             HealerPhyDefStatWrite.close();
                         }
@@ -6982,7 +7717,8 @@ class Main
                         /*write the Healer's Magical Defense Stat value*/
                         try
                         {
-                            FileWriter HealerMagDefStatWrite = new FileWriter("src/HealerMagDefStat.txt");
+                            FileWriter HealerMagDefStatWrite = 
+                                    new FileWriter("src/HealerMagDefStat.txt");
                             HealerMagDefStatWrite.write(HealerMagDefStatValue);
                             HealerMagDefStatWrite.close();
                         }
@@ -7039,34 +7775,45 @@ class Main
                         /*Read the contents of a saved characters from a user named
                         save file and write it back to that character's respective
                         class files found in the "src" folder*/
-                        File MartialArtistTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
-                        Scanner scanMartialArtistClassTxtFile = new Scanner(MartialArtistTxtFile);
+                        File MartialArtistTxtFile = 
+                                new File("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanMartialArtistClassTxtFile = 
+                                new Scanner(MartialArtistTxtFile);
                     
                         /*this variable below is reading the same thing as
                         characterClass and is only needed to read that same line
                         again*/
-                        String dontUseThisVariable = scanMartialArtistClassTxtFile.nextLine();
+                        String dontUseThisVariable = 
+                                scanMartialArtistClassTxtFile.nextLine();
                     
-                        String MartialArtistFirstNameTxt = scanMartialArtistClassTxtFile.next();
+                        String MartialArtistFirstNameTxt = 
+                                scanMartialArtistClassTxtFile.next();
                     
-                        String MartialArtistLastNameTxt = scanMartialArtistClassTxtFile.next();
+                        String MartialArtistLastNameTxt = 
+                                scanMartialArtistClassTxtFile.next();
                     
-                        String MartialArtistAccuracyStatValue = scanMartialArtistClassTxtFile.next();
+                        String MartialArtistAccuracyStatValue = 
+                                scanMartialArtistClassTxtFile.next();
                     
-                        String MartialArtistAttackStatValue = scanMartialArtistClassTxtFile.next();
+                        String MartialArtistAttackStatValue = 
+                                scanMartialArtistClassTxtFile.next();
                     
-                        String MartialArtistDamageStatValue = scanMartialArtistClassTxtFile.next();
+                        String MartialArtistDamageStatValue = 
+                                scanMartialArtistClassTxtFile.next();
                     
-                        String MartialArtistPhyDefStatValue = scanMartialArtistClassTxtFile.next();
+                        String MartialArtistPhyDefStatValue = 
+                                scanMartialArtistClassTxtFile.next();
                     
-                        String MartialArtistMagDefStatValue = scanMartialArtistClassTxtFile.next();
+                        String MartialArtistMagDefStatValue = 
+                                scanMartialArtistClassTxtFile.next();
                         
                         /*write the Martial Artist's first name from the user created
                         txt file to the HealerFirstName.txt file*/
                         try
                         {
                         
-                            FileWriter MartialArtistFirstNameWrite = new FileWriter("src/MartialArtistFirstName.txt");
+                            FileWriter MartialArtistFirstNameWrite = 
+                                    new FileWriter("src/MartialArtistFirstName.txt");
                             MartialArtistFirstNameWrite.write(MartialArtistFirstNameTxt);
                             MartialArtistFirstNameWrite.close();
                         }
@@ -7080,8 +7827,10 @@ class Main
                         txt file to the MartialArtistLastName.txt file*/
                         try
                         {
-                            FileWriter MartialArtistLastNameWrite = new FileWriter("src/MartialArtistLastName.txt");
-                            MartialArtistLastNameWrite.write(MartialArtistLastNameTxt);
+                            FileWriter MartialArtistLastNameWrite = 
+                                    new FileWriter("src/MartialArtistLastName.txt");
+                            MartialArtistLastNameWrite.
+                                    write(MartialArtistLastNameTxt);
                             MartialArtistLastNameWrite.close();
                         }
                     
@@ -7093,8 +7842,10 @@ class Main
                         /*write the Martial Artist's Accuracy Stat value*/
                         try
                         {
-                            FileWriter MartialArtistAccuracyStatWrite = new FileWriter("src/MartialArtistAccuracyStat.txt");
-                            MartialArtistAccuracyStatWrite.write(MartialArtistAccuracyStatValue);
+                            FileWriter MartialArtistAccuracyStatWrite = 
+                                    new FileWriter("src/MartialArtistAccuracyStat.txt");
+                            MartialArtistAccuracyStatWrite.
+                                    write(MartialArtistAccuracyStatValue);
                             MartialArtistAccuracyStatWrite.close();
                         }
                         
@@ -7106,8 +7857,10 @@ class Main
                         /*write the Martial Artist's Attack Stat value*/
                         try
                         {
-                            FileWriter MartialArtistAttackStatWrite = new FileWriter("src/MartialArtistAttackStat.txt");
-                            MartialArtistAttackStatWrite.write(MartialArtistAttackStatValue);
+                            FileWriter MartialArtistAttackStatWrite = 
+                                    new FileWriter("src/MartialArtistAttackStat.txt");
+                            MartialArtistAttackStatWrite.
+                                    write(MartialArtistAttackStatValue);
                             MartialArtistAttackStatWrite.close();
                         }
                         
@@ -7119,8 +7872,11 @@ class Main
                         /*write the Martial Artist's Damage Stat value*/
                         try
                         {
-                            FileWriter MartialArtistDamageStatWrite = new FileWriter("src/MartialArtistDamageStat.txt");
-                            MartialArtistDamageStatWrite.write(MartialArtistDamageStatValue);
+                            FileWriter MartialArtistDamageStatWrite = 
+                                    new FileWriter
+                                        ("src/MartialArtistDamageStat.txt");
+                            MartialArtistDamageStatWrite.
+                                    write(MartialArtistDamageStatValue);
                             MartialArtistDamageStatWrite.close();
                         }
                         
@@ -7132,8 +7888,11 @@ class Main
                         /*write the Martial Artist's Physical Defense Stat value*/
                         try
                         {
-                            FileWriter MartialArtistPhyDefStatWrite = new FileWriter("src/MartialArtistPhyDefStat.txt");
-                            MartialArtistPhyDefStatWrite.write(MartialArtistPhyDefStatValue);
+                            FileWriter MartialArtistPhyDefStatWrite = 
+                                    new FileWriter
+                                        ("src/MartialArtistPhyDefStat.txt");
+                            MartialArtistPhyDefStatWrite.
+                                    write(MartialArtistPhyDefStatValue);
                             MartialArtistPhyDefStatWrite.close();
                         }
                         
@@ -7145,8 +7904,11 @@ class Main
                         /*write the Martial Artist's Magical Defense Stat value*/
                         try
                         {
-                            FileWriter MartialArtistMagDefStatWrite = new FileWriter("src/MartialArtistMagDefStat.txt");
-                            MartialArtistMagDefStatWrite.write(MartialArtistMagDefStatValue);
+                            FileWriter MartialArtistMagDefStatWrite = 
+                                    new FileWriter
+                                        ("src/MartialArtistMagDefStat.txt");
+                            MartialArtistMagDefStatWrite.
+                                    write(MartialArtistMagDefStatValue);
                             MartialArtistMagDefStatWrite.close();
                         }
                         
@@ -7202,35 +7964,48 @@ class Main
                         /*Read the contents of a saved characters from a user named
                         save file and write it back to that character's respective
                         class files found in the "src" folder*/
-                        File NecromancerTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
-                        Scanner scanNecromancerClassTxtFile = new Scanner(NecromancerTxtFile);
+                        File NecromancerTxtFile = 
+                                new File
+                                    ("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanNecromancerClassTxtFile = 
+                                new Scanner(NecromancerTxtFile);
                     
                         /*this variable below is reading the same thing as
                         characterClass and is only needed to read that same line
                         again*/
-                        String dontUseThisVariable = scanNecromancerClassTxtFile.nextLine();
+                        String dontUseThisVariable = 
+                                scanNecromancerClassTxtFile.nextLine();
                     
-                        String NecromancerFirstNameTxt = scanNecromancerClassTxtFile.next();
+                        String NecromancerFirstNameTxt = 
+                                scanNecromancerClassTxtFile.next();
                     
-                        String NecromancerLastNameTxt = scanNecromancerClassTxtFile.next();
+                        String NecromancerLastNameTxt = 
+                                scanNecromancerClassTxtFile.next();
                     
-                        String NecromancerAccuracyStatValue = scanNecromancerClassTxtFile.next();
+                        String NecromancerAccuracyStatValue = 
+                                scanNecromancerClassTxtFile.next();
                     
-                        String NecromancerAttackStatValue = scanNecromancerClassTxtFile.next();
+                        String NecromancerAttackStatValue = 
+                                scanNecromancerClassTxtFile.next();
                     
-                        String NecromancerDamageStatValue = scanNecromancerClassTxtFile.next();
+                        String NecromancerDamageStatValue = 
+                                scanNecromancerClassTxtFile.next();
                     
-                        String NecromancerPhyDefStatValue = scanNecromancerClassTxtFile.next();
+                        String NecromancerPhyDefStatValue = 
+                                scanNecromancerClassTxtFile.next();
                     
-                        String NecromancerMagDefStatValue = scanNecromancerClassTxtFile.next();
+                        String NecromancerMagDefStatValue = 
+                                scanNecromancerClassTxtFile.next();
                         
                         /*write the Necromancer's first name from the user created
                         txt file to the NecromancerFirstName.txt file*/
                         try
                         {
                         
-                            FileWriter NecromancerFirstNameWrite = new FileWriter("src/NecromancerFirstName.txt");
-                            NecromancerFirstNameWrite.write(NecromancerFirstNameTxt);
+                            FileWriter NecromancerFirstNameWrite = 
+                                    new FileWriter("src/NecromancerFirstName.txt");
+                            NecromancerFirstNameWrite.
+                                    write(NecromancerFirstNameTxt);
                             NecromancerFirstNameWrite.close();
                         }
                     
@@ -7243,7 +8018,8 @@ class Main
                         txt file to the NecromancerLastName.txt file*/
                         try
                         {
-                            FileWriter NecromancerLastNameWrite = new FileWriter("src/NecromancerLastName.txt");
+                            FileWriter NecromancerLastNameWrite = 
+                                    new FileWriter("src/NecromancerLastName.txt");
                             NecromancerLastNameWrite.write(NecromancerLastNameTxt);
                             NecromancerLastNameWrite.close();
                         }
@@ -7256,8 +8032,10 @@ class Main
                         /*write the Necromancer's Accuracy Stat value*/
                         try
                         {
-                            FileWriter NecromancerAccuracyStatWrite = new FileWriter("src/NecromancerAccuracyStat.txt");
-                            NecromancerAccuracyStatWrite.write(NecromancerAccuracyStatValue);
+                            FileWriter NecromancerAccuracyStatWrite = 
+                                    new FileWriter("src/NecromancerAccuracyStat.txt");
+                            NecromancerAccuracyStatWrite.
+                                    write(NecromancerAccuracyStatValue);
                             NecromancerAccuracyStatWrite.close();
                         }
                         
@@ -7269,8 +8047,11 @@ class Main
                         /*write the Necromancer's Attack Stat value*/
                         try
                         {
-                            FileWriter NecromancerAttackStatWrite = new FileWriter("src/NecromancerAttackStat.txt");
-                            NecromancerAttackStatWrite.write(NecromancerAttackStatValue);
+                            FileWriter NecromancerAttackStatWrite = 
+                                    new FileWriter
+                                        ("src/NecromancerAttackStat.txt");
+                            NecromancerAttackStatWrite.
+                                    write(NecromancerAttackStatValue);
                             NecromancerAttackStatWrite.close();
                         }
                         
@@ -7282,8 +8063,11 @@ class Main
                         /*write the Necromancer's Damage Stat value*/
                         try
                         {
-                            FileWriter NecromancerDamageStatWrite = new FileWriter("src/NecromancerDamageStat.txt");
-                            NecromancerDamageStatWrite.write(NecromancerDamageStatValue);
+                            FileWriter NecromancerDamageStatWrite = 
+                                    new FileWriter
+                                        ("src/NecromancerDamageStat.txt");
+                            NecromancerDamageStatWrite.
+                                    write(NecromancerDamageStatValue);
                             NecromancerDamageStatWrite.close();
                         }
                         
@@ -7295,8 +8079,10 @@ class Main
                         /*write the Necromancer's Physical Defense Stat value*/
                         try
                         {
-                            FileWriter NecromancerPhyDefStatWrite = new FileWriter("src/NecromancerPhyDefStat.txt");
-                            NecromancerPhyDefStatWrite.write(NecromancerPhyDefStatValue);
+                            FileWriter NecromancerPhyDefStatWrite = 
+                                    new FileWriter("src/NecromancerPhyDefStat.txt");
+                            NecromancerPhyDefStatWrite.
+                                    write(NecromancerPhyDefStatValue);
                             NecromancerPhyDefStatWrite.close();
                         }
                         
@@ -7308,8 +8094,10 @@ class Main
                         /*write the Necromancer's Magical Defense Stat value*/
                         try
                         {
-                            FileWriter NecromancerMagDefStatWrite = new FileWriter("src/NecromancerMagDefStat.txt");
-                            NecromancerMagDefStatWrite.write(NecromancerMagDefStatValue);
+                            FileWriter NecromancerMagDefStatWrite = 
+                                    new FileWriter("src/NecromancerMagDefStat.txt");
+                            NecromancerMagDefStatWrite.
+                                    write(NecromancerMagDefStatValue);
                             NecromancerMagDefStatWrite.close();
                         }
                         
@@ -7365,35 +8153,48 @@ class Main
                         /*Read the contents of a saved characters from a user named
                         save file and write it back to that character's respective
                         class files found in the "src" folder*/
-                        File WizardTxtFile = new File("src/SavedCharacters/"+userSaveFile+".txt");
-                        Scanner scanWizardClassTxtFile = new Scanner(WizardTxtFile);
+                        File WizardTxtFile = 
+                                new File
+                                    ("src/SavedCharacters/"+userSaveFile+".txt");
+                        Scanner scanWizardClassTxtFile = 
+                                new Scanner(WizardTxtFile);
                     
                         /*this variable below is reading the same thing as
                         characterClass and is only needed to read that same line
                         again*/
-                        String dontUseThisVariable = scanWizardClassTxtFile.nextLine();
+                        String dontUseThisVariable = 
+                                scanWizardClassTxtFile.nextLine();
                     
-                        String WizardFirstNameTxt = scanWizardClassTxtFile.next();
+                        String WizardFirstNameTxt = 
+                                scanWizardClassTxtFile.next();
                     
-                        String WizardLastNameTxt = scanWizardClassTxtFile.next();
+                        String WizardLastNameTxt = 
+                                scanWizardClassTxtFile.next();
                     
-                        String WizardAccuracyStatValue = scanWizardClassTxtFile.next();
+                        String WizardAccuracyStatValue = 
+                                scanWizardClassTxtFile.next();
                     
-                        String WizardAttackStatValue = scanWizardClassTxtFile.next();
+                        String WizardAttackStatValue = 
+                                scanWizardClassTxtFile.next();
                     
-                        String WizardDamageStatValue = scanWizardClassTxtFile.next();
+                        String WizardDamageStatValue = 
+                                scanWizardClassTxtFile.next();
                     
-                        String WizardPhyDefStatValue = scanWizardClassTxtFile.next();
+                        String WizardPhyDefStatValue = 
+                                scanWizardClassTxtFile.next();
                     
-                        String WizardMagDefStatValue = scanWizardClassTxtFile.next();
+                        String WizardMagDefStatValue = 
+                                scanWizardClassTxtFile.next();
                         
                         /*write the Wizard's first name from the user created
                         txt file to the WizardFirstName.txt file*/
                         try
                         {
                         
-                            FileWriter WizardFirstNameWrite = new FileWriter("src/WizardFirstName.txt");
-                            WizardFirstNameWrite.write(WizardFirstNameTxt);
+                            FileWriter WizardFirstNameWrite = 
+                                    new FileWriter("src/WizardFirstName.txt");
+                            WizardFirstNameWrite.
+                                    write(WizardFirstNameTxt);
                             WizardFirstNameWrite.close();
                         }
                     
@@ -7406,7 +8207,8 @@ class Main
                         txt file to the WizardLastName.txt file*/
                         try
                         {
-                            FileWriter WizardLastNameWrite = new FileWriter("src/WizardLastName.txt");
+                            FileWriter WizardLastNameWrite = 
+                                    new FileWriter("src/WizardLastName.txt");
                             WizardLastNameWrite.write(WizardLastNameTxt);
                             WizardLastNameWrite.close();
                         }
@@ -7419,8 +8221,10 @@ class Main
                         /*write the Wizard's Accuracy Stat value*/
                         try
                         {
-                            FileWriter WizardAccuracyStatWrite = new FileWriter("src/WizardAccuracyStat.txt");
-                            WizardAccuracyStatWrite.write(WizardAccuracyStatValue);
+                            FileWriter WizardAccuracyStatWrite = 
+                                    new FileWriter("src/WizardAccuracyStat.txt");
+                            WizardAccuracyStatWrite.
+                                    write(WizardAccuracyStatValue);
                             WizardAccuracyStatWrite.close();
                         }
                         
@@ -7432,7 +8236,8 @@ class Main
                         /*write the Wizard's Attack Stat value*/
                         try
                         {
-                            FileWriter WizardAttackStatWrite = new FileWriter("src/WizardAttackStat.txt");
+                            FileWriter WizardAttackStatWrite = 
+                                    new FileWriter("src/WizardAttackStat.txt");
                             WizardAttackStatWrite.write(WizardAttackStatValue);
                             WizardAttackStatWrite.close();
                         }
@@ -7445,7 +8250,8 @@ class Main
                         /*write the Wizard's Damage Stat value*/
                         try
                         {
-                            FileWriter WizardDamageStatWrite = new FileWriter("src/WizardDamageStat.txt");
+                            FileWriter WizardDamageStatWrite = 
+                                    new FileWriter("src/WizardDamageStat.txt");
                             WizardDamageStatWrite.write(WizardDamageStatValue);
                             WizardDamageStatWrite.close();
                         }
@@ -7458,7 +8264,8 @@ class Main
                         /*write the Wizard's Physical Defense Stat value*/
                         try
                         {
-                            FileWriter WizardPhyDefStatWrite = new FileWriter("src/WizardPhyDefStat.txt");
+                            FileWriter WizardPhyDefStatWrite = 
+                                    new FileWriter("src/WizardPhyDefStat.txt");
                             WizardPhyDefStatWrite.write(WizardPhyDefStatValue);
                             WizardPhyDefStatWrite.close();
                         }
@@ -7471,7 +8278,8 @@ class Main
                         /*write the Wizard's Magical Defense Stat value*/
                         try
                         {
-                            FileWriter WizardMagDefStatWrite = new FileWriter("src/WizardMagDefStat.txt");
+                            FileWriter WizardMagDefStatWrite = 
+                                    new FileWriter("src/WizardMagDefStat.txt");
                             WizardMagDefStatWrite.write(WizardMagDefStatValue);
                             WizardMagDefStatWrite.close();
                         }
@@ -7580,46 +8388,65 @@ class Main
                         //------------------------------------------------------
                         
                         //retrieve AssassinFirstName.txt
-                        File AssassinFirstNameTxt2 = new File("src/AssassinFirstName.txt");
-                        Scanner scanAssassinFirstNameTxt = new Scanner(AssassinFirstNameTxt2);
+                        File AssassinFirstNameTxt2 = 
+                                new File("src/AssassinFirstName.txt");
+                        Scanner scanAssassinFirstNameTxt = 
+                                new Scanner(AssassinFirstNameTxt2);
                         //read the AssassinFirstName.txt file
-                        String AssassinFirstName2 = scanAssassinFirstNameTxt.next();
+                        String AssassinFirstName2 = 
+                                scanAssassinFirstNameTxt.next();
                         
                         //retrieve AssassinLastName.txt
-                        File AssassinLastNameTxt2 = new File("src/AssassinLastName.txt");
-                        Scanner scanAssassinLastNameTxt = new Scanner(AssassinLastNameTxt2);
+                        File AssassinLastNameTxt2 = 
+                                new File("src/AssassinLastName.txt");
+                        Scanner scanAssassinLastNameTxt = 
+                                new Scanner(AssassinLastNameTxt2);
                         //read the AssassinLastName.txt file
                         String AssassinLastName2 = scanAssassinLastNameTxt.next();
                         
                         //retrieve AssassinAccuracyStat.txt
-                        File AssassinAccuracyStatTxt = new File("src/AssassinAccuracyStat.txt");
-                        Scanner scanAssassinAccuracyStatTxt = new Scanner(AssassinAccuracyStatTxt);
+                        File AssassinAccuracyStatTxt = 
+                                new File("src/AssassinAccuracyStat.txt");
+                        Scanner scanAssassinAccuracyStatTxt = 
+                                new Scanner(AssassinAccuracyStatTxt);
                         //read the AssassinAccuracyStat.txt file
-                        String AssassinAccuracyStat = scanAssassinAccuracyStatTxt.next();
+                        String AssassinAccuracyStat = 
+                                scanAssassinAccuracyStatTxt.next();
                         
                         //retrieve AssassinAttackStat.txt
-                        File AssassinAttackStatTxt = new File("src/AssassinAttackStat.txt");
-                        Scanner scanAssassinAttackStatTxt = new Scanner(AssassinAttackStatTxt);
+                        File AssassinAttackStatTxt = 
+                                new File("src/AssassinAttackStat.txt");
+                        Scanner scanAssassinAttackStatTxt = 
+                                new Scanner(AssassinAttackStatTxt);
                         //read the AssassinAttackStat.txt file 
                         String AssassinAttackStat = scanAssassinAttackStatTxt.next();
                         
                         //retrieve AssassinDamageStat.txt
-                        File AssassinDamageStatTxt = new File("src/AssassinDamageStat.txt");
-                        Scanner scanAssassinDamageStatTxt = new Scanner(AssassinDamageStatTxt);
+                        File AssassinDamageStatTxt = 
+                                new File("src/AssassinDamageStat.txt");
+                        Scanner scanAssassinDamageStatTxt = 
+                                new Scanner(AssassinDamageStatTxt);
                         //read the AssassinDamageStat.txt file
-                        String AssassinDamageStat = scanAssassinDamageStatTxt.next();
+                        String AssassinDamageStat = 
+                                scanAssassinDamageStatTxt.next();
                         
                         //retrieve AssassinPhyDefStat.txt
-                        File AssassinPhyDefStatTxt = new File("src/AssassinPhyDefStat.txt");
-                        Scanner scanAssassinPhyDefStatTxt = new Scanner(AssassinPhyDefStatTxt);
+                        File AssassinPhyDefStatTxt = 
+                                new File("src/AssassinPhyDefStat.txt");
+                        Scanner scanAssassinPhyDefStatTxt = 
+                                new Scanner(AssassinPhyDefStatTxt);
                         //read the AssassinPhyDefStat.txt file
-                        String AssassinPhyDefStat = scanAssassinPhyDefStatTxt.next();
+                        String AssassinPhyDefStat = 
+                                scanAssassinPhyDefStatTxt.next();
                         
                         //retrieve AssassinMagDefStat.txt
-                        File AssassinMagDefStatTxt = new File("src/AssassinMagDefStat.txt");
-                        Scanner scanAssassinMagDefStatTxt = new Scanner(AssassinMagDefStatTxt);
+                        File AssassinMagDefStatTxt = 
+                                new File("src/AssassinMagDefStat.txt");
+                        Scanner scanAssassinMagDefStatTxt = 
+                                new Scanner(AssassinMagDefStatTxt);
                         //read the AssassinMagDefStat.txt file
-                        String AssassinMagDefStat = scanAssassinMagDefStatTxt.next();
+                        String AssassinMagDefStat = 
+                                scanAssassinMagDefStatTxt.next();
                         
                         try
                         {
@@ -7630,7 +8457,8 @@ class Main
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
+                            FileWriter writeUserSave = 
+                                    new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
                             /*Write "Assassin Class" to the character's user created
@@ -7713,46 +8541,66 @@ class Main
                         //------------------------------------------------------
                         
                         //retrieve EngineerFirstName.txt
-                        File EngineerFirstNameTxt2 = new File("src/EngineerFirstName.txt");
-                        Scanner scanEngineerFirstNameTxt = new Scanner(EngineerFirstNameTxt2);
+                        File EngineerFirstNameTxt2 = 
+                                new File("src/EngineerFirstName.txt");
+                        Scanner scanEngineerFirstNameTxt = 
+                                new Scanner(EngineerFirstNameTxt2);
                         //read the EngineerFirstName.txt file
-                        String EngineerFirstName2 = scanEngineerFirstNameTxt.next();
+                        String EngineerFirstName2 = 
+                                scanEngineerFirstNameTxt.next();
                         
                         //retrieve EngineerLastName.txt
-                        File EngineerLastNameTxt2 = new File("src/EngineerLastName.txt");
-                        Scanner scanEngineerLastNameTxt = new Scanner(EngineerLastNameTxt2);
+                        File EngineerLastNameTxt2 = 
+                                new File("src/EngineerLastName.txt");
+                        Scanner scanEngineerLastNameTxt = 
+                                new Scanner(EngineerLastNameTxt2);
                         //read the EngineerLastName.txt file
                         String EngineerLastName2 = scanEngineerLastNameTxt.next();
                         
                         //retrieve EngineerAccuracyStat.txt
-                        File EngineerAccuracyStatTxt = new File("src/EngineerAccuracyStat.txt");
-                        Scanner scanEngineerAccuracyStatTxt = new Scanner(EngineerAccuracyStatTxt);
+                        File EngineerAccuracyStatTxt = 
+                                new File("src/EngineerAccuracyStat.txt");
+                        Scanner scanEngineerAccuracyStatTxt = 
+                                new Scanner(EngineerAccuracyStatTxt);
                         //read the EngineerAccuracyStat.txt file
-                        String EngineerAccuracyStat = scanEngineerAccuracyStatTxt.next();
+                        String EngineerAccuracyStat = 
+                                scanEngineerAccuracyStatTxt.next();
                         
                         //retrieve EngineerAttackStat.txt
-                        File EngineerAttackStatTxt = new File("src/EngineerAttackStat.txt");
-                        Scanner scanEngineerAttackStatTxt = new Scanner(EngineerAttackStatTxt);
+                        File EngineerAttackStatTxt = 
+                                new File("src/EngineerAttackStat.txt");
+                        Scanner scanEngineerAttackStatTxt = 
+                                new Scanner(EngineerAttackStatTxt);
                         //read the EngineerAttackStat.txt file 
-                        String EngineerAttackStat = scanEngineerAttackStatTxt.next();
+                        String EngineerAttackStat = 
+                                scanEngineerAttackStatTxt.next();
                         
                         //retrieve EngineerDamageStat.txt
-                        File EngineerDamageStatTxt = new File("src/EngineerDamageStat.txt");
-                        Scanner scanEngineerDamageStatTxt = new Scanner(EngineerDamageStatTxt);
+                        File EngineerDamageStatTxt = 
+                                new File("src/EngineerDamageStat.txt");
+                        Scanner scanEngineerDamageStatTxt = 
+                                new Scanner(EngineerDamageStatTxt);
                         //read the EngineerDamageStat.txt file
-                        String EngineerDamageStat = scanEngineerDamageStatTxt.next();
+                        String EngineerDamageStat = 
+                                scanEngineerDamageStatTxt.next();
                         
                         //retrieve EngineerPhyDefStat.txt
-                        File EngineerPhyDefStatTxt = new File("src/EngineerPhyDefStat.txt");
-                        Scanner scanEngineerPhyDefStatTxt = new Scanner(EngineerPhyDefStatTxt);
+                        File EngineerPhyDefStatTxt = 
+                                new File("src/EngineerPhyDefStat.txt");
+                        Scanner scanEngineerPhyDefStatTxt = 
+                                new Scanner(EngineerPhyDefStatTxt);
                         //read the EngineerPhyDefStat.txt file
-                        String EngineerPhyDefStat = scanEngineerPhyDefStatTxt.next();
+                        String EngineerPhyDefStat = 
+                                scanEngineerPhyDefStatTxt.next();
                         
                         //retrieve EngineerMagDefStat.txt
-                        File EngineerMagDefStatTxt = new File("src/EngineerMagDefStat.txt");
-                        Scanner scanEngineerMagDefStatTxt = new Scanner(EngineerMagDefStatTxt);
+                        File EngineerMagDefStatTxt = 
+                                new File("src/EngineerMagDefStat.txt");
+                        Scanner scanEngineerMagDefStatTxt = 
+                                new Scanner(EngineerMagDefStatTxt);
                         //read the EngineerMagDefStat.txt file
-                        String EngineerMagDefStat = scanEngineerMagDefStatTxt.next();
+                        String EngineerMagDefStat = 
+                                scanEngineerMagDefStatTxt.next();
                         
                         try
                         {
@@ -7763,8 +8611,9 @@ class Main
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
-                                    userNamedSaveFile+".txt");
+                            FileWriter writeUserSave = 
+                                    new FileWriter
+                               ("src/SavedCharacters/"+userNamedSaveFile+".txt");
                             
                             /*Write "Engineer Class" to the character's user created
                             save file so that it can later be read when the user
@@ -7846,44 +8695,59 @@ class Main
                         //------------------------------------------------------
                         
                         //retrieve HealerFirstName.txt
-                        File HealerFirstNameTxt2 = new File("src/HealerFirstName.txt");
-                        Scanner scanHealerFirstNameTxt = new Scanner(HealerFirstNameTxt2);
+                        File HealerFirstNameTxt2 = 
+                                new File("src/HealerFirstName.txt");
+                        Scanner scanHealerFirstNameTxt = 
+                                new Scanner(HealerFirstNameTxt2);
                         //read the HealerFirstName.txt file
                         String HealerFirstName2 = scanHealerFirstNameTxt.next();
                         
                         //retrieve HealerLastName.txt
-                        File HealerLastNameTxt2 = new File("src/HealerLastName.txt");
-                        Scanner scanHealerLastNameTxt = new Scanner(HealerLastNameTxt2);
+                        File HealerLastNameTxt2 = 
+                                new File("src/HealerLastName.txt");
+                        Scanner scanHealerLastNameTxt = 
+                                new Scanner(HealerLastNameTxt2);
                         //read the HealerLastName.txt file
                         String HealerLastName2 = scanHealerLastNameTxt.next();
                         
                         //retrieve HealerAccuracyStat.txt
-                        File HealerAccuracyStatTxt = new File("src/HealerAccuracyStat.txt");
-                        Scanner scanHealerAccuracyStatTxt = new Scanner(HealerAccuracyStatTxt);
+                        File HealerAccuracyStatTxt = 
+                                new File("src/HealerAccuracyStat.txt");
+                        Scanner scanHealerAccuracyStatTxt = 
+                                new Scanner(HealerAccuracyStatTxt);
                         //read the HealerAccuracyStat.txt file
-                        String HealerAccuracyStat = scanHealerAccuracyStatTxt.next();
+                        String HealerAccuracyStat = 
+                                scanHealerAccuracyStatTxt.next();
                         
                         //retrieve HealerAttackStat.txt
-                        File HealerAttackStatTxt = new File("src/HealerAttackStat.txt");
-                        Scanner scanHealerAttackStatTxt = new Scanner(HealerAttackStatTxt);
+                        File HealerAttackStatTxt = 
+                                new File("src/HealerAttackStat.txt");
+                        Scanner scanHealerAttackStatTxt = 
+                                new Scanner(HealerAttackStatTxt);
                         //read the HealerAttackStat.txt file 
                         String HealerAttackStat = scanHealerAttackStatTxt.next();
                         
                         //retrieve HealerDamageStat.txt
-                        File HealerDamageStatTxt = new File("src/HealerDamageStat.txt");
-                        Scanner scanHealerDamageStatTxt = new Scanner(HealerDamageStatTxt);
+                        File HealerDamageStatTxt = 
+                                new File("src/HealerDamageStat.txt");
+                        Scanner scanHealerDamageStatTxt = 
+                                new Scanner(HealerDamageStatTxt);
                         //read the HealerDamageStat.txt file
                         String HealerDamageStat = scanHealerDamageStatTxt.next();
                         
                         //retrieve HealerPhyDefStat.txt
-                        File HealerPhyDefStatTxt = new File("src/HealerPhyDefStat.txt");
-                        Scanner scanHealerPhyDefStatTxt = new Scanner(HealerPhyDefStatTxt);
+                        File HealerPhyDefStatTxt = 
+                                new File("src/HealerPhyDefStat.txt");
+                        Scanner scanHealerPhyDefStatTxt = 
+                                new Scanner(HealerPhyDefStatTxt);
                         //read the HealerPhyDefStat.txt file
                         String HealerPhyDefStat = scanHealerPhyDefStatTxt.next();
                         
                         //retrieve HealerMagDefStat.txt
-                        File HealerMagDefStatTxt = new File("src/HealerMagDefStat.txt");
-                        Scanner scanHealerMagDefStatTxt = new Scanner(HealerMagDefStatTxt);
+                        File HealerMagDefStatTxt = 
+                                new File("src/HealerMagDefStat.txt");
+                        Scanner scanHealerMagDefStatTxt = 
+                                new Scanner(HealerMagDefStatTxt);
                         //read the HealerMagDefStat.txt file
                         String HealerMagDefStat = scanHealerMagDefStatTxt.next();
                         
@@ -7896,7 +8760,8 @@ class Main
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
+                            FileWriter writeUserSave = 
+                                    new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
                             /*Write "Healer Class" to the character's user created
@@ -7955,16 +8820,23 @@ class Main
                 if(selectedCharacterClass.contains(thisIsMartialArtist))
                 {
                     //will retrieve MartialArtistFirstName.txt
-                    File MartialArtist1stFile = new File("src/MartialArtistFirstName.txt");
-                    Scanner scanMartialArtistFirstName = new Scanner(MartialArtist1stFile);
+                    File MartialArtist1stFile = 
+                            new File("src/MartialArtistFirstName.txt");
+                    Scanner scanMartialArtistFirstName = 
+                            new Scanner(MartialArtist1stFile);
                 
                     //will retrieve MartialArtistLastName.txt
-                    File MartialArtist2ndFile = new File("src/MartialArtistLastName.txt");
-                    Scanner scanMartialArtistLastName = new Scanner(MartialArtist2ndFile);
+                    File MartialArtist2ndFile = 
+                            new File("src/MartialArtistLastName.txt");
+                    Scanner scanMartialArtistLastName = 
+                            new Scanner(MartialArtist2ndFile);
                 
-                    //read the MartialArtistFirstName.txt file & MartialArtistLastName.txt file
-                    String MartialArtistFirstNameTxt = scanMartialArtistFirstName.next();
-                    String MartialArtistLastNameTxt = scanMartialArtistLastName.next();
+                    /*read the MartialArtistFirstName.txt file &
+                    MartialArtistLastName.txt file*/
+                    String MartialArtistFirstNameTxt = 
+                            scanMartialArtistFirstName.next();
+                    String MartialArtistLastNameTxt = 
+                            scanMartialArtistLastName.next();
                     
                     String userSave;
                     System.out.print("Are you sure you want to save your"+
@@ -7979,46 +8851,67 @@ class Main
                         //------------------------------------------------------
                         
                         //retrieve MartialArtistFirstName.txt
-                        File MartialArtistFirstNameTxt2 = new File("src/MartialArtistFirstName.txt");
-                        Scanner scanMartialArtistFirstNameTxt = new Scanner(MartialArtistFirstNameTxt2);
+                        File MartialArtistFirstNameTxt2 = 
+                                new File("src/MartialArtistFirstName.txt");
+                        Scanner scanMartialArtistFirstNameTxt = 
+                                new Scanner(MartialArtistFirstNameTxt2);
                         //read the MartialArtistFirstName.txt file
-                        String MartialArtistFirstName2 = scanMartialArtistFirstNameTxt.next();
+                        String MartialArtistFirstName2 = 
+                                scanMartialArtistFirstNameTxt.next();
                         
                         //retrieve MartialArtistLastName.txt
-                        File MartialArtistLastNameTxt2 = new File("src/MartialArtistLastName.txt");
-                        Scanner scanMartialArtistLastNameTxt = new Scanner(MartialArtistLastNameTxt2);
+                        File MartialArtistLastNameTxt2 = 
+                                new File("src/MartialArtistLastName.txt");
+                        Scanner scanMartialArtistLastNameTxt = 
+                                new Scanner(MartialArtistLastNameTxt2);
                         //read the MartialArtistLastName.txt file
-                        String MartialArtistLastName2 = scanMartialArtistLastNameTxt.next();
+                        String MartialArtistLastName2 = 
+                                scanMartialArtistLastNameTxt.next();
                         
                         //retrieve MartialArtistAccuracyStat.txt
-                        File MartialArtistAccuracyStatTxt = new File("src/MartialArtistAccuracyStat.txt");
-                        Scanner scanMartialArtistAccuracyStatTxt = new Scanner(MartialArtistAccuracyStatTxt);
+                        File MartialArtistAccuracyStatTxt = 
+                                new File("src/MartialArtistAccuracyStat.txt");
+                        Scanner scanMartialArtistAccuracyStatTxt = 
+                                new Scanner(MartialArtistAccuracyStatTxt);
                         //read the MartialArtistAccuracyStat.txt file
-                        String MartialArtistAccuracyStat = scanMartialArtistAccuracyStatTxt.next();
+                        String MartialArtistAccuracyStat = 
+                                scanMartialArtistAccuracyStatTxt.next();
                         
                         //retrieve MartialArtistAttackStat.txt
-                        File MartialArtistAttackStatTxt = new File("src/MartialArtistAttackStat.txt");
-                        Scanner scanMartialArtistAttackStatTxt = new Scanner(MartialArtistAttackStatTxt);
+                        File MartialArtistAttackStatTxt = 
+                                new File("src/MartialArtistAttackStat.txt");
+                        Scanner scanMartialArtistAttackStatTxt = 
+                                new Scanner(MartialArtistAttackStatTxt);
                         //read the MartialArtistAttackStat.txt file 
-                        String MartialArtistAttackStat = scanMartialArtistAttackStatTxt.next();
+                        String MartialArtistAttackStat = 
+                                scanMartialArtistAttackStatTxt.next();
                         
                         //retrieve MartialArtistDamageStat.txt
-                        File MartialArtistDamageStatTxt = new File("src/MartialArtistDamageStat.txt");
-                        Scanner scanMartialArtistDamageStatTxt = new Scanner(MartialArtistDamageStatTxt);
+                        File MartialArtistDamageStatTxt = 
+                                new File("src/MartialArtistDamageStat.txt");
+                        Scanner scanMartialArtistDamageStatTxt = 
+                                new Scanner(MartialArtistDamageStatTxt);
                         //read the MartialArtistDamageStat.txt file
-                        String MartialArtistDamageStat = scanMartialArtistDamageStatTxt.next();
+                        String MartialArtistDamageStat = 
+                                scanMartialArtistDamageStatTxt.next();
                         
                         //retrieve MartialArtistPhyDefStat.txt
-                        File MartialArtistPhyDefStatTxt = new File("src/MartialArtistPhyDefStat.txt");
-                        Scanner scanMartialArtistPhyDefStatTxt = new Scanner(MartialArtistPhyDefStatTxt);
+                        File MartialArtistPhyDefStatTxt = 
+                                new File("src/MartialArtistPhyDefStat.txt");
+                        Scanner scanMartialArtistPhyDefStatTxt = 
+                                new Scanner(MartialArtistPhyDefStatTxt);
                         //read the MartialArtistPhyDefStat.txt file
-                        String MartialArtistPhyDefStat = scanMartialArtistPhyDefStatTxt.next();
+                        String MartialArtistPhyDefStat = 
+                                scanMartialArtistPhyDefStatTxt.next();
                         
                         //retrieve MartialArtistMagDefStat.txt
-                        File MartialArtistMagDefStatTxt = new File("src/MartialArtistMagDefStat.txt");
-                        Scanner scanMartialArtistMagDefStatTxt = new Scanner(MartialArtistMagDefStatTxt);
+                        File MartialArtistMagDefStatTxt = 
+                                new File("src/MartialArtistMagDefStat.txt");
+                        Scanner scanMartialArtistMagDefStatTxt = 
+                                new Scanner(MartialArtistMagDefStatTxt);
                         //read the MartialArtistMagDefStat.txt file
-                        String MartialArtistMagDefStat = scanMartialArtistMagDefStatTxt.next();
+                        String MartialArtistMagDefStat = 
+                                scanMartialArtistMagDefStatTxt.next();
                         
                         try
                         {
@@ -8087,16 +8980,22 @@ class Main
                 if(selectedCharacterClass.contains(thisIsNecromancer))
                 {
                     //will retrieve NecromancerFirstName.txt
-                    File Necromancer1stFile = new File("src/NecromancerFirstName.txt");
-                    Scanner scanNecromancerFirstName = new Scanner(Necromancer1stFile);
+                    File Necromancer1stFile = 
+                            new File("src/NecromancerFirstName.txt");
+                    Scanner scanNecromancerFirstName = 
+                            new Scanner(Necromancer1stFile);
                 
                     //will retrieve NecromancerLastName.txt
-                    File Necromancer2ndFile = new File("src/NecromancerLastName.txt");
-                    Scanner scanNecromancerLastName = new Scanner(Necromancer2ndFile);
+                    File Necromancer2ndFile = 
+                            new File("src/NecromancerLastName.txt");
+                    Scanner scanNecromancerLastName = 
+                            new Scanner(Necromancer2ndFile);
                 
                     //read the NecromancerFirstName.txt file & NecromancerLastName.txt file
-                    String NecromancerFirstNameTxt = scanNecromancerFirstName.next();
-                    String NecromancerLastNameTxt = scanNecromancerLastName.next();
+                    String NecromancerFirstNameTxt = 
+                            scanNecromancerFirstName.next();
+                    String NecromancerLastNameTxt = 
+                            scanNecromancerLastName.next();
                     
                     String userSave;
                     System.out.print("Are you sure you want to save your"+
@@ -8111,46 +9010,67 @@ class Main
                         //------------------------------------------------------
                         
                         //retrieve NecromancerFirstName.txt
-                        File NecromancerFirstNameTxt2 = new File("src/NecromancerFirstName.txt");
-                        Scanner scanNecromancerFirstNameTxt = new Scanner(NecromancerFirstNameTxt2);
+                        File NecromancerFirstNameTxt2 = 
+                                new File("src/NecromancerFirstName.txt");
+                        Scanner scanNecromancerFirstNameTxt = 
+                                new Scanner(NecromancerFirstNameTxt2);
                         //read the NecromancerFirstName.txt file
-                        String NecromancerFirstName2 = scanNecromancerFirstNameTxt.next();
+                        String NecromancerFirstName2 = 
+                                scanNecromancerFirstNameTxt.next();
                         
                         //retrieve NecromancerLastName.txt
-                        File NecromancerLastNameTxt2 = new File("src/NecromancerLastName.txt");
-                        Scanner scanNecromancerLastNameTxt = new Scanner(NecromancerLastNameTxt2);
+                        File NecromancerLastNameTxt2 = 
+                                new File("src/NecromancerLastName.txt");
+                        Scanner scanNecromancerLastNameTxt = 
+                                new Scanner(NecromancerLastNameTxt2);
                         //read the NecromancerLastName.txt file
-                        String NecromancerLastName2 = scanNecromancerLastNameTxt.next();
+                        String NecromancerLastName2 = 
+                                scanNecromancerLastNameTxt.next();
                         
                         //retrieve NecromancerAccuracyStat.txt
-                        File NecromancerAccuracyStatTxt = new File("src/NecromancerAccuracyStat.txt");
-                        Scanner scanNecromancerAccuracyStatTxt = new Scanner(NecromancerAccuracyStatTxt);
+                        File NecromancerAccuracyStatTxt = 
+                                new File("src/NecromancerAccuracyStat.txt");
+                        Scanner scanNecromancerAccuracyStatTxt = 
+                                new Scanner(NecromancerAccuracyStatTxt);
                         //read the NecromancerAccuracyStat.txt file
-                        String NecromancerAccuracyStat = scanNecromancerAccuracyStatTxt.next();
+                        String NecromancerAccuracyStat = 
+                                scanNecromancerAccuracyStatTxt.next();
                         
                         //retrieve NecromancerAttackStat.txt
-                        File NecromancerAttackStatTxt = new File("src/NecromancerAttackStat.txt");
-                        Scanner scanNecromancerAttackStatTxt = new Scanner(NecromancerAttackStatTxt);
+                        File NecromancerAttackStatTxt = 
+                                new File("src/NecromancerAttackStat.txt");
+                        Scanner scanNecromancerAttackStatTxt = 
+                                new Scanner(NecromancerAttackStatTxt);
                         //read the NecromancerAttackStat.txt file 
-                        String NecromancerAttackStat = scanNecromancerAttackStatTxt.next();
+                        String NecromancerAttackStat = 
+                                scanNecromancerAttackStatTxt.next();
                         
                         //retrieve NecromancerDamageStat.txt
-                        File NecromancerDamageStatTxt = new File("src/NecromancerDamageStat.txt");
-                        Scanner scanNecromancerDamageStatTxt = new Scanner(NecromancerDamageStatTxt);
+                        File NecromancerDamageStatTxt = 
+                                new File("src/NecromancerDamageStat.txt");
+                        Scanner scanNecromancerDamageStatTxt = 
+                                new Scanner(NecromancerDamageStatTxt);
                         //read the NecromancerDamageStat.txt file
-                        String NecromancerDamageStat = scanNecromancerDamageStatTxt.next();
+                        String NecromancerDamageStat = 
+                                scanNecromancerDamageStatTxt.next();
                         
                         //retrieve NecromancerPhyDefStat.txt
-                        File NecromancerPhyDefStatTxt = new File("src/NecromancerPhyDefStat.txt");
-                        Scanner scanNecromancerPhyDefStatTxt = new Scanner(NecromancerPhyDefStatTxt);
+                        File NecromancerPhyDefStatTxt = 
+                                new File("src/NecromancerPhyDefStat.txt");
+                        Scanner scanNecromancerPhyDefStatTxt = 
+                                new Scanner(NecromancerPhyDefStatTxt);
                         //read the NecromancerPhyDefStat.txt file
-                        String NecromancerPhyDefStat = scanNecromancerPhyDefStatTxt.next();
+                        String NecromancerPhyDefStat = 
+                                scanNecromancerPhyDefStatTxt.next();
                         
                         //retrieve NecromancerMagDefStat.txt
-                        File NecromancerMagDefStatTxt = new File("src/NecromancerMagDefStat.txt");
-                        Scanner scanNecromancerMagDefStatTxt = new Scanner(NecromancerMagDefStatTxt);
+                        File NecromancerMagDefStatTxt = 
+                                new File("src/NecromancerMagDefStat.txt");
+                        Scanner scanNecromancerMagDefStatTxt = 
+                                new Scanner(NecromancerMagDefStatTxt);
                         //read the NecromancerMagDefStat.txt file
-                        String NecromancerMagDefStat = scanNecromancerMagDefStatTxt.next();
+                        String NecromancerMagDefStat = 
+                                scanNecromancerMagDefStatTxt.next();
                         
                         try
                         {
@@ -8243,44 +9163,61 @@ class Main
                         //------------------------------------------------------
                         
                         //retrieve WizardFirstName.txt
-                        File WizardFirstNameTxt2 = new File("src/WizardFirstName.txt");
-                        Scanner scanWizardFirstNameTxt = new Scanner(WizardFirstNameTxt2);
+                        File WizardFirstNameTxt2 = 
+                                new File("src/WizardFirstName.txt");
+                        Scanner scanWizardFirstNameTxt = 
+                                new Scanner(WizardFirstNameTxt2);
                         //read the WizardFirstName.txt file
                         String WizardFirstName2 = scanWizardFirstNameTxt.next();
                         
                         //retrieve WizardLastName.txt
-                        File WizardLastNameTxt2 = new File("src/WizardLastName.txt");
-                        Scanner scanWizardLastNameTxt = new Scanner(WizardLastNameTxt2);
+                        File WizardLastNameTxt2 = 
+                                new File("src/WizardLastName.txt");
+                        Scanner scanWizardLastNameTxt = 
+                                new Scanner(WizardLastNameTxt2);
                         //read the WizardLastName.txt file
                         String WizardLastName2 = scanWizardLastNameTxt.next();
                         
                         //retrieve WizardAccuracyStat.txt
-                        File WizardAccuracyStatTxt = new File("src/WizardAccuracyStat.txt");
-                        Scanner scanWizardAccuracyStatTxt = new Scanner(WizardAccuracyStatTxt);
+                        File WizardAccuracyStatTxt = 
+                                new File("src/WizardAccuracyStat.txt");
+                        Scanner scanWizardAccuracyStatTxt = 
+                                new Scanner(WizardAccuracyStatTxt);
                         //read the WizardAccuracyStat.txt file
-                        String WizardAccuracyStat = scanWizardAccuracyStatTxt.next();
+                        String WizardAccuracyStat = 
+                                scanWizardAccuracyStatTxt.next();
                         
                         //retrieve WizardAttackStat.txt
-                        File WizardAttackStatTxt = new File("src/WizardAttackStat.txt");
-                        Scanner scanWizardAttackStatTxt = new Scanner(WizardAttackStatTxt);
+                        File WizardAttackStatTxt = 
+                                new File("src/WizardAttackStat.txt");
+                        Scanner scanWizardAttackStatTxt = 
+                                new Scanner(WizardAttackStatTxt);
                         //read the WizardAttackStat.txt file 
-                        String WizardAttackStat = scanWizardAttackStatTxt.next();
+                        String WizardAttackStat = 
+                                scanWizardAttackStatTxt.next();
                         
                         //retrieve WizardDamageStat.txt
-                        File WizardDamageStatTxt = new File("src/WizardDamageStat.txt");
-                        Scanner scanWizardDamageStatTxt = new Scanner(WizardDamageStatTxt);
+                        File WizardDamageStatTxt = 
+                                new File("src/WizardDamageStat.txt");
+                        Scanner scanWizardDamageStatTxt = 
+                                new Scanner(WizardDamageStatTxt);
                         //read the WizardDamageStat.txt file
-                        String WizardDamageStat = scanWizardDamageStatTxt.next();
+                        String WizardDamageStat = 
+                                scanWizardDamageStatTxt.next();
                         
                         //retrieve WizardPhyDefStat.txt
-                        File WizardPhyDefStatTxt = new File("src/WizardPhyDefStat.txt");
-                        Scanner scanWizardPhyDefStatTxt = new Scanner(WizardPhyDefStatTxt);
+                        File WizardPhyDefStatTxt = 
+                                new File("src/WizardPhyDefStat.txt");
+                        Scanner scanWizardPhyDefStatTxt = 
+                                new Scanner(WizardPhyDefStatTxt);
                         //read the WizardPhyDefStat.txt file
                         String WizardPhyDefStat = scanWizardPhyDefStatTxt.next();
                         
                         //retrieve WizardMagDefStat.txt
-                        File WizardMagDefStatTxt = new File("src/WizardMagDefStat.txt");
-                        Scanner scanWizardMagDefStatTxt = new Scanner(WizardMagDefStatTxt);
+                        File WizardMagDefStatTxt = 
+                                new File("src/WizardMagDefStat.txt");
+                        Scanner scanWizardMagDefStatTxt = 
+                                new Scanner(WizardMagDefStatTxt);
                         //read the WizardMagDefStat.txt file
                         String WizardMagDefStat = scanWizardMagDefStatTxt.next();
                         
@@ -8293,7 +9230,8 @@ class Main
                             userNamedSaveFile = scan.next();
                             System.out.println();
                             
-                            FileWriter writeUserSave = new FileWriter("src/SavedCharacters/"+
+                            FileWriter writeUserSave = 
+                                    new FileWriter("src/SavedCharacters/"+
                                     userNamedSaveFile+".txt");
                             
                             /*Write "Wizard Class" to the character's user created
@@ -8355,8 +9293,10 @@ class Main
                 //--------------------------------------------------------------
                 
                 //retrieve AssassinFirstName.txt
-                File AssassinFirstNameTxt2 = new File("src/AssassinFirstName.txt");
-                Scanner scanAssassinFirstNameTxt = new Scanner(AssassinFirstNameTxt2);
+                File AssassinFirstNameTxt2 = 
+                        new File("src/AssassinFirstName.txt");
+                Scanner scanAssassinFirstNameTxt = 
+                        new Scanner(AssassinFirstNameTxt2);
                 //read the AssassinFirstName.txt file
                 String AssassinFirstName2 = scanAssassinFirstNameTxt.next();
                         
@@ -8367,28 +9307,37 @@ class Main
                 String AssassinLastName2 = scanAssassinLastNameTxt.next();
                 
                 //retrieve AssassinAccuracyStat.txt
-                File AssassinAccuracyStatTxt = new File("src/AssassinAccuracyStat.txt");
-                Scanner scanAssassinAccuracyStatTxt = new Scanner(AssassinAccuracyStatTxt);
+                File AssassinAccuracyStatTxt = 
+                        new File("src/AssassinAccuracyStat.txt");
+                Scanner scanAssassinAccuracyStatTxt = 
+                        new Scanner(AssassinAccuracyStatTxt);
                 //read the AssassinAccuracyStat.txt file
-                String AssassinAccuracyStat = scanAssassinAccuracyStatTxt.next();
+                String AssassinAccuracyStat = 
+                        scanAssassinAccuracyStatTxt.next();
                         
                 //retrieve AssassinAttackStat.txt
-                File AssassinAttackStatTxt = new File("src/AssassinAttackStat.txt");
-                Scanner scanAssassinAttackStatTxt = new Scanner(AssassinAttackStatTxt);
+                File AssassinAttackStatTxt = 
+                        new File("src/AssassinAttackStat.txt");
+                Scanner scanAssassinAttackStatTxt = 
+                        new Scanner(AssassinAttackStatTxt);
                 //read the AssassinAttackStat.txt file 
                 String AssassinAttackStat = scanAssassinAttackStatTxt.next();
                         
                 //Assassin Damage Stat isn't needed 
                         
                 //retrieve AssassinPhyDefStat.txt
-                File AssassinPhyDefStatTxt = new File("src/AssassinPhyDefStat.txt");
-                Scanner scanAssassinPhyDefStatTxt = new Scanner(AssassinPhyDefStatTxt);
+                File AssassinPhyDefStatTxt = 
+                        new File("src/AssassinPhyDefStat.txt");
+                Scanner scanAssassinPhyDefStatTxt = 
+                        new Scanner(AssassinPhyDefStatTxt);
                 //read the AssassinPhyDefStat.txt file
                 String AssassinPhyDefStat = scanAssassinPhyDefStatTxt.next();
                         
                 //retrieve AssassinMagDefStat.txt
-                File AssassinMagDefStatTxt = new File("src/AssassinMagDefStat.txt");
-                Scanner scanAssassinMagDefStatTxt = new Scanner(AssassinMagDefStatTxt);
+                File AssassinMagDefStatTxt = 
+                        new File("src/AssassinMagDefStat.txt");
+                Scanner scanAssassinMagDefStatTxt = 
+                        new Scanner(AssassinMagDefStatTxt);
                 //read the AssassinMagDefStat.txt file
                 String AssassinMagDefStat = scanAssassinMagDefStatTxt.next();
                 
@@ -8399,40 +9348,52 @@ class Main
                 //--------------------------------------------------------------
                 
                 //retrieve EngineerFirstName.txt
-                File EngineerFirstNameTxt2 = new File("src/EngineerFirstName.txt");
-                Scanner scanEngineerFirstNameTxt = new Scanner(EngineerFirstNameTxt2);
+                File EngineerFirstNameTxt2 = 
+                        new File("src/EngineerFirstName.txt");
+                Scanner scanEngineerFirstNameTxt = 
+                        new Scanner(EngineerFirstNameTxt2);
                 //read the EngineerFirstName.txt file
-                String EngineerFirstName2 = scanEngineerFirstNameTxt.next();
+                String EngineerFirstName2 = 
+                        scanEngineerFirstNameTxt.next();
                         
                 //retrieve EngineerLastName.txt
                 File EngineerLastNameTxt2 = new File("src/EngineerLastName.txt");
-                Scanner scanEngineerLastNameTxt = new Scanner(EngineerLastNameTxt2);
+                Scanner scanEngineerLastNameTxt = 
+                        new Scanner(EngineerLastNameTxt2);
                 //read the EngineerLastName.txt file
                 String EngineerLastName2 = scanEngineerLastNameTxt.next();
                 
                 //retrieve EngineerAccuracyStat.txt
-                File EngineerAccuracyStatTxt = new File("src/EngineerAccuracyStat.txt");
-                Scanner scanEngineerAccuracyStatTxt = new Scanner(EngineerAccuracyStatTxt);
+                File EngineerAccuracyStatTxt = 
+                        new File("src/EngineerAccuracyStat.txt");
+                Scanner scanEngineerAccuracyStatTxt = 
+                        new Scanner(EngineerAccuracyStatTxt);
                 //read the EngineerAccuracyStat.txt file
                 String EngineerAccuracyStat = scanEngineerAccuracyStatTxt.next();
                         
                 //retrieve EngineerAttackStat.txt
-                File EngineerAttackStatTxt = new File("src/EngineerAttackStat.txt");
-                Scanner scanEngineerAttackStatTxt = new Scanner(EngineerAttackStatTxt);
+                File EngineerAttackStatTxt = 
+                        new File("src/EngineerAttackStat.txt");
+                Scanner scanEngineerAttackStatTxt = 
+                        new Scanner(EngineerAttackStatTxt);
                 //read the EngineerAttackStat.txt file 
                 String EngineerAttackStat = scanEngineerAttackStatTxt.next();
                         
                 //Engineer Damage Stat isn't needed
                         
                 //retrieve EngineerPhyDefStat.txt
-                File EngineerPhyDefStatTxt = new File("src/EngineerPhyDefStat.txt");
-                Scanner scanEngineerPhyDefStatTxt = new Scanner(EngineerPhyDefStatTxt);
+                File EngineerPhyDefStatTxt = 
+                        new File("src/EngineerPhyDefStat.txt");
+                Scanner scanEngineerPhyDefStatTxt = 
+                        new Scanner(EngineerPhyDefStatTxt);
                 //read the EngineerPhyDefStat.txt file
                 String EngineerPhyDefStat = scanEngineerPhyDefStatTxt.next();
                         
                 //retrieve EngineerMagDefStat.txt
-                File EngineerMagDefStatTxt = new File("src/EngineerMagDefStat.txt");
-                Scanner scanEngineerMagDefStatTxt = new Scanner(EngineerMagDefStatTxt);
+                File EngineerMagDefStatTxt = 
+                        new File("src/EngineerMagDefStat.txt");
+                Scanner scanEngineerMagDefStatTxt = 
+                        new Scanner(EngineerMagDefStatTxt);
                 //read the EngineerMagDefStat.txt file
                 String EngineerMagDefStat = scanEngineerMagDefStatTxt.next();
                 
@@ -8443,20 +9404,26 @@ class Main
                 //--------------------------------------------------------------
                 
                 //retrieve HealerFirstName.txt
-                File HealerFirstNameTxt2 = new File("src/HealerFirstName.txt");
-                Scanner scanHealerFirstNameTxt = new Scanner(HealerFirstNameTxt2);
+                File HealerFirstNameTxt2 = 
+                        new File("src/HealerFirstName.txt");
+                Scanner scanHealerFirstNameTxt = 
+                        new Scanner(HealerFirstNameTxt2);
                 //read the HealerFirstName.txt file
                 String HealerFirstName2 = scanHealerFirstNameTxt.next();
                         
                 //retrieve HealerLastName.txt
-                File HealerLastNameTxt2 = new File("src/HealerLastName.txt");
-                Scanner scanHealerLastNameTxt = new Scanner(HealerLastNameTxt2);
+                File HealerLastNameTxt2 = 
+                        new File("src/HealerLastName.txt");
+                Scanner scanHealerLastNameTxt = 
+                        new Scanner(HealerLastNameTxt2);
                 //read the HealerLastName.txt file
                 String HealerLastName2 = scanHealerLastNameTxt.next();
                         
                 //retrieve HealerAccuracyStat.txt
-                File HealerAccuracyStatTxt = new File("src/HealerAccuracyStat.txt");
-                Scanner scanHealerAccuracyStatTxt = new Scanner(HealerAccuracyStatTxt);
+                File HealerAccuracyStatTxt = 
+                        new File("src/HealerAccuracyStat.txt");
+                Scanner scanHealerAccuracyStatTxt = 
+                        new Scanner(HealerAccuracyStatTxt);
                 //read the HealerAccuracyStat.txt file
                 String HealerAccuracyStat = scanHealerAccuracyStatTxt.next();
                         
@@ -8487,42 +9454,60 @@ class Main
                 //--------------------------------------------------------------
                 
                 //retrieve MartialArtistFirstName.txt
-                File MartialArtistFirstNameTxt2 = new File("src/MartialArtistFirstName.txt");
-                Scanner scanMartialArtistFirstNameTxt = new Scanner(MartialArtistFirstNameTxt2);
+                File MartialArtistFirstNameTxt2 = 
+                        new File("src/MartialArtistFirstName.txt");
+                Scanner scanMartialArtistFirstNameTxt = 
+                        new Scanner(MartialArtistFirstNameTxt2);
                 //read the MartialArtistFirstName.txt file
-                String MartialArtistFirstName2 = scanMartialArtistFirstNameTxt.next();
+                String MartialArtistFirstName2 = 
+                        scanMartialArtistFirstNameTxt.next();
                         
                 //retrieve MartialArtistLastName.txt
-                File MartialArtistLastNameTxt2 = new File("src/MartialArtistLastName.txt");
-                Scanner scanMartialArtistLastNameTxt = new Scanner(MartialArtistLastNameTxt2);
+                File MartialArtistLastNameTxt2 = 
+                        new File("src/MartialArtistLastName.txt");
+                Scanner scanMartialArtistLastNameTxt = 
+                        new Scanner(MartialArtistLastNameTxt2);
                 //read the MartialArtistLastName.txt file
-                String MartialArtistLastName2 = scanMartialArtistLastNameTxt.next();
+                String MartialArtistLastName2 = 
+                        scanMartialArtistLastNameTxt.next();
                         
                 //retrieve MartialArtistAccuracyStat.txt
-                File MartialArtistAccuracyStatTxt = new File("src/MartialArtistAccuracyStat.txt");
-                Scanner scanMartialArtistAccuracyStatTxt = new Scanner(MartialArtistAccuracyStatTxt);
+                File MartialArtistAccuracyStatTxt = 
+                        new File("src/MartialArtistAccuracyStat.txt");
+                Scanner scanMartialArtistAccuracyStatTxt = 
+                        new Scanner(MartialArtistAccuracyStatTxt);
                 //read the MartialArtistAccuracyStat.txt file
-                String MartialArtistAccuracyStat = scanMartialArtistAccuracyStatTxt.next();
+                String MartialArtistAccuracyStat = 
+                        scanMartialArtistAccuracyStatTxt.next();
                         
                 //retrieve MartialArtistAttackStat.txt
-                File MartialArtistAttackStatTxt = new File("src/MartialArtistAttackStat.txt");
-                Scanner scanMartialArtistAttackStatTxt = new Scanner(MartialArtistAttackStatTxt);
+                File MartialArtistAttackStatTxt = 
+                        new File("src/MartialArtistAttackStat.txt");
+                Scanner scanMartialArtistAttackStatTxt = 
+                        new Scanner(MartialArtistAttackStatTxt);
                 //read the MartialArtistAttackStat.txt file 
-                String MartialArtistAttackStat = scanMartialArtistAttackStatTxt.next();
+                String MartialArtistAttackStat = 
+                        scanMartialArtistAttackStatTxt.next();
                         
                 //Martial Artist Damage Stat isn't needed
                         
                 //retrieve MartialArtistPhyDefStat.txt
-                File MartialArtistPhyDefStatTxt = new File("src/MartialArtistPhyDefStat.txt");
-                Scanner scanMartialArtistPhyDefStatTxt = new Scanner(MartialArtistPhyDefStatTxt);
+                File MartialArtistPhyDefStatTxt = 
+                        new File("src/MartialArtistPhyDefStat.txt");
+                Scanner scanMartialArtistPhyDefStatTxt = 
+                        new Scanner(MartialArtistPhyDefStatTxt);
                 //read the MartialArtistPhyDefStat.txt file
-                String MartialArtistPhyDefStat = scanMartialArtistPhyDefStatTxt.next();
+                String MartialArtistPhyDefStat = 
+                        scanMartialArtistPhyDefStatTxt.next();
                         
                 //retrieve MartialArtistMagDefStat.txt
-                File MartialArtistMagDefStatTxt = new File("src/MartialArtistMagDefStat.txt");
-                Scanner scanMartialArtistMagDefStatTxt = new Scanner(MartialArtistMagDefStatTxt);
+                File MartialArtistMagDefStatTxt = 
+                        new File("src/MartialArtistMagDefStat.txt");
+                Scanner scanMartialArtistMagDefStatTxt = 
+                        new Scanner(MartialArtistMagDefStatTxt);
                 //read the MartialArtistMagDefStat.txt file
-                String MartialArtistMagDefStat = scanMartialArtistMagDefStatTxt.next();
+                String MartialArtistMagDefStat = 
+                        scanMartialArtistMagDefStatTxt.next();
                 
                 //END: All MARTIAL ARTIST class name and stat files have been read
                 //--------------------------------------------------------------
@@ -8531,40 +9516,54 @@ class Main
                 //--------------------------------------------------------------
                 
                 //retrieve NecromancerFirstName.txt
-                File NecromancerFirstNameTxt2 = new File("src/NecromancerFirstName.txt");
-                Scanner scanNecromancerFirstNameTxt = new Scanner(NecromancerFirstNameTxt2);
+                File NecromancerFirstNameTxt2 = 
+                        new File("src/NecromancerFirstName.txt");
+                Scanner scanNecromancerFirstNameTxt = 
+                        new Scanner(NecromancerFirstNameTxt2);
                 //read the NecromancerFirstName.txt file
-                String NecromancerFirstName2 = scanNecromancerFirstNameTxt.next();
+                String NecromancerFirstName2 = 
+                        scanNecromancerFirstNameTxt.next();
                         
                 //retrieve NecromancerLastName.txt
-                File NecromancerLastNameTxt2 = new File("src/NecromancerLastName.txt");
-                Scanner scanNecromancerLastNameTxt = new Scanner(NecromancerLastNameTxt2);
+                File NecromancerLastNameTxt2 = 
+                        new File("src/NecromancerLastName.txt");
+                Scanner scanNecromancerLastNameTxt = 
+                        new Scanner(NecromancerLastNameTxt2);
                 //read the NecromancerLastName.txt file
                 String NecromancerLastName2 = scanNecromancerLastNameTxt.next();
                         
                 //retrieve NecromancerAccuracyStat.txt
-                File NecromancerAccuracyStatTxt = new File("src/NecromancerAccuracyStat.txt");
-                Scanner scanNecromancerAccuracyStatTxt = new Scanner(NecromancerAccuracyStatTxt);
+                File NecromancerAccuracyStatTxt = 
+                        new File("src/NecromancerAccuracyStat.txt");
+                Scanner scanNecromancerAccuracyStatTxt = 
+                        new Scanner(NecromancerAccuracyStatTxt);
                 //read the NecromancerAccuracyStat.txt file
-                String NecromancerAccuracyStat = scanNecromancerAccuracyStatTxt.next();
+                String NecromancerAccuracyStat = 
+                        scanNecromancerAccuracyStatTxt.next();
                         
                 //retrieve NecromancerAttackStat.txt
-                File NecromancerAttackStatTxt = new File("src/NecromancerAttackStat.txt");
-                Scanner scanNecromancerAttackStatTxt = new Scanner(NecromancerAttackStatTxt);
+                File NecromancerAttackStatTxt = 
+                        new File("src/NecromancerAttackStat.txt");
+                Scanner scanNecromancerAttackStatTxt = 
+                        new Scanner(NecromancerAttackStatTxt);
                 //read the NecromancerAttackStat.txt file 
                 String NecromancerAttackStat = scanNecromancerAttackStatTxt.next();
                         
                 //Necromancer Damage Stat isn't needed
                         
                 //retrieve NecromancerPhyDefStat.txt
-                File NecromancerPhyDefStatTxt = new File("src/NecromancerPhyDefStat.txt");
-                Scanner scanNecromancerPhyDefStatTxt = new Scanner(NecromancerPhyDefStatTxt);
+                File NecromancerPhyDefStatTxt = 
+                        new File("src/NecromancerPhyDefStat.txt");
+                Scanner scanNecromancerPhyDefStatTxt = 
+                        new Scanner(NecromancerPhyDefStatTxt);
                 //read the NecromancerPhyDefStat.txt file
                 String NecromancerPhyDefStat = scanNecromancerPhyDefStatTxt.next();
                         
                 //retrieve NecromancerMagDefStat.txt
-                File NecromancerMagDefStatTxt = new File("src/NecromancerMagDefStat.txt");
-                Scanner scanNecromancerMagDefStatTxt = new Scanner(NecromancerMagDefStatTxt);
+                File NecromancerMagDefStatTxt = 
+                        new File("src/NecromancerMagDefStat.txt");
+                Scanner scanNecromancerMagDefStatTxt = 
+                        new Scanner(NecromancerMagDefStatTxt);
                 //read the NecromancerMagDefStat.txt file
                 String NecromancerMagDefStat = scanNecromancerMagDefStatTxt.next();
                 
@@ -8681,7 +9680,8 @@ class Main
                             /*turn the String AssassinAccuracyStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            AssassinAccuracyStatInt = Integer.valueOf(AssassinAccuracyStat);
+                            AssassinAccuracyStatInt = 
+                                    Integer.valueOf(AssassinAccuracyStat);
                             
                             //END: Got Assassin Accuracy Stat value
                             //--------------------------------------------------
@@ -8696,7 +9696,8 @@ class Main
                             /*turn the String AssassinAttackStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            AssassinAttackStatInt = Integer.valueOf(AssassinAttackStat);
+                            AssassinAttackStatInt = 
+                                    Integer.valueOf(AssassinAttackStat);
                             
                             //END: Got Assassin getAttack object & Attack Stat value
                             //--------------------------------------------------
@@ -8709,7 +9710,8 @@ class Main
                             //END: Got Assassin getDamage object
                             //--------------------------------------------------
                             
-                            // START: Get Assassin getPhyDef object & Physical Defense Stat value
+                            /* START: Get Assassin getPhyDef object &
+                            Physical Defense Stat value*/
                             //--------------------------------------------------
                             
                             getPhyDef assassinPhyDef = new getPhyDef();
@@ -8719,12 +9721,14 @@ class Main
                             /*turn the String AssassinPhyDefStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            AssassinPhyDefStatInt = Integer.valueOf(AssassinPhyDefStat);
+                            AssassinPhyDefStatInt = 
+                                    Integer.valueOf(AssassinPhyDefStat);
                             
                             //END: Got Assassin getPhyDef object & PhyDef Stat value
                             //--------------------------------------------------
                             
-                            // START: Get Assassin getMagDef object & Magical Defense Stat value
+                            /* START: Get Assassin getMagDef object &
+                            Magical Defense Stat value*/
                             //--------------------------------------------------
                             
                             getMagDef assassinMagDef = new getMagDef();
@@ -8734,7 +9738,8 @@ class Main
                             /*turn the String AssassinMagDefStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            AssassinMagDefStatInt = Integer.valueOf(AssassinMagDefStat);
+                            AssassinMagDefStatInt = 
+                                    Integer.valueOf(AssassinMagDefStat);
                             
                             //END: Got Assassin getMagDef object & MagDef Stat value
                             //--------------------------------------------------
@@ -8823,7 +9828,8 @@ class Main
                                 System.out.println(AssassinFirstName2+
                                 " "+AssassinLastName2+" rolls for "+randomNum3+
                                 ". "+randomNum3+" + "+AssassinPhyDefStatInt+
-                                " Physical Defense = "+assassinPhyDefValue+" Physical Defense");
+                                " Physical Defense = "+
+                                        assassinPhyDefValue+" Physical Defense");
                                 System.out.print("Press enter to continue.");
                                 try{System.in.read();}
                                 catch(Exception e){}
@@ -8874,12 +9880,14 @@ class Main
                             /*turn the String EngineerAccuracyStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            EngineerAccuracyStatInt = Integer.valueOf(EngineerAccuracyStat);
+                            EngineerAccuracyStatInt = 
+                                    Integer.valueOf(EngineerAccuracyStat);
                             
                             //END: Got Engineer Accuracy Stat value
                             //--------------------------------------------------
                             
-                            // START: Get Engineer getAttack object & Attack Stat value
+                            /* START: Get Engineer getAttack object &
+                            Attack Stat value*/
                             //--------------------------------------------------
                             
                             getAttack engineerAttack = new getAttack();
@@ -8889,7 +9897,8 @@ class Main
                             /*turn the String EngineerAttackStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            EngineerAttackStatInt = Integer.valueOf(EngineerAttackStat);
+                            EngineerAttackStatInt = 
+                                    Integer.valueOf(EngineerAttackStat);
                             
                             //END: Got Engineer getAttack object & Attack Stat value
                             //--------------------------------------------------
@@ -8912,7 +9921,8 @@ class Main
                             /*turn the String EngineerPhyDefStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            EngineerPhyDefStatInt = Integer.valueOf(EngineerPhyDefStat);
+                            EngineerPhyDefStatInt = 
+                                    Integer.valueOf(EngineerPhyDefStat);
                             
                             //END: Got Engineer getPhyDef object & PhyDef Stat value
                             //--------------------------------------------------
@@ -8927,7 +9937,8 @@ class Main
                             /*turn the String EngineerMagDefStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            EngineerMagDefStatInt = Integer.valueOf(EngineerMagDefStat);
+                            EngineerMagDefStatInt = 
+                                    Integer.valueOf(EngineerMagDefStat);
                             
                             //END: Got Engineer getMagDef object & MagDef Stat value
                             //--------------------------------------------------
@@ -9016,7 +10027,8 @@ class Main
                                 System.out.println(EngineerFirstName2+
                                 " "+EngineerLastName2+" rolls for "+randomNum3+
                                 ". "+randomNum3+" + "+EngineerPhyDefStatInt+
-                                " Physical Defense = "+engineerPhyDefValue+" Physical Defense");
+                                " Physical Defense = "+
+                                        engineerPhyDefValue+" Physical Defense");
                                 System.out.print("Press enter to continue.");
                                 try{System.in.read();}
                                 catch(Exception e){}
@@ -9046,7 +10058,8 @@ class Main
                                 System.out.println(EngineerFirstName2+
                                 " "+EngineerLastName2+" rolls for "+randomNum4+
                                 ". "+randomNum4+" + "+EngineerMagDefStatInt+
-                                " Magical Defense = "+engineerMagDefValue+" Magical Defense");
+                                " Magical Defense = "+
+                                        engineerMagDefValue+" Magical Defense");
                                 System.out.print("Press enter to continue.");
                                 try{System.in.read();}
                                 catch(Exception e){}
@@ -9067,7 +10080,8 @@ class Main
                             /*turn the String HealerAccuracyStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            HealerAccuracyStatInt = Integer.valueOf(HealerAccuracyStat);
+                            HealerAccuracyStatInt = 
+                                    Integer.valueOf(HealerAccuracyStat);
                             
                             //END: Got Healer Accuracy Stat value
                             //--------------------------------------------------
@@ -9082,7 +10096,8 @@ class Main
                             /*turn the String HealerAttackStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            HealerAttackStatInt = Integer.valueOf(HealerAttackStat);
+                            HealerAttackStatInt = 
+                                    Integer.valueOf(HealerAttackStat);
                             
                             //END: Got Healer getAttack object & Attack Stat value
                             //--------------------------------------------------
@@ -9095,7 +10110,8 @@ class Main
                             //END: Got Healer getDamage object
                             //--------------------------------------------------
                             
-                            // START: Get Healer getPhyDef object & Physical Defense Stat value
+                            /* START: Get Healer getPhyDef object &
+                            Physical Defense Stat value*/
                             //--------------------------------------------------
                             
                             getPhyDef healerPhyDef = new getPhyDef();
@@ -9105,12 +10121,14 @@ class Main
                             /*turn the String HealerPhyDefStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            HealerPhyDefStatInt = Integer.valueOf(HealerPhyDefStat);
+                            HealerPhyDefStatInt = 
+                                    Integer.valueOf(HealerPhyDefStat);
                             
                             //END: Got Healer getPhyDef object & PhyDef Stat value
                             //--------------------------------------------------
                             
-                            // START: Get Healer getMagDef object & Magical Defense Stat value
+                            /* START: Get Healer getMagDef object &
+                            Magical Defense Stat value*/
                             //--------------------------------------------------
                             
                             getMagDef healerMagDef = new getMagDef();
@@ -9209,7 +10227,8 @@ class Main
                                 System.out.println(HealerFirstName2+
                                 " "+HealerLastName2+" rolls for "+randomNum3+
                                 ". "+randomNum3+" + "+HealerPhyDefStatInt+
-                                " Physical Defense = "+healerPhyDefValue+" Physical Defense");
+                                " Physical Defense = "+
+                                        healerPhyDefValue+" Physical Defense");
                                 System.out.print("Press enter to continue.");
                                 try{System.in.read();}
                                 catch(Exception e){}
@@ -9239,7 +10258,8 @@ class Main
                                 System.out.println(HealerFirstName2+
                                 " "+HealerLastName2+" rolls for "+randomNum4+
                                 ". "+randomNum4+" + "+HealerMagDefStatInt+
-                                " Magical Defense = "+healerMagDefValue+" Magical Defense");
+                                " Magical Defense = "+
+                                        healerMagDefValue+" Magical Defense");
                                 System.out.print("Press enter to continue.");
                                 try{System.in.read();}
                                 catch(Exception e){}
@@ -9260,12 +10280,14 @@ class Main
                             /*turn the String MartialArtistAccuracyStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            MartialArtistAccuracyStatInt = Integer.valueOf(MartialArtistAccuracyStat);
+                            MartialArtistAccuracyStatInt = 
+                                    Integer.valueOf(MartialArtistAccuracyStat);
                             
                             //END: Got Martial Artist Accuracy Stat value
                             //--------------------------------------------------
                             
-                            // START: Get Martial Artist getAttack object & Attack Stat value
+                            /* START: Get Martial Artist getAttack object 
+                            & Attack Stat value*/
                             //--------------------------------------------------
                             
                             getAttack martialArtistAttack = new getAttack();
@@ -9275,9 +10297,11 @@ class Main
                             /*turn the String MartialArtistAttackStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            MartialArtistAttackStatInt = Integer.valueOf(MartialArtistAttackStat);
+                            MartialArtistAttackStatInt = 
+                                    Integer.valueOf(MartialArtistAttackStat);
                             
-                            //END: Got Martial Artist getAttack object & Attack Stat value
+                            /*END: Got Martial Artist getAttack object &
+                            Attack Stat value*/
                             //--------------------------------------------------
                             
                             // START: Get Martial Artist getDamage object
@@ -9288,7 +10312,8 @@ class Main
                             //END: Got Martial Artist getDamage object
                             //--------------------------------------------------
                             
-                            // START: Get Martial Artist getPhyDef object & Physical Defense Stat value
+                            /* START: Get Martial Artist getPhyDef object 
+                            & Physical Defense Stat value*/
                             //--------------------------------------------------
                             
                             getPhyDef martialArtistPhyDef = new getPhyDef();
@@ -9298,12 +10323,14 @@ class Main
                             /*turn the String MartialArtistPhyDefStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            MartialArtistPhyDefStatInt = Integer.valueOf(MartialArtistPhyDefStat);
+                            MartialArtistPhyDefStatInt = 
+                                    Integer.valueOf(MartialArtistPhyDefStat);
                             
                             //END: Got Martial Artist getPhyDef object & PhyDef Stat value
                             //--------------------------------------------------
                             
-                            // START: Get Martial Artist getMagDef object & Magical Defense Stat value
+                            /* START: Get Martial Artist getMagDef object &
+                            Magical Defense Stat value*/
                             //--------------------------------------------------
                             
                             getMagDef martialArtistMagDef = new getMagDef();
@@ -9313,7 +10340,8 @@ class Main
                             /*turn the String MartialArtistMagDefStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            MartialArtistMagDefStatInt = Integer.valueOf(MartialArtistMagDefStat);
+                            MartialArtistMagDefStatInt = 
+                                    Integer.valueOf(MartialArtistMagDefStat);
                             
                             //END: Got MartialArtist getMagDef object & MagDef Stat value
                             //--------------------------------------------------
@@ -9453,7 +10481,8 @@ class Main
                             /*turn the String NecromancerAccuracyStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            NecromancerAccuracyStatInt = Integer.valueOf(NecromancerAccuracyStat);
+                            NecromancerAccuracyStatInt = 
+                                    Integer.valueOf(NecromancerAccuracyStat);
                             
                             //END: Got Necromancer Accuracy Stat value
                             //--------------------------------------------------
@@ -9468,7 +10497,8 @@ class Main
                             /*turn the String NecromancerAttackStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            NecromancerAttackStatInt = Integer.valueOf(NecromancerAttackStat);
+                            NecromancerAttackStatInt = 
+                                    Integer.valueOf(NecromancerAttackStat);
                             
                             //END: Got Necromancer getAttack object & Attack Stat value
                             //--------------------------------------------------
@@ -9491,7 +10521,8 @@ class Main
                             /*turn the String NecromancerPhyDefStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            NecromancerPhyDefStatInt = Integer.valueOf(NecromancerPhyDefStat);
+                            NecromancerPhyDefStatInt = 
+                                    Integer.valueOf(NecromancerPhyDefStat);
                             
                             //END: Got Necromancer getPhyDef object & PhyDef Stat value
                             //--------------------------------------------------
@@ -9506,7 +10537,8 @@ class Main
                             /*turn the String NecromancerMagDefStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            NecromancerMagDefStatInt = Integer.valueOf(NecromancerMagDefStat);
+                            NecromancerMagDefStatInt = 
+                                    Integer.valueOf(NecromancerMagDefStat);
                             
                             //END: Got Necromancer getMagDef object & MagDef Stat value
                             //--------------------------------------------------
@@ -9646,7 +10678,8 @@ class Main
                             /*turn the String WizardAccuracyStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            WizardAccuracyStatInt = Integer.valueOf(WizardAccuracyStat);
+                            WizardAccuracyStatInt = 
+                                    Integer.valueOf(WizardAccuracyStat);
                             
                             //END: Got Wizard Accuracy Stat value
                             //--------------------------------------------------
@@ -9674,7 +10707,8 @@ class Main
                             //END: Got Wizard getDamage object
                             //--------------------------------------------------
                             
-                            // START: Get Wizard getPhyDef object & Physical Defense Stat value
+                            /* START: Get Wizard getPhyDef object &
+                            Physical Defense Stat value*/
                             //--------------------------------------------------
                             
                             getPhyDef wizardPhyDef = new getPhyDef();
@@ -9689,7 +10723,8 @@ class Main
                             //END: Got Wizard getPhyDef object & PhyDef Stat value
                             //--------------------------------------------------
                             
-                            // START: Get Wizard getMagDef object & Magical Defense Stat value
+                            /* START: Get Wizard getMagDef object &
+                            Magical Defense Stat value*/
                             //--------------------------------------------------
                             
                             getMagDef wizardMagDef = new getMagDef();
@@ -9699,7 +10734,8 @@ class Main
                             /*turn the String WizardMagDefStat into int data
                             type so that the value can be used in methods that
                             require the value to be of int type*/
-                            WizardMagDefStatInt = Integer.valueOf(WizardMagDefStat);
+                            WizardMagDefStatInt = 
+                                    Integer.valueOf(WizardMagDefStat);
                             
                             //END: Got Wizard getMagDef object & MagDef Stat value
                             //--------------------------------------------------
@@ -9848,7 +10884,8 @@ class Main
             {
                 System.out.println("Character Manager");
                 System.out.println("-----------------------");
-                System.out.print("You have no character selected. Enter 1 to create a"+
+                System.out.print("You have no character selected."+
+                " Enter 1 to create a"+
                 " new character, 2 to select an existing character, \n"+
                 "3 to load a character from file, 4 to save a character to file,"+
                 " 5 to perform an action, or 6 to exit: ");
@@ -9911,16 +10948,23 @@ class Main
                 //START: Get Martial Artist Character Name
                 //--------------------------------------------------------------
                 //will retrieve MartialArtistFirstName.txt
-                File MartialArtist1stFile = new File("src/MartialArtistFirstName.txt");
-                Scanner scanMartialArtistFirstName = new Scanner(MartialArtist1stFile);
+                File MartialArtist1stFile = 
+                        new File("src/MartialArtistFirstName.txt");
+                Scanner scanMartialArtistFirstName = 
+                        new Scanner(MartialArtist1stFile);
                 
                 //will retrieve MartialArtistLastName.txt
-                File MartialArtist2ndFile = new File("src/MartialArtistLastName.txt");
-                Scanner scanMartialArtistLastName = new Scanner(MartialArtist2ndFile);
+                File MartialArtist2ndFile = 
+                        new File("src/MartialArtistLastName.txt");
+                Scanner scanMartialArtistLastName = 
+                        new Scanner(MartialArtist2ndFile);
                 
-                //read the MartialArtistFirstName.txt file & MartialArtistLastName.txt file
-                String MartialArtistFirstNameTxt = scanMartialArtistFirstName.next();
-                String MartialArtistLastNameTxt = scanMartialArtistLastName.next();
+                /*read the MartialArtistFirstName.txt file &
+                MartialArtistLastName.txt file*/
+                String MartialArtistFirstNameTxt = 
+                        scanMartialArtistFirstName.next();
+                String MartialArtistLastNameTxt = 
+                        scanMartialArtistLastName.next();
                 //END
                 //--------------------------------------------------------------
                 
@@ -9934,7 +10978,8 @@ class Main
                 File Necromancer2ndFile = new File("src/NecromancerLastName.txt");
                 Scanner scanNecromancerLastName = new Scanner(Necromancer2ndFile);
                 
-                //read the NecromancerFirstName.txt file & NecromancerLastName.txt file
+                /*read the NecromancerFirstName.txt file &
+                NecromancerLastName.txt file*/
                 String NecromancerFirstNameTxt = scanNecromancerFirstName.next();
                 String NecromancerLastNameTxt = scanNecromancerLastName.next();
                 //END
@@ -10007,9 +11052,10 @@ class Main
                     System.out.println();
                 }
                 
-                /*if the selectedCharacterClass contains the #4 (thisIsMartialArtist)
-                representing a character of the Martial Artist Class, then let the user
-                know they have said character selected by displaying it*/
+                /*if the selectedCharacterClass contains the #4 
+                (thisIsMartialArtist) representing a character of the Martial
+                Artist Class, then let the user know they have said character
+                selected by displaying it*/
                 else if(selectedCharacterClass.contains(thisIsMartialArtist))
                 {
                     System.out.println("Character Manager");
