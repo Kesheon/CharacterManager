@@ -11182,54 +11182,56 @@ class Main
             //if the user does have a character selected
             else
             {
+                
+                
                 //START: Get Assassin Character Name
                 //--------------------------------------------------------------
                 //will retrieve AssassinFirstName.txt
                 File Assassin1stFile = new File("src/AssassinFirstName.txt");
                 Scanner scanAssassinFirstName = new Scanner(Assassin1stFile);
-                
+
                 //will retrieve AssassinLastName.txt
                 File Assassin2ndFile = new File("src/AssassinLastName.txt");
                 Scanner scanAssassinLastName = new Scanner(Assassin2ndFile);
-                
+
                 //read the AssassinFirstName.txt file & AssassinLastName.txt file
                 String AssassinFirstNameTxt = scanAssassinFirstName.next();
                 String AssassinLastNameTxt = scanAssassinLastName.next();
                 //END
                 //--------------------------------------------------------------
-                
+
                 //START: Get Engineeer Character Name
                 //--------------------------------------------------------------
                 //will retrieve EngineerFirstName.txt
                 File Engineer1stFile = new File("src/EngineerFirstName.txt");
                 Scanner scanEngineerFirstName = new Scanner(Engineer1stFile);
-                
+
                 //will retrieve EngineerLastName.txt
                 File Engineer2ndFile = new File("src/EngineerLastName.txt");
                 Scanner scanEngineerLastName = new Scanner(Engineer2ndFile);
-                
+
                 //read the EngineerFirstName.txt file & EngineerLastName.txt file
                 String EngineerFirstNameTxt = scanEngineerFirstName.next();
                 String EngineerLastNameTxt = scanEngineerLastName.next();
                 //END
                 //--------------------------------------------------------------
-                
+
                 //START: Get Healer Character Name
                 //--------------------------------------------------------------
                 //will retrieve HealerFirstName.txt
                 File Healer1stFile = new File("src/HealerFirstName.txt");
                 Scanner scanHealerFirstName = new Scanner(Healer1stFile);
-                
+
                 //will retrieve HealerLastName.txt
                 File Healer2ndFile = new File("src/HealerLastName.txt");
                 Scanner scanHealerLastName = new Scanner(Healer2ndFile);
-                
+
                 //read the HealerFirstName.txt file & HealerLastName.txt file
                 String HealerFirstNameTxt = scanHealerFirstName.next();
                 String HealerLastNameTxt = scanHealerLastName.next();
                 //END
                 //--------------------------------------------------------------
-                
+
                 //START: Get Martial Artist Character Name
                 //--------------------------------------------------------------
                 //will retrieve MartialArtistFirstName.txt
@@ -11237,13 +11239,13 @@ class Main
                         new File("src/MartialArtistFirstName.txt");
                 Scanner scanMartialArtistFirstName = 
                         new Scanner(MartialArtist1stFile);
-                
+
                 //will retrieve MartialArtistLastName.txt
                 File MartialArtist2ndFile = 
                         new File("src/MartialArtistLastName.txt");
                 Scanner scanMartialArtistLastName = 
                         new Scanner(MartialArtist2ndFile);
-                
+
                 /*read the MartialArtistFirstName.txt file &
                 MartialArtistLastName.txt file*/
                 String MartialArtistFirstNameTxt = 
@@ -11252,40 +11254,40 @@ class Main
                         scanMartialArtistLastName.next();
                 //END
                 //--------------------------------------------------------------
-                
+
                 //START: Get Necromancer Character Name
                 //--------------------------------------------------------------
                 //will retrieve NecromancerFirstName.txt
                 File Necromancer1stFile = new File("src/NecromancerFirstName.txt");
                 Scanner scanNecromancerFirstName = new Scanner(Necromancer1stFile);
-                
+
                 //will retrieve NecromancerLastName.txt
                 File Necromancer2ndFile = new File("src/NecromancerLastName.txt");
                 Scanner scanNecromancerLastName = new Scanner(Necromancer2ndFile);
-                
+
                 /*read the NecromancerFirstName.txt file &
                 NecromancerLastName.txt file*/
                 String NecromancerFirstNameTxt = scanNecromancerFirstName.next();
                 String NecromancerLastNameTxt = scanNecromancerLastName.next();
                 //END
                 //--------------------------------------------------------------
-                
+
                 //START: Get Wizard Character Name
                 //--------------------------------------------------------------
                 //will retrieve WizardFirstName.txt
                 File Wizard1stFile = new File("src/WizardFirstName.txt");
                 Scanner scanWizardFirstName = new Scanner(Wizard1stFile);
-                
+
                 //will retrieve WizardLastName.txt
                 File Wizard2ndFile = new File("src/WizardLastName.txt");
                 Scanner scanWizardLastName = new Scanner(Wizard2ndFile);
-                
+
                 //read the WizardFirstName.txt file & WizardLastName.txt file
                 String WizardFirstNameTxt = scanWizardFirstName.next();
                 String WizardLastNameTxt = scanWizardLastName.next();
                 //END
                 //--------------------------------------------------------------
-                
+
                 /*if the selectedCharacterClass contains the #1 (thisIsAssassin)
                 representing a character of the Assassin Class, then let the user
                 know they have said character selected be displaying it*/
@@ -11302,7 +11304,7 @@ class Main
                     System.out.println();
                     System.out.println();
                 }
-                
+
                 /*if the selectedCharacterClass contains the #2 (thisIsEngineer)
                 representing a character of the Engineer Class, then let the user
                 know they have said character selected by displaying it*/
@@ -11319,7 +11321,7 @@ class Main
                     System.out.println();
                     System.out.println();
                 }
-                
+
                 /*if the selectedCharacterClass contains the #3 (thisIsHealer)
                 representing a character of the Healer Class, then let the user
                 know they have said character selected by displaying it*/
@@ -11336,7 +11338,7 @@ class Main
                     System.out.println();
                     System.out.println();
                 }
-                
+
                 /*if the selectedCharacterClass contains the #4 
                 (thisIsMartialArtist) representing a character of the Martial
                 Artist Class, then let the user know they have said character
@@ -11354,9 +11356,10 @@ class Main
                     System.out.println();
                     System.out.println();
                 }
-                
+
                 /*if the selectedCharacterClass contains the #5 (thisIsNecromancer)
-                representing a character of the Necromancer Class, then let the user
+                representing a character of the Necromancer Class, then let the
+                user
                 know they have said character selected by displaying it*/
                 else if(selectedCharacterClass.contains(thisIsNecromancer))
                 {
@@ -11371,7 +11374,7 @@ class Main
                     System.out.println();
                     System.out.println();
                 }
-                
+
                 /*if the selectedCharacterClass contains the #6 (thisIsWizard)
                 representing a character of the Wizard Class, then let the user
                 know they have said character selected by displaying it*/
@@ -11388,9 +11391,10 @@ class Main
                     System.out.println();
                     System.out.println();
                 }
-            }
+            }    
         }
     }
 }
+
 
 
