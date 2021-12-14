@@ -6451,329 +6451,294 @@ class Main
                     //will retrieve AssassinFirstName.txt
                     File Assassin1stFile = new File("src/AssassinFirstName.txt");
                     Scanner scanAssassinFirstName = new Scanner(Assassin1stFile);
-                
-                    /*see if the AssassinFirstName.txt file has anything in it,
-                    returns true or false*/
-                    Boolean booleanAssassinFirstNameTxt = 
-                        scanAssassinFirstName.hasNext();
-                
-                
+                    
                     //will retrieve AssassinLastName.txt
                     File Assassin2ndFile = new File("src/AssassinLastName.txt");
                     Scanner scanAssassinLastName = new Scanner(Assassin2ndFile);
                 
-                    /*see if the AssassinLastName.txt file has anything in it,
-                    returns true or false*/
-                    Boolean booleanAssassinLastNameTxt = 
-                        scanAssassinLastName.hasNext();
-                
-                
-                    /*if the Assassin character's first name txt file is blank
-                    then
-                    tell the user that no character has been created or loaded 
-                    for the Assassin class*/
-                    if(booleanAssassinFirstNameTxt == false &&
-                        booleanAssassinLastNameTxt == false)
+                    String AssassinFirstNameValue;
+                    String AssassinLastNameValue;
+                    
+                    String AssassinFirstNameTxt = 
+                            scanAssassinFirstName.next();
+                    String AssassinLastNameTxt = scanAssassinLastName.next();
+                    
+                    AssassinFirstNameValue = String.
+                            valueOf(AssassinFirstNameTxt);
+                    AssassinLastNameValue = String.
+                            valueOf(AssassinLastNameTxt);
+                    
+                    //if no Assassin character has been created or loaded
+                    if(AssassinFirstNameValue.equals("0") &&
+                        AssassinLastNameValue.equals("0"))
                     {
+       
                         String NoCharacterAlert1 = "1. No character has been"+
                         " created or loaded for the Assassin class so none can"+
                         " be selected";
                         System.out.println(NoCharacterAlert1);
                     }
-                
-                    /*else if there is an Assassin character that has been 
-                    created
-                    or loaded then display them.*/
-                    else if(booleanAssassinFirstNameTxt == true &&
-                        booleanAssassinLastNameTxt == true)
+                    
+                    /*if an Assassin character has been created or loaded
+                    display their name and class as an option to be selected*/
+                    else
                     {
-                        /*read the AssassinFirstName.txt file 
-                        & AssassinLastName.txt
-                        File, then display*/
-                        String AssassinFirstNameTxt = 
-                                scanAssassinFirstName.next();
-                        String AssassinLastNameTxt = scanAssassinLastName.next();
-                        System.out.println("1. "+AssassinFirstNameTxt+" "+
-                            AssassinLastNameTxt+" (Assassin Class)");
+                        System.out.println("1. "+AssassinFirstNameValue+" "+
+                            AssassinLastNameValue+" (Assassin Class)");
                     }
+                    
                     //END: Assassin Character display ends
                     //----------------------------------------------------------
                 
                 
-                    //START: display an Available Engineer Character if possible
+                    //START: display an available Engineer Character if possible
                     //----------------------------------------------------------
                     //will retrieve EngineerFirstName.txt
                     File Engineer1stFile = new File("src/EngineerFirstName.txt");
                     Scanner scanEngineerFirstName = new Scanner(Engineer1stFile);
-                
-                    /*see if the EngineerFirstName.txt file has anything in it,
-                    returns true or false*/
-                    Boolean booleanEngineerFirstNameTxt = 
-                        scanEngineerFirstName.hasNext();
-                
-                
+                    
                     //will retrieve EngineerLastName.txt
                     File Engineer2ndFile = new File("src/EngineerLastName.txt");
                     Scanner scanEngineerLastName = new Scanner(Engineer2ndFile);
                 
-                    /*see if the EngineerLastName.txt file has anything in it,
-                    returns true or false*/
-                    Boolean booleanEngineerLastNameTxt = 
-                        scanEngineerLastName.hasNext();
-                
-                
-                    /*if the Engineer character's first name txt file is 
-                    blank then
-                    tell the user that no character has been created or loaded
-                    for the Engineer class*/
-                    if(booleanEngineerFirstNameTxt == false &&
-                        booleanEngineerLastNameTxt == false)
+                    String EngineerFirstNameValue;
+                    String EngineerLastNameValue;
+                    
+                    String EngineerFirstNameTxt = 
+                            scanEngineerFirstName.next();
+                    String EngineerLastNameTxt = scanEngineerLastName.next();
+                    
+                    EngineerFirstNameValue = String.
+                            valueOf(EngineerFirstNameTxt);
+                    EngineerLastNameValue = String.
+                            valueOf(EngineerLastNameTxt);
+                    
+                    //if no Engineer character has been created or loaded
+                    if(EngineerFirstNameValue.equals("0") &&
+                        EngineerLastNameValue.equals("0"))
                     {
+       
                         String NoCharacterAlert2 = "2. No character has been"+
                         " created or loaded for the Engineer class so none can"+
                         " be selected";
                         System.out.println(NoCharacterAlert2);
                     }
-                
-                    /*else if there is an Engineer character that has been created
-                    or loaded then display them.*/
-                    else if(booleanEngineerFirstNameTxt == true &&
-                            booleanEngineerLastNameTxt == true)
+                    
+                    /*if an Engineer character has been created or loaded
+                    display their name and class as an option to be selected*/
+                    else
                     {
-                        /*read the EngineerFirstName.txt file & 
-                        EngineerLastName.txt
-                        File, then display*/
-                        String EngineerFirstNameTxt = scanEngineerFirstName.next();
-                        String EngineerLastNameTxt = scanEngineerLastName.next();
-                        System.out.println("2. "+EngineerFirstNameTxt+" "+
-                            EngineerLastNameTxt+" (Engineer Class)");
+                        System.out.println("2. "+EngineerFirstNameValue+" "+
+                            EngineerLastNameValue+" (Engineer Class)");
                     }
+                    
                     //END: Engineer Character display ends
                     //----------------------------------------------------------
                 
                 
-                    //START: display an Available Healer Character if possible
+                    //START: display an available Healer Character if possible
                     //----------------------------------------------------------
                     //will retrieve HealerFirstName.txt
                     File Healer1stFile = new File("src/HealerFirstName.txt");
                     Scanner scanHealerFirstName = new Scanner(Healer1stFile);
-                
-                    /*see if the HealerFirstName.txt file has anything in it,
-                    returns true or false*/
-                    Boolean booleanHealerFirstNameTxt = 
-                            scanHealerFirstName.hasNext();
-                
-                
+                    
                     //will retrieve HealerLastName.txt
                     File Healer2ndFile = new File("src/HealerLastName.txt");
                     Scanner scanHealerLastName = new Scanner(Healer2ndFile);
                 
-                    /*see if the HealerLastName.txt file has anything in it,
-                    returns true or false*/
-                    Boolean booleanHealerLastNameTxt = 
-                            scanHealerLastName.hasNext();
-                
-                
-                    /*if the Healer character's first name txt file is blank then
-                    tell the user that no character has been created or loaded for
-                    the Healer class*/
-                    if(booleanHealerFirstNameTxt == false &&
-                        booleanHealerLastNameTxt == false)
+                    String HealerFirstNameValue;
+                    String HealerLastNameValue;
+                    
+                    String HealerFirstNameTxt = 
+                            scanHealerFirstName.next();
+                    String HealerLastNameTxt = scanHealerLastName.next();
+                    
+                    HealerFirstNameValue = String.
+                            valueOf(HealerFirstNameTxt);
+                    HealerLastNameValue = String.
+                            valueOf(HealerLastNameTxt);
+                    
+                    //if no Healer character has been created or loaded
+                    if(HealerFirstNameValue.equals("0") &&
+                        HealerLastNameValue.equals("0"))
                     {
+       
                         String NoCharacterAlert3 = "3. No character has been"+
-                        " created or loaded for the Healer class so none can be"+
-                        " selected";
+                        " created or loaded for the Healer class so none can"+
+                        " be selected";
                         System.out.println(NoCharacterAlert3);
                     }
-                
-                    /*else if there is a Healer character that has been created or
-                    loaded then display them.*/
-                    else if(booleanHealerFirstNameTxt == true &&
-                            booleanHealerLastNameTxt == true)
+                    
+                    /*if a Healer character has been created or loaded
+                    display their name and class as an option to be selected*/
+                    else
                     {
-                        /*read the HealerFirstName.txt file & HealerLastName.txt
-                        File, then display*/
-                        String HealerFirstNameTxt = scanHealerFirstName.next();
-                        String HealerLastNameTxt = scanHealerLastName.next();
-                        System.out.println("3. "+HealerFirstNameTxt+" "+
-                            HealerLastNameTxt+" (Healer Class)");
+                        System.out.println("3. "+HealerFirstNameValue+" "+
+                            HealerLastNameValue+" (Healer Class)");
                     }
+                    
                     //END: Healer Character display ends
                     //----------------------------------------------------------
                 
                 
-                    /*START: display an Available Martial Artist Character 
-                    if possible*/
+                    /*START: display an available Martial Artist
+                    Character if possible*/
                     //----------------------------------------------------------
                     //will retrieve MartialArtistFirstName.txt
-                    File MartialArtist1stFile = new File
-                    ("src/MartialArtistFirstName.txt");
+                    File MartialArtist1stFile = 
+                            new File("src/MartialArtistFirstName.txt");
                     Scanner scanMartialArtistFirstName = 
                             new Scanner(MartialArtist1stFile);
-                
-                    /*see if the MartialArtistFirstName.txt file has anything
-                    in it,
-                    returns true or false*/
-                    Boolean booleanMartialArtistFirstNameTxt = 
-                            scanMartialArtistFirstName.hasNext();
-                
-                
+                    
                     //will retrieve MartialArtistLastName.txt
                     File MartialArtist2ndFile = 
                             new File("src/MartialArtistLastName.txt");
                     Scanner scanMartialArtistLastName = 
                             new Scanner(MartialArtist2ndFile);
                 
-                    /*see if the MartialArtistLastName.txt file has anything
-                    in it,
-                    returns true or false*/
-                    Boolean booleanMartialArtistLastNameTxt = 
-                            scanMartialArtistLastName.hasNext();
-                
-                
-                    /*if the Martial Artist character's first name txt file is
-                    blank
-                    then tell the user that no character has been created or
-                    loaded
-                    for the Healer class*/
-                    if(booleanMartialArtistFirstNameTxt == false &&
-                            booleanMartialArtistLastNameTxt == false)
+                    String MartialArtistFirstNameValue;
+                    String MartialArtistLastNameValue;
+                    
+                    String MartialArtistFirstNameTxt = 
+                            scanMartialArtistFirstName.next();
+                    String MartialArtistLastNameTxt = 
+                            scanMartialArtistLastName.next();
+                    
+                    MartialArtistFirstNameValue = String.
+                            valueOf(MartialArtistFirstNameTxt);
+                    MartialArtistLastNameValue = String.
+                            valueOf(MartialArtistLastNameTxt);
+                    
+                    //if no MartialArtist character has been created or loaded
+                    if(MartialArtistFirstNameValue.equals("0") &&
+                        MartialArtistLastNameValue.equals("0"))
                     {
+       
                         String NoCharacterAlert4 = "4. No character has been"+
-                        " created or loaded for the Martial Artist class so none"+
-                        " can be selected";
+                        " created or loaded for the Martial Artist"+
+                        " class so none can"+
+                        " be selected";
                         System.out.println(NoCharacterAlert4);
                     }
-                
-                    /*else if there is a Martial Artist character that has been
-                    created or loaded then display them.*/
-                    else if(booleanMartialArtistFirstNameTxt == true &&
-                            booleanMartialArtistLastNameTxt == true)
+                    
+                    /*if a Martial Artist character has been created or loaded
+                    display their name and class as an option to be selected*/
+                    else
                     {
-                        /*read the MartialArtistFirstName.txt file &
-                        MartialArtistLastName.txt File, then display*/
-                        String MartialArtistFirstNameTxt = 
-                                scanMartialArtistFirstName.next();
-                        String MartialArtistLastNameTxt = 
-                                scanMartialArtistLastName.next();
-                        System.out.println("4. "+MartialArtistFirstNameTxt+" "+
-                        MartialArtistLastNameTxt+" (Martial Artist Class)");
+                        System.out.println("4. "+MartialArtistFirstNameValue+" "+
+                            MartialArtistLastNameValue+" (Martial Artist Class)");
                     }
+                    
                     //END: Martial Artist Character display ends
                     //----------------------------------------------------------
                 
                 
-                    /*START: display an Available Necromancer Character if
-                    possible*/
+                    /*START: display an available Necromancer
+                    Character if possible*/
                     //----------------------------------------------------------
                     //will retrieve NecromancerFirstName.txt
                     File Necromancer1stFile = 
                             new File("src/NecromancerFirstName.txt");
                     Scanner scanNecromancerFirstName = 
                             new Scanner(Necromancer1stFile);
-                
-                    /*see if the NecromancerFirstName.txt file has anything in it,
-                    returns true or false*/
-                    Boolean booleanNecromancerFirstNameTxt = 
-                            scanNecromancerFirstName.hasNext();
-                
-                
+                    
                     //will retrieve NecromancerLastName.txt
                     File Necromancer2ndFile = 
                             new File("src/NecromancerLastName.txt");
                     Scanner scanNecromancerLastName = 
                             new Scanner(Necromancer2ndFile);
                 
-                    /*see if the NecromancerLastName.txt file has anything in it,
-                    returns true or false*/
-                    Boolean booleanNecromancerLastNameTxt = 
-                            scanNecromancerLastName.hasNext();
-                
-                
-                    /*if the Necromancer character's first name txt file is
-                    blank then
-                    tell the user that no character has been created or loaded
-                    for
-                    the Necromancer class*/
-                    if(booleanNecromancerFirstNameTxt == false &&
-                        booleanNecromancerLastNameTxt == false)
+                    String NecromancerFirstNameValue;
+                    String NecromancerLastNameValue;
+                    
+                    String NecromancerFirstNameTxt = 
+                            scanNecromancerFirstName.next();
+                    String NecromancerLastNameTxt = 
+                            scanNecromancerLastName.next();
+                    
+                    NecromancerFirstNameValue = String.
+                            valueOf(NecromancerFirstNameTxt);
+                    NecromancerLastNameValue = String.
+                            valueOf(NecromancerLastNameTxt);
+                    
+                    //if no Necromancer character has been created or loaded
+                    if(NecromancerFirstNameValue.equals("0") &&
+                        NecromancerLastNameValue.equals("0"))
                     {
+       
                         String NoCharacterAlert5 = "5. No character has been"+
-                        " created or loaded for the Necromancer class so none"+
-                        " can be selected";
+                        " created or loaded for the Necromancer"+
+                        " class so none can"+
+                        " be selected";
                         System.out.println(NoCharacterAlert5);
                     }
-                
-                    /*else if there is a Necromancer character that has been
-                    created
-                    or loaded then display them.*/
-                    else if(booleanNecromancerFirstNameTxt == true &&
-                            booleanNecromancerLastNameTxt == true)
+                    
+                    /*if a Necromancer character has been created or loaded
+                    display their name and class as an option to be selected*/
+                    else
                     {
-                        /*read the NecromancerFirstName.txt file &
-                        NecromancerLastName.txt File, then display*/
-                        String NecromancerFirstNameTxt = 
-                                scanNecromancerFirstName.next();
-                        String NecromancerLastNameTxt = 
-                                scanNecromancerLastName.next();
-                        System.out.println("5. "+NecromancerFirstNameTxt+" "+
-                            NecromancerLastNameTxt+" (Necromancer Class)");
+                        System.out.println("5. "+NecromancerFirstNameValue+" "+
+                            NecromancerLastNameValue+" (Necromancer Class)");
                     }
+                    
                     //END: Necromancer Character display ends
                     //----------------------------------------------------------
                 
                 
-                    //START: display an Available Wizard Character if possible
+                    /*START: display an available Wizard
+                    Character if possible*/
                     //----------------------------------------------------------
                     //will retrieve WizardFirstName.txt
-                    File Wizard1stFile = new File("src/WizardFirstName.txt");
-                    Scanner scanWizardFirstName = new Scanner(Wizard1stFile);
-                
-                    /*see if the WizardFirstName.txt file has anything in it,
-                    returns true or false*/
-                    Boolean booleanWizardFirstNameTxt = 
-                            scanWizardFirstName.hasNext();
-                
-                
+                    File Wizard1stFile = 
+                            new File("src/WizardFirstName.txt");
+                    Scanner scanWizardFirstName = 
+                            new Scanner(Wizard1stFile);
+                    
                     //will retrieve WizardLastName.txt
-                    File Wizard2ndFile = new File("src/WizardLastName.txt");
-                    Scanner scanWizardLastName = new Scanner(Wizard2ndFile);
+                    File Wizard2ndFile = 
+                            new File("src/WizardLastName.txt");
+                    Scanner scanWizardLastName = 
+                            new Scanner(Wizard2ndFile);
                 
-                    /*see if the WizardLastName.txt file has anything in it,
-                    returns
-                    true or false*/
-                    Boolean booleanWizardLastNameTxt = 
-                            scanWizardLastName.hasNext();
-                
-                
-                    /*if the Wizard character's first name txt file is blank 
-                    then
-                    tell the user that no character has been created or loaded
-                    for
-                    the Wizard class*/
-                    if(booleanWizardFirstNameTxt == false &&
-                        booleanWizardLastNameTxt == false)
+                    String WizardFirstNameValue;
+                    String WizardLastNameValue;
+                    
+                    String WizardFirstNameTxt = 
+                            scanWizardFirstName.next();
+                    String WizardLastNameTxt = scanWizardLastName.next();
+                    
+                    WizardFirstNameValue = String.
+                            valueOf(WizardFirstNameTxt);
+                    WizardLastNameValue = String.
+                            valueOf(WizardLastNameTxt);
+                    
+                    //if no Wizard character has been created or loaded
+                    if(WizardFirstNameValue.equals("0") &&
+                        WizardLastNameValue.equals("0"))
                     {
+       
                         String NoCharacterAlert6 = "6. No character has been"+
-                        " created or loaded for the Wizard class so none can"+
+                        " created or loaded for the Wizard"+
+                        " class so none can"+
                         " be selected";
                         System.out.println(NoCharacterAlert6);
                     }
-                
-                    /*else if there is a Wizard character that has been created
-                    or
-                    loaded then display them.*/
-                    else if(booleanWizardFirstNameTxt == true &&
-                            booleanWizardLastNameTxt == true)
+                    
+                    /*if a Wizard character has been created or loaded
+                    display their name and class as an option to be selected*/
+                    else
                     {
-                        /*read the WizardFirstName.txt file & WizardLastName.txt
-                        File, then display*/
-                        String WizardFirstNameTxt = scanWizardFirstName.next();
-                        String WizardLastNameTxt = scanWizardLastName.next();
-                        System.out.println("6. "+WizardFirstNameTxt+" "+
-                                WizardLastNameTxt+" (Wizard Class)");
+                        System.out.println("6. "+WizardFirstNameValue+" "+
+                            WizardLastNameValue+" (Wizard Class)");
                     }
+                    
                     //END: Wizard Character display ends
+                    //----------------------------------------------------------
+                    
+                    //START: Exit display
+                    //----------------------------------------------------------
+                    System.out.println("7. Exit");
+                    //END: Exit display
                     //----------------------------------------------------------
                 
                     int userCharacterChoice;
@@ -6788,8 +6753,9 @@ class Main
                     {
                         /*if the AssassinFirstName.txt and AssassinLastName.txt
                         files have no character names in them then do the below*/
-                        if(booleanAssassinFirstNameTxt == false &&
-                            booleanAssassinLastNameTxt == false)
+                        
+                        if(AssassinFirstNameValue.equals("0") &&
+                            AssassinLastNameValue.equals("0"))
                         {
                             System.out.print("There is no Assassin character to"+
                             " select. You must create one or load one from a\nsave"+
@@ -6802,28 +6768,9 @@ class Main
                         }
                         /*if the AssassinFirstName.txt and AssassinLastName.txt
                         files have character names in them then do the below*/
-                        else if(booleanAssassinFirstNameTxt == true &&
-                                booleanAssassinLastNameTxt == true)
+                        else
                         {
-                            //will retrieve AssassinFirstName.txt
-                            File Assassin1stFile2 = new File
-                            ("src/AssassinFirstName.txt");
-                            Scanner scanAssassinFirstName2 = 
-                                new Scanner(Assassin1stFile2);
-                        
-                            //will retrieve AssassinLastName.txt
-                            File Assassin2ndFile2 = new File
-                            ("src/AssassinLastName.txt");
-                            Scanner scanAssassinLastName2 = 
-                                    new Scanner(Assassin2ndFile2);
-                        
-                            /*read the AssassinFirstName.txt file &
-                            AssassinLastName.txt file*/
-                            String AssassinFirstNameTxt = 
-                                    scanAssassinFirstName2.next();
-                            String AssassinLastNameTxt = 
-                                    scanAssassinLastName2.next();
-                        
+                            
                             //make the Assassin the currently selected character
                             /*if both lists are empty...add AssassinFirstNameTxt
                             & 
@@ -6860,22 +6807,20 @@ class Main
                            }
                         }            
                     }
-                   
-                
-  
-                    /*Make the currently selected character one of
-                    the Engineer class*/
+                 
+                    /*Make the currently selected character one of the
+                    Engineer class*/
                     else if(userCharacterChoice == 2)
                     {
                         /*if the EngineerFirstName.txt and EngineerLastName.txt
                         files have no character names in them then do the below*/
-                        if(booleanEngineerFirstNameTxt == false &&
-                            booleanEngineerLastNameTxt == false)
+                        
+                        if(EngineerFirstNameValue.equals("0") &&
+                            EngineerLastNameValue.equals("0"))
                         {
-                            System.out.print("There is"+
-                                    " no Engineer character to"+
-                            " select. You must create one"+
-                                    " or load one from a\nsave"+
+                            System.out.print("There is no Engineer character to"+
+                            " select. You must create one or load one"+
+                            " from a\nsave"+
                             " file. Press enter to continue.");
                             try{System.in.read();}
                             catch(Exception e){}
@@ -6885,33 +6830,14 @@ class Main
                         }
                         /*if the EngineerFirstName.txt and EngineerLastName.txt
                         files have character names in them then do the below*/
-                        else if(booleanEngineerFirstNameTxt == true &&
-                                booleanEngineerLastNameTxt == true)
+                        else
                         {
-                            //will retrieve EngineerFirstName.txt
-                            File Engineer1stFile2 = new File
-                            ("src/EngineerFirstName.txt");
-                            Scanner scanEngineerFirstName2 = 
-                                    new Scanner(Engineer1stFile2);
-                        
-                            //will retrieve EngineerLastName.txt
-                            File Engineer2ndFile2 = new File
-                            ("src/EngineerLastName.txt");
-                            Scanner scanEngineerLastName2 = 
-                                    new Scanner(Engineer2ndFile2);
-                        
-                            /*read the EngineerFirstName.txt file & 
-                            EngineerLastName.txt file*/
-                            String EngineerFirstNameTxt = 
-                                    scanEngineerFirstName2.next();
-                            String EngineerLastNameTxt = 
-                                    scanEngineerLastName2.next();
-                        
+                            
                             //make the Engineer the currently selected character
                             /*if both lists are empty...add EngineerFirstNameTxt
                             & 
-                            EngineerLastNameTxt then add thisIsEngineer
-                            (value 2)*/
+                            EngineerLastNameTxt then add thisIsEngineer (value 2)
+                            */
                             if(selectedCharacter.isEmpty())
                             {
                                 selectedCharacter.add(EngineerFirstNameTxt);
@@ -6922,7 +6848,6 @@ class Main
                                     /*determines that this character is of the
                                     Engineer Class*/
                                     selectedCharacterClass.add(thisIsEngineer);
-                                
                                 }
                             
                             }
@@ -6940,60 +6865,40 @@ class Main
                                 selectedCharacter.add(EngineerLastNameTxt);
                                 selectedCharacterClass.clear();
                                 selectedCharacterClass.add(thisIsEngineer);
-                            }
-                        }
+                           }
+                        }            
                     }
                 
-                    /*Make the currently selected character one of the Healer
-                        class*/
+                    /*Make the currently selected character one of the
+                    Healer class*/
                     else if(userCharacterChoice == 3)
                     {
                         /*if the HealerFirstName.txt and HealerLastName.txt
-                        files have no character names in them then do the
-                        below*/
-                        if(booleanHealerFirstNameTxt == false &&
-                            booleanHealerLastNameTxt == false)
+                        files have no character names in them then do the below*/
+                        
+                        if(HealerFirstNameValue.equals("0") &&
+                            HealerLastNameValue.equals("0"))
                         {
-                            System.out.print("There is no"+
-                                    " Healer character to"+
-                            " select. You must create"+
-                                    " one or load one from a\nsave"+
+                            System.out.print("There is no Healer character to"+
+                            " select. You must create one or load one"+
+                            " from a\nsave"+
                             " file. Press enter to continue.");
                             try{System.in.read();}
                             catch(Exception e){}
                             System.out.println();
                             System.out.println();
+                        
                         }
                         /*if the HealerFirstName.txt and HealerLastName.txt
-                        files have character names in them then do the below
-                        */
-                        else if(booleanHealerFirstNameTxt == true &&
-                                booleanHealerLastNameTxt == true)
+                        files have character names in them then do the below*/
+                        else
                         {
-                            //will retrieve HealerFirstName.txt
-                            File Healer1stFile2 = 
-                                    new File("src/HealerFirstName.txt");
-                            Scanner scanHealerFirstName2 = 
-                                    new Scanner(Healer1stFile2);
-                        
-                            //will retrieve HealerLastName.txt
-                            File Healer2ndFile2 = 
-                                    new File("src/HealerLastName.txt");
-                            Scanner scanHealerLastName2 = 
-                                    new Scanner(Healer2ndFile2);
-                        
-                            /*read the HealerFirstName.txt file &
-                                HealerLastName.txt file*/
-                            String HealerFirstNameTxt = 
-                                    scanHealerFirstName2.next();
-                            String HealerLastNameTxt = 
-                                scanHealerLastName2.next();
-                        
+                            
                             //make the Healer the currently selected character
                             /*if both lists are empty...add HealerFirstNameTxt
                             & 
-                            HealerLastNameTxt then add thisIsHealer
-                            (value 3)*/
+                            HealerLastNameTxt then add thisIsHealer (value 3)
+                            */
                             if(selectedCharacter.isEmpty())
                             {
                                 selectedCharacter.add(HealerFirstNameTxt);
@@ -7001,10 +6906,9 @@ class Main
                             
                                 if(selectedCharacterClass.isEmpty())
                                 {
-                                    /*determines that this character is of
-                                    the Healer Class*/
+                                    /*determines that this character is of the
+                                    Healer Class*/
                                     selectedCharacterClass.add(thisIsHealer);
-                                
                                 }
                             
                             }
@@ -7022,25 +6926,25 @@ class Main
                                 selectedCharacter.add(HealerLastNameTxt);
                                 selectedCharacterClass.clear();
                                 selectedCharacterClass.add(thisIsHealer);
-                            }
-                        }
+                           }
+                        }            
                     }
                 
                     /*Make the currently selected character one of the
                     Martial Artist class*/
                     else if(userCharacterChoice == 4)
                     {
-                        /*if the MartialArtistFirstName.txt and 
+                        /*if the MartialArtistFirstName.txt and
                         MartialArtistLastName.txt
-                        files have no character names in them then do the
-                        below*/
-                        if(booleanMartialArtistFirstNameTxt == false &&
-                            booleanMartialArtistLastNameTxt == false)
+                        files have no character names in them then do the below*/
+                        
+                        if(MartialArtistFirstNameValue.equals("0") &&
+                            MartialArtistLastNameValue.equals("0"))
                         {
                             System.out.print("There is no Martial Artist"+
-                                    " character to"+
+                            " character to"+
                             " select. You must create one or load one"+
-                                        " from a\nsave"+
+                            " from a\nsave"+
                             " file. Press enter to continue.");
                             try{System.in.read();}
                             catch(Exception e){}
@@ -7048,92 +6952,65 @@ class Main
                             System.out.println();
                         
                         }
-                        /*if the MartialArtistFirstName.txt and 
+                        /*if the MartialArtistFirstName.txt and
                         MartialArtistLastName.txt
-                        files have character names in them then do the below
-                        */
-                        else if(booleanMartialArtistFirstNameTxt == true &&
-                            booleanMartialArtistLastNameTxt == true)
+                        files have character names in them then do the below*/
+                        else
                         {
-                            //will retrieve MartialArtistFirstName.txt
-                            File MartialArtist1stFile2 = new File
-                                    ("src/MartialArtistFirstName.txt");
-                            Scanner scanMartialArtistFirstName2 = 
-                                    new Scanner(MartialArtist1stFile2);
-                        
-                            //will retrieve MartialArtistLastName.txt
-                            File MartialArtist2ndFile2 = new File
-                                    ("src/MartialArtistLastName.txt");
-                            Scanner scanMartialArtistLastName2 = 
-                                    new Scanner(MartialArtist2ndFile2);
-                        
-                            /*read the MartialArtistFirstName.txt file &
-                            MartialArtistLastName.txt file*/
-                            String MartialArtistFirstNameTxt = 
-                                    scanMartialArtistFirstName2.next();
-                            String MartialArtistLastNameTxt = 
-                                    scanMartialArtistLastName2.next();
-                        
-                            /*make the Martial Artist the currently selected 
+                            
+                            /*make the MartialArtist the currently selected
                             character*/
-                            /*if both lists are empty...add 
-                            MartialArtistFirstNameTxt & 
-                            MartialArtistLastNameTxt then add 
-                            thisIsMartialArtist
+                            /*if both lists are empty...add
+                            MartialArtistFirstNameTxt
+                            & MartialArtistNameTxt then add thisIsMartialArtist
                             (value 4)*/
                             if(selectedCharacter.isEmpty())
                             {
-                                selectedCharacter.
-                                        add(MartialArtistFirstNameTxt);
-                                selectedCharacter.
-                                        add(MartialArtistLastNameTxt);
+                                selectedCharacter.add(MartialArtistFirstNameTxt);
+                                selectedCharacter.add(MartialArtistLastNameTxt);
                             
                                 if(selectedCharacterClass.isEmpty())
                                 {
-                                    /*determines that this character is of
-                                    the
-                                    Martial Artist Class*/
+                                    /*determines that this character is of the
+                                    MartialArtist Class*/
                                     selectedCharacterClass.
-                                        add(thisIsMartialArtist);
-                                
+                                            add(thisIsMartialArtist);
                                 }
+                            
                             }
                             /*If not empty then clear it to make way for the
-                            Martial Artist
+                            MartialArtist
                             Character to be the currently selected character.
                             And
-                            make way for the selectedCharacterClass to add 
-                            the correct
+                            make way for the selectedCharacterClass to add the
+                            correct
                             value for the class that is being created.*/
                             else
                             {
                                 selectedCharacter.clear();
-                                selectedCharacter.
-                                        add(MartialArtistFirstNameTxt);
-                                selectedCharacter.
-                                        add(MartialArtistLastNameTxt);
+                                selectedCharacter.add(MartialArtistFirstNameTxt);
+                                selectedCharacter.add(MartialArtistLastNameTxt);
                                 selectedCharacterClass.clear();
-                                selectedCharacterClass.
-                                        add(thisIsMartialArtist);
-                            }
-                        }
+                                selectedCharacterClass.add(thisIsMartialArtist);
+                           }
+                        }            
                     }
                 
-                    /*Make the currently selected character one of the 
+                    /*Make the currently selected character one of the
                     Necromancer class*/
                     else if(userCharacterChoice == 5)
                     {
-                        /*if the NecromancerFirstName.txt and 
+                        /*if the NecromancerFirstName.txt and
                         NecromancerLastName.txt
-                        files have no character names in them then do the below
-                        */
-                        if(booleanNecromancerFirstNameTxt == false &&
-                            booleanNecromancerLastNameTxt == false)
+                        files have no character names in them then do the below*/
+                        
+                        if(NecromancerFirstNameValue.equals("0") &&
+                            NecromancerLastNameValue.equals("0"))
                         {
-                            System.out.print("There is"+
-                                    " no Necromancer character to"+
-                            " select. You must create"+
-                                    " one or load one from a\nsave"+
+                            System.out.print("There is no Necromancer"+
+                            " character to"+
+                            " select. You must create one or load one"+
+                            " from a\nsave"+
                             " file. Press enter to continue.");
                             try{System.in.read();}
                             catch(Exception e){}
@@ -7141,124 +7018,83 @@ class Main
                             System.out.println();
                         
                         }
-                        /*if the NecromancerFirstName.txt and 
+                        /*if the NecromancerFirstName.txt and
                         NecromancerLastName.txt
                         files have character names in them then do the below*/
-                        else if(booleanNecromancerFirstNameTxt == true &&
-                                booleanNecromancerLastNameTxt == true)
+                        else
                         {
-                            //will retrieve NecromancerFirstName.txt
-                            File Necromancer1stFile2 = new File
-                            ("src/NecromancerFirstName.txt");
-                            Scanner scanNecromancerFirstName2 = 
-                                    new Scanner(Necromancer1stFile2);
-                        
-                            //will retrieve NecromancerLastName.txt
-                            File Necromancer2ndFile2 = new File
-                            ("src/NecromancerLastName.txt");
-                            Scanner scanNecromancerLastName2 = 
-                                    new Scanner(Necromancer2ndFile2);
-                        
-                            /*read the NecromancerFirstName.txt file &
-                            NecromancerLastName.txt file*/
-                            String NecromancerFirstNameTxt = 
-                                    scanNecromancerFirstName2.next();
-                            String NecromancerLastNameTxt = 
-                                    scanNecromancerLastName2.next();
-                                
                             
                             /*make the Necromancer the currently selected
                             character*/
-                            /*if both lists are empty...add 
-                            NecromancerFirstNameTxt & 
-                            NecromancerLastNameTxt then add
-                              thisIsNecromancer (value 5)*/
+                            /*if both lists are empty...add
+                            NecromancerFirstNameTxt
+                            & NecromancerNameTxt then add thisIsNecromancer
+                            (value 4)*/
                             if(selectedCharacter.isEmpty())
                             {
-                                selectedCharacter.
-                                        add(NecromancerFirstNameTxt);
-                                selectedCharacter.
-                                        add(NecromancerLastNameTxt);
-                          
+                                selectedCharacter.add(NecromancerFirstNameTxt);
+                                selectedCharacter.add(NecromancerLastNameTxt);
+                            
                                 if(selectedCharacterClass.isEmpty())
                                 {
                                     /*determines that this character is of the
                                     Necromancer Class*/
                                     selectedCharacterClass.
                                             add(thisIsNecromancer);
-                                
                                 }
-                            
                             }
-                            /*If not empty then clear it to make way for
-                            the Necromancer
-                            Character to be the currently selected
-                            character. And
-                            make way for the selectedCharacterClass to add
-                            the correct
+                            /*If not empty then clear it to make way for the
+                            Necromancer
+                            Character to be the currently selected character.
+                            And
+                            make way for the selectedCharacterClass to add the
+                            correct
                             value for the class that is being created.*/
                             else
                             {
                                 selectedCharacter.clear();
-                                selectedCharacter.
-                                        add(NecromancerFirstNameTxt);
-                                selectedCharacter.
-                                        add(NecromancerLastNameTxt);
+                                selectedCharacter.add(NecromancerFirstNameTxt);
+                                selectedCharacter.add(NecromancerLastNameTxt);
                                 selectedCharacterClass.clear();
-                                selectedCharacterClass.
-                                        add(thisIsNecromancer);
-                            }
-                        }
+                                selectedCharacterClass.add(thisIsNecromancer);
+                           }
+                        }            
                     }
                 
                     /*Make the currently selected character one of the
                     Wizard class*/
                     else if(userCharacterChoice == 6)
                     {
-                        /*if the WizardFirstName.txt and WizardLastName.txt
+                        /*if the WizardFirstName.txt and
+                        WizardLastName.txt
                         files have no character names in them then do the below*/
-                        if(booleanWizardFirstNameTxt == false &&
-                            booleanWizardLastNameTxt == false)
+                        
+                        if(WizardFirstNameValue.equals("0") &&
+                            WizardLastNameValue.equals("0"))
                         {
-                            System.out.print("There is no Wizard character to"+
+                            System.out.print("There is no Wizard"+
+                            " character to"+
                             " select. You must create one or load one"+
-                                    " from a\nsave"+
+                            " from a\nsave"+
                             " file. Press enter to continue.");
                             try{System.in.read();}
                             catch(Exception e){}
                             System.out.println();
                             System.out.println();
+                        
                         }
-                        /*if the WizardFirstName.txt and WizardLastName.txt
+                        /*if the WizardFirstName.txt and
+                        WizardLastName.txt
                         files have character names in them then do the below*/
-                        else if(booleanWizardFirstNameTxt == true &&
-                                booleanWizardLastNameTxt == true)
+                        else
                         {
-                            //will retrieve WizardFirstName.txt
-                            File Wizard1stFile2 = 
-                                    new File("src/WizardFirstName.txt");
-                            Scanner scanWizardFirstName2 = 
-                                    new Scanner(Wizard1stFile2);
-                        
-                            //will retrieve WizardLastName.txt
-                            File Wizard2ndFile2 = 
-                                    new File("src/WizardLastName.txt");
-                            Scanner scanWizardLastName2 = 
-                                    new Scanner(Wizard2ndFile2);
-                        
-                            /*read the WizardFirstName.txt file &
-                                    WizardLastName.txt file*/
-                            String WizardFirstNameTxt = 
-                                    scanWizardFirstName2.next();
-                            String WizardLastNameTxt = 
-                                    scanWizardLastName2.next();
-                        
-                            /*make the Wizard the currently selected 
+                            
+                            /*make the Wizard the currently selected
                             character*/
-                            /*if both lists are empty...add 
-                            WizardFirstNameTxt & 
-                            WizardLastNameTxt then add thisIsWizard 
-                            (value 6)*/
+                            /*if both lists are empty...add
+                            WizardFirstNameTxt
+                            & WizardNameTxt then add thisIsWizard
+                            (value 4)*/
                             if(selectedCharacter.isEmpty())
                             {
                                 selectedCharacter.add(WizardFirstNameTxt);
@@ -7266,13 +7102,11 @@ class Main
                             
                                 if(selectedCharacterClass.isEmpty())
                                 {
-                                    /*determines that this character is of
-                                    the
+                                    /*determines that this character is of the
                                     Wizard Class*/
-                                    selectedCharacterClass.add(thisIsWizard);
-                                
+                                    selectedCharacterClass.
+                                            add(thisIsWizard);
                                 }
-                            
                             }
                             /*If not empty then clear it to make way for the
                             Wizard
@@ -7288,17 +7122,25 @@ class Main
                                 selectedCharacter.add(WizardLastNameTxt);
                                 selectedCharacterClass.clear();
                                 selectedCharacterClass.add(thisIsWizard);
-                            }
-                        }
+                           }
+                        }            
                     }
-                
+                    
+                    /*this else if statement and the else clause below it act
+                    as a while loop (sort of). I would have added an actual while
+                    loop but I am short on time- need to get to other things
+                    in this program.*/
+                    else if(userCharacterChoice == 7)
+                    {
+                        //do nothing, just exit the selection menu
+                    }
+                    
                     else
                     {
                         System.out.print("You must select a number"+
                                 " that corresponds"+
-                        " with an existing character,\nyou'll have to"+
-                                " try again. Press"+
-                        " enter to continue.");
+                        " with an existing character,\nor enter 7 to exit."+
+                        " Press enter to continue.");
                         try{System.in.read();}
                         catch(Exception e){}
                         System.out.println();
@@ -7306,8 +7148,8 @@ class Main
                     }
                 }
                 
-                /*if none of the files above this catch can be read, then this
-                is the message given to the user*/
+                /*if none of the files in the try above this catch can be read,
+                then this is the message given to the user*/
                 catch(FileNotFoundException exception)
                 {
                     System.out.print("You have not created or loaded any"+
@@ -10704,7 +10546,8 @@ class Main
                             }
 
                             //if the currently selected character is a Necromancer
-                            else if(selectedCharacterClass.contains(thisIsNecromancer))
+                            else if(selectedCharacterClass.
+                                    contains(thisIsNecromancer))
                             {
 
                                 // START: Get Necromancer Accuracy Stat value
